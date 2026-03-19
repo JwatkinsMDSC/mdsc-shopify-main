@@ -1,0 +1,7 @@
+.quickview-gallery-pagination-wrapper {
+    @apply absolute bg-white rounded-full w-fit z-20 left-1/2 -translate-x-1/2 bottom-4 px-4 py-2 border border-gray-100;
+
+    .swiper-pagination-bullet {
+        @apply bg-primary-500;
+    }
+}

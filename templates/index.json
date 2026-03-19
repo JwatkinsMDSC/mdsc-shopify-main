@@ -1,0 +1,124 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_banner_Jff6Ud": {
+      "type": "hero-banner",
+      "name": "Hero Banner",
+      "settings": {
+        "enable_overlap": true,
+        "hero_height": "auto",
+        "enable_image": false,
+        "enable_video": true,
+        "video": "shopify://files/videos/7191658_Sisu_22_Boat_1280x720.mp4",
+        "video_poster": "shopify://shop_images/abstract-background-with-dark-blue-glowing-geometric-mesh-futuristic-network-technology.jpg",
+        "enable_overlay": true,
+        "overlay_color": "#102e4a",
+        "overlay_opacity": 60,
+        "overlay_blend_mode": "normal",
+        "enable_subtitle": true,
+        "subtitle": "Welcome to Marine Detail Supply",
+        "subtitle_color": "#ffffff",
+        "subtitle_size": "text-base",
+        "enable_title": true,
+        "title": "Marine Detailing Products",
+        "title_color": "#ffffff",
+        "title_size": "text-6xl",
+        "enable_description": true,
+        "description": "<p>The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release while they're still in stock.</p>",
+        "description_color": "#ffffff",
+        "description_size": "text-base",
+        "enable_button": true,
+        "button_label": "Shop Collection",
+        "button_link": "shopify://pages/b2b-home",
+        "button_bg_color": "#288dcd",
+        "button_text_color": "#ffffff",
+        "button_size": "btn-xl"
+      }
+    },
+    "hero_collection_carousel_jxKttb": {
+      "type": "hero-collection-carousel",
+      "blocks": {
+        "collection_slide_ByjqCr": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "coatings-sealants",
+            "title": "",
+            "url": "",
+            "design_variant": "default",
+            "eyebrow_enable": true,
+            "eyebrow": "Shop the collection",
+            "button_enable": true,
+            "button_text": "View Products"
+          }
+        },
+        "collection_slide_GNx36U": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "coatings-sealants",
+            "title": "",
+            "url": "",
+            "design_variant": "default",
+            "eyebrow_enable": true,
+            "eyebrow": "Shop the collection",
+            "button_enable": true,
+            "button_text": "View Products"
+          }
+        },
+        "collection_slide_YVEDQr": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "coatings-sealants",
+            "title": "",
+            "url": "",
+            "design_variant": "default",
+            "eyebrow_enable": true,
+            "eyebrow": "Shop the collection",
+            "button_enable": true,
+            "button_text": "View Products"
+          }
+        },
+        "collection_slide_Ph6T7a": {
+          "type": "collection_slide",
+          "settings": {
+            "collection": "coatings-sealants",
+            "title": "",
+            "url": "",
+            "design_variant": "default",
+            "eyebrow_enable": true,
+            "eyebrow": "Shop the collection",
+            "button_enable": true,
+            "button_text": "View Products"
+          }
+        }
+      },
+      "block_order": [
+        "collection_slide_ByjqCr",
+        "collection_slide_GNx36U",
+        "collection_slide_YVEDQr",
+        "collection_slide_Ph6T7a"
+      ],
+      "name": "Hero Collection Carousel",
+      "settings": {
+        "enable_overlap": true,
+        "desktop_slides": 4,
+        "tablet_slides": 3,
+        "mobile_slides": 2,
+        "desktop_spacing": 24,
+        "tablet_spacing": 16,
+        "mobile_spacing": 10
+      }
+    }
+  },
+  "order": [
+    "hero_banner_Jff6Ud",
+    "hero_collection_carousel_jxKttb"
+  ]
+}

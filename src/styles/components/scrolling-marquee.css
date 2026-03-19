@@ -1,0 +1,54 @@
+/* ================================== */
+/* Logo Marquee
+/* ================================== */
+
+[data-marquee-viewport],
+.marquee__viewport {
+    @apply relative w-full overflow-hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  [data-marquee-content],
+  .marquee__content {
+    @apply flex w-max items-center gap-8;
+    will-change: transform;
+    transform: translate3d(0,0,0);
+  }
+
+  [data-marquee-content] > div,
+  .marquee__item {
+    @apply flex items-center justify-center shrink-0;
+  }
+
+  [data-marquee-content] img,
+  .marquee__logo {
+    @apply block h-10 w-auto transition-all duration-300
+         grayscale hover:grayscale-0;
+    max-width: 10rem;
+    object-fit: contain;
+  }
+
+  [data-marquee-content] img:hover,
+  .marquee__logo:hover {
+    @apply opacity-100;
+  }
+
+  @media (max-width: 640px) {
+    [data-marquee-content] > div,
+    .marquee__item { 
+      @apply shrink-0; 
+    }
+    
+    [data-marquee-content] img,
+    .marquee__logo { 
+      @apply h-8; 
+      max-width: 8.5rem; 
+    }
+
+    [data-marquee-viewport],
+    .marquee__viewport {
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
+    }
+  }

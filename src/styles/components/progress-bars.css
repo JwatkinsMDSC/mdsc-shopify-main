@@ -1,0 +1,41 @@
+/* Base wrapper */
+.progress-block {
+    @apply grid gap-1;
+}
+
+/* Label */
+.progress-label {
+    @apply text-sm font-medium leading-tight;
+}
+
+/* Track */
+.progress-track {
+    @apply w-full h-2 rounded-full bg-gray-200 overflow-hidden;
+}
+
+/* Fill */
+.progress-fill {
+    @apply h-full rounded-full transition-[width] duration-300 ease-out;
+    width: var(--progress);
+}
+
+/* Variants */
+.progress-fill--primary {
+    @apply bg-primary-600;
+}
+
+.progress-fill--secondary {
+    @apply bg-secondary-600;
+}
+
+.progress-fill--success {
+    @apply bg-green-600;
+}
+
+.progress-fill--warning {
+    @apply bg-yellow-600;
+}
+
+.progress-fill--danger {
+    @apply bg-red-600;
+}

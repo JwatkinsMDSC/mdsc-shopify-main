@@ -1,0 +1,126 @@
+{% schema %}
+{
+  "name": "B2B Collection Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Image (optional)"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow Text",
+          "default": "Shop the collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Collection Carousel"
+    }
+  ]
+}
+{% endschema %}
+
+<section 
+  aria-labelledby="collection-heading" 
+  class="relative overflow-hidden -mt-40 sm:mt-0"
+  data-section-id="{{ section.id }}"
+  data-section-type="hero-collection-carousel"
+>
+  <h2 id="collection-heading" class="sr-only">{{ section.settings.heading }}</h2>
+  <div class="max-w-400 mx-auto px-4">
+    
+    <div class="swiper b2b-collection-carousel" data-swiper data-swiper-config='{
+      "slidesPerView": 2,
+      "spaceBetween": 14,
+      "loop": true,
+      "navigation": {
+        "nextEl": ".btn-next",
+        "prevEl": ".btn-prev"
+      },
+      "breakpoints": {
+        "640": {
+          "slidesPerView": 3,
+          "spaceBetween": 20
+        },
+        "1024": {
+          "slidesPerView": 4,
+          "spaceBetween": 24
+        }
+      }
+    }'>
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign collection = collections[block.settings.collection] %}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            <div class="collection-card">
+              
+              {% comment %} Background {% endcomment %}
+              <div class="collection-card-bg-wrap">
+                {% if block.settings.image != blank %}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: class: 'collection-card-bg', alt: collection.title }}
+                {% elsif collection.image != blank %}
+                  {{ collection.image | image_url: width: 600 | image_tag: class: 'collection-card-bg', alt: collection.title }}
+                {% else %}
+                  {{ 'collection-1' | placeholder_svg_tag: 'collection-card-bg' }}
+                {% endif %}
+                <div class="collection-card-overlay"></div>
+              </div>
+              
+              {% comment %} Foreground content {% endcomment %}
+              <div class="collection-card-content-wrap">
+                <div class="collection-card-content">
+                  
+                  <span class="collection-card-eyebrow">{{ block.settings.eyebrow }}</span>
+                  
+                  <h3 class="collection-card-title font-oswald">
+                    {{ collection.title }}
+                  </h3>
+                  
+                  <div class="collection-card-button-wrap">
+                    <a href="{{ collection.url }}" class="collection-card-button">
+                      View Products
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" class="size-5 md:size-6">
+                        <path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                      </svg>
+                    </a>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+      {% comment %} Navigation buttons {% endcomment %}
+      {% if section.blocks.size > 4 %}
+        <div class="swiper-button-prev btn-prev"></div>
+        <div class="swiper-button-next btn-next"></div>
+      {% endif %}
+    </div>
+    
+  </div>
+</section>
+
+

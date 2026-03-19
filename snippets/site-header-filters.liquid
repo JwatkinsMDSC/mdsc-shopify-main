@@ -1,0 +1,58 @@
+{%- if request.page_type == 'collection' or request.page_type == 'search' or request.page_type == 'index' -%}
+  <div id="siteHeaderFilters" class="site-header-filters bg-white border-b border-gray-200 shadow-md" data-filters-bar hidden>
+    <div class="fade-overlay-white fade-x-4 mx-auto max-w-400">
+      <div class="relative flex justify-center space-x-4">
+        <div class="px-4 whitespace-nowrap overflow-x-auto flex items-center gap-2 cursor-grab scrollbar scrollbar-thumb-primary-300 gutter-both scrollbar-track-white scrollbar-h-1">
+          
+          {% assign filter_types = "product_type,collection,tag,brand,price" | split: ',' %}
+          {% assign filter_labels = "Product Type,Collection,Tag,Brand,Price Range" | split: ',' %}
+          
+          {% for type in filter_types %}
+            {% assign label = filter_labels[forloop.index0] %}
+            <div class="flex items-center gap-1 cursor-pointer py-2" data-filter-group="{{ type }}">
+              <div data-popover>
+                <button class="filter-trigger" data-popover-button>
+                  <span class="badge badge-info badge-xs badge-pill shadow-sm hidden" data-filter-count>0</span>
+                  {{ label }}
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" class="size-5 text-gray-400">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                  </svg>
+                </button>
+                
+                <div class="filter-popover" data-popover-panel>
+                  <div class="filter-panel">
+                    <div class="p-4">
+                      <div class="filter-header">
+                        {{ label }}
+                        <button type="button" class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                          <span class="sr-only">Close</span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-3">
+                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      
+                      <form class="filters-panel-chips" data-filter-type="{{ type }}">
+                        {% comment %} Filter options will be populated by JavaScript {% endcomment %}
+                      </form>
+                    </div>
+                    
+                    <div class="filter-actions">
+                      <button type="button" class="filter-action-btn filter-action-apply">
+                        Apply Filters
+                      </button>
+                      <button type="button" class="filter-action-btn filter-action-reset">
+                        Clear All
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

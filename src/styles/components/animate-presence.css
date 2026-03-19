@@ -1,0 +1,239 @@
+/* ======================================================
+   UI ANIMATE PRESENCE
+   ------------------------------------------------------
+   Single source of truth for enter / leave animations
+   used by:
+   - modals
+   - drawers (side + sheet)
+   - dropdowns
+   - backdrops
+   ------------------------------------------------------
+   STATE CONTRACT:
+   - [data-open]   → element is visible/open
+   - [data-closed] → element is hidden/closed
+   - [data-enter]  → entering transition in progress
+   - [data-leave]  → leaving transition in progress
+   ------------------------------------------------------
+   VISIBILITY:
+   - Controller owns `hidden` attribute
+   - Authors do NOT add `hidden` in markup
+   ------------------------------------------------------
+   JS controls state only.
+   CSS controls motion only.
+====================================================== */
+
+/* ======================================================
+   GLOBAL MOTION TOKENS
+====================================================== */
+
+:root {
+  /* Durations */
+  --ui-anim-in: 260ms;
+  --ui-anim-out: 200ms;
+
+  /* Easing */
+  --ui-ease-in: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-ease-out: cubic-bezier(0.4, 0, 1, 1);
+}
+
+[data-ui-panel]:focus,
+[data-ui-panel]:focus-visible {
+  outline: none;
+}
+
+/* ======================================================
+   LIFECYCLE STATE CONTRACT
+====================================================== */
+
+/*
+  CLOSED STATE — PANELS ONLY
+  ------------------------------------
+  Backdrops MUST NOT translate.
+*/
+[data-ui-panel][data-closed],
+[data-dd-panel][data-closed] {
+  opacity: 0;
+  transform: var(--ui-closed-transform, translateY(8px));
+}
+
+/*
+  OPEN STATE — PANELS ONLY
+*/
+[data-ui-panel][data-open],
+[data-dd-panel][data-open] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* ======================================================
+   ENTER / LEAVE TRANSITIONS
+====================================================== */
+
+/*
+  ENTERING
+*/
+[data-enter] {
+  transition:
+    opacity var(--ui-anim-in) var(--ui-ease-in),
+    transform var(--ui-anim-in) var(--ui-ease-in),
+    backdrop-filter var(--ui-anim-in) var(--ui-ease-in);
+}
+
+/*
+  LEAVING
+*/
+[data-leave] {
+  transition:
+    opacity var(--ui-anim-out) var(--ui-ease-out),
+    transform var(--ui-anim-out) var(--ui-ease-out),
+    backdrop-filter var(--ui-anim-out) var(--ui-ease-out);
+}
+
+/* ======================================================
+   BACKDROP (MODALS & DRAWERS)
+====================================================== */
+
+/*
+  Backdrop is controller-owned.
+  Visuals are theme-owned.
+  NO TRANSFORMS. EVER.
+*/
+.ui-backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: var(--ui-backdrop-bg, rgba(0, 0, 0, 0.5));
+  backdrop-filter: var(--ui-backdrop-filter, none);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: none !important;
+
+  z-index: var(--ui-backdrop-z, 50);
+  will-change: opacity, backdrop-filter;
+}
+
+/* Open backdrop */
+.ui-backdrop[data-open] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Closed backdrop */
+.ui-backdrop[data-closed] {
+  opacity: 0;
+  backdrop-filter: blur(0);
+}
+
+/* ======================================================
+   BACKDROP VARIANTS
+====================================================== */
+
+.ui-backdrop[data-variant="dark"] {
+  --ui-backdrop-bg: rgba(0, 0, 0, 0.75);
+}
+
+.ui-backdrop[data-variant="light"] {
+  --ui-backdrop-bg: rgba(0, 0, 0, 0.35);
+}
+
+.ui-backdrop[data-variant="blur"] {
+  --ui-backdrop-bg: rgba(0, 0, 0, 0.4);
+  --ui-backdrop-filter: blur(16px);
+}
+
+/* ======================================================
+   DEFAULT CLOSED TRANSFORMS (OPTIONAL HELPERS)
+====================================================== */
+
+/*
+  OPTIONAL helpers.
+  Panels may also define --ui-closed-transform inline.
+*/
+
+.ui-from-left {
+  --ui-closed-transform: translateX(-100%);
+}
+
+.ui-from-right {
+  --ui-closed-transform: translateX(100%);
+}
+
+.ui-from-bottom {
+  --ui-closed-transform: translateY(100%);
+}
+
+.ui-from-top {
+  --ui-closed-transform: translateY(-100%);
+}
+
+.ui-scale-fade {
+  --ui-closed-transform: scale(0.96);
+}
+
+/* ======================================================
+   DEFAULT HIDDEN STATE (FOIC PREVENTION)
+====================================================== */
+
+/*
+  Panels are hidden by default until JS initializes.
+  This prevents flash of initial content (FOIC).
+  JS controls visibility via hidden attribute after init.
+  
+  IMPORTANT: Only hide if NEITHER data-open NOR data-closed is present.
+  During animation staging, data-closed is applied first (element visible
+  at starting pose), then data-open triggers the transition.
+*/
+[data-ui-panel]:not([data-open]):not([data-closed]),
+[data-dd-panel]:not([data-open]):not([data-closed]) {
+  display: none;
+}
+
+/* ======================================================
+   PERFORMANCE SAFETY
+====================================================== */
+
+[data-ui-panel],
+[data-dd-panel] {
+  will-change: transform, opacity;
+}
+
+.ui-backdrop {
+  will-change: opacity, backdrop-filter;
+}
+
+/* ======================================================
+   MOBILE MENU – LEVEL TRANSITIONS
+   Slower, more spatial motion than drawers/modals
+====================================================== */
+
+[data-ui-type="menu-level"] {
+  --ui-anim-in: 550ms;
+  --ui-anim-out: 500ms;
+
+  /* Optional: slightly softer easing */
+  --ui-ease-in: cubic-bezier(0.22, 1, 0.36, 1);
+  --ui-ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ======================================================
+   MENU DIRECTION HELPERS
+====================================================== */
+
+/* Incoming panels */
+.ui-enter-from-right {
+  --ui-closed-transform: translateX(100%);
+}
+
+.ui-enter-from-left {
+  --ui-closed-transform: translateX(-100%);
+}
+
+/* Outgoing panels */
+.ui-exit-to-left {
+  --ui-closed-transform: translateX(-100%);
+}
+
+.ui-exit-to-right {
+  --ui-closed-transform: translateX(100%);
+}

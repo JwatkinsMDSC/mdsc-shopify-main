@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDS Theme Design Studio</title>
+    <link rel="stylesheet" href="/tailwind.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+</head>
+
+<body>
+
+    <el-dialog>
+        <dialog id="sidebar" class="backdrop:bg-transparent xl:hidden">
+            <el-dialog-backdrop
+                class="fixed inset-0 bg-gray-900/80 transition-opacity duration-300 ease-linear data-closed:opacity-0"></el-dialog-backdrop>
+
+            <div tabindex="0" class="fixed inset-0 flex focus:outline-none">
+                <el-dialog-panel
+                    class="group/dialog-panel relative mr-16 flex w-full max-w-xs flex-1 transform transition duration-300 ease-in-out data-closed:-translate-x-full">
+                    <div
+                        class="absolute top-0 left-full flex w-16 justify-center pt-5 duration-300 ease-in-out group-data-closed/dialog-panel:opacity-0">
+                        <button type="button" command="close" commandfor="sidebar" class="-m-2.5 p-2.5">
+                            <span class="sr-only">Close sidebar</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 text-white">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Sidebar component, swap this element with another sidebar if you like -->
+                    <div
+                        class="relative flex grow flex-col gap-y-5 overflow-y-auto bg-gray-50 px-6 dark:bg-gray-900 dark:ring dark:ring-white/10 dark:before:pointer-events-none dark:before:absolute dark:before:inset-0 dark:before:bg-black/10">
+                        <div class="relative flex h-16 shrink-0 items-center">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mdsclogo.png"
+                                alt="Your Company" class="h-14 w-auto dark:hidden" />
+                        </div>
+                        <nav class="relative flex flex-1 flex-col">
+                            <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                                <li>
+                                    <ul role="list" class="-mx-2 space-y-1">
+                                        <li>
+                                            <!-- Current: "bg-gray-100 dark:bg-white/5 text-indigo-600 dark:text-white", Default: "text-gray-700 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5" -->
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                    class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                                    <path
+                                                        d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                Projects
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                    class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                                    <path
+                                                        d="M21.75 17.25v-.228a4.5 4.5 0 0 0-.12-1.03l-2.268-9.64a3.375 3.375 0 0 0-3.285-2.602H7.923a3.375 3.375 0 0 0-3.285 2.602l-2.268 9.64a4.5 4.5 0 0 0-.12 1.03v.228m19.5 0a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3m19.5 0a3 3 0 0 0-3-3H5.25a3 3 0 0 0-3 3m16.5 0h.008v.008h-.008v-.008Zm-3 0h.008v.008h-.008v-.008Z"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                Deployments
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                    class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                                    <path
+                                                        d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                Activity
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                    class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                                    <path
+                                                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                Domains
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                    class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                                    <path
+                                                        d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                                Usage
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md bg-gray-100 p-2 text-sm/6 font-semibold text-indigo-600 dark:bg-white/5 dark:text-white">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                    class="size-6 shrink-0 text-indigo-600 dark:text-white">
+                                                    <path
+                                                        d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                                Settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="text-xs/6 font-semibold text-gray-400">Your teams</div>
+                                    <ul role="list" class="-mx-2 mt-2 space-y-1">
+                                        <li>
+                                            <!-- Current: "bg-gray-100 dark:bg-white/5 text-indigo-600 dark:text-white", Default: "text-gray-700 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5" -->
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <span
+                                                    class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:group-hover:border-white/20 dark:group-hover:text-white">P</span>
+                                                <span class="truncate">Planetaria</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <span
+                                                    class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:group-hover:border-white/20 dark:group-hover:text-white">P</span>
+                                                <span class="truncate">Protocol</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                                <span
+                                                    class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:group-hover:border-white/20 dark:group-hover:text-white">T</span>
+                                                <span class="truncate">Tailwind Labs</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="-mx-6 mt-auto">
+                                    <a href="#"
+                                        class="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-white/5">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt=""
+                                            class="size-8 rounded-full bg-gray-100 outline -outline-offset-1 outline-black/5 dark:bg-gray-800 dark:outline-white/10" />
+                                        <span class="sr-only">Your profile</span>
+                                        <span aria-hidden="true">Tom Cook</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </el-dialog-panel>
+            </div>
+        </dialog>
+    </el-dialog>
+
+    <!-- Static sidebar for desktop -->
+    <div class="hidden xl:fixed xl:inset-y-0 xl:z-50 xl:flex xl:w-72 xl:flex-col dark:bg-gray-900">
+        <!-- Sidebar component, swap this element with another sidebar if you like -->
+        <div
+            class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 ring-1 ring-gray-200 dark:bg-black/10 dark:ring-white/5">
+            <div class="flex h-16 shrink-0 items-center">
+                <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mdsclogo.png" alt="Your Company"
+                    class="h-14 w-auto dark:hidden" />
+                <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                    alt="Your Company" class="h-8 w-auto not-dark:hidden" />
+            </div>
+            <nav class="flex flex-1 flex-col">
+                <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                    <li>
+                        <ul role="list" class="-mx-2 space-y-1">
+                            <li>
+                                <!-- Current: "bg-gray-100 dark:bg-white/5 text-indigo-600 dark:text-white", Default: "text-gray-700 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5" -->
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true"
+                                        class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                        <path
+                                            d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true"
+                                        class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                        <path
+                                            d="M21.75 17.25v-.228a4.5 4.5 0 0 0-.12-1.03l-2.268-9.64a3.375 3.375 0 0 0-3.285-2.602H7.923a3.375 3.375 0 0 0-3.285 2.602l-2.268 9.64a4.5 4.5 0 0 0-.12 1.03v.228m19.5 0a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3m19.5 0a3 3 0 0 0-3-3H5.25a3 3 0 0 0-3 3m16.5 0h.008v.008h-.008v-.008Zm-3 0h.008v.008h-.008v-.008Z"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Deployments
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true"
+                                        class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                        <path
+                                            d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Activity
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true"
+                                        class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                        <path
+                                            d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Domains
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true"
+                                        class="size-6 shrink-0 text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-white">
+                                        <path
+                                            d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Usage
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md bg-gray-100 p-2 text-sm/6 font-semibold text-indigo-600 dark:bg-white/5 dark:text-white">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true"
+                                        class="size-6 shrink-0 text-indigo-600 dark:text-white">
+                                        <path
+                                            d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Settings
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="text-xs/6 font-semibold text-gray-500 dark:text-gray-400">Your teams</div>
+                        <ul role="list" class="-mx-2 mt-2 space-y-1">
+                            <li>
+                                <!-- Current: "bg-gray-100 dark:bg-white/5 text-indigo-600 dark:text-white", Default: "text-gray-700 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5" -->
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <span
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:group-hover:border-white/20 dark:group-hover:text-white">P</span>
+                                    <span class="truncate">Planetaria</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <span
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:group-hover:border-white/20 dark:group-hover:text-white">P</span>
+                                    <span class="truncate">Protocol</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-700 hover:bg-gray-100 hover:text-indigo-600 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-white">
+                                    <span
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-200 bg-white text-[0.625rem] font-medium text-gray-400 group-hover:border-indigo-600 group-hover:text-indigo-600 dark:border-white/10 dark:bg-white/5 dark:group-hover:border-white/20 dark:group-hover:text-white">T</span>
+                                    <span class="truncate">Tailwind Labs</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="-mx-6 mt-auto">
+                        <a href="#"
+                            class="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-white/5">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt=""
+                                class="size-8 rounded-full bg-gray-100 outline -outline-offset-1 outline-black/5 dark:bg-gray-800 dark:outline-white/10" />
+                            <span class="sr-only">Your profile</span>
+                            <span aria-hidden="true">Tom Cook</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="xl:pl-72">
+        <!-- Sticky search header -->
+        <div
+            class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-6 border-b border-gray-200 bg-white px-4 shadow-xs sm:px-6 lg:px-8 dark:border-white/5 dark:bg-gray-900 dark:shadow-none">
+            <button type="button" command="show-modal" commandfor="sidebar"
+                class="-m-2.5 p-2.5 text-gray-900 xl:hidden dark:text-white">
+                <span class="sr-only">Open sidebar</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5">
+                    <path
+                        d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75ZM2 10a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 10Zm0 5.25a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"
+                        clip-rule="evenodd" fill-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div class="flex flex-1 gap-x-4">
+                <h1 class="text-[1.1rem] font-semibold text-primary-700 dark:text-white">Elements</h1>
+            </div>
+        </div>
+
+        <main>
+            <div class="p-8">
+                <h2 class="text-4xl tracking-tight text-pretty mb-4">Buttons</h2>
+                <div
+                    class="overflow-hidden rounded-md border border-gray-300 bg-white dark:border-white/10 dark:bg-gray-900">
+                    <ul role="list" class="divide-y divide-gray-200 dark:divide-white/10">
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">
+                                Primary
+                            </h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <button class="btn btn-xs btn-primary">Extra Small</button>
+                                <button class="btn btn-sm btn-primary">Small</button>
+                                <button class="btn btn-primary">Default</button>
+                                <button class="btn btn-lg btn-primary">Large</button>
+                                <button class="btn btn-xl btn-primary">Extra Large</button>
+                            </div>
+                        </li>
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">
+                                Secondary
+                            </h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <button class="btn btn-xs btn-secondary">Extra Small</button>
+                                <button class="btn btn-sm btn-secondary">Small</button>
+                                <button class="btn btn-secondary">Default</button>
+                                <button class="btn btn-lg btn-secondary">Large</button>
+                                <button class="btn btn-xl btn-secondary">Extra Large</button>
+                            </div>
+                        </li>
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">
+                                Soft
+                            </h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <button class="btn btn-xs btn-soft">Extra Small</button>
+                                <button class="btn btn-sm btn-soft">Small</button>
+                                <button class="btn btn-soft">Default</button>
+                                <button class="btn btn-lg btn-soft">Large</button>
+                                <button class="btn btn-xl btn-soft">Extra Large</button>
+                            </div>
+                        </li>
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">
+                                Leading Icons
+                            </h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <button class="btn btn-xs btn-soft btn-icon-leading">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="size-3">
+                                        <path fill-rule="evenodd"
+                                            d="M13.836 2.477a.75.75 0 0 1 .75.75v3.182a.75.75 0 0 1-.75.75h-3.182a.75.75 0 0 1 0-1.5h1.37l-.84-.841a4.5 4.5 0 0 0-7.08.932.75.75 0 0 1-1.3-.75 6 6 0 0 1 9.44-1.242l.842.84V3.227a.75.75 0 0 1 .75-.75Zm-.911 7.5A.75.75 0 0 1 13.199 11a6 6 0 0 1-9.44 1.241l-.84-.84v1.371a.75.75 0 0 1-1.5 0V9.591a.75.75 0 0 1 .75-.75H5.35a.75.75 0 0 1 0 1.5H3.98l.841.841a4.5 4.5 0 0 0 7.08-.932.75.75 0 0 1 1.025-.273Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    Extra Small
+                                </button>
+                                <button class="btn btn-sm btn-soft btn-icon-leading">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="size-4">
+                                        <path
+                                            d="M5.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM5 10.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM10.25 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM7.25 8.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM8 9.5A.75.75 0 1 0 8 11a.75.75 0 0 0 0-1.5Z" />
+                                        <path fill-rule="evenodd"
+                                            d="M4.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-5V1.75A.75.75 0 0 0 4.75 1ZM3.5 7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v4.5a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V7Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    Small
+                                </button>
+                                <button class="btn btn-soft btn-icon-leading">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    Default
+                                </button>
+                                <button class="btn btn-lg btn-soft btn-icon-leading">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                                    </svg>
+                                    Large
+                                </button>
+                                <button class="btn btn-xl btn-soft btn-icon-leading">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                    </svg>
+                                    Extra Large
+                                </button>
+                            </div>
+                        </li>
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">
+                                Trailing Icons
+                            </h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <button class="btn btn-xs btn-primary btn-icon-trailing">
+                                    Extra Small
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="size-3">
+                                        <path fill-rule="evenodd"
+                                            d="M13.836 2.477a.75.75 0 0 1 .75.75v3.182a.75.75 0 0 1-.75.75h-3.182a.75.75 0 0 1 0-1.5h1.37l-.84-.841a4.5 4.5 0 0 0-7.08.932.75.75 0 0 1-1.3-.75 6 6 0 0 1 9.44-1.242l.842.84V3.227a.75.75 0 0 1 .75-.75Zm-.911 7.5A.75.75 0 0 1 13.199 11a6 6 0 0 1-9.44 1.241l-.84-.84v1.371a.75.75 0 0 1-1.5 0V9.591a.75.75 0 0 1 .75-.75H5.35a.75.75 0 0 1 0 1.5H3.98l.841.841a4.5 4.5 0 0 0 7.08-.932.75.75 0 0 1 1.025-.273Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-sm btn-primary btn-icon-trailing">
+                                    Small
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="size-4">
+                                        <path
+                                            d="M5.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM5 10.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM10.25 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM7.25 8.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM8 9.5A.75.75 0 1 0 8 11a.75.75 0 0 0 0-1.5Z" />
+                                        <path fill-rule="evenodd"
+                                            d="M4.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-5V1.75A.75.75 0 0 0 4.75 1ZM3.5 7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v4.5a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V7Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-primary btn-icon-trailing">
+                                    Default
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-lg btn-primary btn-icon-trailing">
+                                    Large
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-xl btn-primary btn-icon-trailing">
+                                    Extra Large
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">
+                                Circular
+                            </h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <button class="btn btn-xs btn-primary btn-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="size-3">
+                                        <path fill-rule="evenodd"
+                                            d="M13.836 2.477a.75.75 0 0 1 .75.75v3.182a.75.75 0 0 1-.75.75h-3.182a.75.75 0 0 1 0-1.5h1.37l-.84-.841a4.5 4.5 0 0 0-7.08.932.75.75 0 0 1-1.3-.75 6 6 0 0 1 9.44-1.242l.842.84V3.227a.75.75 0 0 1 .75-.75Zm-.911 7.5A.75.75 0 0 1 13.199 11a6 6 0 0 1-9.44 1.241l-.84-.84v1.371a.75.75 0 0 1-1.5 0V9.591a.75.75 0 0 1 .75-.75H5.35a.75.75 0 0 1 0 1.5H3.98l.841.841a4.5 4.5 0 0 0 7.08-.932.75.75 0 0 1 1.025-.273Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-sm btn-secondary btn-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="size-4">
+                                        <path
+                                            d="M5.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM5 10.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM10.25 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM7.25 8.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM8 9.5A.75.75 0 1 0 8 11a.75.75 0 0 0 0-1.5Z" />
+                                        <path fill-rule="evenodd"
+                                            d="M4.75 1a.75.75 0 0 0-.75.75V3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2V1.75a.75.75 0 0 0-1.5 0V3h-5V1.75A.75.75 0 0 0 4.75 1ZM3.5 7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v4.5a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V7Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-soft btn-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-lg btn-primary btn-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                                    </svg>
+                                </button>
+                                <button class="btn btn-xl btn-secondary btn-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-7">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-8">
+                <h2 class="text-4xl tracking-tight text-pretty mb-4">Badges and Chips</h2>
+
+                <div
+                    class="overflow-hidden rounded-md border border-gray-300 bg-white dark:border-white/10 dark:bg-gray-900">
+                    <ul role="list" class="divide-y divide-gray-200 dark:divide-white/10">
+
+                        <!-- Solid badges -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Solid</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-gray">Gray</span>
+                                <span class="badge badge-primary">Primary</span>
+                                <span class="badge badge-danger">Danger</span>
+                                <span class="badge badge-success">Success</span>
+                                <span class="badge badge-warning">Warning</span>
+                                <span class="badge badge-info">Info</span>
+                                <span class="badge badge-white">White</span>
+                            </div>
+                        </li>
+
+                        <!-- Flat and outline -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Flat and Outline</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-gray badge-flat">Gray</span>
+                                <span class="badge badge-primary badge-flat">Primary</span>
+                                <span class="badge badge-danger badge-flat">Danger</span>
+                                <span class="badge badge-success badge-flat">Success</span>
+                                <span class="badge badge-warning badge-flat">Warning</span>
+                                <span class="badge badge-info badge-flat">Info</span>
+                                <span class="badge badge-white badge-flat">White</span>
+                            </div>
+                        </li>
+
+                        <!-- Gradient and glow -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Gradient and Glow</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-md badge-gradient-primary badge-pill">Gradient
+                                    primary</span>
+                                <span class="badge badge-md badge-gradient-danger badge-pill">Gradient
+                                    danger</span>
+                                <span class="badge badge-md badge-gradient-success badge-pill">Gradient
+                                    success</span>
+                                <span class="badge badge-md badge-gradient-warning badge-pill">Gradient
+                                    warning</span>
+
+                                <span class="badge badge-md badge-glow-primary badge-pill">Glow
+                                    primary</span>
+                                <span class="badge badge-md badge-glow-danger badge-pill">Glow
+                                    danger</span>
+                                <span class="badge badge-md badge-glow-success badge-pill">Glow
+                                    success</span>
+                            </div>
+                        </li>
+
+                        <!-- With dot -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">With dot</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-md badge-danger badge-dot badge-dot-red">Error</span>
+                                <span class="badge badge-md badge-warning badge-dot badge-dot-yellow">Warning</span>
+                                <span class="badge badge-md badge-success badge-dot badge-dot-green">Online</span>
+                                <span class="badge badge-md badge-info badge-dot badge-dot-blue">Info</span>
+                                <span class="badge badge-md badge-gray badge-dot badge-dot-pink">Promo</span>
+                            </div>
+                        </li>
+
+                        <!-- With label -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">With label</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-primary">
+                                    Messages
+                                    <span class="badge-label badge-label-primary">4</span>
+                                </span>
+                                <span class="badge badge-warning">
+                                    Limited
+                                    <span class="badge-label badge-label-warning">3</span>
+                                </span>
+                                <span class="badge badge-success">
+                                    Tasks
+                                    <span class="badge-label badge-label-success">9</span>
+                                </span>
+                                <span class="badge badge-info">
+                                    Info
+                                    <span class="badge-label badge-label-info">9</span>
+                                </span>
+                                <span class="badge badge-danger">
+                                    Error
+                                    <span class="badge-label badge-label-danger">9</span>
+                                </span>
+                            </div>
+                        </li>
+
+                        <!-- Removable chips -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Removable chips</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-sm badge-gray badge-removable group">
+                                    Salt removal
+
+                                    <button type="button" class="badge-remove">
+                                        <span class="sr-only">Remove</span>
+
+                                        <svg viewBox="0 0 14 14"
+                                            class="size-3.5 stroke-gray-700 group-hover:stroke-gray-700 dark:stroke-gray-400 dark:group-hover:stroke-gray-300">
+                                            <path d="M4 4l6 6m0-6l-6 6" />
+                                        </svg>
+
+                                        <span class="absolute -inset-1"></span>
+                                    </button>
+                                </span>
+
+
+                                <span class="badge badge-sm badge-danger badge-removable">
+                                    Limited time
+                                    <button type="button" class="badge-remove">
+                                        <span class="sr-only">Remove</span>
+                                        <svg viewBox="0 0 14 14"
+                                            class="stroke-red-700 group-hover:stroke-red-700 dark:stroke-red-400">
+                                            <path d="M4 4l6 6m0-6l-6 6" />
+                                        </svg>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+
+                        <!-- Filter chips -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Filter chips</h3>
+                            <div class="flex gap-4 mt-2">
+                                <button class="filter-chip">Compounds</button>
+                                <button class="filter-chip filter-chip-active">Ceramic coatings</button>
+                                <button class="filter-chip">Machines</button>
+                                <button class="filter-chip">Pads</button>
+                            </div>
+                        </li>
+
+                        <!-- Product badges -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Product badges</h3>
+                            <div class="mx-auto flex flex-wrap items-center justify-start gap-3">
+                                <span class="badge badge-product-sale">Sale</span>
+                                <span class="badge badge-product-new">New</span>
+                                <span class="badge badge-product-limited">Limited</span>
+                                <span class="badge badge-product-custom">MDS Exclusive</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-4 sm:p-8">
+                <h2 class="text-4xl tracking-tight text-pretty mb-4">Product Cards</h2>
+                <div class="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-3 md:gap-6">
+
+                    <div class="product-card">
+
+                        <!-- Discount Badge -->
+                        <div class="product-card-img-wrap">
+                            <div class="product-card-badge badge badge-md badge-gradient-primary badge-pill">
+                                35% OFF
+                            </div>
+
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                alt="Product Image" class="product-card-img" />
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="product-card-info">
+                            <h2 class="product-card-title">
+                                Starke Level R Heavy Cut Compound
+                            </h2>
+                            <p class="product-card-vendor">Starke Yacht Care</p>
+
+                            <!-- Variant Slider -->
+                            <div class="product-card-variants">
+
+                                <div class="product-card-variant product-card-variant--active">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="16oz">
+                                    <span class="mt-1">16 oz.</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="32oz">
+                                    <span class="mt-1">32 oz.</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="128 oz Jug">
+                                    <span class="mt-1">128 oz. Jug</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="128 oz Drum">
+                                    <span class="mt-1">128 oz. Drum</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Price + Cart -->
+                        <div class="product-card-price-area">
+
+                            <!-- Price -->
+                            <div class="product-card-price-wrap">
+                                <p class="product-card-price-compare">$34.99</p>
+                                <p class="product-card-price">$22.74</p>
+                            </div>
+
+                            <!-- Qty + Add to Cart -->
+                            <div class="flex w-full justify-end items-center gap-2">
+
+                                <!-- Qty -->
+                                <div class="product-card-qty-wrap">
+                                    <span class="product-card-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--left">
+                                            <span class="sr-only">Decrease</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                        <input type="number" value="1" min="1" class="input-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--right">
+                                            <span class="sr-only">Increase</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                    </span>
+                                </div>
+
+                                <!-- Add to Cart -->
+                                <button class="product-card-add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    Add to cart
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-card">
+
+                        <!-- Discount Badge -->
+                        <div class="product-card-img-wrap">
+                            <div class="product-card-badge badge badge-md badge-gradient-primary badge-pill">
+                                35% OFF
+                            </div>
+
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                alt="Product Image" class="product-card-img" />
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="product-card-info">
+                            <h2 class="product-card-title">
+                                Starke Level R Heavy Cut Compound
+                            </h2>
+                            <p class="product-card-vendor">Starke Yacht Care</p>
+
+                            <!-- Variant Slider -->
+                            <div class="product-card-variants">
+
+                                <div class="product-card-variant product-card-variant--active">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="16oz">
+                                    <span class="mt-1">16 oz.</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="32oz">
+                                    <span class="mt-1">32 oz.</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="128 oz Jug">
+                                    <span class="mt-1">128 oz. Jug</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="128 oz Drum">
+                                    <span class="mt-1">128 oz. Drum</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Price + Cart -->
+                        <div class="product-card-price-area">
+
+                            <!-- Price -->
+                            <div class="product-card-price-wrap">
+                                <p class="product-card-price-compare">$34.99</p>
+                                <p class="product-card-price">$22.74</p>
+                            </div>
+
+                            <!-- Qty + Add to Cart -->
+                            <div class="flex w-full justify-end items-center gap-2">
+
+                                <!-- Qty -->
+                                <div class="product-card-qty-wrap">
+                                    <span class="product-card-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--left">
+                                            <span class="sr-only">Decrease</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                        <input type="number" value="1" min="1" class="input-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--right">
+                                            <span class="sr-only">Increase</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                    </span>
+                                </div>
+
+                                <!-- Add to Cart -->
+                                <button class="product-card-add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    Add to cart
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-card">
+
+                        <!-- Discount Badge -->
+                        <div class="product-card-img-wrap">
+                            <div class="product-card-badge badge badge-md badge-gradient-primary badge-pill">
+                                35% OFF
+                            </div>
+
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                alt="Product Image" class="product-card-img" />
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="product-card-info">
+                            <h2 class="product-card-title">
+                                Starke Level R Heavy Cut Compound Starke Level R Heavy Cut Compound
+                            </h2>
+                            <p class="product-card-vendor">Starke Yacht Care</p>
+
+                            <!-- Variant Slider -->
+                            <div class="product-card-variants">
+
+                                <div class="product-card-variant product-card-variant--active">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="16oz">
+                                    <span class="mt-1">16 oz.</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="32oz">
+                                    <span class="mt-1">32 oz.</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="128 oz Jug">
+                                    <span class="mt-1">128 oz. Jug</span>
+                                </div>
+
+                                <div class="product-card-variant product-card-variant--inactive">
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        alt="128 oz Drum">
+                                    <span class="mt-1">128 oz. Drum</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Price + Cart -->
+                        <div class="product-card-price-area">
+
+                            <!-- Price -->
+                            <div class="product-card-price-wrap">
+                                <p class="product-card-price-compare">$34.99</p>
+                                <p class="product-card-price">$22.74</p>
+                            </div>
+
+                            <!-- Qty + Add to Cart -->
+                            <div class="flex w-full justify-end items-center gap-2">
+
+                                <!-- Qty -->
+                                <div class="product-card-qty-wrap">
+                                    <span class="product-card-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--left">
+                                            <span class="sr-only">Decrease</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                        <input type="number" value="1" min="1" class="input-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--right">
+                                            <span class="sr-only">Increase</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                    </span>
+                                </div>
+
+                                <!-- Add to Cart -->
+                                <button class="product-card-add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    Add to cart
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Glass Radio Group Vertical -->
+
+                    <div class="glass-radio-group-vertical bg-primary-700">
+                        <input checked="" id="glass-silver" name="plan" type="radio" />
+                        <label data-color="silver" for="glass-silver">
+                            <span class="radio-indicator">
+                                <span class="checkmark">✓</span>
+                            </span>
+                            <span class="label-text">Silver</span>
+                        </label>
+                    
+                        <input id="glass-gold" name="plan" type="radio" />
+                        <label data-color="gold" for="glass-gold">
+                            <span class="radio-indicator">
+                                <span class="checkmark">✓</span>
+                            </span>
+                            <span class="label-text">Gold</span>
+                        </label>
+                    
+                        <input id="glass-platinum" name="plan" type="radio" />
+                        <label data-color="platinum" for="glass-platinum">
+                            <span class="radio-indicator">
+                                <span class="checkmark">✓</span>
+                            </span>
+                            <span class="label-text">Platinum</span>
+                        </label>
+                    
+                        <div class="glass-glider-vertical"></div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="p-8">
+
+                <h2 class="text-4xl tracking-tight text-pretty mb-4">Avatars</h2>
+
+                <div
+                    class="overflow-hidden rounded-md border border-gray-300 bg-white dark:border-white/10 dark:bg-gray-900">
+                    <ul role="list" class="divide-y divide-gray-200 dark:divide-white/10">
+
+                        <!-- Circular Avatars -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Circular</h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-xs avatar-circle avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-sm avatar-circle avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-md avatar-circle avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-lg avatar-circle avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-xl avatar-circle avatar-outline" />
+                            </div>
+                        </li>
+
+                        <!-- Rounded Avatars -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Rounded</h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-xs avatar-rounded avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-sm avatar-rounded avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-md avatar-rounded avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-lg avatar-rounded avatar-outline" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    class="avatar avatar-xl avatar-rounded avatar-outline" />
+                            </div>
+                        </li>
+
+                        <!-- Circular With Notification (Top Right) -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Circular w/ Notification (Top Right)</h3>
+                            <div class="mx-auto flex items-center justify-start gap-6">
+
+                                <!-- Example XS -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-xs avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-top-right avatar-notify-xs avatar-notify-gray"></span>
+                                </span>
+
+                                <!-- Example SM (red) -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-sm avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-top-right avatar-notify-sm avatar-notify-red"></span>
+                                </span>
+
+                                <!-- Example MD (green) -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-md avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-top-right avatar-notify-md avatar-notify-green"></span>
+                                </span>
+
+                                <!-- Example LG (gray) -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-lg avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-top-right avatar-notify-lg avatar-notify-gray"></span>
+                                </span>
+
+                                <!-- Example XL (red) -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-xl avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-top-right avatar-notify-xl avatar-notify-red"></span>
+                                </span>
+
+                            </div>
+                        </li>
+
+                        <!-- Circular With Notification (Bottom Right) -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Circular w/ Notification (Bottom Right)</h3>
+                            <div class="mx-auto flex items-center justify-start gap-6">
+
+                                <!-- XS -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-xs avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-bottom-right avatar-notify-xs avatar-notify-gray"></span>
+                                </span>
+
+                                <!-- SM -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-sm avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-bottom-right avatar-notify-sm avatar-notify-red"></span>
+                                </span>
+
+                                <!-- MD -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-md avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-bottom-right avatar-notify-md avatar-notify-green"></span>
+                                </span>
+
+                                <!-- LG -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-lg avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-bottom-right avatar-notify-lg avatar-notify-gray"></span>
+                                </span>
+
+                                <!-- XL -->
+                                <span class="relative inline-block">
+                                    <img class="avatar avatar-xl avatar-circle avatar-outline"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" />
+                                    <span
+                                        class="avatar-notify avatar-notify-bottom-right avatar-notify-xl avatar-notify-red"></span>
+                                </span>
+
+                            </div>
+                        </li>
+
+                        <!-- Placeholder Icons -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Placeholders (Icons)</h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+
+                                <div class="avatar avatar-xs avatar-circle avatar-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="avatar avatar-sm avatar-circle avatar-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="avatar avatar-md avatar-circle avatar-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                            </div>
+                        </li>
+
+                        <!-- Placeholder Initials -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Placeholders (Initials)</h3>
+                            <div class="mx-auto flex items-center justify-start gap-4">
+
+                                <div class="avatar avatar-xs avatar-circle avatar-initials">TW</div>
+                                <div class="avatar avatar-sm avatar-circle avatar-initials">TW</div>
+                                <div class="avatar avatar-md avatar-circle avatar-initials">TW</div>
+                                <div class="avatar avatar-lg avatar-circle avatar-initials">TW</div>
+                                <div class="avatar avatar-xl avatar-circle avatar-initials">TW</div>
+
+                            </div>
+                        </li>
+
+                        <!-- Avatar Groups -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Avatar Groups</h3>
+                            <div class="mx-auto flex flex-col items-start gap-6">
+
+                                <!-- Tight group -->
+                                <div class="avatar-group avatar-group-tight">
+                                    <img class="avatar avatar-sm avatar-circle"
+                                        src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?auto=format&w=256&q=80" />
+                                    <img class="avatar avatar-sm avatar-circle"
+                                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?auto=format&w=256&q=80" />
+                                    <img class="avatar avatar-sm avatar-circle"
+                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&w=256&q=80" />
+                                    <img class="avatar avatar-sm avatar-circle"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&w=256&q=80" />
+                                </div>
+
+                                <!-- Medium group -->
+                                <div class="avatar-group avatar-group-medium">
+                                    <img class="avatar avatar-md avatar-circle"
+                                        src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?auto=format&w=256&q=80" />
+                                    <img class="avatar avatar-md avatar-circle"
+                                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?auto=format&w=256&q=80" />
+                                    <img class="avatar avatar-md avatar-circle"
+                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&w=256&q=80" />
+                                    <img class="avatar avatar-md avatar-circle"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&w=256&q=80" />
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Avatar With Text -->
+                        <li class="px-6 py-4">
+                            <h3 class="text-xl font-medium tracking-tight">Avatar w/ Text</h3>
+                            <a href="#" class="group block shrink-0">
+                                <div class="flex items-center">
+                                    <div>
+                                        <img class="avatar avatar-lg avatar-circle avatar-outline"
+                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&w=256&q=80" />
+                                    </div>
+                                    <div class="ml-3">
+                                        <p
+                                            class="text-sm font-medium text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white">
+                                            Tom Cook
+                                        </p>
+                                        <p
+                                            class="text-xs font-medium text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">
+                                            View profile
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

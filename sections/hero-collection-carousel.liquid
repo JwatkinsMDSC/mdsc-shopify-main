@@ -1,0 +1,335 @@
+{% schema %}
+{
+  "name": "Hero Collection Carousel",
+  "tag": "section",
+  "class": "section-hero-collection-carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Overlap"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlap",
+      "label": "Enable Hero Overlap Support",
+      "default": false,
+      "info": "If enabled, this section will overlap with the Hero Banner above it."
+    },
+    {
+      "type": "header",
+      "content": "Slides Per View"
+    },
+    {
+      "type": "number",
+      "id": "desktop_slides",
+      "label": "Desktop",
+      "default": 4,
+      "info": "Min: 2, Max: 6"
+    },
+    {
+      "type": "number",
+      "id": "tablet_slides",
+      "label": "Tablet",
+      "default": 3,
+      "info": "Min: 1, Max: 4"
+    },
+    {
+      "type": "number",
+      "id": "mobile_slides",
+      "label": "Mobile",
+      "default": 2,
+      "info": "Min: 1, Max: 2"
+    },
+    {
+      "type": "header",
+      "content": "Slide Spacing (px)"
+    },
+    {
+      "type": "number",
+      "id": "desktop_spacing",
+      "label": "Desktop Space Between",
+      "default": 24
+    },
+    {
+      "type": "number",
+      "id": "tablet_spacing",
+      "label": "Tablet Space Between",
+      "default": 16
+    },
+    {
+      "type": "number",
+      "id": "mobile_spacing",
+      "label": "Mobile Space Between",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_slide",
+      "name": "Collection Slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Override",
+          "info": "Falls back to collection image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title Override",
+          "info": "Falls back to collection title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link Override",
+          "info": "Falls back to collection URL"
+        },
+        {
+          "type": "header",
+          "content": "Design"
+        },
+        {
+          "type": "select",
+          "id": "design_variant",
+          "label": "Design Variant",
+          "options": [
+            { "value": "default", "label": "Default" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "checkbox",
+          "id": "eyebrow_enable",
+          "label": "Enable Eyebrow",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow Text",
+          "default": "Shop the collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_enable",
+          "label": "Enable Button",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "View Products"
+        }
+      ]
+    },
+    {
+      "type": "custom_slide",
+      "name": "Custom Slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Required"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Custom Title"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Design"
+        },
+        {
+          "type": "select",
+          "id": "design_variant",
+          "label": "Design Variant",
+          "options": [
+            { "value": "default", "label": "Default" }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "checkbox",
+          "id": "eyebrow_enable",
+          "label": "Enable Eyebrow",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow Text",
+          "default": "Shop the collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_enable",
+          "label": "Enable Button",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "View Products"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Collection Carousel",
+      "blocks": [
+        { "type": "collection_slide" },
+        { "type": "collection_slide" },
+        { "type": "collection_slide" },
+        { "type": "collection_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section 
+  aria-labelledby="collection-heading-{{ section.id }}" 
+  class="relative overflow-hidden z-10" 
+  data-section-id="{{ section.id }}"
+  data-section-type="hero-collection-carousel"
+  {% if section.settings.enable_overlap %}data-overlap-parent{% endif %}
+>
+  <h2 id="collection-heading-{{ section.id }}" class="sr-only">Collections</h2>
+  <div class="max-w-400 mx-auto px-4" {% if section.settings.enable_overlap %}data-overlap-child{% endif %}>
+    <div class="swiper swiper-hero" data-carousel data-swiper data-swiper-config='{
+      "slidesPerView": {{ section.settings.mobile_slides | default: 2 }},
+      "spaceBetween": {{ section.settings.mobile_spacing | default: 10 }},
+      "loop": true,
+      "navigation": {
+        "nextEl": ".btn-next-{{ section.id }}",
+        "prevEl": ".btn-prev-{{ section.id }}"
+      },
+      "breakpoints": {
+        "640": {
+          "slidesPerView": {{ section.settings.tablet_slides | default: 3 }},
+          "spaceBetween": {{ section.settings.tablet_spacing | default: 16 }}
+        },
+        "1024": {
+          "slidesPerView": {{ section.settings.desktop_slides | default: 4 }},
+          "spaceBetween": {{ section.settings.desktop_spacing | default: 24 }}
+        }
+      }
+    }'>
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% liquid
+            assign card_image = blank
+            assign card_title = blank
+            assign card_url = blank
+            assign card_eyebrow = block.settings.eyebrow
+            assign show_eyebrow = block.settings.eyebrow_enable
+            assign show_button = block.settings.button_enable
+            assign button_text = block.settings.button_text
+
+            if block.type == 'collection_slide'
+              assign collection = block.settings.collection
+              
+              if block.settings.image != blank
+                assign card_image = block.settings.image
+              elsif collection.image != blank
+                assign card_image = collection.image
+              endif
+
+              if block.settings.title != blank
+                assign card_title = block.settings.title
+              else
+                assign card_title = collection.title
+              endif
+
+              if block.settings.url != blank
+                assign card_url = block.settings.url
+              else
+                assign card_url = collection.url
+              endif
+            
+            elsif block.type == 'custom_slide'
+              assign card_image = block.settings.image
+              assign card_title = block.settings.title
+              assign card_url = block.settings.url
+            endif
+          %}
+
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            <div class="collection-card">
+              <!-- Background -->
+              <div class="collection-card-bg-wrap">
+                {% if card_image != blank %}
+                  {{ card_image | image_url: width: 800 | image_tag: class: 'collection-card-bg', loading: 'lazy' }}
+                {% else %}
+                  {{ 'collection-1' | placeholder_svg_tag: 'collection-card-bg' }}
+                {% endif %}
+                <div class="collection-card-overlay"></div>
+              </div>
+
+              <!-- Foreground content -->
+              <div class="collection-card-content-wrap">
+                <div class="collection-card-content">
+                  {% if show_eyebrow and card_eyebrow != blank %}
+                    <span class="collection-card-eyebrow">{{ card_eyebrow }}</span>
+                  {% endif %}
+
+                  <h3 class="collection-card-title font-oswald">
+                    {{ card_title | default: 'Collection Title' }}
+                  </h3>
+
+                  {% if show_button %}
+                    <div class="collection-card-button-wrap">
+                      <a href="{{ card_url | default: '#' }}" class="collection-card-button">
+                        {{ button_text }}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 md:size-6">
+                          <path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                        </svg>
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="swiper-hero-btn btn-prev btn-prev-{{ section.id }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+          <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+        </svg>
+      </div>
+      <div class="swiper-hero-btn btn-next btn-next-{{ section.id }}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+          <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+{% comment %}
+  Renders B2B pricing UI.
+  Initially hidden, toggled by JS.
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - current_variant: {Object} Selected variant
+{% endcomment %}
+
+<div class="product-pricing-b2b hidden flex-col gap-1">
+  <div class="flex items-baseline gap-2">
+    <span class="text-sm font-medium text-blue-600">Pro Price:</span>
+    <span class="text-lg font-bold text-blue-700" data-b2b-price>
+      <!-- Populated by JS -->
+    </span>
+  </div>
+  <div class="text-xs text-gray-500">
+    <span data-b2b-savings>
+      <!-- Populated by JS -->
+    </span>
+  </div>
+  <div class="text-xs text-orange-600 italic mt-1">
+    Demo pricing. Final price applied at checkout.
+  </div>
+</div>

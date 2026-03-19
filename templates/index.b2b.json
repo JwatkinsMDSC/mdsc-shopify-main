@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "b2b",
+  "sections": {
+    "header": {
+      "type": "b2b-header",
+      "blocks": {
+        "announcement_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Free shipping on orders over $500</p>"
+          }
+        },
+        "announcement_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Volume discounts available for bulk orders</p>"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_1",
+        "announcement_2"
+      ],
+      "settings": {
+        "phone_number": "(555) 555-1234"
+      }
+    },
+    "hero": {
+      "type": "b2b-hero",
+      "settings": {
+        "heading": "Marine Detailing Products",
+        "subheading": "The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release while they're still in stock."
+      }
+    },
+    "hero_collection_carousel": {
+      "type": "b2b-hero-collection-carousel",
+      "settings": {}
+    },
+    "product_grid": {
+      "type": "b2b-product-grid",
+      "settings": {
+        "collection": "all",
+        "products_per_page": 24,
+        "show_discount_badge": true,
+        "show_discounted_first": true,
+        "heading": "All Products"
+      }
+    },
+    "above_footer_cta": {
+      "type": "b2b-above-footer-cta",
+      "settings": {}
+    },
+    "footer": {
+      "type": "b2b-footer",
+      "settings": {
+        "copyright_text": "© 2024 Marine Detail Supply. All rights reserved."
+      }
+    },
+    "cart_modal": {
+      "type": "b2b-cart-modal",
+      "settings": {}
+    },
+    "countdown": {
+      "type": "b2b-countdown-timer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "header",
+    "hero",
+    "hero_collection_carousel",
+    "product_grid",
+    "above_footer_cta",
+    "footer",
+    "cart_modal",
+    "countdown"
+  ]
+}

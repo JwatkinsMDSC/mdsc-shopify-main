@@ -1,0 +1,86 @@
+{% schema %}
+{
+  "name": "B2B Product Grid",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 12,
+      "max": 48,
+      "step": 12,
+      "default": 24,
+      "label": "Products per page"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_badge",
+      "label": "Show Discount Badges",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discounted_first",
+      "label": "Show Discounted Products First",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "All Products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "B2B Product Grid"
+    }
+  ]
+}
+{% endschema %}
+
+{% liquid
+  assign collection = collections[section.settings.collection]
+  assign products_per_page = section.settings.products_per_page
+  assign collection_handle = section.settings.collection | default: 'all'
+%}
+
+<main class="b2b-product-grid-section">
+  <div class="max-w-400 mx-auto px-2 py-4 sm:px-4 sm:py-6">
+    
+    {% if section.settings.heading != blank %}
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    <div 
+      id="productGrid" 
+      class="grid grid-cols-2 gap-2 md:gap-5 sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]" 
+      data-product-grid
+      data-collection-handle="{{ collection_handle }}"
+      data-products-per-page="{{ products_per_page }}"
+      data-show-discount-badge="{{ section.settings.show_discount_badge }}"
+      data-show-discounted-first="{{ section.settings.show_discounted_first }}"
+    >
+      <div class="col-span-full flex items-center justify-center py-12">
+        <div class="text-center">
+          <svg class="mx-auto size-12 text-gray-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <p class="mt-4 text-sm text-gray-500">Loading products...</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="paginationContainer" data-pagination-container></div>
+    
+  </div>
+  
+  {% comment %} Include Quick View Modal {% endcomment %}
+  {% render 'b2b-product-card-quick-view' %}
+  
+</main>

@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MDS Theme Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tailwind.css">
+    <script type="module" src="/assets/design.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+</head>
+
+<body>
+    <header id="siteHeader" class="main-header b2b__activated__no">
+        <!-- Top Bar -->
+        <div class="top-bar">
+
+            <div class="top-bar-wrapper">
+
+                <!-- Announcement Banner -->
+                <div class="announcement-banner-container flex justify-center">
+                    <div class="announcement-banner" data-slider-scope>
+
+                        <button class="announcement-btn announcement-prev" data-slider-prev aria-label="Previous">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                        </button>
+
+                        <!-- Fixed-height rail -->
+                        <div class="announcement-rail">
+
+                            <div
+                                class="announcement-swiper swiper"
+                                data-slider
+                                data-slider-type="announcement-vertical"
+                                data-slider-autoplay="4000"
+                                data-slider-direction="vertical"
+                            >
+                                <div class="swiper-wrapper">
+
+                                    <div class="swiper-slide">
+                                        <span>Get 50% off on Member Exclusive Month</span>
+                                        <a href="#">Shop Now</a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <span>Free Shipping on Orders Over $99</span>
+                                        <a href="#">Learn More</a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <span>Members Earn Double Points Today</span>
+                                        <a href="#">Join Now</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="announcement-btn announcement-next" data-slider-next aria-label="Next">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="top-bar-r">
+                    <div class="top-bar-cta">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="svg-inline">
+                                <path fill-rule="evenodd"
+                                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        <span class="phone-number text-nowrap">(555) 555-1234</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Bar -->
+        <div class="middle-bar">
+            <div class="middlebar-container">
+                <!-- Brand Logos -->
+                <div class="branding justify-self-start" data-middle-bar="branding">
+                    <span class="logo-sizer">
+                        <!-- Retail -->
+                        <img src="//sales-campaign-test-store.myshopify.com/cdn/shop/files/Marine_Detail_Supply_Company_Logo.svg?v=1766014334&width=600"
+                            class="logo retail" alt="Logo">
+                        <!-- B2C Logo -->
+                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mdsc-pro-logo.png?v=1765208781"
+                            class="logo b2b" alt="Logo">
+                    </span>
+                </div>
+
+                <!-- Category Dropdown + Search -->
+                <div class="cat-search">
+                    <div class="cat-search-wrapper">
+
+                        <div data-dd-context id="cat-dd-select" class="relative">
+                            <button 
+                                type="button"
+                                data-dd-trigger
+                                aria-controls="search-dd-options"
+                                aria-expanded="false"
+                                class="category-dd"
+                            >
+                                <div class="selected-cat">All Categories</div>
+                                <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="search-icon">
+                                    <path
+                                        d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z"
+                                        clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <div 
+                                data-dd-panel
+                                id="search-dd-options" 
+                                class="category-dd-options shadow-lg" 
+                                role="listbox"
+                            >
+                                <div role="option" class="group/option">All Categories</div>
+                                <div role="option" class="group/option">Marine</div>
+                                <div role="option" class="group/option">Automotive</div>
+                            </div>
+                        </div>
+
+
+
+                        <input type="text" id="catSearchInput" class="cat-search-input"
+                            placeholder="What can we help you find today?" />
+                        <button class="cat-search-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="search-icon">
+                                <path fill-rule="evenodd"
+                                    d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cart & Account -->
+                <div class="middle-bar-cta" data-middle-bar="cta">
+                    <!-- Cart -->
+                    <div class="cart flow-root">
+                        <button href="#" command="show-modal" commandfor="dialog" class="group">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="icons z-10">
+                                <path
+                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span
+                                class="cart-total rounded-xs font-light px-1 h-4.5 leading-1 tracking-normal flex items-center justify-center bg-primary-800/60 -translate-x-1 -translate-y-1.5">23</span>
+                            <span class="sr-only">items in cart, view bag</span>
+                        </button>
+                    </div>
+
+                    <!-- Account -->
+                    <div class="hidden account-logi">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="icons">
+                            <path
+                                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span>Account</span>
+                    </div>
+
+                    <div class="relative inline-block w-full">
+                        <div class="relative">
+                            <div 
+                                data-dd-context
+                                class="app-dd inline-block relative"
+                            >
+                                <button 
+                                    type="button"
+                                    data-dd-trigger
+                                    aria-controls="account-menu"
+                                    aria-expanded="false"
+                                    class="golden-button btn-shine" 
+                                >
+                                    <div class="flex items-center gap-1 sm:gap-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor"
+                                            class="size-6 md:size-7 text-primary-700">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                                        </svg>
+                                        <div class="flex flex-col gap-0.5 text-left leading-none">
+                                            <span
+                                                class="text-xs sm:text-sm font-medium text-primary-600 group-hover:text-secondary-100 leading-none">
+                                                Derek Stevens
+                                            </span>
+                                            <span
+                                                class="text-xs font-medium text-primary-600 group-hover:text-gray-700 leading-none tracking-tighter text-nowrap">
+                                                MDSC Professional
+                                            </span>
+                                        </div>
+                                    </div>
+                                </button>
+                                <div 
+                                    id="account-menu"
+                                    data-dd-panel
+                                    class="app-dd-menu"
+                                >
+
+                                    <div class="app-dd-menu__header">
+                                        <p class="app-dd-menu__header-label">Signed in as</p>
+                                        <p class="app-dd-menu__header-email">tom@example.com</p>
+                                    </div>
+
+                                    <div class="app-dd-menu__section">
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="m5.433 13.917 1.262-3.155A4 4 0 0 1 7.58 9.42l6.92-6.918a2.121 2.121 0 0 1 3 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 0 1-.65-.65Z" />
+                                                <path
+                                                    d="M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0 0 10 3H4.75A2.75 2.75 0 0 0 2 5.75v9.5A2.75 2.75 0 0 0 4.75 18h9.5A2.75 2.75 0 0 0 17 15.25V10a.75.75 0 0 0-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5Z" />
+                                            </svg>
+                                            Edit
+                                        </a>
+
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="M7 3.5A1.5 1.5 0 0 1 8.5 2h3.879a1.5 1.5 0 0 1 1.06.44l3.122 3.12A1.5 1.5 0 0 1 17 6.622V12.5a1.5 1.5 0 0 1-1.5 1.5h-1v-3.379a3 3 0 0 0-.879-2.121L10.5 5.379A3 3 0 0 0 8.379 4.5H7v-1Z" />
+                                                <path
+                                                    d="M4.5 6A1.5 1.5 0 0 0 3 7.5v9A1.5 1.5 0 0 0 4.5 18h7a1.5 1.5 0 0 0 1.5-1.5v-5.879a1.5 1.5 0 0 0-.44-1.06L9.44 6.439A1.5 1.5 0 0 0 8.378 6H4.5Z" />
+                                            </svg>
+                                            Duplicate
+                                        </a>
+                                    </div>
+
+                                    <div class="app-dd-menu__section">
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="M2 3a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z" />
+                                                <path
+                                                    d="M2 7.5h16l-.811 7.71a2 2 0 0 1-1.99 1.79H4.802a2 2 0 0 1-1.99-1.79L2 7.5ZM7 11a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1Z"
+                                                    clip-rule="evenodd" fill-rule="evenodd" />
+                                            </svg>
+                                            Archive
+                                        </a>
+
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM6.75 9.25a.75.75 0 0 0 0 1.5h4.59l-2.1 1.95a.75.75 0 0 0 1.02 1.1l3.5-3.25a.75.75 0 0 0 0-1.1l-3.5-3.25a.75.75 0 1 0-1.02 1.1l2.1 1.95H6.75Z"
+                                                    clip-rule="evenodd" fill-rule="evenodd" />
+                                            </svg>
+                                            Move
+                                        </a>
+                                    </div>
+
+                                    <div class="app-dd-menu__section">
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="M10 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM1.615 16.428a1.224 1.224 0 0 1-.569-1.175 6.002 6.002 0 0 1 11.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 0 1 7 18a9.953 9.953 0 0 1-5.385-1.572ZM16.25 5.75a.75.75 0 0 0-1.5 0v2h-2a.75.75 0 0 0 0 1.5h2v2a.75.75 0 0 0 1.5 0v-2h2a.75.75 0 0 0 0-1.5h-2v-2Z" />
+                                            </svg>
+                                            Share
+                                        </a>
+
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z" />
+                                            </svg>
+                                            Add to favorites
+                                        </a>
+                                    </div>
+
+                                    <div class="app-dd-menu__section">
+                                        <a href="#" class="group app-dd-menu__item">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="app-dd-menu__icon">
+                                                <path
+                                                    d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z"
+                                                    clip-rule="evenodd" fill-rule="evenodd" />
+                                            </svg>
+                                            Delete
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 pointer-events-none">
+                            <!-- Sparkles -->
+                            <div
+                                class="pointer-events-none absolute z-10 top-[1%] left-[99%] animate-[sparkle_2s_infinite] animate-delay-[0.5s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="6" width="6">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[7%] left-[1%] animate-[sparkle_2s_infinite] animate-delay-[0.33s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="9" width="9">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[93%] left-[23%] animate-[sparkle_2s_infinite] animate-delay-[0.6s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="7" width="7">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[43%] left-[15%] animate-[sparkle_2s_infinite] animate-delay-[0.9s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="6" width="6">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[93%] left-[9%] animate-[sparkle_2s_infinite] animate-delay-[1.2s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="9" width="9">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[21%] left-[88%] animate-[sparkle_2s_infinite] animate-delay-[1.5s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="5" width="5">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[99%] left-[95%] animate-[sparkle_2s_infinite] animate-delay-[1.8s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="6" width="6">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[64%] left-[99%] animate-[sparkle_2s_infinite] animate-delay-[1.9s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="9" width="9">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[14%] left-[45%] animate-[sparkle_2s_infinite] animate-delay-[1.4s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="5" width="5">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+
+                            <div
+                                class="pointer-events-none absolute z-10 top-[2%] left-[48%] animate-[sparkle_2s_infinite] animate-delay-[1.7s] mix-blend-overlay">
+                                <svg class="animate-spin animate-duration-[8s] drop-shadow-[0_0_2px_rgb(96_165_250)]"
+                                    fill="none" viewBox="0 0 68 68" height="9" width="9">
+                                    <path fill="white"
+                                        d="M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="flex items-center md:hidden">
+                        <!-- Mobile menu button -->
+                        <button type="button" command="--toggle" commandfor="mobile-menu" class="hamburger-icon"
+                            aria-expanded="false" aria-controls="mobile-menu">
+                            <span class="sr-only">Open main menu</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <nav class="main-header-navbar" arial-label="Main navigation" role="navigation">
+            <div class="main-header-navbar__container">
+                <div class="main-header-navbar__mobile">
+                    <a href="#" class="flex gap-2 text-xs items-center">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="size-4">
+                                <path
+                                    d="m4.922 6.752-1.067.534a7.52 7.52 0 0 0 4.859 4.86l.534-1.068a1 1 0 0 1 1.046-.542l2.858.44a1 1 0 0 1 .848.988V13a1 1 0 0 1-1 1h-2c-.709 0-1.4-.082-2.062-.238a9.012 9.012 0 0 1-6.7-6.7A9.024 9.024 0 0 1 2 5V3a1 1 0 0 1 1-1h1.036a1 1 0 0 1 .988.848l.44 2.858a1 1 0 0 1-.542 1.046Z" />
+                                <path
+                                    d="M9.22 5.72a.75.75 0 0 0 1.06 1.06l2.22-2.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L9.22 5.72Z" />
+                            </svg>
+                        </span>
+                        <span class="text-nowrap">(555) 555-1234</span>
+                    </a>
+                </div>
+                <div class="main-header-navbar__scrolling-container">
+                    <ul class="main-header-navbar__list">
+                        <li class="mega-menu-group" data-dd-context>
+                            <div class="relative flex">
+                                <button 
+                                    class="mega-menu-trigger" 
+                                    type="button" 
+                                    data-dd-trigger
+                                    aria-controls="mega-menu"
+                                    aria-expanded="false"
+                                >
+                                    Shop Products
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        class="size-5">
+                                        <path fill-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div 
+                                id="mega-menu" 
+                                class="mega-menu-panel" 
+                                data-dd-panel
+                            >
+                                <div class="relative">
+                                    <div class="max-w-400 mx-auto">
+                                        
+                                        <!-- Tabs -->
+                                        <div data-tabs class="grid grid-cols-[310px_1fr] items-stretch bg-white shadow-xl border-t border-gray-200">
+
+                                            <div class="menu-category-selector p-3 border-r border-slate-200">
+                                                <!-- Tab List -->
+                                                <div data-tabs-list data-tabs-hover role="tablist" aria-label="Select a Category" class="space-y-1">
+
+                                                    <!-- Compounds & Polishes -->
+                                                    <div data-tab aria-controls="compounds-polishes" aria-current="page" data-active class="group menu-selector-item">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-6" fill="currentColor"
+                                                                    viewBox="0 0 512 487.4">
+                                                                    <g id="Layer_x5F_1">
+                                                                        <path class="st0"
+                                                                            d="M338.3,307.4c-93.6,0-169.2-75.9-169.2-169.2,0,93.3-75.9,169.2-169.2,169.2,93.3,0,169.2,75.6,169.2,168.9,0-93.3,75.6-168.9,169.2-168.9Z" />
+                                                                        <g>
+                                                                            <path class="st0"
+                                                                                d="M512,394.7c-51.3,0-92.7-41.7-92.7-92.7,0,51-41.7,92.7-92.7,92.7,51,0,92.7,41.4,92.7,92.7,0-51.3,41.4-92.7,92.7-92.7Z" />
+                                                                            <path class="st0"
+                                                                                d="M458.6,112.8c-62.4,0-112.8-50.4-112.8-112.8,0,62.4-50.4,112.8-112.8,112.8,62.4,0,112.8,50.4,112.8,112.8,0-62.4,50.4-112.8,112.8-112.8Z" />
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Compounds & Polishes</p>
+                                                                <p class="menu-selector-subtitle">Professional gelcoat
+                                                                    restoration</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Pads -->
+                                                    <div data-tab aria-controls="pads" aria-current="page" class="group menu-selector-item">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-8" fill="currentColor" id="Layer_1"
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                                                    viewBox="0 0 54.6 54.6">
+                                                                    <polygon
+                                                                        points="50.2 12.5 50.2 12.5 50.2 12.5 50.2 12.5" />
+                                                                    <path
+                                                                        d="M53.2,18.8c-.7-2.2-1.8-4.4-3-6.3C45.2,4.7,36.6,0,27.3,0,12.2,0,0,12.3,0,27.3s12.1,27.1,27,27.3h0s.2,0,.2,0c2.3,0,4.7-.3,6.9-.9,6-1.6,11.1-5.1,14.7-9.7,3.6-4.7,5.7-10.5,5.7-16.7s-.5-5.8-1.4-8.5ZM33.9,52.5c-2.2.6-4.4.8-6.6.8-14.3,0-26-11.7-26-26S12.9,1.2,27.3,1.2h0c8.9,0,17,4.4,21.9,11.9,1.2,1.9,2.2,3.9,2.9,6,.9,2.6,1.3,5.3,1.3,8.1,0,11.8-8,22.2-19.4,25.2Z" />
+                                                                    <path
+                                                                        d="M6.7,28.1c.4,0,.7-.4.8-.8,0-1.3.1-2.6.4-3.8h0s0-.1,0-.1c0-.4-.2-.7-.6-.7h0s-.1,0-.1,0h0c-.4,0-.7.2-.7.6-.3,1.4-.4,2.7-.4,4.1h0c0,.2,0,.4.2.6.1.1.3.2.5.2h0Z" />
+                                                                    <polygon
+                                                                        points="6.3 23.1 6.3 23.1 6.3 23.1 6.3 23.1" />
+                                                                    <path
+                                                                        d="M8.9,34.9c-.5-1.2-.9-2.4-1.1-3.7h0c0-.3-.4-.6-.7-.6h0s-.1,0-.1,0h0c-.4,0-.6.4-.6.7h0c0,.1,0,.1,0,.1.3,1.4.7,2.7,1.2,4h0c.1.3.4.5.7.5h0s0,0,0,0h.2s0,0,0,0c.3-.1.5-.4.5-.7,0,0,0-.2,0-.3h0Z" />
+                                                                    <path
+                                                                        d="M12.2,13.3h0s0,0,0,0c0,0,0,0,0,0h0c.1.1.3.2.5.2.2,0,.4,0,.5-.2.9-.9,1.9-1.8,3-2.5h0c.2-.1.3-.4.3-.6,0-.1,0-.3-.1-.4h0s-.2-.2-.2-.2h0s0,0,0,0h0s-.1,0-.1,0h0s-.1,0-.1,0h0s-.2,0-.2,0h0c-1.2.8-2.2,1.7-3.2,2.7-.1.1-.2.3-.2.5,0,.2,0,.4.2.5Z" />
+                                                                    <polygon
+                                                                        points="12.2 12.2 12.2 12.2 12.2 12.2 12.2 12.2" />
+                                                                    <path
+                                                                        d="M13.3,41.3c-.9-.9-1.7-1.9-2.5-3h0s-.2-.2-.2-.2h0s0,0,0,0h0s-.1,0-.1,0h0s-.1,0-.1,0h0s-.2,0-.2,0h0c-.2.2-.3.4-.3.7,0,.1,0,.3.1.4h0c.8,1.2,1.7,2.2,2.7,3.2h0s0,0,0,0c0,0,0,0,0,0h0c.1.1.3.2.5.2h0c.2,0,.4,0,.5-.2.1-.1.2-.3.2-.5,0-.2,0-.4-.2-.5h0Z" />
+                                                                    <path
+                                                                        d="M18.7,8.5s0,0,0,0c0,0,0,0,0,0h0c.1.3.4.5.7.5h0s.2,0,.2,0h0c1.2-.5,2.4-.9,3.7-1.1h0c.4,0,.6-.4.6-.7h0c0-.1,0-.1,0-.1,0-.3-.4-.6-.7-.6h0s0,0,0,0h0c-1.4.3-2.7.7-4,1.2h0s0,0,0,0c0,0,0,0,0,0h0c-.3.1-.5.4-.5.7,0,0,0,.2,0,.3h0Z" />
+                                                                    <path
+                                                                        d="M34.8,8.9h0c1.2.5,2.4,1.1,3.4,1.8h0c0,0,.2,0,.3.1h0s0,0,0,0h0s0,0,0,0c0,0,0,0,0,0h0s0,0,0,0c0,0,0,0,0,0h0s0,0,0,0h0c.2,0,.4-.1.6-.3h0c0-.1.1-.3.1-.4,0-.2-.1-.5-.3-.6-1.2-.8-2.4-1.4-3.7-2h0s-.2,0-.2,0h0s-.1,0-.1,0h0s-.2,0-.2,0h0s0,0,0,0h0s-.2.3-.2.3h0c0,.2,0,.3,0,.4,0,.3.2.6.5.7Z" />
+                                                                    <polygon
+                                                                        points="39.1 9.5 39.1 9.5 39.1 9.5 39.1 9.5" />
+                                                                    <path
+                                                                        d="M27.3,7.4c1.3,0,2.6.1,3.8.4h0s0,0,0,0c0,0,0,0,0,0,.3,0,.7-.2.7-.6h0s0-.1,0-.1c0-.4-.2-.7-.6-.7h0s0,0,0,0c0,0,0,0,0,0h0c-1.3-.3-2.7-.4-4.1-.4h0c-.2,0-.4,0-.5.2-.1.1-.2.3-.2.5,0,.4.4.7.8.8Z" />
+                                                                    <path
+                                                                        d="M8,20.1h0s.2,0,.2,0h0c.3,0,.6-.2.7-.5h0c.5-1.2,1.1-2.4,1.8-3.4h0c0-.1.1-.3.1-.4,0-.2-.1-.5-.3-.6-.1,0-.3-.1-.4-.1-.2,0-.5.1-.6.3-.8,1.2-1.4,2.4-2,3.7h0s0,0,0,0c0,0,0,0,0,0h0c0,0,0,.2,0,.3,0,.3.2.6.5.7Z" />
+                                                                    <polygon
+                                                                        points="9.5 15.4 9.5 15.4 9.5 15.4 9.5 15.4" />
+                                                                    <path
+                                                                        d="M41.3,13.2c.3.3.7.7,1,1h0c.5.6,1,1.3,1.5,2h0c.1.2.4.3.6.3,0,0,0,0,0,0,.1,0,.2,0,.3-.1h0s0,0,0,0c0,0,0,0,0,0h0c.2-.1.3-.4.3-.6,0-.1,0-.3-.1-.4h0c-.5-.7-1-1.5-1.6-2.1-.3-.4-.7-.7-1-1.1-.1-.1-.3-.2-.5-.2-.2,0-.4,0-.5.2-.1.1-.2.3-.2.5,0,.2,0,.4.2.5h0Z" />
+                                                                    <polygon
+                                                                        points="43.4 13.2 43.4 13.2 43.4 13.2 43.4 13.2" />
+                                                                    <path
+                                                                        d="M46.6,34.5h0s-.2,0-.2,0h0c-.3,0-.6.2-.7.5h0c-.5,1.2-1.1,2.4-1.8,3.4h0c0,.1-.1.3-.1.4,0,.2.1.5.3.6h0c0,0,.2,0,.3.1,0,0,0,0,0,0,.2,0,.5-.1.6-.3h0c.8-1.2,1.4-2.4,2-3.7h0s0,0,0,0c0,0,0,0,0,0h0c0,0,0-.2,0-.3,0-.3-.2-.6-.5-.7Z" />
+                                                                    <path
+                                                                        d="M45.6,19.6c.5,1.2.9,2.4,1.1,3.7h0c0,.4.4.6.7.6h.1c.4,0,.6-.4.6-.7h0c0-.1,0-.1,0-.1-.3-1.4-.7-2.7-1.2-4h0c0,0-.2-.3-.2-.3h0c0,0,0,0,0,0h0s-.2-.1-.2-.1h0s-.1,0-.1,0h0s-.2,0-.2,0h0c-.3.1-.5.4-.5.7,0,0,0,.2,0,.3h0Z" />
+                                                                    <path
+                                                                        d="M47.9,26.5c-.4,0-.7.4-.8.8,0,1.3-.1,2.6-.4,3.9h0s0,.2,0,.2c0,.4.2.7.6.7h0s0,0,0,0h0c.3,0,.7-.2.7-.6h0c.3-1.4.4-2.8.4-4.2h0c0-.3,0-.5-.2-.6-.1-.1-.3-.2-.5-.2Z" />
+                                                                    <path
+                                                                        d="M42.4,41.3c-.1-.1-.3-.2-.5-.2-.2,0-.4,0-.5.2h0c-.9.9-1.9,1.7-3,2.5h0c-.2.1-.3.4-.3.6,0,.1,0,.3.1.4h0c.1.2.3.3.6.3h0c.1,0,.3,0,.4,0h0c1.2-.8,2.2-1.7,3.2-2.7.1-.1.2-.3.2-.5,0-.2,0-.4-.2-.5Z" />
+                                                                    <polygon
+                                                                        points="42.4 42.4 42.4 42.4 42.4 42.4 42.4 42.4" />
+                                                                    <path
+                                                                        d="M27.3,47.1c-.9,0-1.9,0-2.8-.2h0c-.3,0-.7,0-1-.2h0s0,0,0,0h0c-.4,0-.7.3-.7.6h0c0,.5.2.8.6.9h0s0,0,0,0c0,0,0,0,0,0h0c.4,0,.7.1,1.1.2h0c.9.1,1.8.2,2.6.2.1,0,.3,0,.4,0h.1c.2,0,.4-.1.5-.2.1-.1.2-.3.2-.5,0-.4-.3-.7-.8-.8Z" />
+                                                                    <path
+                                                                        d="M35.2,45.6h0s-.2,0-.2,0h0c-1.2.5-2.4.9-3.7,1.1h0c-.4,0-.6.4-.6.7h0c0,.1,0,.1,0,.1,0,.3.4.6.7.6,0,0,0,0,0,0h.1c1.4-.3,2.7-.7,4-1.2h0s0,0,0,0c0,0,0,0,0,0h0c.3-.1.5-.4.5-.7,0,0,0-.2,0-.3-.1-.3-.4-.5-.7-.5Z" />
+                                                                    <path
+                                                                        d="M19.7,45.6h0c-1.2-.5-2.4-1.1-3.4-1.8h0s-.2-.1-.2-.1h0s-.1,0-.1,0h0s0,0,0,0h-.1s0,0,0,0h0s0,0,0,0l-.2.2h0c0,.2-.1.3-.1.5,0,.2.1.5.3.6h0s0,0,0,0c0,0,0,0,0,0h0c1.2.8,2.4,1.4,3.7,2h0s.2,0,.2,0h0c.3,0,.6-.2.7-.5h0s0,0,0,0c0,0,0,0,0,0h0c0,0,0-.2,0-.3,0-.3-.2-.6-.5-.7Z" />
+                                                                    <circle cx="27.3" cy="27.3" r="4.1" />
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Pads</p>
+                                                                <p class="menu-selector-subtitle">Cutting, Polishing, &
+                                                                    Coating</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Coatings & Sealants -->
+                                                    <div data-tab aria-controls="coatings-sealants" aria-current="page" class="group menu-selector-item">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-6" fill="currentColor"
+                                                                    viewBox="0 0 512 487.4">
+                                                                    <g id="Layer_x5F_1">
+                                                                        <path class="st0"
+                                                                            d="M338.3,307.4c-93.6,0-169.2-75.9-169.2-169.2,0,93.3-75.9,169.2-169.2,169.2,93.3,0,169.2,75.6,169.2,168.9,0-93.3,75.6-168.9,169.2-168.9Z" />
+                                                                        <g>
+                                                                            <path class="st0"
+                                                                                d="M512,394.7c-51.3,0-92.7-41.7-92.7-92.7,0,51-41.7,92.7-92.7,92.7,51,0,92.7,41.4,92.7,92.7,0-51.3,41.4-92.7,92.7-92.7Z" />
+                                                                            <path class="st0"
+                                                                                d="M458.6,112.8c-62.4,0-112.8-50.4-112.8-112.8,0,62.4-50.4,112.8-112.8,112.8,62.4,0,112.8,50.4,112.8,112.8,0-62.4,50.4-112.8,112.8-112.8Z" />
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Coatings & Sealants</p>
+                                                                <p class="menu-selector-subtitle">Long-Term Protection
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Maintenance & Wash Care -->
+                                                    <div data-tab aria-controls="maintenance-wash-care" aria-current="page" class="group menu-selector-item">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-6" fill="currentColor"
+                                                                    viewBox="0 0 512 487.4">
+                                                                    <g id="Layer_x5F_1">
+                                                                        <path class="st0"
+                                                                            d="M338.3,307.4c-93.6,0-169.2-75.9-169.2-169.2,0,93.3-75.9,169.2-169.2,169.2,93.3,0,169.2,75.6,169.2,168.9,0-93.3,75.6-168.9,169.2-168.9Z" />
+                                                                        <g>
+                                                                            <path class="st0"
+                                                                                d="M512,394.7c-51.3,0-92.7-41.7-92.7-92.7,0,51-41.7,92.7-92.7,92.7,51,0,92.7,41.4,92.7,92.7,0-51.3,41.4-92.7,92.7-92.7Z" />
+                                                                            <path class="st0"
+                                                                                d="M458.6,112.8c-62.4,0-112.8-50.4-112.8-112.8,0,62.4-50.4,112.8-112.8,112.8,62.4,0,112.8,50.4,112.8,112.8,0-62.4,50.4-112.8,112.8-112.8Z" />
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Wash & Care</p>
+                                                                <p class="menu-selector-subtitle">Routine Care &
+                                                                    Essentials</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Tools & Machines -->
+                                                    <div data-tab aria-controls="tools-machines" aria-current="page" class="menu-selector-item group">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-8" fill="currentColor" id="Layer_1"
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                                                    viewBox="0 0 59.2 79.4">
+                                                                    <path
+                                                                        d="M37.4,26.6h-15.6c-.9,0-1.6.6-1.6,1.6s.6,1.6,1.6,1.6h15.6c.9,0,1.6-.6,1.6-1.6s-.6-1.6-1.6-1.6Z" />
+                                                                    <path
+                                                                        d="M37.4,32.8h-15.6c-.9,0-1.6.6-1.6,1.6s.6,1.6,1.6,1.6h15.6c.9,0,1.6-.6,1.6-1.6s-.6-1.6-1.6-1.6Z" />
+                                                                    <path
+                                                                        d="M37.4,39.1h-15.6c-.9,0-1.6.6-1.6,1.6s.6,1.6,1.6,1.6h15.6c.9,0,1.6-.6,1.6-1.6s-.6-1.6-1.6-1.6Z" />
+                                                                    <path
+                                                                        d="M29.6,0C13.3,0,0,13.3,0,29.6s6.5,21.4,16.1,26.3c.2.3.3.6.6.9,1.2,1.7,2,3.9,2,6.1v10.2c0,3.4,2.8,6.2,6.2,6.2h9.4c3.4,0,6.2-2.8,6.2-6.2v-10.2c0-2.2.8-4.4,2-6.1.2-.2.4-.6.6-.9h0c9.6-4.9,16.1-14.9,16.1-26.3C59.2,13.3,46,0,29.6,0ZM37.4,73.1c0,1.7-1.4,3.1-3.1,3.1h-9.4c-1.7,0-3.1-1.4-3.1-3.1v-4.7h15.6v4.7ZM38.1,58.8c-.5,1.4-.7,2.8-.7,4.2v2.3h-15.6v-2.3c0-1.7-.3-3.5-1-5.1-.4-1-1-2-1.6-2.9-.3-.4-.6-.8-.8-1.3-.8-1.5-1.2-3.1-1.2-4.8v-18c0-6.9,5.6-12.5,12.5-12.5s12.5,5.6,12.5,12.5v18c0,1.7-.5,3.4-1.2,4.8-.2.4-.5.9-.8,1.3-.7.9-1.2,1.9-1.6,2.9-.1.3-.2.6-.3.9ZM44.9,51.4l.2-.5c.2-.6.2-1.4.2-2v-10.2l-.2-9.4c-.8-7.8-7.5-14.1-15.5-14.1s-15.6,7-15.6,15.6v18c0,.6,0,1.4.2,2l.2.4c-6.8-4.8-11.3-12.8-11.3-21.8C3,14.9,14.9,3,29.6,3s26.6,11.9,26.6,26.6-4.5,16.9-11.3,21.8Z" />
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Tools & Machines</p>
+                                                                <p class="menu-selector-subtitle">Polishers & power
+                                                                    tools</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Abrasives -->
+                                                    <div data-tab aria-controls="abrasives" aria-current="page" class="menu-selector-item group">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-8" fill="currentColor" id="Layer_1"
+                                                                    xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                                                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                    viewBox="0 0 95 93.4">
+                                                                    <path
+                                                                        d="M47.5,0C21.3,0,0,20.9,0,46.7s21.3,46.7,47.5,46.7,47.5-20.9,47.5-46.7S73.7,0,47.5,0ZM22.1,34c2.2,0,3.9,1.8,3.9,3.9s-1.8,3.9-3.9,3.9-3.9-1.8-3.9-3.9c0-2.2,1.8-3.9,3.9-3.9ZM23.2,62.1c-2.2,0-3.9-1.8-3.9-3.9s1.8-3.9,3.9-3.9,3.9,1.8,3.9,3.9-1.8,3.9-3.9,3.9ZM37.1,18.2c2.2,0,3.9,1.8,3.9,3.9s-1.8,3.9-3.9,3.9-3.9-1.8-3.9-3.9,1.8-3.9,3.9-3.9ZM37.9,75.5c-2.2,0-3.9-1.8-3.9-3.9s1.8-3.9,3.9-3.9,3.9,1.8,3.9,3.9-1.8,3.9-3.9,3.9ZM57.6,75.5c-2.2,0-3.9-1.8-3.9-3.9s1.8-3.9,3.9-3.9,3.9,1.8,3.9,3.9-1.8,3.9-3.9,3.9ZM58.4,26c-2.2,0-3.9-1.8-3.9-3.9s1.8-3.9,3.9-3.9,3.9,1.8,3.9,3.9-1.8,3.9-3.9,3.9ZM72.3,62.1c-2.2,0-3.9-1.8-3.9-3.9s1.8-3.9,3.9-3.9,3.9,1.8,3.9,3.9c0,2.2-1.8,3.9-3.9,3.9ZM73.4,41.8c-2.2,0-3.9-1.8-3.9-3.9s1.8-3.9,3.9-3.9,3.9,1.8,3.9,3.9-1.8,3.9-3.9,3.9Z" />
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Abrasives</p>
+                                                                <p class="menu-selector-subtitle">Surface prep solutions
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Accessories & Apparel -->
+                                                    <div data-tab aria-controls="accessories-apparel" aria-current="page" class="menu-selector-item group">
+                                                        <div class="flex items-center space-x-3">
+                                                            <div class="menu-selector-icon">
+                                                                <svg class="size-6" fill="currentColor"
+                                                                    viewBox="0 0 512 487.4">
+                                                                    <g id="Layer_x5F_1">
+                                                                        <path class="st0"
+                                                                            d="M338.3,307.4c-93.6,0-169.2-75.9-169.2-169.2,0,93.3-75.9,169.2-169.2,169.2,93.3,0,169.2,75.6,169.2,168.9,0-93.3,75.6-168.9,169.2-168.9Z" />
+                                                                        <g>
+                                                                            <path class="st0"
+                                                                                d="M512,394.7c-51.3,0-92.7-41.7-92.7-92.7,0,51-41.7,92.7-92.7,92.7,51,0,92.7,41.4,92.7,92.7,0-51.3,41.4-92.7,92.7-92.7Z" />
+                                                                            <path class="st0"
+                                                                                d="M458.6,112.8c-62.4,0-112.8-50.4-112.8-112.8,0,62.4-50.4,112.8-112.8,112.8,62.4,0,112.8,50.4,112.8,112.8,0-62.4,50.4-112.8,112.8-112.8Z" />
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="menu-selector-text">
+                                                                <p class="menu-selector-title">Accessories & Apparel</p>
+                                                                <p class="menu-selector-subtitle">Professional add-ons
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="menu-selector-arrow">
+                                                            <svg class="menu-selector-arrow-icon"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <!-- Compounds & Polishes Tab Panel -->
+                                                <div id="compounds-polishes" data-tab-panel class="relative">
+                                                    <!-- Header row -->
+                                                    <div
+                                                        class="hidden px-6 py-4 lg:flex flex-col lg:flex-row justify-between 
+                                                        gap-4 items-start lg:items-center border-b border-slate-200">
+                                                        <div>
+                                                            <div class="text-base font-semibold">Professional Marine
+                                                                Compounds &amp; Polishes</div>
+                                                            <p class="mt-1 text-wrap text-sm text-slate-600">
+                                                                Gelcoat restoration from oxidation to mirror shine. Shop
+                                                                by correction step, surface, or
+                                                                complete systems.
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="items-center gap-2">
+                                                            <a href="#" class="btn btn-primary text-sm px-5 py-3">
+                                                                Browse All Products
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Content grid -->
+                                                    <div class="p-4 lg:p-6 grid grid-cols-1 gap-4 lg:grid-cols-[1fr_300px]">
+                                                        <!-- Column 1 | Category Links-->
+                                                        <section
+                                                            class="grid gap-6 pr-6 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-w-[6px] scrollbar scrollbar-thumb-primary-600 scrollbar-track-primary-50 h-[360px] overflow-y-scroll">
+                                                            <!-- Column 1 -->
+                                                            <section class="mega-nav-column">
+                                                                <!-- Trusted Brands -->
+                                                                <section class="mega-nav-group">
+                                                                    <div class="mega-nav-group__header">
+                                                                        <h3 class="mega-nav-group__title">Trusted Brands
+                                                                        </h3>
+                                                                    </div>
+                                                                    <ul class="mega-nav-group__list">
+                                                                        <li><a href="#">Presta</a></li>
+                                                                        <li><a href="#">Menzerna</a></li>
+                                                                        <li><a href="#">3D</a></li>
+                                                                        <li><a href="#">Starke</a></li>
+                                                                        <li><a href="#">P&amp;S</a></li>
+                                                                        <li>
+                                                                            <a href="#">
+                                                                                Shop All Brands <span
+                                                                                    class="text-slate-700">→</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </section>
+
+                                                                <!-- Shop by Correction Step -->
+                                                                <section class="mega-nav-group">
+                                                                    <div class="mega-nav-group__header">
+                                                                        <h3 class="mega-nav-group__title">Shop by
+                                                                            Correction Step</h3>
+                                                                    </div>
+                                                                    <ul class="mega-nav-group__list">
+                                                                        <li><a href="#">Heavy Cut Compounds</a></li>
+                                                                        <li><a href="#">Medium Cut Polishes</a></li>
+                                                                        <li><a href="#">Finishing Polishes</a></li>
+                                                                        <li><a href="#">One-Step Compounds</a></li>
+                                                                        <li><a href="#">Gelcoat Oxidation Removal</a>
+                                                                        </li>
+                                                                        <li><a href="#">Marine Paint Correction</a></li>
+                                                                        <li><a href="#">Spot Correction</a></li>
+                                                                    </ul>
+                                                                </section>
+                                                            </section>
+
+                                                            <!-- Column 2 -->
+                                                            <section class="mega-nav-column">
+
+                                                                <!-- Shop by Problem -->
+                                                                <section class="mega-nav-group">
+                                                                    <div class="mega-nav-group__header">
+                                                                        <h3 class="mega-nav-group__title">Shop by
+                                                                            Problem</h3>
+                                                                    </div>
+                                                                    <ul class="mega-nav-group__list">
+                                                                        <li><a href="#">Heavy Oxidation</a></li>
+                                                                        <li><a href="#">Swirl Marks & Haze</a></li>
+                                                                        <li><a href="#">Scratches & Scuffs</a></li>
+                                                                        <li><a href="#">Faded Gelcoat</a></li>
+                                                                        <li><a href="#">Spot Repair & Touch-Ups</a></li>
+                                                                    </ul>
+                                                                </section>
+
+                                                                <!-- Shop by Surface -->
+                                                                <section class="mega-nav-group">
+                                                                    <div class="mega-nav-group__header">
+                                                                        <h3 class="mega-nav-group__title">Shop by
+                                                                            Surface</h3>
+                                                                    </div>
+                                                                    <ul class="mega-nav-group__list">
+                                                                        <li><a href="#">Gelcoat</a></li>
+                                                                        <li><a href="#">Marine Paint</a></li>
+                                                                        <li><a href="#">Fiberglass</a></li>
+                                                                        <li><a href="#">Metal Polish</a></li>
+                                                                        <li><a href="#">Clear Plastics</a></li>
+                                                                    </ul>
+                                                                </section>
+
+
+                                                            </section>
+
+                                                            <!-- Column 3 -->
+                                                            <section class="mega-nav-column">
+
+                                                                <!-- Learn Before You Buy -->
+                                                                <section class="mega-nav-group">
+                                                                    <div class="mega-nav-group__header">
+                                                                        <h3 class="mega-nav-group__title">Learn Before
+                                                                            You Buy</h3>
+                                                                    </div>
+                                                                    <ul class="mega-nav-group__list">
+                                                                        <li><a href="#">Compound vs Polish: What’s the
+                                                                                Difference?</a></li>
+                                                                        <li><a href="#">How to Choose the Right Cut
+                                                                                Level</a></li>
+                                                                        <li><a href="#">Gelcoat Correction: Step-by-Step
+                                                                                Guide</a></li>
+                                                                        <li><a href="#">Common Gelcoat Problems &
+                                                                                Solutions</a></li>
+                                                                        <li><a href="#">Oxidation Levels Explained</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </section>
+
+                                                                <!-- Compatibility & Use Cases -->
+                                                                <section class="mega-nav-group">
+                                                                    <div class="mega-nav-group__header">
+                                                                        <h3 class="mega-nav-group__title">Compatibility
+                                                                            & Use Cases</h3>
+                                                                    </div>
+                                                                    <ul class="mega-nav-group__list">
+                                                                        <li><a href="#">Safe for Gelcoat & Paint?</a>
+                                                                        </li>
+                                                                        <li><a href="#">Boat vs RV Applications</a></li>
+                                                                        <li><a href="#">Rotary vs DA Polisher Use</a>
+                                                                        </li>
+                                                                        <li><a href="#">Hand Application Options</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </section>
+                                                            </section>
+                                                        </section>
+
+                                                        <!-- Column 2 | Product Highlight Card -->
+                                                        <section class="hidden lg:block lg:min-w-0">
+                                                            <div
+                                                                class="group flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                                                                <div
+                                                                    class="relative flex justify-center items-center h-40 rounded-t-xl overflow-hidden">
+                                                                    <!-- Background image -->
+                                                                    <img src="https://starkeyachtcare.com/cdn/shop/files/IMG_5995-2_720x.jpg?v=1722014661"
+                                                                        alt=""
+                                                                        class="absolute inset-0 w-full h-full object-cover scale-120 transition-transform ease-in-out duration-300 group-hover:scale-100" />
+
+                                                                    <!-- Centered logo -->
+                                                                    <div
+                                                                        class="absolute bottom-0 left-0 right-0 flex justify-center px-2 py-3 bg-primary-950/70">
+                                                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Starke_White.svg?v=1766502894"
+                                                                            alt="Starke Yacht Care"
+                                                                            class="relative z-10 max-w-[120px] mx-auto" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="flex flex-col p-3 text-wrap">
+                                                                    <span
+                                                                        class="block text-xs font-semibold uppercase text-primary-500 dark:text-slate-100">
+                                                                        2-Step System
+                                                                    </span>
+                                                                    <h3
+                                                                        class="mb-0.5 text-lg font-semibold text-primary-800 dark:text-neutral-300 dark:hover:text-white">
+                                                                        Gelcoat Correction System
+                                                                    </h3>
+                                                                    <p
+                                                                        class="text-sm text-slate-600 dark:text-neutral-500">
+                                                                        Restore dull or damaged gelcoat by correcting
+                                                                        oxidation and surface defects, then polishing
+                                                                        and
+                                                                        sealing it back to a deep, high-gloss, like-new
+                                                                        finish.
+                                                                    </p>
+                                                                </div>
+                                                                <div
+                                                                    class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
+                                                                    <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                                                                        href="#" target="_parent">
+                                                                        Shop the System
+                                                                    </a>
+                                                                    <a class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                                                                        href="#" target="_parent">
+                                                                        View Results
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+                                                    </div>
+
+                                                    <!-- Footer row -->
+                                                    <div class="mega-nav-footer">
+                                                        <!-- Primary CTA -->
+                                                        <a href="#" class="group mega-nav-footer__primary">
+                                                            Shop All Compounds &amp; Polishes
+                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke-width="1.5"
+                                                                stroke="currentColor"
+                                                                class="mega-nav-footer__primary-icon">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                                                            </svg>
+                                                        </a>
+
+                                                        <!-- Logo Marquee -->
+                                                        <section class="hidden lg:block min-w-0">
+                                                            <div
+                                                                data-marquee
+                                                                data-marquee-direction="left"
+                                                                data-marquee-speed="90"
+                                                                data-marquee-gap="32"
+                                                                data-marquee-pause-on-hover
+                                                            >
+                                                                <div data-marquee-viewport>
+                                                                <div data-marquee-content>
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Starke.svg?v=1766501510"
+                                                                            alt="Starke Yacht Care logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/duraslic_logo.svg?v=1766522801"
+                                                                            alt="DuraSlic logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/3D_Logo_-_Green.svg?v=1766502132"
+                                                                            alt="3D logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/P_and_S_-_Logo_-_Red.svg?v=1766502903"
+                                                                            alt="P and S logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/booyah_clean_fc.png?v=1766574872"
+                                                                            alt="Booyah Clean logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mirka-fc.svg?v=1766575019"
+                                                                            alt="Mirka logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/shurhold.svg?v=1766575673"
+                                                                            alt="Shurhold logo"
+                                                                        >
+                                                                    </div>
+
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/koch-chemie-fc.svg?v=1766575759"
+                                                                            alt="Koch Chemie logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Presta-FC.svg?v=1766518409"
+                                                                            alt="Presta logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/xanigo-fc.svg?v=1766516827"
+                                                                            alt="xanigo logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/jescar-logo-fc.svg?v=1766516199"
+                                                                            alt="Jescar logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Renegade_Logo.svg?v=1767008893"
+                                                                            alt="Renegade logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/rupes-red.svg?v=1767008912"
+                                                                            alt="Rupes logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Gtechniq_Logo_FC.svg?v=1767009050"
+                                                                            alt="Gtechniq logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Boat-Candy-Logo---FC.png?v=1767009476"
+                                                                            alt="Boat Candy logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Car-Candy-Logo-FC.png?v=1767009471"
+                                                                            alt="Car Candy logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Flex_Logo_FC.svg?v=1767009564"
+                                                                            alt="Flex logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Flitz_Logo_FC.svg?v=1767009626"
+                                                                            alt="Flitz logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Nautical_One_Logo_-_Black.svg?v=1767009678"
+                                                                            alt="Nautical One logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Lake_Country_-_FC.svg?v=1767009819"
+                                                                            alt="Lake Country logo"
+                                                                        >
+                                                                    </div>
+                                                                    <div>
+                                                                        <img 
+                                                                            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Marine_Nano_Shop_Logo.svg?v=1767010292"
+                                                                            alt="Marine Nano Shop logo"
+                                                                        >
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+
+
+                                                        <!-- Secondary Actions -->
+                                                        <div class="hidden ega-nav-footer__secondary">
+                                                            <a href="#" class="mega-nav-footer__pill show-lg-up">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                    viewBox="0 0 24 24" stroke-width="1.5"
+                                                                    stroke="currentColor" class="size-4">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+                                                                </svg>
+                                                                How to Restore Oxidized Gelcoat
+                                                            </a>
+                                                            <a href="#" class="mega-nav-footer__pill">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                    viewBox="0 0 24 24" stroke-width="1.5"
+                                                                    stroke="currentColor" class="size-4">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                                                                </svg>
+
+                                                                Before &amp; After Results
+                                                            </a>
+                                                            <a href="#" class="mega-nav-footer__pill">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                    viewBox="0 0 24 24" stroke-width="1.5"
+                                                                    stroke="currentColor" class="size-4">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                                                                </svg>
+
+                                                                Pro Tips
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Pads Tab Panel -->
+                                                <div id="pads" data-tab-panel class="relative" hidden>
+                                                    <!-- Header row -->
+                                                    <div
+                                                        class="px-6 py-4 flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4 items-start lg:items-center border-b border-slate-200">
+                                                        <div>
+                                                            <div class="text-base font-semibold">Professional Marine
+                                                                Pads</div>
+                                                            <p class="mt-1 max-w-2xl text-sm text-slate-600">
+                                                                Gelcoat restoration from oxidation to mirror shine. Shop
+                                                                by correction step, surface, or
+                                                                complete systems.
+                                                            </p>
+                                                        </div>
+
+                                                        <div class="flex items-center gap-2">
+                                                            <a href="#" class="btn btn-primary text-sm px-5 py-3">
+                                                                Browse All Pads
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Content grid -->
+                                                    <div class="p-6 grid gap-4 grid-cols-[1fr_300px]">
+                                                        <!-- Column 1 | Category Links-->
+                                                        <section
+                                                            class="border-2 border-primary-300 border-dashed grid gap-6 pr-6 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-w-[6px] scrollbar scrollbar-thumb-primary-600 scrollbar-track-primary-50 h-[360px] overflow-y-scroll">
+                                                            <!-- Columns -->
+                                                        </section>
+
+                                                        <!-- Column 2 | Product Highlight Card -->
+                                                        <section class="min-w-0">
+                                                            <div
+                                                                class="border-2 border-primary-300 border-dashed group flex flex-col bg-white shadow-2xs rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                                                            </div>
+                                                        </section>
+
+                                                    </div>
+
+                                                    <!-- Footer row -->
+                                                    <div class="border-2 border-primary-300 border-dashed mega-nav-footer">
+                                                        <!-- Primary CTA -->
+
+                                                        <!-- Logo Marquee -->
+
+                                                        <!-- Secondary Actions -->
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- Coatings & Sealants Tab Panel -->
+                                                <div id="coatings-sealants" data-tab-panel class="relative" hidden>
+                                                    <!-- Header row -->
+                                                    <div
+                                                        class="border-2 border-primary-300 border-dashed p-6 pb-4 flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4 items-start lg:items-center">
+                                                        <div>
+                                                            <div class="text-base font-semibold"></div>
+                                                            <p class="mt-1 max-w-2xl text-sm text-slate-600"></p>
+                                                        </div>
+
+                                                        <div class="flex items-center gap-2">
+                                                            
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Content grid -->
+                                                    <div class="p-6 grid gap-4 grid-cols-[1fr_300px]">
+                                                        <!-- Column 1 | Category Links-->
+                                                        <section
+                                                            class="border-2 border-primary-300 border-dashed grid gap-6 pr-6 grid-cols-[repeat(auto-fit,minmax(240px,1fr))] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-w-[6px] scrollbar scrollbar-thumb-primary-600 scrollbar-track-primary-50 h-[360px] overflow-y-scroll">
+                                                            <!-- Columns -->
+                                                        </section>
+
+                                                        <!-- Column 2 | Product Highlight Card -->
+                                                        <section class="min-w-0">
+                                                            <div
+                                                                class="border-2 border-primary-300 border-dashed group flex flex-col bg-white shadow-2xs rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                                                            </div>
+                                                        </section>
+
+                                                    </div>
+
+                                                    <!-- Footer row -->
+                                                    <div class="border-2 border-primary-300 border-dashed mega-nav-footer">
+                                                        <!-- Primary CTA -->
+
+                                                        <!-- Logo Marquee -->
+
+                                                        <!-- Secondary Actions -->
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="main-header-navbar__link" href="#">Brands</a></li>
+                        <li><a class="main-header-navbar__link" href="#">Marine</a></li>
+                        <li><a class="main-header-navbar__link" href="#">Automotive</a></li>
+                        <li><a class="main-header-navbar__link" href="#">Mariners Clubs</a></li>
+                        <li><a class="main-header-navbar__link" href="#">MDSC Pros</a></li>
+                        <li><a class="main-header-navbar__link" href="#">Store Locator</a></li>
+                        <li><a class="main-header-navbar__link" href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Filter Navbar -->
+        <div id="revealSection" x-data="{ 
+                    show: false,
+                    init() {
+                        const header = document.getElementById('siteHeader');
+                        const updateVisibility = () => {
+                            const headerHeight = header?.offsetHeight || 0;
+                            this.show = window.scrollY > headerHeight;
+                        };
+                        window.addEventListener('scroll', updateVisibility, { passive: true });
+                        window.addEventListener('resize', updateVisibility, { passive: true });
+                    }
+                }" x-show="show" x-transition:enter="transition-all duration-400"
+            x-transition:enter-start="opacity-0 -translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition-all duration-400" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-8"
+            class="bg-white border-b border-gray-200 shadow-md relative -z-1">
+            <div class="fade-overlay-white fade-x-4 mx-auto max-w-400">
+                <div class="relative flex justify-center space-x-4">
+
+                    <!-- Filters -->
+                    <div class="
+                                px-4 whitespace-nowrap overflow-x-auto 
+                                flex items-center gap-2 cursor-grab
+                                scrollbar scrollbar-thumb-primary-300 gutter-both 
+                                scrollbar-track-white scrollbar-h-1
+                            ">
+
+                        <!-- Combined Filters -->
+
+
+                        <!-- Primary Filters -->
+                        <div class="flex items-center gap-1 cursor-pointer py-1.5">
+                            <!-- Product Types -->
+                            <div data-popover>
+
+                                <!-- Trigger -->
+                                <button class="filter-trigger" data-popover-button>
+                                    Product Types
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Popover -->
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+
+                                        <!-- Form -->
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Product Types
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="productTypesForm" class="filters-panel-chips">
+                                                <!-- Chips will be dynamically generated here -->
+                                            </form>
+                                        </div>
+
+                                        <!-- Actions -->
+                                        <div class="filter-actions">
+
+                                            <!-- Apply -->
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+
+                                                Apply Filters
+                                            </a>
+
+                                            <!-- Clear All -->
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" data-slot="icon"
+                                                    aria-hidden="true"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear Filters
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Surface Type -->
+                            <div data-popover>
+
+                                <!-- Trigger -->
+                                <button class="filter-trigger" data-popover-button>
+                                    Surface Types
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Popover -->
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+
+                                        <!-- Form -->
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Surface Types
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="surfaceTypesForm" class="filters-panel-chips">
+                                                <!-- Chips will be dynamically generated here -->
+                                            </form>
+                                        </div>
+
+                                        <!-- Actions -->
+                                        <div class="filter-actions">
+
+                                            <!-- Apply -->
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+
+                                                Apply Filters
+                                            </a>
+
+                                            <!-- Clear All -->
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" data-slot="icon"
+                                                    aria-hidden="true"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Stage of Work -->
+                            <div data-popover>
+
+                                <!-- Trigger -->
+                                <button class="filter-trigger" data-popover-button>
+                                    Stage of Work
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Popover -->
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+
+                                        <!-- Form -->
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Stage of Work
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="stageOfWorkForm" class="filters-panel-chips">
+                                                <!-- Chips will be dynamically generated here -->
+                                            </form>
+                                        </div>
+
+                                        <!-- Actions -->
+                                        <div class="filter-actions">
+
+                                            <!-- Apply -->
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+
+                                                Apply Filters
+                                            </a>
+
+                                            <!-- Clear All -->
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" data-slot="icon"
+                                                    aria-hidden="true"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Detailing Goals -->
+                            <div data-popover>
+
+                                <!-- Trigger -->
+                                <button class="filter-trigger" data-popover-button>
+                                    Detailing Goals
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Popover -->
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+
+                                        <!-- Form -->
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Detailing Goals
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="detailingGoalsForm" class="filters-panel-chips">
+                                                <!-- Chips will be dynamically generated here -->
+                                            </form>
+                                        </div>
+
+                                        <!-- Actions -->
+                                        <div class="filter-actions">
+
+                                            <!-- Apply -->
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+
+                                                Apply Filters
+                                            </a>
+
+                                            <!-- Clear All -->
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" data-slot="icon"
+                                                    aria-hidden="true"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Secondary Filters -->
+                        <div
+                            class="flex items-center gap-1 cursor-pointer px-2 py-1.5 border-l border-r border-gray-200">
+
+                            <!-- Brands -->
+                            <div data-popover>
+                                <button class="filter-trigger" data-popover-button>
+                                    Brands
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Brands
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="brandsForm" class="filters-panel-chips">
+                                            </form>
+                                        </div>
+                                        <div class="filter-actions">
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+                                                Apply Filters
+                                            </a>
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tools & Accessories -->
+                            <div data-popover>
+                                <button class="filter-trigger" data-popover-button>
+                                    Tools & Accessories
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+                                <div class="filter-popover min-w-220" data-popover-panel>
+                                    <div class="filter-panel">
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Tools & Accessories
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="grid grid-cols-3 gap-6">
+                                                <div>
+                                                    <div class="filter-subtitle">Polishers
+                                                    </div>
+                                                    <form id="polishersForm" class="filters-panel-chips">
+                                                    </form>
+                                                    <div class="filter-subtitle mt-4">Pads
+                                                    </div>
+                                                    <form id="padsForm" class="filters-panel-chips">
+                                                    </form>
+                                                </div>
+                                                <div>
+                                                    <div class="filter-subtitle">Abrasives
+                                                    </div>
+                                                    <form id="abrasivesForm" class="filters-panel-chips">
+                                                    </form>
+                                                    <div class="filter-subtitle mt-4">
+                                                        Sprayers & Tools</div>
+                                                    <form id="sprayersToolsForm" class="filters-panel-chips">
+                                                    </form>
+                                                </div>
+                                                <div>
+                                                    <div class="filter-subtitle">
+                                                        Microfiber</div>
+                                                    <form id="microfiberForm" class="filters-panel-chips">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter-actions">
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+                                                Apply Filters
+                                            </a>
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Tertiary Filters -->
+                        <div class="flex items-center gap-1 cursor-pointer py-1.5">
+
+                            <!-- Size -->
+                            <div data-popover>
+                                <button class="filter-trigger" data-popover-button>
+                                    Size
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Size
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="sizesForm" class="flex flex-wrap items-center gap-1">
+                                            </form>
+                                        </div>
+                                        <div class="filter-actions">
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+                                                Apply Filters
+                                            </a>
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pack Types -->
+                            <div data-popover>
+                                <button class="filter-trigger" data-popover-button>
+                                    Pack Types
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Pack Types
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="packTypesForm" class="flex flex-wrap items-center gap-1">
+                                            </form>
+                                        </div>
+                                        <div class="filter-actions">
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+                                                Apply Filters
+                                            </a>
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price -->
+                            <div data-popover>
+                                <button class="filter-trigger" data-popover-button>
+                                    Price
+                                    <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                    </svg>
+                                </button>
+                                <div class="filter-popover" data-popover-panel>
+                                    <div class="filter-panel">
+                                        <div class="p-4">
+                                            <div class="filter-header">
+                                                Select Price Range
+                                                <button type="button"
+                                                    class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" class="size-3">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <form id="pricingForm" class="flex flex-wrap items-center gap-1">
+                                            </form>
+                                        </div>
+                                        <div class="filter-actions">
+                                            <a href="#" class="filter-action-btn filter-action-apply">
+                                                <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+                                                Apply Filters
+                                            </a>
+                                            <a href="#" class="filter-action-btn filter-action-reset">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                </svg>
+                                                Clear All
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero-banner">
+        <!-- Background Layer -->
+        <div aria-hidden="true" class="hero-banner-background">
+            <div class="hero-banner-bg-wrapper">
+                <div class="absolute inset-0 overflow-hidden">
+
+                    <!-- Background Image | Options: On / Off, image source upload / selector -->
+                    <img src="https://cdn.shopify.com/s/files/1/0779/3508/3763/files/38474.jpg?v=1766017027"
+                        class="hidden" />
+
+                    <!-- Video | Options: On / Off, video source upload, poster image upload -->
+                    <video autoplay muted loop playsinline preload="auto" class="hero-banner-visual">
+                        <source src="https://cdn.shopify.com/videos/c/o/v/a917dc031a6b4c2796256b1c2d1121f7.mp4"
+                            type="video/mp4" />
+                    </video>
+                </div>
+
+                <!-- Overlay | Options: On / Off, bg color picker, opacity slider, blending mode dropdown (none, multiply, overlay, screen, darken, lighten, hard-light, soft-light, difference) -->
+                <div class="hero-banner-overlay bg-primary-600 opacity-60 mix-blend-multiply"></div>
+            </div>
+        </div>
+
+        <!-- Foreground Content | Note: data-hero attribute is mandatory for hero when placed right below the header | calculates and watches header height  -->
+        <div class="hero-banner-content-wrapper" data-hero>
+            <div class="hero-banner-content">
+
+                <!-- Subtitle | Options: On / Off, Text Color Picker,font size picker options small, medium, large, x-large -->
+                <span class="hero-banner-subtitle font-oswald text-white">
+                    Welcome to Marine Detail Supply
+                </span>
+
+                <!-- Banner Title H1 | Options: On / Off, Text Color Picker, font size picker options small, medium, large, x-large -->
+                <h1 class="hero-banner-title font-oswald text-white">
+                    Marine Detailing Products
+                </h1>
+
+                <!-- Description | Options: On / Off, Text Color Picker, font size picker options small, medium, large, x-large -->
+                <p class="hero-banner-description text-white">
+                    The new arrivals have, well, newly arrived. Check out the latest
+                    options from our summer small-batch release while they're still in stock.
+                </p>
+
+                <!-- Action Button | Options: On / Off, BG Color Picker, Text Color Picker, size picker: small, medium, large, x-large -->
+                <div class="hero-banner-cta">
+                    <!-- link to product, page, collection, blog post, external URL, custom, etc... -->
+                    <a href="#"
+                        class="btn-hero bg-secondary-600 text-white hover:bg-secondary-500 hover:text-primary-800">Shop
+                        Collection</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section aria-labelledby="collection-heading" class="relative overflow-hidden" data-overlap-parent>
+        <h2 id="collection-heading" class="sr-only">Collections</h2>
+        <div class="max-w-400 mx-auto px-4" data-overlap-child data-slider-scope>
+            <div
+                class="swiper swiper-hero"
+                data-slider
+                data-slider-type="hero-collection"
+            >
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="collection-card">
+
+                            <!-- Background -->
+                            <div class="collection-card-bg-wrap">
+                                <img src="https://marinedetailsupply.com/cdn/shop/files/IMG_7850-2.jpg"
+                                    alt="Coatings & Sealant Marine Detailing Products" class="collection-card-bg" />
+
+                                <div class="collection-card-overlay"></div>
+                            </div>
+
+                            <!-- Foreground content -->
+                            <div class="collection-card-content-wrap">
+                                <div class="collection-card-content">
+
+                                    <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                    <h3 class="collection-card-title font-oswald">
+                                        Coatings & Sealants
+                                    </h3>
+
+                                    <div class="collection-card-button-wrap">
+                                        <a href="#" class="collection-card-button">
+                                            View Products
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-5 md:size-6">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="collection-card">
+
+                            <!-- Background -->
+                            <div class="collection-card-bg-wrap">
+                                <img src="https://marinedetailsupply.com/cdn/shop/files/MDSC-Apparel-GreyFitted-57.jpg"
+                                    alt="Coatings & Sealant Marine Detailing Products" class="collection-card-bg" />
+
+                                <div class="collection-card-overlay"></div>
+                            </div>
+
+                            <!-- Foreground content -->
+                            <div class="collection-card-content-wrap">
+                                <div class="collection-card-content">
+
+                                    <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                    <h3 class="collection-card-title font-oswald">
+                                        Pads & Buffers
+                                    </h3>
+
+                                    <div class="collection-card-button-wrap">
+                                        <a href="#" class="collection-card-button">
+                                            View Products
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-5 md:size-6">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="collection-card">
+
+                            <!-- Background -->
+                            <div class="collection-card-bg-wrap">
+                                <img src="https://marinedetailsupply.com/cdn/shop/files/IMG_7842-2.jpg"
+                                    alt="Coatings & Sealant Marine Detailing Products" class="collection-card-bg" />
+
+                                <div class="collection-card-overlay"></div>
+                            </div>
+
+                            <!-- Foreground content -->
+                            <div class="collection-card-content-wrap">
+                                <div class="collection-card-content">
+
+                                    <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                    <h3 class="collection-card-title font-oswald">
+                                        Polishes
+                                    </h3>
+
+                                    <div class="collection-card-button-wrap">
+                                        <a href="#" class="collection-card-button">
+                                            View Products
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-5 md:size-6">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="collection-card">
+
+                            <!-- Background -->
+                            <div class="collection-card-bg-wrap">
+                                <img src="//marinedetailsupply.com/cdn/shop/files/IMG_7868-2_1296x.jpg"
+                                    alt="Coatings & Sealant Marine Detailing Products" class="collection-card-bg" />
+
+                                <div class="collection-card-overlay"></div>
+                            </div>
+
+                            <!-- Foreground content -->
+                            <div class="collection-card-content-wrap">
+                                <div class="collection-card-content">
+
+                                    <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                    <h3 class="collection-card-title font-oswald">
+                                        Machines
+                                    </h3>
+
+                                    <div class="collection-card-button-wrap">
+                                        <a href="#" class="collection-card-button">
+                                            View Products
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-5 md:size-6">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="collection-card">
+
+                            <!-- Background -->
+                            <div class="collection-card-bg-wrap">
+                                <img src="https://marinedetailsupply.com/cdn/shop/files/IMG_7850-2.jpg"
+                                    alt="Coatings & Sealant Marine Detailing Products" class="collection-card-bg" />
+
+                                <div class="collection-card-overlay"></div>
+                            </div>
+
+                            <!-- Foreground content -->
+                            <div class="collection-card-content-wrap">
+                                <div class="collection-card-content">
+
+                                    <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                    <h3 class="collection-card-title font-oswald">
+                                        Sealants
+                                    </h3>
+
+                                    <div class="collection-card-button-wrap">
+                                        <a href="#" class="collection-card-button">
+                                            View Products
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-5 md:size-6">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-hero-btn btn-prev" data-slider-prev>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                        <path fill-rule="evenodd"
+                            d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                </div>
+                <div class="swiper-hero-btn btn-next" data-slider-next>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                        <path fill-rule="evenodd"
+                            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Scrolling Animated Logo Marquee -->
+    <script>
+        (function () {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) return;
+
+            const marquees = document.querySelectorAll('.js-marquee');
+
+            marquees.forEach((marquee) => {
+                const viewport = marquee.querySelector('.marquee__viewport');
+                const content = marquee.querySelector('.marquee__content');
+                if (!viewport || !content) return;
+
+                const direction = (marquee.dataset.direction || 'left').toLowerCase();
+                const speed = Number(marquee.dataset.speed || 40); // px/sec
+
+                let rafId = null;
+                let lastTs = 0;
+                let x = 0;
+                let cycleWidth = 0;
+
+                // Clone enough times so we never see blank space.
+                // We want content width >= viewport * 2 for safety.
+                function rebuild() {
+                    // Reset to original items (first set only)
+                    const originals = Array.from(content.children).filter((el) => !el.dataset.clone);
+                    content.innerHTML = '';
+                    originals.forEach((el) => content.appendChild(el));
+
+                    // Measure one full "set"
+                    const set = document.createElement('div');
+                    set.style.display = 'flex';
+                    set.style.alignItems = 'center';
+                    set.style.width = 'max-content';
+                    originals.forEach((el) => set.appendChild(el.cloneNode(true)));
+                    // Not using this detached set visually; we measure via real DOM below.
+
+                    // Build at least 2 sets, then keep cloning until wide enough
+                    const makeCloneSet = () => {
+                        const frag = document.createDocumentFragment();
+                        originals.forEach((node) => {
+                            const clone = node.cloneNode(true);
+                            clone.dataset.clone = '1';
+                            // remove alt text for clones (avoid repeated SR announcements)
+                            const img = clone.querySelector('img');
+                            if (img) img.alt = '';
+                            frag.appendChild(clone);
+                        });
+                        return frag;
+                    };
+
+                    // Add one clone set to enable looping
+                    content.appendChild(makeCloneSet());
+
+                    // Now measure cycle width = width of originals set (not including clones)
+                    // We can compute it by measuring first N items (originals.length)
+                    const allItems = Array.from(content.children);
+                    const firstSetItems = allItems.slice(0, originals.length);
+
+                    const firstSetWidth = firstSetItems.reduce((acc, el) => acc + el.getBoundingClientRect().width, 0);
+                    cycleWidth = Math.max(1, firstSetWidth);
+
+                    // Ensure total width is >= viewport * 2
+                    const viewportWidth = viewport.getBoundingClientRect().width;
+                    while (content.getBoundingClientRect().width < viewportWidth * 2) {
+                        content.appendChild(makeCloneSet());
+                    }
+
+                    // Reset position safely
+                    x = 0;
+                    applyTransform();
+                }
+
+                function applyTransform() {
+                    content.style.transform = `translate3d(${x}px,0,0)`;
+                }
+
+                function tick(ts) {
+                    if (!lastTs) lastTs = ts;
+                    const dt = (ts - lastTs) / 1000;
+                    lastTs = ts;
+
+                    const dir = direction === 'right' ? 1 : -1;
+                    x += dir * speed * dt;
+
+                    // Wrap seamlessly based on cycle width
+                    if (dir === -1 && x <= -cycleWidth) x += cycleWidth;
+                    if (dir === 1 && x >= 0) x -= cycleWidth;
+
+                    applyTransform();
+                    rafId = requestAnimationFrame(tick);
+                }
+
+                // Wait for images/fonts to settle, then build
+                const start = () => {
+                    cancelAnimationFrame(rafId);
+                    rafId = null;
+                    lastTs = 0;
+                    rebuild();
+                    rafId = requestAnimationFrame(tick);
+                };
+
+                // Start when images load (important for correct measurement)
+                const imgs = Array.from(content.querySelectorAll('img'));
+                let pending = imgs.length;
+
+                if (!pending) {
+                    start();
+                } else {
+                    imgs.forEach((img) => {
+                        if (img.complete) {
+                            pending -= 1;
+                            if (pending === 0) start();
+                        } else {
+                            img.addEventListener(
+                                'load',
+                                () => {
+                                    pending -= 1;
+                                    if (pending === 0) start();
+                                },
+                                { once: true },
+                            );
+                            img.addEventListener(
+                                'error',
+                                () => {
+                                    pending -= 1;
+                                    if (pending === 0) start();
+                                },
+                                { once: true },
+                            );
+                        }
+                    });
+                }
+
+                // Rebuild on resize (debounced)
+                let resizeT = null;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeT);
+                    resizeT = setTimeout(start, 150);
+                });
+            });
+        })();
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        (function () {
+            const header = document.getElementById('siteHeader');
+            const revealSection = document.querySelector('[data-reveal-section]');
+
+            function updateHeroLayout(hero) {
+                const overlapParent = document.querySelector('[data-overlap-parent]');
+                const overlapChild = overlapParent?.querySelector('[data-overlap-child]');
+
+                if (!header || !hero || !overlapParent || !overlapChild) return;
+
+                const parentHeight = overlapParent.offsetHeight;
+                const headerHeight = header.offsetHeight;
+                const revealHeight = revealSection ? revealSection.offsetHeight : 0;
+
+                // Pull overlap parent upward
+                overlapParent.style.marginTop = `-${parentHeight / 2}px`;
+
+                // Push hero content downward to compensate
+                hero.style.paddingBottom = `${parentHeight / 1.45}px`;
+
+                // Adjust hero top padding based on header height
+                const adjustedHeaderHeight = headerHeight - revealHeight;
+                hero.style.paddingTop = `${adjustedHeaderHeight * 1.4}px`;
+            }
+
+            function init() {
+                const heroes = document.querySelectorAll('[data-hero]');
+                if (!heroes.length) return;
+
+                heroes.forEach(hero => updateHeroLayout(hero));
+
+                // Recalculate on resize
+                window.addEventListener('resize', () => {
+                    heroes.forEach(hero => updateHeroLayout(hero));
+                });
+
+                // Observe overlap parent height changes
+                const overlapParent = document.querySelector('[data-overlap-parent]');
+                if (overlapParent) {
+                    const parentObserver = new ResizeObserver(() => {
+                        heroes.forEach(hero => updateHeroLayout(hero));
+                    });
+                    parentObserver.observe(overlapParent);
+                }
+
+                // Observe header height changes
+                if (header) {
+                    const headerObserver = new ResizeObserver(() => {
+                        heroes.forEach(hero => updateHeroLayout(hero));
+                    });
+                    headerObserver.observe(header);
+                }
+            }
+
+            // Run after full load to ensure media dimensions are stable
+            window.addEventListener('load', init);
+        })();
+    </script>
+
+
+
+
+
+</body>
+
+</html>

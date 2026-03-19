@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Test</title>
+    <link rel="stylesheet" href="/tailwind.css">
+</head>
+<body class="bg-gray-900 p-8">
+    <div class="space-y-4">
+        <h1 class="text-white text-2xl mb-8">Hover Color Test</h1>
+        
+        <!-- Test 1: Simple text hover -->
+        <a href="#" class="text-gray-200 hover:text-primary-600 block">
+            Simple text hover (should turn blue)
+        </a>
+        
+        <!-- Test 2: SVG with currentColor -->
+        <a href="#" class="inline-flex items-center p-2 text-gray-200 hover:text-primary-600">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+            </svg>
+            <span class="ml-2">Circle SVG with currentColor</span>
+        </a>
+        
+        <!-- Test 3: Exact copy of social icon -->
+        <a href="#" class="inline-flex items-center p-2 text-sm font-medium text-gray-200 rounded-lg hover:bg-gray-50 hover:text-primary-600">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512">
+                <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+            </svg>
+        </a>
+        
+        <!-- Test 4: Check CSS variables -->
+        <div class="mt-8 p-4 bg-white rounded">
+            <p class="text-sm">CSS Variable Tests:</p>
+            <div class="w-20 h-20 mt-2" style="background-color: var(--color-primary-600);"></div>
+            <p class="text-xs mt-2">Primary-600 box (should be dark blue)</p>
+        </div>
+    </div>
+</body>
+</html>

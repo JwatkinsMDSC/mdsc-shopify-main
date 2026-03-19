@@ -1,0 +1,43 @@
+# This file contains a list of files that will be excluded from Shopify CLI
+# operations such as push, pull, dev, etc.
+
+# Development and internal files
+design/*
+src/*
+docs/*
+scripts/*
+tasks/*
+test-dir/*
+node_modules/*
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Build configuration
+vite.config.js
+tailwind.config.js
+postcss.config.js
+package.json
+package-lock.json
+
+# Git and IDE files
+.git/*
+.github/*
+.vscode/*
+.zencoder/*
+.gitignore
+.gitattributes
+
+# Environment and config
+.env*
+.config/*
+config/settings_data.json
+.npm/*
+
+# Documentation
+README.md
+LICENSE.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md

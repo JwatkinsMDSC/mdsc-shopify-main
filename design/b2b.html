@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDS Theme Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tailwind.css">
+    <script type="module" src="/assets/design.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <script defer src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"></script>
+</head>
+
+<body class="bg-gray-50">
+    <div>
+        <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50">
+            <!-- Top Bar -->
+            <div class="bg-primary-700 text-sm">
+                <div class="relative max-w-400 mx-auto flex justify-end px-0 sm:px-4 py-0.5 sm:py-2 gap-4">
+
+                    <div class="banner-rotator flex text-primary-50 tracking-tight text-xs lg:text-sm w-full 
+                        sm:w-100 md:w-100 lg:w-240 relative sm:absolute sm:left-30 md:left-1/2 top-1/2 
+                        translate-0 md:-translate-x-1/2 sm:-translate-y-1/2 justify-center">
+
+                        <!-- Prev -->
+                        <button id="bannerPrev"
+                            class="btn btn-clear btn-micro text-secondary-500 hover:text-secondary-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" />
+                            </svg>
+                        </button>
+
+                        <!-- Offers -->
+                        <div class="relative text-center w-full sm:w-100">
+                            <div class="banner-offer">Get 50% off on Member Exclusive Month <a href="#"
+                                    class="font-semibold text-secondary-500 underline">Shop Now</a></div>
+
+                            <div class="banner-offer">Free shipping on all U.S. orders over $99 <a href="#"
+                                    class="font-semibold text-secondary-500 underline">Learn More</a></div>
+
+                            <div class="banner-offer">Buy 2, get 1 free on select detailing essentials <a href="#"
+                                    class="font-semibold text-secondary-500 underline">Shop Deals</a></div>
+                        </div>
+
+                        <!-- Next -->
+                        <button id="bannerNext"
+                            class="btn btn-clear btn-micro text-secondary-500 hover:text-secondary-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="hidden sm:flex items-center gap-0 md:gap-6">
+                        <div class="flex items-center gap-1">
+                            <span class="text-secondary-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-3 lg:size-4">
+                                    <path fill-rule="evenodd"
+                                        d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span class="text-primary-50 text-xs lg:text-sm tracking-tight">(555) 555-1234</span>
+                        </div>
+
+                        <!-- Currency Drop Down -->
+                        <div class="relative">
+                            <button popovertarget="desktop-menu-solutions"
+                                class="hidden md:inline-flex items-center gap-x-1 text-xs lg:text-sm font-semibold text-gray-50 dark:text-white">
+                                <span>USD $</span>
+                                <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                    class="size-5">
+                                    <path
+                                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                                        clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                            </button>
+
+                            <el-popover id="desktop-menu-solutions" anchor="bottom end" popover
+                                class="w-screen max-w-min overflow-visible bg-transparent px-4 transition transition-discrete [--anchor-gap:--spacing(2)] backdrop:bg-transparent open:flex data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in">
+                                <div
+                                    class="w-56 p-1 shrink rounded-xl bg-white text-sm/6 font-semibold text-gray-900 shadow-lg outline-1 outline-gray-900/5 dark:bg-gray-800 dark:text-white dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/10">
+                                    <div
+                                        class="max-h-56 overflow-y-auto overscroll-contain scrollbar-stable scrollbar-thin scrollbar-color scrollbar-thumb-primary-400 scrollbar-track-white rounded-xl">
+                                        <ul role="list" class="divide-y divide-gray-100 dark:divide-white/5">
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block p-2 hover:bg-gray-50 dark:hover:bg-white/2.5">CAD</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </el-popover>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Bar -->
+            <div class="relative z-20 border-b border-gray-200 backdrop-blur-xl bg-secondary-800/80">
+                <div class="relative max-w-400 mx-auto px-4 py-4 sm:py-6 flex items-center justify-between">
+                    <!-- Logo -->
+                    <div class="absolute flex items-center">
+                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mdsc-pro-logo.png?v=1765208781"
+                            class="h-28 -translate-x-2 md:translate-x-0 sm:h-34 md:h-36 translate-y-4 md:translate-y-2 drop-shadow-xl drop-shadow-primary-700/40"
+                            alt="Logo">
+                    </div>
+
+                    <!-- Category Dropdown + Search -->
+                    <div
+                        class="hidden sm:block flex-1 w-full sm:w-72 md:w-100 lg:w-140 absolute left-1/2 top-1/2 -translate-x-44 md:-translate-x-1/2 -translate-y-1/2">
+                        <div class="flex bg-white rounded-md overflow-hidden">
+
+                            <el-select id="select" name="selected" value="4" class="block">
+                                <button type="button" class="hidden lg:grid w-full cursor-default grid-cols-1 bg-white py-1.5 
+                                            pr-2 pl-3 text-left text-gray-900 outline-0 border-r-[1.5px] 
+                                            border-gray-200 sm:text-sm/6 dark:bg-white/5 dark:text-white 
+                                            dark:outline-white/10 dark:focus-visible:outline-primary-500">
+                                    <el-selectedcontent class="col-start-1 row-start-1 truncate pr-6">All
+                                        Categories</el-selectedcontent>
+                                    <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                        class="col-start-1 row-start-1 size-5 self-center justify-self-end text-gray-500 sm:size-4 dark:text-gray-400">
+                                        <path
+                                            d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z"
+                                            clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                </button>
+
+                                <el-options anchor="bottom start" popover
+                                    class="max-h-60 w-60 scrollbar-thin scrollbar-color scrollbar-thumb-gray-300 scrollbar-track-white overflow-hidden rounded-md bg-white py-1 text-base shadow-lg outline-1 outline-black/5 [--anchor-gap:--spacing(1)] data-leave:transition data-leave:transition-discrete data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 sm:text-sm dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                                    <el-option value="4"
+                                        class="group/option relative block cursor-default py-2 pr-9 pl-3 text-gray-900 select-none focus:bg-primary-600 focus:text-white focus:outline-hidden dark:text-white dark:focus:bg-primary-500">
+                                        <span
+                                            class="block truncate font-normal group-aria-selected/option:font-semibold">All
+                                            Categories</span>
+                                        <span
+                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-primary-600 group-not-aria-selected/option:hidden group-focus/option:text-white in-[el-selectedcontent]:hidden dark:text-primary-400">
+                                        </span>
+                                    </el-option>
+                                    <el-option value="1"
+                                        class="group/option relative block cursor-default py-2 pr-9 pl-3 text-gray-900 select-none focus:bg-primary-600 focus:text-white focus:outline-hidden dark:text-white dark:focus:bg-primary-500">
+                                        <span
+                                            class="block truncate font-normal group-aria-selected/option:font-semibold">Wade
+                                            Cooper</span>
+                                        <span
+                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-primary-600 group-not-aria-selected/option:hidden group-focus/option:text-white in-[el-selectedcontent]:hidden dark:text-primary-400">
+                                        </span>
+                                    </el-option>
+                                    <el-option value="2"
+                                        class="group/option relative block cursor-default py-2 pr-9 pl-3 text-gray-900 select-none focus:bg-primary-600 focus:text-white focus:outline-hidden dark:text-white dark:focus:bg-primary-500">
+                                        <span
+                                            class="block truncate font-normal group-aria-selected/option:font-semibold">Arlene
+                                            Mccoy</span>
+                                        <span
+                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-primary-600 group-not-aria-selected/option:hidden group-focus/option:text-white in-[el-selectedcontent]:hidden dark:text-primary-400">
+                                        </span>
+                                    </el-option>
+                                    <el-option value="3"
+                                        class="group/option relative block cursor-default py-2 pr-9 pl-3 text-gray-900 select-none focus:bg-primary-600 focus:text-white focus:outline-hidden dark:text-white dark:focus:bg-primary-500">
+                                        <span
+                                            class="block truncate font-normal group-aria-selected/option:font-semibold">Devon
+                                            Webb</span>
+                                        <span
+                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-primary-600 group-not-aria-selected/option:hidden group-focus/option:text-white in-[el-selectedcontent]:hidden dark:text-primary-400">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon"
+                                                aria-hidden="true" class="size-5">
+                                                <path
+                                                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                                    clip-rule="evenodd" fill-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </el-option>
+                                </el-options>
+                            </el-select>
+
+
+                            <input type="text" class="flex-1 px-4 py-2 text-sm focus:outline-none"
+                                placeholder="What can we help you find today?" />
+                            <button class="bg-secondary-600 px-4 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="size-6">
+                                    <path fill-rule="evenodd"
+                                        d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cart & Account -->
+                    <div class="flex items-center gap-4 ml-auto">
+                        <!-- Cart -->
+                        <div class="flow-root">
+                            <button href="#" command="show-modal" commandfor="dialog"
+                                class="group -m-2 flex items-center p-2 text-gray-50">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true"
+                                    class="size-6 shrink-0 text-gray-50 group-hover:text-primary-50">
+                                    <path
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                                <span
+                                    class="ml-2 text-sm font-medium text-gray-50 group-hover:text-primary-100">0</span>
+                                <span class="sr-only">items in cart, view bag</span>
+                            </button>
+                        </div>
+
+                        <!-- Account -->
+                        <div class="flex items-center gap-1 text-sm text-gray-50 cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                data-slot="icon" aria-hidden="true"
+                                class="size-6 shrink-0 text-gray-50 group-hover:text-primary-50">
+                                <path
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>Account</span>
+                        </div>
+
+                        <!-- Mobile Menu Button -->
+                        <div class="flex items-center md:hidden">
+                            <!-- Mobile menu button -->
+                            <button type="button" command="--toggle" commandfor="mobile-menu"
+                                class="btn btn-clear btn-xs text-white p-0" aria-expanded="false"
+                                aria-controls="mobile-menu">
+                                <span class="sr-only">Open main menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                                    <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Nav -->
+            <nav class="pl-40 lg:pl-0 z-10 bg-white shadow-sm border-b border-gray-200">
+                <div
+                    class="flex justify-start lg:justify-center max-w-400 mx-auto min-h-9 text-sm font-medium text-gray-900">
+                    <div
+                        class="flex gap-6 whitespace-nowrap overflow-x-auto items-center scrollbar scrollbar-thumb-primary-300 scrollbar-track-white scrollbar-h-1">
+                        <div class="flex items-center gap-1 cursor-pointer">
+                            <span>All categories</span>
+                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                        <a href="#">Brands</a>
+                        <a href="#">Marine</a>
+                        <a href="#">Automotive</a>
+                        <a href="#">Weekly Deals</a>
+                        <a href="#">Deals of the Day</a>
+                        <a href="#">New Releases</a>
+                    </div>
+
+                </div>
+            </nav>
+
+            <!-- Filter Navbar -->
+            <div id="revealSection" x-data="{ 
+                    show: false,
+                    init() {
+                        const header = document.getElementById('siteHeader');
+                        const updateVisibility = () => {
+                            const headerHeight = header?.offsetHeight || 0;
+                            this.show = window.scrollY > headerHeight;
+                        };
+                        window.addEventListener('scroll', updateVisibility, { passive: true });
+                        window.addEventListener('resize', updateVisibility, { passive: true });
+                    }
+                }" x-show="show" x-transition:enter="transition-all duration-400"
+                x-transition:enter-start="opacity-0 -translate-y-8" x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition-all duration-400" x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-8" class="bg-white border-b border-gray-200 shadow-md">
+                <div class="fade-overlay-white fade-x-4 mx-auto max-w-400">
+                    <div class="relative flex justify-center space-x-4">
+
+                        <!-- Filters -->
+                        <div class="
+                                px-4 whitespace-nowrap overflow-x-auto 
+                                flex items-center gap-2 cursor-grab
+                                scrollbar scrollbar-thumb-primary-300 gutter-both 
+                                scrollbar-track-white scrollbar-h-1
+                            ">
+
+                            <!-- Combined Filters -->
+
+
+                            <!-- Primary Filters -->
+                            <div class="flex items-center gap-1 cursor-pointer py-2">
+                                <!-- Product Types -->
+                                <div data-popover>
+
+                                    <!-- Trigger -->
+                                    <button class="filter-trigger" data-popover-button>
+                                        Product Types
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Popover -->
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+
+                                            <!-- Form -->
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Product Types
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="productTypesForm" class="filters-panel-chips">
+                                                    <!-- Chips will be dynamically generated here -->
+                                                </form>
+                                            </div>
+
+                                            <!-- Actions -->
+                                            <div class="filter-actions">
+
+                                                <!-- Apply -->
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+
+                                                    Apply Filters
+                                                </a>
+
+                                                <!-- Clear All -->
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        data-slot="icon" aria-hidden="true"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear Filters
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Surface Type -->
+                                <div data-popover>
+
+                                    <!-- Trigger -->
+                                    <button class="filter-trigger" data-popover-button>
+                                        Surface Types
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Popover -->
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+
+                                            <!-- Form -->
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Surface Types
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="surfaceTypesForm" class="filters-panel-chips">
+                                                    <!-- Chips will be dynamically generated here -->
+                                                </form>
+                                            </div>
+
+                                            <!-- Actions -->
+                                            <div class="filter-actions">
+
+                                                <!-- Apply -->
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+
+                                                    Apply Filters
+                                                </a>
+
+                                                <!-- Clear All -->
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        data-slot="icon" aria-hidden="true"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Stage of Work -->
+                                <div data-popover>
+
+                                    <!-- Trigger -->
+                                    <button class="filter-trigger" data-popover-button>
+                                        Stage of Work
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Popover -->
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+
+                                            <!-- Form -->
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Stage of Work
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="stageOfWorkForm" class="filters-panel-chips">
+                                                    <!-- Chips will be dynamically generated here -->
+                                                </form>
+                                            </div>
+
+                                            <!-- Actions -->
+                                            <div class="filter-actions">
+
+                                                <!-- Apply -->
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+
+                                                    Apply Filters
+                                                </a>
+
+                                                <!-- Clear All -->
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        data-slot="icon" aria-hidden="true"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Detailing Goals -->
+                                <div data-popover>
+
+                                    <!-- Trigger -->
+                                    <button class="filter-trigger" data-popover-button>
+                                        Detailing Goals
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Popover -->
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+
+                                            <!-- Form -->
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Detailing Goals
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="detailingGoalsForm" class="filters-panel-chips">
+                                                    <!-- Chips will be dynamically generated here -->
+                                                </form>
+                                            </div>
+
+                                            <!-- Actions -->
+                                            <div class="filter-actions">
+
+                                                <!-- Apply -->
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+
+                                                    Apply Filters
+                                                </a>
+
+                                                <!-- Clear All -->
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        data-slot="icon" aria-hidden="true"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Secondary Filters -->
+                            <div
+                                class="flex items-center gap-1 cursor-pointer px-2 py-2 border-l border-r border-gray-200">
+
+                                <!-- Brands -->
+                                <div data-popover>
+                                    <button class="filter-trigger" data-popover-button>
+                                        Brands
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Brands
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="brandsForm" class="filters-panel-chips">
+                                                </form>
+                                            </div>
+                                            <div class="filter-actions">
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+                                                    Apply Filters
+                                                </a>
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tools & Accessories -->
+                                <div data-popover>
+                                    <button class="filter-trigger" data-popover-button>
+                                        Tools & Accessories
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="filter-popover min-w-220" data-popover-panel>
+                                        <div class="filter-panel">
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Tools & Accessories
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="grid grid-cols-3 gap-6">
+                                                    <div>
+                                                        <div class="filter-subtitle">Polishers
+                                                        </div>
+                                                        <form id="polishersForm" class="filters-panel-chips">
+                                                        </form>
+                                                        <div class="filter-subtitle mt-4">Pads
+                                                        </div>
+                                                        <form id="padsForm" class="filters-panel-chips">
+                                                        </form>
+                                                    </div>
+                                                    <div>
+                                                        <div class="filter-subtitle">Abrasives
+                                                        </div>
+                                                        <form id="abrasivesForm" class="filters-panel-chips">
+                                                        </form>
+                                                        <div class="filter-subtitle mt-4">
+                                                            Sprayers & Tools</div>
+                                                        <form id="sprayersToolsForm" class="filters-panel-chips">
+                                                        </form>
+                                                    </div>
+                                                    <div>
+                                                        <div class="filter-subtitle">
+                                                            Microfiber</div>
+                                                        <form id="microfiberForm" class="filters-panel-chips">
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter-actions">
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+                                                    Apply Filters
+                                                </a>
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Tertiary Filters -->
+                            <div class="flex items-center gap-1 cursor-pointer py-2">
+
+                                <!-- Size -->
+                                <div data-popover>
+                                    <button class="filter-trigger" data-popover-button>
+                                        Size
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Size
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="sizesForm" class="flex flex-wrap items-center gap-1">
+                                                </form>
+                                            </div>
+                                            <div class="filter-actions">
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+                                                    Apply Filters
+                                                </a>
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pack Types -->
+                                <div data-popover>
+                                    <button class="filter-trigger" data-popover-button>
+                                        Pack Types
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Pack Types
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="packTypesForm" class="flex flex-wrap items-center gap-1">
+                                                </form>
+                                            </div>
+                                            <div class="filter-actions">
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+                                                    Apply Filters
+                                                </a>
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Price -->
+                                <div data-popover>
+                                    <button class="filter-trigger" data-popover-button>
+                                        Price
+                                        <svg viewBox="0 0 20 20" fill="currentColor" class="size-5 text-gray-400">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                                        </svg>
+                                    </button>
+                                    <div class="filter-popover" data-popover-panel>
+                                        <div class="filter-panel">
+                                            <div class="p-4">
+                                                <div class="filter-header">
+                                                    Select Price Range
+                                                    <button type="button"
+                                                        class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                                                        <span class="sr-only">Close</span>
+                                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="1.5" class="size-3">
+                                                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                                stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <form id="pricingForm" class="flex flex-wrap items-center gap-1">
+                                                </form>
+                                            </div>
+                                            <div class="filter-actions">
+                                                <a href="#" class="filter-action-btn filter-action-apply">
+                                                    <svg class="size-5 text-gray-400" fill="none" stroke-width="1.5"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                    </svg>
+                                                    Apply Filters
+                                                </a>
+                                                <a href="#" class="filter-action-btn filter-action-reset">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-5 flex-none text-gray-400 dark:text-gray-500">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                                    </svg>
+                                                    Clear All
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <div class="relative bg-primary-600">
+            <!-- Background image and overlap -->
+            <div aria-hidden="true" class="absolute inset-0 hidden sm:flex sm:flex-col">
+                <div class="relative w-full flex-1 bg-primary-800">
+                    <div class="absolute inset-0 overflow-hidden">
+                        <video autoplay muted loop playsinline preload="auto"
+                            class="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover">
+                            <!-- Best Videos -->
+                            <!-- 
+                            waves-lights.mp4, waves-digital-2.mp4, blue-light-waves.mp4, water-droplets-1.mov
+                            abstract-waves.mp4, wireframe-waves.mov, waves-wireframe-2.mov, waves-wireframe.mov
+
+                        -->
+                            <source src="/assets/video/waves-hexagon.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="absolute inset-0 bg-primary-700 opacity-70"></div>
+                </div>
+                <div class="h-32 w-full md:h-40 lg:h-48"></div>
+            </div>
+
+            <div
+                class="relative mx-auto max-w-4xl px-4 pb-54 pt-42 sm:pb-0 sm:mb-16 md:mb-22 md:pt-54 lg:mb-26 lg:pt-54 text-center">
+
+                <!-- Background video and overlap (mobile only) -->
+                <div aria-hidden="true" class="absolute inset-0 flex flex-col sm:hidden">
+                    <div class="relative w-full flex-1 bg-primary-800">
+
+                        <div class="absolute inset-0 overflow-hidden">
+                            <video autoplay muted loop playsinline preload="auto"
+                                class="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover">
+                                <source src="/assets/video/waves-hexagon.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+
+                        <div class="absolute inset-0 bg-primary-800 opacity-70"></div>
+                    </div>
+                </div>
+
+                <!-- Foreground content -->
+                <div class="relative">
+                    <span class="text-lg font-oswald uppercase font-light tracking-normal text-white">Welcome to Marine
+                        Detail Supply</span>
+                    <h1
+                        class="text-4xl font-oswald uppercase font-medium tracking-tight text-white sm:text-5xl md:text-6xl">
+                        Marine Detailing Products
+                    </h1>
+                    <p class="mt-4 text-md sm:text-xl text-white">The new arrivals have, well, newly arrived. Check out
+                        the latest
+                        options from our summer small-batch release while they're still in stock.</p>
+                    <div class="mt-4 sm:mt-6">
+                        <a href="#"
+                            class="inline-block rounded-md border border-transparent bg-secondary-600 px-8 py-3 font-medium text-white hover:bg-primary-400">
+                            Shop Collection
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <section aria-labelledby="collection-heading" class="relative overflow-hidden -mt-40 sm:mt-0">
+                <h2 id="collection-heading" class="sr-only">Collections</h2>
+                <div class="max-w-400 mx-auto px-4">
+
+                    <div class="swiper" data-swiper data-swiper-config='{
+                        "slidesPerView": 2,
+                        "spaceBetween": 14,
+                        "loop": true,
+                        "navigation": {
+                            "nextEl": ".btn-next",
+                            "prevEl": ".btn-prev"
+                        },
+                        "breakpoints": {
+                            "640": {
+                                "slidesPerView": 3,
+                                "spaceBetween": 20
+                            },
+                            "1024": {
+                                "slidesPerView": 4,
+                                "spaceBetween": 24
+                            }
+                        }
+                    }'>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+
+                                    <!-- Background -->
+                                    <div class="collection-card-bg-wrap">
+                                        <img src="https://marinedetailsupply.com/cdn/shop/files/IMG_7850-2.jpg"
+                                            alt="Coatings & Sealant Marine Detailing Products"
+                                            class="collection-card-bg" />
+
+                                        <div class="collection-card-overlay"></div>
+                                    </div>
+
+                                    <!-- Foreground content -->
+                                    <div class="collection-card-content-wrap">
+                                        <div class="collection-card-content">
+
+                                            <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                            <h3 class="collection-card-title font-oswald">
+                                                Coatings & Sealants
+                                            </h3>
+
+                                            <div class="collection-card-button-wrap">
+                                                <a href="#" class="collection-card-button">
+                                                    View Products
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-5 md:size-6">
+                                                        <path fill-rule="evenodd"
+                                                            d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+
+                                    <!-- Background -->
+                                    <div class="collection-card-bg-wrap">
+                                        <img src="https://marinedetailsupply.com/cdn/shop/files/MDSC-Apparel-GreyFitted-57.jpg"
+                                            alt="Coatings & Sealant Marine Detailing Products"
+                                            class="collection-card-bg" />
+
+                                        <div class="collection-card-overlay"></div>
+                                    </div>
+
+                                    <!-- Foreground content -->
+                                    <div class="collection-card-content-wrap">
+                                        <div class="collection-card-content">
+
+                                            <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                            <h3 class="collection-card-title font-oswald">
+                                                Pads & Buffers
+                                            </h3>
+
+                                            <div class="collection-card-button-wrap">
+                                                <a href="#" class="collection-card-button">
+                                                    View Products
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-5 md:size-6">
+                                                        <path fill-rule="evenodd"
+                                                            d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+
+                                    <!-- Background -->
+                                    <div class="collection-card-bg-wrap">
+                                        <img src="https://marinedetailsupply.com/cdn/shop/files/IMG_7842-2.jpg"
+                                            alt="Coatings & Sealant Marine Detailing Products"
+                                            class="collection-card-bg" />
+
+                                        <div class="collection-card-overlay"></div>
+                                    </div>
+
+                                    <!-- Foreground content -->
+                                    <div class="collection-card-content-wrap">
+                                        <div class="collection-card-content">
+
+                                            <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                            <h3 class="collection-card-title font-oswald">
+                                                Polishes
+                                            </h3>
+
+                                            <div class="collection-card-button-wrap">
+                                                <a href="#" class="collection-card-button">
+                                                    View Products
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-5 md:size-6">
+                                                        <path fill-rule="evenodd"
+                                                            d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+
+                                    <!-- Background -->
+                                    <div class="collection-card-bg-wrap">
+                                        <img src="//marinedetailsupply.com/cdn/shop/files/IMG_7868-2_1296x.jpg"
+                                            alt="Coatings & Sealant Marine Detailing Products"
+                                            class="collection-card-bg" />
+
+                                        <div class="collection-card-overlay"></div>
+                                    </div>
+
+                                    <!-- Foreground content -->
+                                    <div class="collection-card-content-wrap">
+                                        <div class="collection-card-content">
+
+                                            <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                            <h3 class="collection-card-title font-oswald">
+                                                Machines
+                                            </h3>
+
+                                            <div class="collection-card-button-wrap">
+                                                <a href="#" class="collection-card-button">
+                                                    View Products
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-5 md:size-6">
+                                                        <path fill-rule="evenodd"
+                                                            d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="collection-card">
+
+                                    <!-- Background -->
+                                    <div class="collection-card-bg-wrap">
+                                        <img src="https://marinedetailsupply.com/cdn/shop/files/IMG_7850-2.jpg"
+                                            alt="Coatings & Sealant Marine Detailing Products"
+                                            class="collection-card-bg" />
+
+                                        <div class="collection-card-overlay"></div>
+                                    </div>
+
+                                    <!-- Foreground content -->
+                                    <div class="collection-card-content-wrap">
+                                        <div class="collection-card-content">
+
+                                            <span class="collection-card-eyebrow">Shop the collection</span>
+
+                                            <h3 class="collection-card-title font-oswald">
+                                                Sealants
+                                            </h3>
+
+                                            <div class="collection-card-button-wrap">
+                                                <a href="#" class="collection-card-button">
+                                                    View Products
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-5 md:size-6">
+                                                        <path fill-rule="evenodd"
+                                                            d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-hero-btn btn-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                        </div>
+                        <div class="swiper-hero-btn btn-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Products -->
+        <main>
+            <div class="max-w-400 mx-auto px-4 py-6 flex flex-col gap-6">
+
+                <div id="product-grid"
+                    class="cards-fade-in intersect-half grid grid-cols-2 gap-2 md:gap-5 sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+
+                    <div id="product-template" class="product-card shadow-sm">
+
+                        <!-- Discount Badge -->
+                        <div class="product-card-img-wrap group">
+                            <div class="product-card-badge badge badge-md badge-gradient-primary badge-pill">
+                                35% OFF
+                            </div>
+
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                alt="Product Image" class="product-card-img" data-product-image />
+
+                            <!-- Quick View Button -->
+                            <button class="product-card-quickview" command="show-modal" commandfor="quickview-1">
+                                Quick View
+                            </button>
+                        </div>
+
+                        <!-- Product Quick View -->
+                        <el-dialog>
+                            <dialog id="quickview-1" class="relative z-10 backdrop:bg-transparent">
+                                <el-dialog-backdrop class="modal-backdrop backdrop-blur"></el-dialog-backdrop>
+
+                                <div tabindex="0"
+                                    class="fixed inset-0 z-10 w-screen overflow-y-auto focus:outline-none">
+                                    <div
+                                        class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
+                                        <!-- This element is to trick the browser into centering the modal contents. -->
+                                        <span aria-hidden="true"
+                                            class="hidden md:inline-block md:h-screen md:align-middle">&#8203;</span>
+                                        <!-- Modal panel, show/hide based on modal state. -->
+                                        <el-dialog-panel
+                                            class="flex w-full transform text-left text-base transition data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in md:my-8 md:max-w-2xl md:px-4 data-closed:md:translate-y-0 data-closed:md:scale-95 lg:max-w-4xl">
+                                            <div
+                                                class="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+                                                <button type="button" command="close" commandfor="quickview-1"
+                                                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
+                                                    <span class="sr-only">Close</span>
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="1.5" data-slot="icon" aria-hidden="true"
+                                                        class="size-6">
+                                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </button>
+
+                                                <div
+                                                    class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:items-center lg:gap-x-8">
+                                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                                        alt="Back of women&#039;s Basic Tee in black."
+                                                        class="aspect-2/3 w-full rounded-lg bg-gray-100 object-cover sm:col-span-4 lg:col-span-5" />
+                                                    <div class="sm:col-span-8 lg:col-span-7">
+                                                        <h2
+                                                            class="text-xl font-medium text-gray-900 tracking-tight sm:pr-12">
+                                                            Starke Level R Heavy Cut Compound</h2>
+
+                                                        <section aria-labelledby="information-heading" class="mt-1">
+                                                            <h3 id="information-heading" class="sr-only">Product
+                                                                information</h3>
+
+                                                            <!-- Reviews -->
+                                                            <div class="mt-4">
+                                                                <h4 class="sr-only">Reviews</h4>
+                                                                <div class="rating">
+
+                                                                    <p class="rating-score">
+                                                                        3.9 <span class="sr-only">out of 5 stars</span>
+                                                                    </p>
+
+                                                                    <div class="rating-stars">
+                                                                        <!-- Active stars -->
+                                                                        <svg viewBox="0 0 20 20" fill="currentColor" class="rating-star rating-star--active">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                                        </svg>
+                                                                        <svg viewBox="0 0 20 20" fill="currentColor" class="rating-star rating-star--active">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                                        </svg>
+                                                                        <svg viewBox="0 0 20 20" fill="currentColor" class="rating-star rating-star--active">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                                        </svg>
+                                                                        <svg viewBox="0 0 20 20" fill="currentColor" class="rating-star rating-star--active">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                                        </svg>
+
+                                                                        <!-- Inactive star -->
+                                                                        <svg viewBox="0 0 20 20" fill="currentColor" class="rating-star rating-star--inactive">
+                                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                                        </svg>
+                                                                    </div>
+
+                                                                    <div class="rating-reviews">
+                                                                        <span class="rating-reviews-separator" aria-hidden="true">&middot;</span>
+                                                                        <a href="#" class="rating-reviews-link">
+                                                                            See all 512 reviews
+                                                                        </a>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- Product Description -->
+                                                            <div class="mt-4">
+                                                                <h4 class="sr-only">Description</h4>
+
+                                                                <p class="text-sm text-gray-800">Ready to bring back the brilliant shine of your boat's gel coat or marine paint? Look no further than Level R! This powerful product effortlessly removes scratches, heavy oxidation, and chalk, restoring your vessel to its former glory. For that ultimate glossy finish, follow up with Elevate medium cut compound or Ignition finishing polish. Want to take it even further? Use a protective coating from our large product offering to achieve an unparalleled shine and protect against the elements. Transform your boat with Level R and cruise in style!</p>
+                                                            </div>
+                                                        </section>
+
+                                                        <section aria-labelledby="options-heading" class="mt-6">
+                                                            <h3 id="options-heading" class="sr-only">
+                                                                Product options
+                                                            </h3>
+
+                                                            <form>
+                                                                <!-- Color picker -->
+                                                                <fieldset class="color-picker" aria-label="Choose a color">
+                                                                    <legend class="color-picker-legend">Color</legend>
+
+                                                                    <div class="color-picker-options">
+
+                                                                        <!-- Black -->
+                                                                        <label class="color-picker-option">
+                                                                        <input
+                                                                            type="radio"
+                                                                            name="color"
+                                                                            aria-label="Black"
+                                                                            value="black"
+                                                                            checked
+                                                                            class="color-picker-radio color-black"
+                                                                        />
+                                                                        </label>
+
+                                                                        <!-- Heather Grey -->
+                                                                        <label class="color-picker-option">
+                                                                        <input
+                                                                            type="radio"
+                                                                            name="color"
+                                                                            aria-label="Heather Grey"
+                                                                            value="heather-grey"
+                                                                            class="color-picker-radio color-heather-gray"
+                                                                        />
+                                                                        </label>
+
+                                                                    </div>
+                                                                </fieldset>
+
+                                                                <!-- Size picker -->
+                                                                <fieldset aria-label="Choose a size" class="product-card-variants scrollbar scrollbar-thumb-primary-600 scrollbar-track-gray-200 
+                                                                        scrollbar-h-2 scrollbar-thumb-rounded-full scrollbar-track-rounded-full cursor-grab 
+                                                                        active:cursor-grabbing select-none mt-8" data-variant-scroll>
+                                                                    <legend class="text-sm font-medium text-gray-900">
+                                                                        Size</legend>
+                                                                    <div class="tooltip tooltip-primary tooltip-portal"
+                                                                        data-tip="16 oz.">
+                                                                        <div class="product-card-variant product-card-variant--active"
+                                                                            data-variant
+                                                                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                                                            data-variant-price="$22.74"
+                                                                            data-variant-compare="$34.99">
+                                                                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                                                alt="16oz" draggable="false">
+                                                                            <span class="mt-1">16 oz.</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="tooltip tooltip-portal"
+                                                                        data-tip="32 oz.">
+                                                                        <div class="product-card-variant product-card-variant--inactive"
+                                                                            data-variant
+                                                                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                                            data-variant-price="$38.99"
+                                                                            data-variant-compare="$49.99">
+                                                                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                                                alt="32oz" draggable="false">
+                                                                            <span class="mt-1">32 oz.</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="tooltip tooltip-portal"
+                                                                        data-tip="128 oz. Jug">
+                                                                        <div class="product-card-variant product-card-variant--inactive"
+                                                                            data-variant
+                                                                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                                                            data-variant-price="$89.99"
+                                                                            data-variant-compare="$119.99">
+                                                                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                                                alt="128 oz Jug" draggable="false">
+                                                                            <span class="mt-1">128 oz. Jug</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="tooltip tooltip-portal"
+                                                                        data-tip="128 oz. Drum">
+                                                                        <div class="product-card-variant product-card-variant--inactive"
+                                                                            data-variant
+                                                                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                                            data-variant-price="$299.99"
+                                                                            data-variant-compare="$399.99">
+                                                                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                                                alt="128 oz Drum" draggable="false">
+                                                                            <span class="mt-1">128 oz. Drum</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+
+                                                                <!-- Price + Qty + Add to Cart -->
+                                                                <div class="product-card-price-area flex-col p-0 mt-8">
+
+                                                                    <!-- Price + Qty -->
+                                                                    <div
+                                                                        class="flex w-full justify-between items-center gap-2">
+
+                                                                        <!-- Price -->
+                                                                        <div class="product-card-price-wrap">
+                                                                            <p class="product-card-price-compare"
+                                                                                data-price-compare>$34.99</p>
+                                                                            <p class="product-card-price" data-price>
+                                                                                $22.74</p>
+                                                                        </div>
+
+                                                                        <!-- Qty -->
+                                                                        <div class="product-card-qty-wrap">
+                                                                            <span class="product-card-qty">
+
+                                                                                <button type="button"
+                                                                                    class="product-card-qty-btn product-card-qty-btn--left">
+                                                                                    <span
+                                                                                        class="sr-only">Decrease</span>
+                                                                                    <svg viewBox="0 0 24 24"
+                                                                                        fill="currentColor"
+                                                                                        class="size-3">
+                                                                                        <path fill-rule="evenodd"
+                                                                                            d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                                                            clip-rule="evenodd" />
+                                                                                    </svg>
+                                                                                </button>
+
+                                                                                <input type="number" value="1" min="1"
+                                                                                    class="input-qty">
+
+                                                                                <button type="button"
+                                                                                    class="product-card-qty-btn product-card-qty-btn--right">
+                                                                                    <span
+                                                                                        class="sr-only">Increase</span>
+                                                                                    <svg viewBox="0 0 24 24"
+                                                                                        fill="currentColor"
+                                                                                        class="size-3">
+                                                                                        <path fill-rule="evenodd"
+                                                                                            d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                                                            clip-rule="evenodd" />
+                                                                                    </svg>
+                                                                                </button>
+
+                                                                            </span>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!-- Add to Cart -->
+                                                                    <button class="product-card-add">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            fill="none" viewBox="0 0 24 24"
+                                                                            stroke-width="1.5" stroke="currentColor"
+                                                                            class="size-5">
+                                                                            <path stroke-linecap="round"
+                                                                                stroke-linejoin="round"
+                                                                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                                                        </svg>
+                                                                        Add to cart
+                                                                    </button>
+
+                                                                </div>
+
+                                                            </form>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </el-dialog-panel>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </el-dialog>
+
+                        <!-- Product Info -->
+                        <div class="product-card-info">
+                            <h2 class="product-card-title">
+                                Starke Level R Heavy Cut Compound
+                            </h2>
+                            <p class="product-card-vendor">Starke Yacht Care</p>
+
+                            <!-- Variant Slider -->
+                            <div class="
+                                product-card-variants scrollbar scrollbar-thumb-primary-600 scrollbar-track-gray-200 
+                                scrollbar-h-2 scrollbar-thumb-rounded-full scrollbar-track-rounded-full cursor-grab 
+                                active:cursor-grabbing select-none" data-variant-scroll>
+
+                                <div class="tooltip tooltip-primary tooltip-portal" data-tip="16 oz.">
+                                    <div class="product-card-variant product-card-variant--active" data-variant
+                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                        data-variant-price="$22.74" data-variant-compare="$34.99">
+                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                            alt="16oz" draggable="false">
+                                        <span class="mt-1">16 oz.</span>
+                                    </div>
+                                </div>
+
+                                <div class="tooltip tooltip-portal" data-tip="32 oz.">
+                                    <div class="product-card-variant product-card-variant--inactive" data-variant
+                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        data-variant-price="$38.99" data-variant-compare="$49.99">
+                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                            alt="32oz" draggable="false">
+                                        <span class="mt-1">32 oz.</span>
+                                    </div>
+                                </div>
+
+                                <div class="tooltip tooltip-portal" data-tip="128 oz. Jug">
+                                    <div class="product-card-variant product-card-variant--inactive" data-variant
+                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                        data-variant-price="$89.99" data-variant-compare="$119.99">
+                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                            alt="128 oz Jug" draggable="false">
+                                        <span class="mt-1">128 oz. Jug</span>
+                                    </div>
+                                </div>
+
+                                <div class="tooltip tooltip-portal" data-tip="128 oz. Drum">
+                                    <div class="product-card-variant product-card-variant--inactive" data-variant
+                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                        data-variant-price="$299.99" data-variant-compare="$399.99">
+                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                            alt="128 oz Drum" draggable="false">
+                                        <span class="mt-1">128 oz. Drum</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Price + Qty + Add to Cart -->
+                        <div class="product-card-price-area">
+
+                            <!-- Price + Qty -->
+                            <div class="flex w-full justify-between items-center gap-2">
+
+                                <!-- Price -->
+                                <div class="product-card-price-wrap">
+                                    <p class="product-card-price-compare" data-price-compare>$34.99</p>
+                                    <p class="product-card-price" data-price>$22.74</p>
+                                </div>
+
+                                <!-- Qty -->
+                                <div class="product-card-qty-wrap">
+                                    <span class="product-card-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--left">
+                                            <span class="sr-only">Decrease</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                        <input type="number" value="1" min="1" class="input-qty">
+
+                                        <button type="button" class="product-card-qty-btn product-card-qty-btn--right">
+                                            <span class="sr-only">Increase</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- Add to Cart -->
+                            <button class="product-card-add">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>
+                                Add to cart
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Pagination -->
+                <nav
+                    class="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0 dark:border-white/10">
+                    <div class="-mt-px flex w-0 flex-1">
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent pt-4 pr-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">
+                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                class="mr-3 size-5 text-gray-400 dark:text-gray-500">
+                                <path
+                                    d="M18 10a.75.75 0 0 1-.75.75H4.66l2.1 1.95a.75.75 0 1 1-1.02 1.1l-3.5-3.25a.75.75 0 0 1 0-1.1l3.5-3.25a.75.75 0 1 1 1.02 1.1l-2.1 1.95h12.59A.75.75 0 0 1 18 10Z"
+                                    clip-rule="evenodd" fill-rule="evenodd" />
+                            </svg>
+                            Previous
+                        </a>
+                    </div>
+                    <div class="hidden md:-mt-px md:flex">
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">1</a>
+                        <!-- Current: "border-primary-500 dark:border-primary-400 text-primary-600 dark:text-primary-400", Default: "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 hover:border-gray-300 dark:hover:border-white/20" -->
+                        <a href="#" aria-current="page"
+                            class="inline-flex items-center border-t-2 border-primary-500 px-4 pt-4 text-sm font-medium text-primary-600 dark:border-primary-400 dark:text-primary-400">2</a>
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">3</a>
+                        <span
+                            class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500">...</span>
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">8</a>
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">9</a>
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">10</a>
+                    </div>
+                    <div class="-mt-px flex w-0 flex-1 justify-end">
+                        <a href="#"
+                            class="inline-flex items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:border-white/20 dark:hover:text-gray-200">
+                            Next
+                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                                class="ml-3 size-5 text-gray-400 dark:text-gray-500">
+                                <path
+                                    d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z"
+                                    clip-rule="evenodd" fill-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </nav>
+
+            </div>
+        </main>
+
+
+        <!-- Sub Footer -->
+        <section class="bg-white border-t border-gray-200 py-8">
+            <section class="mx-auto max-w-400 px-4">
+                <section aria-labelledby="policy-heading" class="">
+                    <h2 id="policy-heading" class="sr-only">Our policies</h2>
+                    <div class="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
+                        <div>
+                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-delivery-light.svg"
+                                alt="" class="h-24 w-auto">
+                            <h3 class="mt-6 text-base font-medium text-gray-900">Free delivery all year long</h3>
+                            <p class="mt-3 text-base text-gray-500">Name another place that offers year long free
+                                delivery? We’ll be waiting. Order now and you’ll get delivery absolutely free.</p>
+                        </div>
+                        <div>
+                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-chat-light.svg"
+                                alt="" class="h-24 w-auto">
+                            <h3 class="mt-6 text-base font-medium text-gray-900">24/7 Customer Support</h3>
+                            <p class="mt-3 text-base text-gray-500">Or so we want you to believe. In reality our chat
+                                widget is powered by a naive series of if/else statements that churn out canned
+                                responses. Guaranteed to irritate.</p>
+                        </div>
+                        <div>
+                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-fast-checkout-light.svg"
+                                alt="" class="h-24 w-auto">
+                            <h3 class="mt-6 text-base font-medium text-gray-900">Fast Shopping Cart</h3>
+                            <p class="mt-3 text-base text-gray-500">Look at the cart in that icon, there's never been a
+                                faster cart. What does this mean for the actual checkout experience? I don't know.</p>
+                        </div>
+                        <div>
+                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce/icons/icon-gift-card-light.svg"
+                                alt="" class="h-24 w-auto">
+                            <h3 class="mt-6 text-base font-medium text-gray-900">Gift Cards</h3>
+                            <p class="mt-3 text-base text-gray-500">We sell these hoping that you will buy them for your
+                                friends and they will never actually use it. Free money for us, it's great.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+
+
+        <footer aria-labelledby="footer-heading" class="bg-primary-900">
+            <h2 id="footer-heading" class="sr-only">Footer</h2>
+            <div class="mx-auto max-w-400 px-4 sm:px-6 lg:px-8">
+                <div class="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
+                    <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+                        <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+                            <div>
+                                <h3 class="text-sm font-medium text-white">Shop</h3>
+                                <ul role="list" class="mt-6 space-y-6">
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Compounts & Polishes</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Pads & Accessories</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Sealants & Coatings</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Kits</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Accessories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-white">Company</h3>
+                                <ul role="list" class="mt-6 space-y-6">
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Who we are</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Sustainability</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Press</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Careers</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Terms &amp; Conditions</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Privacy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-12 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+                            <div>
+                                <h3 class="text-sm font-medium text-white">Account</h3>
+                                <ul role="list" class="mt-6 space-y-6">
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Manage Account</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Returns &amp; Exchanges</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Redeem Points</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-white">Connect</h3>
+                                <ul role="list" class="mt-6 space-y-6">
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Contact Us</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+                                    </li>
+                                    <li class="text-sm">
+                                        <a href="#" class="text-gray-300 hover:text-white">Pinterest</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 md:mt-16 xl:mt-0">
+                        <h3 class="text-sm font-medium text-white">Sign up for our newsletter</h3>
+                        <p class="mt-6 text-sm text-gray-300">The latest deals and savings, sent to your inbox weekly.
+                        </p>
+                        <form class="mt-2 flex sm:max-w-md">
+                            <input id="email-address" type="text" required="" autocomplete="email"
+                                aria-label="Email address"
+                                class="block w-full rounded-md bg-white px-4 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-white">
+                            <div class="ml-4 shrink-0">
+                                <button type="submit"
+                                    class="flex w-full items-center justify-center rounded-md border border-transparent bg-secondary-600 px-4 py-2 text-base font-medium text-white shadow-xs hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-hidden">Sign
+                                    up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 py-10">
+                    <p class="text-sm text-gray-400">Copyright 2025 Marine Detail Supply, Co</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+    <!-- Shopping Cart -->
+    <el-dialog>
+        <dialog id="dialog" class="modal">
+            <el-dialog-backdrop class="modal-backdrop backdrop-blur"></el-dialog-backdrop>
+
+            <div tabindex="0"
+                class="flex min-h-full items-stretch justify-center text-center focus:outline-none sm:items-center sm:px-6 lg:px-8">
+                <el-dialog-panel class="modal-panel">
+
+                    <form class="relative flex w-full flex-col overflow-hidden bg-white pt-6 sm:rounded-lg">
+                        <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8">
+                            <h2 class="text-lg font-medium text-gray-900">Shopping Cart</h2>
+                            <button type="button" command="close" commandfor="dialog"
+                                class="text-gray-400 hover:text-gray-500">
+                                <span class="sr-only">Close</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <section class="cart-banner flex items-center bg-primary-500 justify-center">
+                            <div id="sale-countdown" class="p-4 grid auto-cols-max grid-flow-col gap-3 text-center">
+
+                                <!-- DAYS -->
+                                <div class="countdown-box">
+                                    <span class="countdown font-mono text-2xl">
+                                        <span data-days aria-live="polite"></span>
+                                    </span>
+                                    days
+                                </div>
+
+                                <!-- HOURS -->
+                                <div class="countdown-box">
+                                    <span class="countdown font-mono text-2xl">
+                                        <span data-hours aria-live="polite"></span>
+                                    </span>
+                                    hours
+                                </div>
+
+                                <!-- MINUTES -->
+                                <div class="countdown-box">
+                                    <span class="countdown font-mono text-2xl">
+                                        <span data-min aria-live="polite"></span>
+                                    </span>
+                                    min
+                                </div>
+
+                                <!-- SECONDS -->
+                                <div class="countdown-box">
+                                    <span class="countdown font-mono text-2xl">
+                                        <span data-sec aria-live="polite"></span>
+                                    </span>
+                                    sec
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <section aria-labelledby="cart-heading">
+                            <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
+
+                            <ul role="list" class="divide-y divide-gray-200 px-4 sm:px-8">
+                                <li class="relative flex gap-4 sm:gap-6 py-8 text-sm items-start sm:items-center">
+                                    <button
+                                        class="btn btn-micro badge-danger btn-circle shadow-md absolute -left-1.5 top-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                            class="size-3">
+                                            <path
+                                                d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                                        </svg>
+                                    </button>
+                                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                        alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
+                                        class="size-30 flex-none rounded-lg border border-gray-200 sm:size-32" />
+                                    <div class="flex flex-col gap-4 sm:gap-0 sm:flex-row grow w-full items-start">
+                                        <div class="flex flex-col grow flex-1">
+                                            <h5 class="font-medium text-primary-900 tracking-tight">
+                                                <a href="#">Starke Level R Heavy Cut Compound</a>
+                                            </h5>
+                                            <p class="mt-1 text-gray-800">128 oz. Jug</p>
+                                        </div>
+
+                                        <div class="flex gap-4 sm:gap-0 sm:w-50 items-center">
+                                            <div class="flex flex-col w-full items-start sm:items-center">
+                                                <!-- Qty -->
+                                                <div class="product-card-qty-wrap">
+                                                    <span class="product-card-qty">
+
+                                                        <button type="button"
+                                                            class="product-card-qty-btn product-card-qty-btn--left">
+                                                            <span class="sr-only">Decrease</span>
+                                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </button>
+
+                                                        <input type="number" value="1" min="1" class="input-qty">
+
+                                                        <button type="button"
+                                                            class="product-card-qty-btn product-card-qty-btn--right">
+                                                            <span class="sr-only">Increase</span>
+                                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                                <path fill-rule="evenodd"
+                                                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                                    clip-rule="evenodd" />
+                                                            </svg>
+                                                        </button>
+
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- Price -->
+                                            <div class="product-card-price-wrap">
+                                                <p class="product-card-price-compare">$34.99</p>
+                                                <p class="product-card-price">$22.74</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section aria-labelledby="summary-heading" class="mt-auto">
+                            <div class="">
+                                <h2 id="summary-heading" class="sr-only">Order summary</h2>
+
+                                <div class="border-t border-gray-200 px-4 py-6 sm:px-8">
+                                    <div class="flex justify-between text-base font-medium text-gray-900">
+                                        <p>Subtotal</p>
+                                        <p>$262.00</p>
+                                    </div>
+                                    <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.
+                                    </p>
+                                    <div class="mt-6">
+                                        <a href="#" class="btn btn-lg btn-primary btn-icon-trailing w-full">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-6">
+                                                <path
+                                                    d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+                                            </svg>
+
+                                            Checkout
+                                        </a>
+                                    </div>
+                                    <div class="mt-3 flex gap-3 justify-center text-center text-sm">
+                                        <span>or</span>
+                                        <button type="button" command="close" commandfor="dialog"
+                                            class="btn btn-sm btn-clear p-0" aria-expanded="true">
+                                            Continue Shopping
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="size-4">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+                </el-dialog-panel>
+            </div>
+        </dialog>
+    </el-dialog>
+
+<script type="module">
+import { Observer } from 'tailwindcss-intersect';
+
+const grid = document.getElementById('product-grid');
+const template = document.getElementById('product-template');
+
+// 1️⃣ Create dummy product cards
+for (let i = 0; i < 29; i++) {
+  const clone = template.cloneNode(true);
+  clone.removeAttribute('id');
+  grid.appendChild(clone);
+}
+
+// 2️⃣ NOW select the cards — must happen AFTER appending
+const cards = grid.querySelectorAll('.product-card');
+
+// 3️⃣ Add animation classes
+cards.forEach(card => {
+  card.classList.add(
+    'intersect:motion-preset-blur-up',
+    'intersect-once'
+  );
+});
+
+// 4️⃣ Row-aware delay logic
+let lastRowTop = -1;
+let delayInRow = 0;
+
+cards.forEach(card => {
+  const cardTop = card.offsetTop;
+
+  if (cardTop !== lastRowTop) {
+    lastRowTop = cardTop;
+    delayInRow = 0;
+  }
+
+  card.style.setProperty('--motion-delay', `${delayInRow}ms`);
+  delayInRow += 100;
+});
+
+// 5️⃣ Start the observer
+Observer.start();
+</script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load and render filters
+            try {
+                const response = await fetch('/filters.json');
+                const filters = await response.json();
+
+                // Helper function to generate filter chips
+                const generateFilterChips = (items, formId, inputName) => {
+                    const form = document.getElementById(formId);
+                    if (!form || !items) return;
+
+                    items.forEach(item => {
+                        const value = item.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-');
+
+                        const label = document.createElement('label');
+
+                        const input = document.createElement('input');
+                        input.type = 'checkbox';
+                        input.className = 'peer sr-only';
+                        input.value = value;
+                        input.name = inputName;
+
+                        const span = document.createElement('span');
+                        span.className = 'filter-chip';
+                        span.textContent = item;
+
+                        label.appendChild(input);
+                        label.appendChild(span);
+                        form.appendChild(label);
+                    });
+
+                    const resetBtn = document.createElement('button');
+                    resetBtn.type = 'reset';
+                    resetBtn.className = 'filter-chip filter-chip-danger';
+                    resetBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>`;
+
+                    const tooltipWrapper = document.createElement('div');
+                    tooltipWrapper.className = 'flex tooltip tooltip-primary';
+                    tooltipWrapper.setAttribute('data-tip', 'Clear Filters');
+                    tooltipWrapper.appendChild(resetBtn);
+
+                    form.appendChild(tooltipWrapper);
+                };
+
+                generateFilterChips(filters.filters.product_types, 'productTypesForm', 'product_type');
+                generateFilterChips(filters.filters.surface_types, 'surfaceTypesForm', 'surface_type');
+                generateFilterChips(filters.filters.stage_of_work, 'stageOfWorkForm', 'stage_of_work');
+                generateFilterChips(filters.filters.detailing_goals, 'detailingGoalsForm', 'detailing_goal');
+                generateFilterChips(filters.filters.brands, 'brandsForm', 'brand');
+                generateFilterChips(filters.filters.tools_and_accessories?.polishers, 'polishersForm', 'polisher');
+                generateFilterChips(filters.filters.tools_and_accessories?.pads, 'padsForm', 'pad');
+                generateFilterChips(filters.filters.tools_and_accessories?.microfiber, 'microfiberForm', 'microfiber');
+                generateFilterChips(filters.filters.tools_and_accessories?.abrasives, 'abrasivesForm', 'abrasive');
+                generateFilterChips(filters.filters.tools_and_accessories?.sprayers_and_tools, 'sprayersToolsForm', 'sprayers_tools');
+                generateFilterChips(filters.filters.bundle_size_pricing?.sizes, 'sizesForm', 'size');
+                generateFilterChips(filters.filters.bundle_size_pricing?.pack_types, 'packTypesForm', 'pack_type');
+                generateFilterChips(filters.filters.bundle_size_pricing?.pricing, 'pricingForm', 'pricing');
+            } catch (error) {
+                console.error('Failed to load filters:', error);
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("click", (event) => {
+            const clickedButton = event.target.closest("[data-popover-button]");
+            const allPopovers = document.querySelectorAll("[data-popover]");
+
+            // If click is NOT on a popover button, do nothing here.
+            // (You can add "click outside to close" later if you want.)
+            if (!clickedButton) return;
+
+            const parent = clickedButton.closest("[data-popover]");
+            const isOpen = parent.dataset.open === "true";
+
+            // Close all popovers
+            allPopovers.forEach((p) => (p.dataset.open = "false"));
+
+            // Re-open clicked one only if it wasn't already open
+            if (!isOpen) {
+                parent.dataset.open = "true";
+            }
+        });
+    </script>
+
+    <!-- Tooltip Portal -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Create single portal root if not exists
+            let portalRoot = document.getElementById("tooltip-root");
+            if (!portalRoot) {
+                portalRoot = document.createElement("div");
+                portalRoot.id = "tooltip-root";
+                document.body.appendChild(portalRoot);
+            }
+
+            // Create a single tooltip element with arrow
+            const floating = document.createElement("div");
+            floating.className = "tooltip-floating";
+
+            const arrow = document.createElement("div");
+            arrow.className = "tooltip-floating-arrow";
+            floating.appendChild(arrow);
+
+            const content = document.createElement("div");
+            content.className = "tooltip-floating-content";
+            floating.appendChild(content);
+
+            portalRoot.appendChild(floating);
+
+            // Listen to all tooltip triggers with .tooltip-portal class
+            document.querySelectorAll(".tooltip-portal[data-tip]").forEach((trigger) => {
+                const text = trigger.getAttribute("data-tip");
+
+                const colorVariants = ['tooltip-primary', 'tooltip-secondary', 'tooltip-info', 'tooltip-success', 'tooltip-warning', 'tooltip-danger', 'tooltip-white'];
+                const colorClass = colorVariants.find(cls => trigger.classList.contains(cls));
+
+                const show = () => {
+                    content.textContent = text;
+
+                    colorVariants.forEach(cls => floating.classList.remove(cls));
+                    if (colorClass) {
+                        floating.classList.add(colorClass);
+                    }
+
+                    const rect = trigger.getBoundingClientRect();
+
+                    floating.style.opacity = "0";
+                    floating.style.visibility = "visible";
+                    floating.style.pointerEvents = "none";
+
+                    const tipHeight = floating.offsetHeight;
+                    const tipWidth = floating.offsetWidth;
+
+                    floating.style.left = rect.left + rect.width / 2 + "px";
+                    floating.style.top = rect.top - tipHeight - 8 + "px";
+
+                    floating.style.opacity = "";
+                    floating.style.visibility = "";
+
+                    floating.classList.add("visible");
+                };
+
+                const hide = () => {
+                    floating.classList.remove("visible");
+                };
+
+                trigger.addEventListener("mouseenter", show);
+                trigger.addEventListener("mouseleave", hide);
+                trigger.addEventListener("focusin", show);
+                trigger.addEventListener("focusout", hide);
+            });
+
+            // Hide tooltip on scroll
+            let scrollTimeout;
+            window.addEventListener("scroll", () => {
+                if (floating.classList.contains("visible")) {
+                    floating.classList.remove("visible");
+                }
+            }, true);
+        });
+    </script>
+
+    <!-- Rotating Banner Offers -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const offers = document.querySelectorAll(".banner-offer");
+            const prevBtn = document.getElementById("bannerPrev");
+            const nextBtn = document.getElementById("bannerNext");
+
+            let index = 0;
+
+            function showOffer(i) {
+                offers.forEach((offer, idx) => {
+                    offer.classList.toggle("active", idx === i);
+                    offer.classList.toggle("inactive", idx !== i);
+                });
+            }
+
+            prevBtn.addEventListener("click", () => {
+                index = (index - 1 + offers.length) % offers.length;
+                showOffer(index);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                index = (index + 1) % offers.length;
+                showOffer(index);
+            });
+
+            // Initialize
+            showOffer(index);
+        });
+    </script>
+
+    <!-- Popover Button Active State -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Update button state based on parent data-open attribute
+            function updateButtonState(popover) {
+                const button = popover.querySelector('[data-popover-button]');
+                if (!button) return;
+
+                const isOpen = popover.getAttribute('data-open') === 'true';
+
+                if (isOpen) {
+                    button.setAttribute('data-popover-button', 'active');
+                } else {
+                    button.setAttribute('data-popover-button', '');
+                }
+            }
+
+            // Close popover
+            function closePopover(popover) {
+                popover.setAttribute('data-open', 'false');
+            }
+
+            // Close all popovers
+            function closeAllPopovers() {
+                popovers.forEach(p => closePopover(p));
+            }
+
+            // Initialize all popovers
+            const popovers = document.querySelectorAll('[data-popover]');
+            popovers.forEach(popover => {
+                updateButtonState(popover);
+
+                // Watch for attribute changes
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'data-open') {
+                            updateButtonState(popover);
+                        }
+                    });
+                });
+
+                observer.observe(popover, {
+                    attributes: true,
+                    attributeFilter: ['data-open']
+                });
+            });
+
+            // Click outside to close
+            document.addEventListener('click', (e) => {
+                popovers.forEach(popover => {
+                    const isOpen = popover.getAttribute('data-open') === 'true';
+                    if (!isOpen) return;
+
+                    // Check if click is outside both the popover and its panel
+                    const panel = popover.querySelector('[data-popover-panel]');
+                    const button = popover.querySelector('[data-popover-button]');
+
+                    const clickedInsidePopover = popover.contains(e.target);
+                    const clickedInsidePanel = panel && panel.contains(e.target);
+                    const clickedButton = button && button.contains(e.target);
+
+                    if (!clickedInsidePopover && !clickedInsidePanel && !clickedButton) {
+                        closePopover(popover);
+                    }
+                });
+            });
+
+            // Close button click handlers
+            document.querySelectorAll('.filter-close-btn').forEach(closeBtn => {
+                closeBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Find parent popover
+                    const popover = closeBtn.closest('[data-popover]');
+                    if (popover) {
+                        closePopover(popover);
+                    }
+                });
+            });
+
+            // Watch revealSection visibility (Alpine x-show uses display style)
+            const revealSection = document.getElementById('revealSection');
+            if (revealSection) {
+                const revealObserver = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                            const isHidden = revealSection.style.display === 'none';
+                            if (isHidden) {
+                                closeAllPopovers();
+                            }
+                        }
+                    });
+                });
+
+                revealObserver.observe(revealSection, {
+                    attributes: true,
+                    attributeFilter: ['style']
+                });
+            }
+        });
+    </script>
+
+    <!-- Filter Badge Management -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            function updateFilterBadge(popover) {
+                const button = popover.querySelector('[data-popover-button]');
+
+                if (!button) return;
+
+                const checkedCount = popover.querySelectorAll('input[type="checkbox"]:checked').length;
+
+                let badge = button.querySelector('.badge');
+
+                if (checkedCount > 0) {
+                    if (!badge) {
+                        badge = document.createElement('span');
+                        badge.className = 'badge badge-info badge-xs badge-pill shadow-sm';
+                        button.insertBefore(badge, button.firstChild);
+                    }
+                    badge.textContent = checkedCount;
+                } else {
+                    if (badge) {
+                        badge.remove();
+                    }
+                }
+            }
+
+            function clearFilters(popover) {
+                const forms = popover.querySelectorAll('form');
+                forms.forEach(form => {
+                    const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+                    checkboxes.forEach(cb => cb.checked = false);
+                });
+                updateFilterBadge(popover);
+            }
+
+            document.querySelectorAll('.filter-action-apply').forEach(applyBtn => {
+                applyBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const popover = applyBtn.closest('[data-popover]');
+                    if (popover) {
+                        updateFilterBadge(popover);
+                        popover.setAttribute('data-open', 'false');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.filter-action-reset').forEach(resetBtn => {
+                resetBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const popover = resetBtn.closest('[data-popover]');
+                    if (popover) {
+                        clearFilters(popover);
+                        popover.setAttribute('data-open', 'false');
+                    }
+                });
+            });
+
+            document.addEventListener('reset', (e) => {
+                const form = e.target;
+                const popover = form.closest('[data-popover]');
+
+                if (popover && form.classList.contains('filters-panel-chips')) {
+                    setTimeout(() => {
+                        updateFilterBadge(popover);
+                    }, 0);
+                }
+            });
+        });
+    </script>
+
+    <!-- Countdown Timer -->
+    <script>
+        function startCountdown(endDate, el) {
+            function tick() {
+                const now = new Date();
+                let diff = Math.max(0, endDate - now);
+
+                // Compute values
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+                const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                const seconds = Math.floor(diff / 1000) % 60;
+
+                // Assign CSS variables for animation
+                el.querySelector("[data-days]").style.setProperty("--value", days);
+                el.querySelector("[data-hours]").style.setProperty("--value", hours);
+                el.querySelector("[data-min]").style.setProperty("--value", minutes);
+                el.querySelector("[data-sec]").style.setProperty("--value", seconds);
+
+                requestAnimationFrame(tick);
+            }
+            tick();
+        }
+
+        // Example: countdown to 24 hours from now
+        startCountdown(
+            //new Date(Date.now() + 24 * 60 * 60 * 1000),
+            new Date("2025-12-31T00:00:00"),
+            document.querySelector("#sale-countdown")
+        );
+    </script>
+
+    <!-- Product Card Variant Selection & Drag Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const variantContainer = card.querySelector('[data-variant-scroll]');
+                const variants = card.querySelectorAll('[data-variant]');
+                const productImage = card.querySelector('[data-product-image]');
+                const priceElement = card.querySelector('[data-price]');
+                const comparePriceElement = card.querySelector('[data-price-compare]');
+
+                // Quantity controls
+                const qtyInput = card.querySelector('.input-qty');
+                const decreaseBtn = card.querySelector('.product-card-qty-btn--left');
+                const increaseBtn = card.querySelector('.product-card-qty-btn--right');
+
+                if (qtyInput && decreaseBtn && increaseBtn) {
+                    decreaseBtn.addEventListener('click', () => {
+                        const currentValue = parseInt(qtyInput.value) || 1;
+                        const minValue = parseInt(qtyInput.min) || 1;
+                        if (currentValue > minValue) {
+                            qtyInput.value = currentValue - 1;
+                        }
+                    });
+
+                    increaseBtn.addEventListener('click', () => {
+                        const currentValue = parseInt(qtyInput.value) || 1;
+                        const maxValue = qtyInput.max ? parseInt(qtyInput.max) : Infinity;
+                        if (currentValue < maxValue) {
+                            qtyInput.value = currentValue + 1;
+                        }
+                    });
+                }
+
+                if (!variantContainer || !variants.length) return;
+
+                // Drag-to-scroll functionality
+                let isDown = false;
+                let isDragging = false;
+                let startX;
+                let scrollLeft;
+
+                variantContainer.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    isDragging = false;
+                    startX = e.pageX - variantContainer.offsetLeft;
+                    scrollLeft = variantContainer.scrollLeft;
+                });
+
+                variantContainer.addEventListener('mouseleave', () => {
+                    isDown = false;
+                });
+
+                variantContainer.addEventListener('mouseup', () => {
+                    isDown = false;
+                    setTimeout(() => { isDragging = false; }, 10);
+                });
+
+                variantContainer.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    isDragging = true;
+                    const x = e.pageX - variantContainer.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    variantContainer.scrollLeft = scrollLeft - walk;
+                });
+
+                // Touch support
+                let touchStartX = 0;
+                let touchScrollLeft = 0;
+                let isTouchDragging = false;
+
+                variantContainer.addEventListener('touchstart', (e) => {
+                    isTouchDragging = false;
+                    touchStartX = e.touches[0].pageX;
+                    touchScrollLeft = variantContainer.scrollLeft;
+                }, { passive: true });
+
+                variantContainer.addEventListener('touchmove', (e) => {
+                    isTouchDragging = true;
+                    const x = e.touches[0].pageX;
+                    const walk = (touchStartX - x) * 1.5;
+                    variantContainer.scrollLeft = touchScrollLeft + walk;
+                }, { passive: true });
+
+                variantContainer.addEventListener('touchend', () => {
+                    setTimeout(() => { isTouchDragging = false; }, 10);
+                }, { passive: true });
+
+                // Variant click handler
+                variants.forEach(variant => {
+                    variant.addEventListener('click', (e) => {
+                        // Don't trigger if user was dragging
+                        if (isDragging || isTouchDragging) {
+                            e.preventDefault();
+                            return;
+                        }
+
+                        const variantImage = variant.dataset.variantImage;
+                        const variantPrice = variant.dataset.variantPrice;
+                        const variantCompare = variant.dataset.variantCompare;
+
+                        // Update product image
+                        if (productImage && variantImage) {
+                            productImage.src = variantImage;
+                        }
+
+                        // Update prices
+                        if (priceElement && variantPrice) {
+                            priceElement.textContent = variantPrice;
+                        }
+                        if (comparePriceElement && variantCompare) {
+                            comparePriceElement.textContent = variantCompare;
+                        }
+
+                        // Update active state
+                        variants.forEach(v => {
+                            v.classList.remove('product-card-variant--active');
+                            v.classList.add('product-card-variant--inactive');
+                        });
+                        variant.classList.remove('product-card-variant--inactive');
+                        variant.classList.add('product-card-variant--active');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

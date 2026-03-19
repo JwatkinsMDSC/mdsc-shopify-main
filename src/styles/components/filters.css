@@ -1,0 +1,130 @@
+  .filter-header {
+    @apply flex items-center pb-2 text-sm font-medium text-gray-900 
+           dark:text-gray-300;
+  }
+
+  .filter-subtitle {
+    @apply flex items-center pb-2 text-xs font-medium text-gray-900 
+           dark:text-gray-300;
+  }
+
+  /* Filter Trigger Button */
+  .filter-trigger {
+    @apply inline-flex w-full justify-between items-center gap-1.5 rounded-md select-none
+           bg-white px-2 py-1 text-xs font-semibold text-gray-900 shadow-xs 
+           inset-ring-1 inset-ring-gray-300 hover:bg-gray-50 
+           dark:bg-white/10 dark:text-white dark:shadow-none 
+           dark:inset-ring-white/5 dark:hover:bg-white/20;
+  }
+
+  .filter-trigger[data-popover-button="active"] {
+    @apply bg-primary-600 text-primary-50 inset-ring-primary-600
+         dark:bg-primary-700/40 dark:text-primary-200;
+  }
+
+  .filter-trigger[data-popover-button="active"] svg {
+    @apply text-secondary-500 dark:text-primary-200;
+  }
+
+  /* Popover container */
+  .filter-popover {
+    @apply absolute left-1/2 top-full z-50
+         -translate-x-1/2
+         max-w-md w-max pointer-events-none
+         bg-white rounded-b-lg shadow-lg
+         outline outline-gray-900/5
+         dark:bg-gray-800 dark:outline-white/10;
+  }
+
+  /* Animate open */
+  [data-popover][data-open="true"] > [data-popover-panel] {
+    @apply block opacity-100 translate-y-0 pointer-events-auto;
+  }
+
+  [data-popover-panel] {
+    @apply opacity-0 translate-y-1 transition duration-150 ease-out;
+  }
+
+  /* Popover panel */
+  .filter-panel {
+    @apply flex-auto overflow-hidden rounded-b-lg bg-white 
+           text-sm/6 shadow-lg outline-1 outline-gray-900/5 
+           dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 
+           dark:outline-white/10;
+  }
+
+  /* Filter chip wrapper */
+  .filter-chip {
+    @apply px-2 py-1 rounded-md bg-gray-100 
+           text-gray-800 text-xs font-medium cursor-pointer shadow-sm 
+           inset-ring-1 inset-ring-gray-300
+           dark:bg-gray-700 dark:text-white dark:inset-ring-white/5
+           transition select-none
+           hover:bg-gray-200
+           peer-checked:bg-primary-600 peer-checked:text-white peer-checked:inset-ring-primary-600 peer-checked:hover:bg-primary-600;
+  }
+
+  .filter-chip-danger {
+    background-color: var(--badge-danger-bg);
+    color: var(--badge-danger-text);
+    @apply inset-ring inset-ring-red-200 hover:bg-red-100;
+  }
+
+  /* Bottom action row */
+  .filter-actions {
+    @apply grid grid-cols-2 divide-x border-t border-gray-200 
+           divide-gray-900/10 bg-gray-50/70 
+           dark:divide-white/10 dark:bg-gray-700/50;
+  }
+
+  /* Apply / Reset buttons */
+  .filter-action-btn {
+    @apply flex items-center justify-center gap-2.5 p-2 
+           font-semibold text-gray-900 
+           hover:bg-gray-100 
+           dark:text-white dark:hover:bg-gray-700/50;
+  }
+
+  .filter-action-apply {
+    @apply hover:bg-green-50;
+  }
+
+  .filter-action-reset {
+    @apply hover:bg-red-50;
+  }
+
+  .filters-panel-chips {
+    @apply flex flex-wrap items-center gap-1;
+
+    label {
+        @apply flex;
+    }
+  }
+
+  /* Site Header Filters Container */
+  .site-header-filters {
+    @apply transition-all duration-300 ease-in-out opacity-0 -translate-y-2;
+  }
+
+  .site-header-filters.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Fade Overlay */
+  .fade-overlay-white {
+    @apply relative;
+  }
+
+  .fade-overlay-white::before,
+  .fade-overlay-white::after {
+    content: '';
+    @apply absolute top-0 bottom-0 w-4 pointer-events-none z-10;
+  }
+
+  .fade-overlay-white::before {
+    @apply left-0 bg-linear-to-r from-white to-transparent;
+  }
+
+  .fade-overlay-white::after {
+    @apply right-0 bg-linear-to-l from-white to-transparent;
+  }

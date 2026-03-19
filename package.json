@@ -1,0 +1,52 @@
+{
+  "name": "marine-detail-supply-theme",
+  "version": "1.0.0",
+  "description": "Marine Detail Supply Global Theme Framework - Enterprise Shopify theme system built on Taillour Theme",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./scripts/check-dir.js && vite",
+    "build": "node ./scripts/check-dir.js && vite build",
+    "watch": "node ./scripts/check-dir.js && vite build --watch",
+    "deploy": "node ./scripts/check-dir.js && node ./scripts/deploy.js",
+    "preview": "node ./scripts/check-dir.js && vite preview",
+    "design": "node ./scripts/check-dir.js && vite serve design --port 5173",
+    "check:animations": "node ./scripts/check-animation-contract.js",
+    "shopify:dev": "node ./scripts/check-dir.js && shopify theme dev",
+    "shopify:push": "node ./scripts/check-dir.js && shopify theme push",
+    "shopify:pull": "node ./scripts/check-dir.js && shopify theme pull",
+    "shopify:check": "node ./scripts/check-dir.js && shopify theme check"
+  },
+  "keywords": [
+    "shopify",
+    "theme",
+    "marine-detail-supply",
+    "multi-store",
+    "franchise"
+  ],
+  "author": "Marine Detail Supply",
+  "license": "MIT",
+  "devDependencies": {
+    "@shopify/cli": "^3.51.0",
+    "@shopify/theme": "^3.51.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.16",
+    "dotenv": "^16.3.1",
+    "postcss": "^8.4.32",
+    "postcss-preset-env": "^10.5.0",
+    "tailwind-scrollbar": "^4.0.2",
+    "tailwindcss": "^4.1.17",
+    "tailwindcss-intersect": "^2.2.0",
+    "tailwindcss-motion": "^1.1.1",
+    "terser": "^5.44.1",
+    "vite": "^5.0.7"
+  },
+  "dependencies": {
+    "@alpinejs/intersect": "^3.15.2",
+    "@floating-ui/dom": "^1.7.4",
+    "@tailwindcss/vite": "^4.1.17",
+    "alpinejs": "^3.15.2",
+    "swiper": "^12.0.3",
+    "tailwindcss-animated": "^2.0.0",
+    "tailwindcss-fade": "^0.1.2"
+  }
+}

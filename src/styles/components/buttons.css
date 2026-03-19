@@ -1,0 +1,179 @@
+/* ---------------------------------------------
+     Base Button
+     --------------------------------------------- */
+.btn {
+    @apply inline-flex items-center font-semibold transition-colors duration-200 select-none;
+    border-radius: var(--radius-md);
+    gap: var(--spacing-2);
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ---------------------------------------------
+     Variants
+     --------------------------------------------- */
+
+/* Primary */
+.btn-primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+@media (hover: hover) {
+    .btn-primary:hover {
+        background-color: var(--color-primary-500);
+    }
+}
+
+/* Secondary (White w/ border) */
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--color-gray-900);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    border: 1px solid var(--color-gray-300);
+}
+
+@media (hover: hover) {
+    .btn-secondary:hover {
+        background-color: var(--color-gray-50);
+    }
+}
+
+.btn-danger {
+    background-color: var(--color-red-800);
+    color: var(--color-white);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        oklab(55.974999999999994% 0.20047 0.11215 / 0.5) 0px 4px 6px -3px,
+        oklab(55.974999999999994% 0.20047 0.11215 / 0.5) 0px 3px 5px -4px;
+}
+
+@media (hover: hover) {
+    .btn-danger:hover {
+        background-color: var(--color-red-700);
+    }
+}
+
+.btn-clear {
+    @apply bg-transparent border-0;
+}
+
+/* Soft (Tinted version of primary) */
+.btn-soft {
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-600);
+    box-shadow: var(--shadow-xs);
+}
+
+@media (hover: hover) {
+    .btn-soft:hover {
+        background-color: var(--color-primary-100);
+    }
+}
+
+/* Outline */
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-primary-600);
+    color: var(--color-primary-600);
+}
+
+@media (hover: hover) {
+    .btn-outline:hover {
+        background-color: var(--color-primary-50);
+    }
+}
+
+/* ---------------------------------------------
+     Sizes
+     --------------------------------------------- */
+.btn-micro {
+    padding: 6px;
+    font-size: 0.5rem;
+    gap: var(--spacing-1);
+}
+
+.btn-xs {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: 0.75rem;
+    gap: var(--spacing-1);
+    
+    &.btn-font-light {
+        @apply font-[400];
+    }
+}
+
+.btn-sm {
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: 0.8rem;
+    gap: var(--spacing-1);
+}
+
+.btn-md {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--text-base);
+}
+
+.btn-lg {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: 1rem;
+}
+
+.btn-xl {
+    padding: var(--spacing-3) var(--spacing-5);
+    font-size: 1.125rem;
+}
+
+.btn-hero {
+    @apply inline-block rounded-md border border-transparent
+         px-6 py-2 sm:px-8 sm:py-3 font-medium transition-all;
+}
+
+/* ---------------------------------------------
+     Shapes
+     --------------------------------------------- */
+
+/* Default handled by base (.btn) */
+
+.btn-rounded {
+    border-radius: var(--radius-md);
+}
+
+.btn-square {
+    border-radius: 0 !important;
+}
+
+.btn-pill {
+    border-radius: var(--radius-full);
+}
+
+.btn-circle {
+    border-radius: var(--radius-full);
+    width: auto;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+}
+
+/* ---------------------------------------------
+     Icon utilities
+     --------------------------------------------- */
+
+/* Leading icon spacing */
+.btn-icon-leading svg {
+    margin-left: calc(var(--spacing-1) * -1);
+}
+
+/* Trailing icon spacing */
+.btn-icon-trailing svg {
+    margin-right: calc(var(--spacing-1) * -1);
+}

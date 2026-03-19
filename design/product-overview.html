@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MDS Theme Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tailwind.css">
+    <script type="module" src="/assets/design.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+</head>
+
+<body class="mt-40">
+
+    <main class="max-w-[1600px] mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_600px] xl:grid-cols-[1fr_700px] gap-10">
+            <!-- Left: Flexible column -->
+            <div class="w-full min-w-0">
+                <!-- Left: Product Image -->
+                <div class="sticky top-[155px] w-full shrink flex items-start">
+                    <div class="sticky top-[155px] self-start w-full">
+                        <!-- MAIN GALLERY -->
+                        <div data-media-gallery data-media-gallery-type="product"
+                            class="media-gallery-carousel media-gallery__soft-rounded">
+                            <!-- Skeleton (visible by default) -->
+                            <div data-skeleton role="status" class="skeleton skeleton-media-gallery">
+                                <!-- Main Slide -->
+                                <div class="skeleton-carousel-slide">
+                                    <div class="flex w-full p-2 justify-between items-center">
+                                        <div class="skeleton-btn skeleton-btn-prev">
+                                            <svg class="size-10 md:size-12 lg:size-14 text-primary-200 dark:text-white"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="1" d="m15 19-7-7 7-7" />
+                                            </svg>
+                                        </div>
+                                        <div class="skeleton-btn skeleton-btn-next">
+                                            <svg class="size-10 md:size-12 lg:size-14 text-primary-200 dark:text-white"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                                                height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="1" d="m9 5 7 7-7 7" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Pagination -->
+                                    <div class="skeleton-pagination-dots">
+                                        <div class="skeleton-pagination-dot"></div>
+                                        <div class="skeleton-pagination-dot"></div>
+                                        <div class="skeleton-pagination-dot active"></div>
+                                        <div class="skeleton-pagination-dot"></div>
+                                        <div class="skeleton-pagination-dot"></div>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 m-auto flex flex-col gap-2 items-center justify-center">
+                                        <svg class="size-20 animate-spin text-primary-200"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                                stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor"
+                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                            </path>
+                                        </svg>
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                                <!-- Thumbnails -->
+                                <div class="skeleton-media-gallery-thumbs">
+                                    <div class="skeleton-thumbnail-ring flex">
+                                        <svg class="size-8 sm:size-10 text-fg-disabled text-primary-200"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.25"
+                                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="skeleton-thumbnail-ring flex">
+                                        <svg class="size-8 sm:size-10 text-fg-disabled text-primary-200"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.25"
+                                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="skeleton-thumbnail-ring flex">
+                                        <svg class="size-8 sm:size-10 text-fg-disabled text-primary-200"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.25"
+                                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="skeleton-thumbnail-ring hidden md:flex">
+                                        <svg class="size-8 sm:size-10 text-1fg-disabled text-primary-200"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.25"
+                                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="sr-only">Loading...</span>
+                            </div>
+
+                            <!-- MAIN SLIDER (hidden by default with invisible class) -->
+                            <div class="media-gallery-carousel__main invisible" data-slider
+                                data-slider-type="media-main" data-slider-lazy data-slider-show-labels>
+                                <div class="swiper-wrapper media-gallery-carousel__wrapper">
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="16oz Bottle">
+                                        <img data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_16oz_1080x.jpg"
+                                            loading="lazy" alt="Level R 16oz bottle - front view">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="32oz Bottle">
+                                        <img data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_32oz_1080x.jpg"
+                                            loading="lazy" alt="Level R 32oz bottle - front view">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Product Shot">
+                                        <img data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_1080x.jpg"
+                                            loading="lazy" alt="Level R extra heavy cut compound">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Detail View">
+                                        <img data-lazy-src="https://marinedetailsupply.com/cdn/shop/files/5361ACB2-070D-4054-9334-DCEA5A6C2CDD_1080x.png"
+                                            loading="lazy" alt="Product detail and ingredients">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Lifestyle 1">
+                                        <img data-lazy-src="https://picsum.photos/id/237/800/800.jpg" loading="lazy"
+                                            alt="Product in use - lifestyle shot 1">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Lifestyle 2">
+                                        <img data-lazy-src="https://picsum.photos/id/238/800/800.jpg" loading="lazy"
+                                            alt="Product in use - lifestyle shot 2">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Lifestyle 3">
+                                        <img data-lazy-src="https://picsum.photos/id/239/800/800.jpg" loading="lazy"
+                                            alt="Product in use - lifestyle shot 3">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Before/After 1">
+                                        <img data-lazy-src="https://picsum.photos/id/240/800/800.jpg" loading="lazy"
+                                            alt="Before and after comparison 1">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Before/After 2">
+                                        <img data-lazy-src="https://picsum.photos/id/241/800/800.jpg" loading="lazy"
+                                            alt="Before and after comparison 2">
+                                    </div>
+                                    <div class="swiper-slide media-gallery-carousel__slide"
+                                        data-slider-label="Texture Close-up">
+                                        <img data-lazy-src="https://picsum.photos/id/242/800/800.jpg" loading="lazy"
+                                            alt="Product texture and consistency close-ups">
+                                    </div>
+                                </div>
+                                <!-- OPEN MODAL (your system) -->
+                                <div class="slider-nav__actions">
+                                    <button class="slider-btn slider-btn-white slider-btn-round" type="button"
+                                        data-ui-trigger data-media-open aria-controls="pdp-media-modal">
+                                        <svg class="size-5 md:size-7 text-primary-900 dark:text-white"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.2"
+                                                d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="slider-nav__center">
+                                    <button class="slider-btn slider-btn-white slider-btn__prev" type="button"
+                                        data-slider-prev aria-label="Previous media">
+                                        <svg class="size-5 md:size-7 text-primary-900 dark:text-white"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.2" d="m15 19-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    <button class="slider-btn slider-btn-white slider-btn__next" type="button"
+                                        data-slider-next aria-label="Next media">
+                                        <svg class="size-5 md:size-7 text-primary-900 dark:text-white"
+                                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.2" d="m9 5 7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- THUMBS (hidden by default with invisible class) -->
+                            <div class="swiper invisible" data-slider data-slider-type="media-thumbs-soft"
+                                data-slider-lazy>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_16oz_300x.jpg"
+                                            loading="lazy" alt="A"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_32oz_300x.jpg"
+                                            loading="lazy" alt="B"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_300x.jpg"
+                                            loading="lazy" alt="C"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/files/5361ACB2-070D-4054-9334-DCEA5A6C2CDD_300x.png"
+                                            loading="lazy" alt="D"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://picsum.photos/id/237/800/800.jpg" loading="lazy"
+                                            alt="E"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://picsum.photos/id/238/800/800.jpg" loading="lazy"
+                                            alt="F"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://picsum.photos/id/239/800/800.jpg" loading="lazy"
+                                            alt="G"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://picsum.photos/id/240/800/800.jpg" loading="lazy"
+                                            alt="H"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://picsum.photos/id/241/800/800.jpg" loading="lazy"
+                                            alt="I"></div>
+                                    <div class="swiper-slide"><img
+                                            data-lazy-src="https://picsum.photos/id/242/800/800.jpg" loading="lazy"
+                                            alt="J"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="w-full space-y-6">
+                <!-- Brand & Name -->
+                <div class="mb-2">
+                    <p class="text-sm text-gray-700">Marine Detail Supply Co.</p>
+                    <h1 class="text-3xl font-medium tracking-tight">Short Sleeve Cotton Blend Tee</h1>
+                </div>
+
+                <!-- Reviews -->
+                <div class="rating-block">
+                    <h2 class="sr-only">Reviews</h2>
+
+                    <div class="rating-stars">
+                        <!-- Active star -->
+                        <svg class="rating-star rating-star--active" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                        </svg>
+
+                        <svg class="rating-star rating-star--active" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                        </svg>
+
+                        <svg class="rating-star rating-star--active" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                        </svg>
+
+                        <svg class="rating-star rating-star--active" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                        </svg>
+
+                        <!-- Inactive star -->
+                        <svg class="rating-star rating-star--inactive" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                        </svg>
+                    </div>
+
+                    <span class="rating-score">
+                        3.9<span class="sr-only"> out of 5 stars</span>
+                    </span>
+
+                    <span class="rating-count">
+                        12 reviews
+                    </span>
+                </div>
+
+                <!-- Variant Selection -->
+                <div class="product-card-variants scrollbar scrollbar-thumb-primary-600 scrollbar-track-gray-200 
+                    scrollbar-h-2 scrollbar-thumb-rounded-full scrollbar-track-rounded-full cursor-grab 
+                    active:cursor-grabbing select-none" data-variant-scroll>
+
+                    <div class="tooltip tooltip-primary tooltip-portal" data-tip="16 oz.">
+                        <div class="product-card-variant product-card-variant--active" data-variant
+                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                            data-variant-price="$22.74" data-variant-compare="$34.99">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                alt="16oz" draggable="false">
+                            <span class="mt-1">16 oz.</span>
+                        </div>
+                    </div>
+
+                    <div class="tooltip tooltip-primary tooltip-portal" data-tip="32 oz.">
+                        <div class="product-card-variant product-card-variant--inactive" data-variant
+                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                            data-variant-price="$38.99" data-variant-compare="$49.99">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                alt="32oz" draggable="false">
+                            <span class="mt-1">32 oz.</span>
+                        </div>
+                    </div>
+
+                    <div class="tooltip tooltip-primary tooltip-portal" data-tip="128 oz. Jug">
+                        <div class="product-card-variant product-card-variant--inactive" data-variant
+                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                            data-variant-price="$89.99" data-variant-compare="$119.99">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                alt="128 oz Jug" draggable="false">
+                            <span class="mt-1">128 oz. Jug</span>
+                        </div>
+                    </div>
+
+                    <div class="tooltip tooltip-primary tooltip-portal" data-tip="128 oz. Drum">
+                        <div class="product-card-variant product-card-variant--inactive" data-variant
+                            data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                            data-variant-price="$299.99" data-variant-compare="$399.99">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                alt="128 oz Drum" draggable="false">
+                            <span class="mt-1">128 oz. Drum</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Popular Upgrades -->
+                <details class="popular-upgrades">
+                    <summary class="popular-upgrades-summary group">
+                        <div class="popular-upgrades-summary-left">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                            </svg>
+
+                            <span class="popular-upgrades-title">
+                                Popular upgrades
+                            </span>
+                        </div>
+
+                        <div class="popular-upgrades-toggle">
+                            <svg class="popular-upgrades-toggle-icon" viewBox="0 0 14 14" fill="none"
+                                stroke="currentColor">
+                                <path d="M7 1v12M13 7H1" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </summary>
+
+                    <div class="popular-upgrades-content">
+                        <ul role="list" class="popular-upgrades-list">
+                            <!-- Upgrade Item -->
+                            <li class="popular-upgrades-item">
+                                <label class="popular-upgrades-label">
+                                    <input type="checkbox" class="popular-upgrades-checkbox" />
+
+                                    <img src="https://marinedetailsupply.com/cdn/shop/products/Venom_16oz_1080x.jpg?v=1679474900"
+                                        alt="Starke Venom Water Spot and Stain Remover"
+                                        class="popular-upgrades-image" />
+
+                                    <div class="popular-upgrades-text">
+                                        <p class="popular-upgrades-name">
+                                            Starke Venom Water Spot and Stain Remover
+                                            <span class="popular-upgrades-variant">
+                                                16 oz.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="popular-upgrade-price-wrap">
+                                        <p class="popular-upgrade-price-compare" data-price-compare>
+                                            $34.99
+                                        </p>
+                                        <p class="popular-upgrade-price" data-price>
+                                            $22.74
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <!-- Upgrade Item -->
+                            <li class="popular-upgrades-item">
+                                <label class="popular-upgrades-label">
+                                    <input type="checkbox" class="popular-upgrades-checkbox" />
+
+                                    <img src="https://marinedetailsupply.com/cdn/shop/products/Venom_16oz_1080x.jpg?v=1679474900"
+                                        alt="Starke Venom Water Spot and Stain Remover"
+                                        class="popular-upgrades-image" />
+
+                                    <div class="popular-upgrades-text">
+                                        <p class="popular-upgrades-name">
+                                            Starke Venom Water Spot and Stain Remover
+                                            <span class="popular-upgrades-variant">
+                                                16 oz.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="popular-upgrade-price-wrap">
+                                        <p class="popular-upgrade-price-compare" data-price-compare>
+                                            $34.99
+                                        </p>
+                                        <p class="popular-upgrade-price" data-price>
+                                            $22.74
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <!-- Upgrade Item -->
+                            <li class="popular-upgrades-item">
+                                <label class="popular-upgrades-label">
+                                    <input type="checkbox" class="popular-upgrades-checkbox" />
+
+                                    <img src="https://marinedetailsupply.com/cdn/shop/products/Venom_16oz_1080x.jpg?v=1679474900"
+                                        alt="Starke Venom Water Spot and Stain Remover"
+                                        class="popular-upgrades-image" />
+
+                                    <div class="popular-upgrades-text">
+                                        <p class="popular-upgrades-name">
+                                            Starke Venom Water Spot and Stain Remover
+                                            <span class="popular-upgrades-variant">
+                                                16 oz.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="popular-upgrade-price-wrap">
+                                        <p class="popular-upgrade-price-compare" data-price-compare>
+                                            $34.99
+                                        </p>
+                                        <p class="popular-upgrade-price" data-price>
+                                            $22.74
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <!-- Upgrade Item -->
+                            <li class="popular-upgrades-item">
+                                <label class="popular-upgrades-label">
+                                    <input type="checkbox" class="popular-upgrades-checkbox" />
+
+                                    <img src="https://marinedetailsupply.com/cdn/shop/products/Venom_16oz_1080x.jpg?v=1679474900"
+                                        alt="Starke Venom Water Spot and Stain Remover"
+                                        class="popular-upgrades-image" />
+
+                                    <div class="popular-upgrades-text">
+                                        <p class="popular-upgrades-name">
+                                            Starke Venom Water Spot and Stain Remover
+                                            <span class="popular-upgrades-variant">
+                                                16 oz.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="popular-upgrade-price-wrap">
+                                        <p class="popular-upgrade-price-compare" data-price-compare>
+                                            $34.99
+                                        </p>
+                                        <p class="popular-upgrade-price" data-price>
+                                            $22.74
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+
+                            <!-- Upgrade Item -->
+                            <li class="popular-upgrades-item">
+                                <label class="popular-upgrades-label">
+                                    <input type="checkbox" class="popular-upgrades-checkbox" />
+
+                                    <img src="https://marinedetailsupply.com/cdn/shop/products/Venom_16oz_1080x.jpg?v=1679474900"
+                                        alt="Starke Venom Water Spot and Stain Remover"
+                                        class="popular-upgrades-image" />
+
+                                    <div class="popular-upgrades-text">
+                                        <p class="popular-upgrades-name">
+                                            Starke Venom Water Spot and Stain Remover
+                                            <span class="popular-upgrades-variant">
+                                                16 oz.
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <div class="popular-upgrade-price-wrap">
+                                        <p class="popular-upgrade-price-compare" data-price-compare>
+                                            $34.99
+                                        </p>
+                                        <p class="popular-upgrade-price" data-price>
+                                            $22.74
+                                        </p>
+                                    </div>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Stock Warning -->
+                <div class="progress-block">
+                    <p class="progress-label">
+                        Hurry, only 13 items left in stock!
+                    </p>
+
+                    <div class="progress-track">
+                        <div class="progress-fill progress-fill--secondary" style="--progress: 65%;"></div>
+                    </div>
+                </div>
+
+                <!-- Price + Qty -->
+                <div class="flex flex-col w-full gap-2">
+
+                    <div class="flex flex-col sm:flex-row w-full items-center gap-4">
+                        <!-- Price -->
+                        <div class="b2b-price-badge min-w-60 animate-wiggle delay-150 duration-300">
+                            <div class="b2b-price-badge-header">
+                                <div class="shimmer shimmer-sweep"></div>
+                                <div class="flex items-center justify-center gap-1 z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="size-6 text-primary-700">
+                                        <path fill-rule="evenodd"
+                                            d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+
+                                    <span class="b2b-price-badge-header-text">MDSC Pros</span>
+                                </div>
+                            </div>
+                            <div class="b2b-price-badge-body">
+                                <ul class="flex flex-col w-full justify-between text-sm space-y-1">
+                                    <li
+                                        class="flex justify-between border-b border-dotted text-sm border-gray-300 text-gray-600">
+                                        <span>Retail</span>
+                                        <span class="line-through">$10.00</span>
+                                    </li>
+                                    <li
+                                        class="flex justify-between border-b border-dotted border-gray-300 text-base text-primary-500">
+                                        <span class="font-semibold tracking-tight">Pros Price</span>
+                                        <span class="font-semibold tracking-tight">$5.00</span>
+                                    </li>
+                                    <li class="flex justify-between text-green-900 border-gray-300">
+                                        <span class="font-semibold">You Save</span>
+                                        <span class="font-semibold">$5.00</span>
+                                    </li>
+                                </ul>
+                                <span class="b2b-price-compare hidden">$139.00</span>
+                                <span class="b2b-price hidden">$199.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Actions & Qty -->
+                        <div class="flex flex-col w-full sm:w-auto grow gap-2">
+                            <div class="flex items-center gap-2 sm:h-10">
+                                <!-- Quantity -->
+                                <div class="product-card-qty-wrap h-full">
+                                    <span class="product-card-qty h-full">
+
+                                        <button type="button"
+                                            class="product-card-qty-btn product-card-qty-btn--left min-w-7">
+                                            <span class="sr-only">Decrease</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                        <input type="number" value="1" min="1" class="input-qty min-w-10">
+
+                                        <button type="button"
+                                            class="product-card-qty-btn product-card-qty-btn--right min-w-7">
+                                            <span class="sr-only">Increase</span>
+                                            <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                                                <path fill-rule="evenodd"
+                                                    d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+
+                                    </span>
+                                </div>
+                                <!-- Add to Cart -->
+                                <button class="product-card-add">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+
+                        <!-- Divider -->
+                        <div class="flex items-center">
+                            <div aria-hidden="true" class="w-full border-t border-gray-300"></div>
+                            <div class="relative flex justify-center">
+                                <span class="bg-white px-2 text-sm text-gray-500">or</span>
+                            </div>
+                            <div aria-hidden="true" class="w-full border-t border-gray-300"></div>
+                        </div>
+
+                        <div class="flex justify-center gap-2">
+
+                            <div class="inline-flex">
+                                <p class="text-center text-sm text-gray-900">
+                                    Pay over time for orders over $35.00 with
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 25" aria-label="Shop Pay"
+                                        role="img" class="inline h-3.5 w-[59px] align-middle text-[#5433eb]">
+                                        <path fill="currentColor"
+                                            d="M70.842 7.915h2.25c1.561 0 2.328.642 2.328 1.715 0 1.074-.739 1.715-2.259 1.715h-2.32v-3.43ZM80.525 16.142c-.879 0-1.227-.474-1.227-.948 0-.642.725-.935 2.147-1.102l1.115-.125c-.07 1.227-.892 2.175-2.035 2.175Z">
+                                        </path>
+                                        <path fill="currentColor" fill-rule="evenodd"
+                                            d="M65.645.5a3.64 3.64 0 0 0-3.64 3.64V20.7a3.64 3.64 0 0 0 3.64 3.64h29.668a3.64 3.64 0 0 0 3.64-3.64V4.14A3.64 3.64 0 0 0 95.314.5H65.645Zm5.197 16.674v-4.197h2.64c2.412 0 3.695-1.353 3.695-3.402 0-2.05-1.283-3.277-3.695-3.277h-4.341v10.876h1.7Zm9.334.223c1.297 0 2.147-.572 2.538-1.548.112 1.088.767 1.645 2.189 1.269l.014-1.157c-.572.055-.683-.154-.683-.753v-2.845c0-1.673-1.102-2.663-3.138-2.663-2.008 0-3.165 1.004-3.165 2.705h1.562c0-.809.572-1.297 1.576-1.297 1.06 0 1.547.46 1.534 1.255v.363l-1.8.195c-2.021.223-3.137.99-3.137 2.329 0 1.101.781 2.147 2.51 2.147Zm9.906.32c-.711 1.73-1.855 2.245-3.64 2.245h-.766V18.54h.822c.977 0 1.45-.307 1.966-1.185L85.3 9.923h1.757l2.259 5.424 2.008-5.424h1.715l-2.956 7.795Z"
+                                            clip-rule="evenodd"></path>
+                                        <path fill="currentColor"
+                                            d="M6.992 11.055c-2.359-.509-3.41-.708-3.41-1.612 0-.85.711-1.274 2.134-1.274 1.25 0 2.165.544 2.839 1.61.05.081.155.11.241.066l2.655-1.335a.186.186 0 0 0 .076-.259c-1.102-1.9-3.137-2.94-5.818-2.94C2.188 5.311 0 7.037 0 9.781c0 2.915 2.664 3.651 5.027 4.16 2.362.51 3.417.709 3.417 1.613s-.769 1.33-2.303 1.33c-1.416 0-2.467-.644-3.102-1.896a.186.186 0 0 0-.251-.082L.14 16.21a.188.188 0 0 0-.083.253c1.051 2.102 3.207 3.285 6.087 3.285 3.668 0 5.885-1.698 5.885-4.527 0-2.83-2.677-3.651-5.037-4.16v-.007ZM21.218 5.311c-1.505 0-2.835.531-3.791 1.477-.06.057-.159.015-.159-.067V.687A.185.185 0 0 0 17.081.5h-3.322a.185.185 0 0 0-.187.187v18.73c0 .104.083.186.187.186h3.322a.185.185 0 0 0 .187-.186V11.2c0-1.587 1.223-2.804 2.87-2.804 1.649 0 2.843 1.191 2.843 2.804v8.216c0 .104.082.186.187.186h3.322a.185.185 0 0 0 .187-.186V11.2c0-3.452-2.274-5.89-5.459-5.89ZM33.415 4.774c-1.803 0-3.493.55-4.706 1.343a.186.186 0 0 0-.06.25l1.464 2.488c.054.089.168.12.257.066a5.853 5.853 0 0 1 3.052-.834c2.899 0 5.03 2.036 5.03 4.726 0 2.292-1.706 3.99-3.868 3.99-1.762 0-2.985-1.022-2.985-2.463 0-.825.352-1.502 1.27-1.98a.183.183 0 0 0 .073-.258l-1.381-2.327a.187.187 0 0 0-.226-.079c-1.85.683-3.15 2.327-3.15 4.533 0 3.338 2.67 5.83 6.396 5.83 4.35 0 7.478-3 7.478-7.303 0-4.612-3.64-7.982-8.644-7.982ZM51.776 5.283c-1.68 0-3.182.62-4.277 1.707a.093.093 0 0 1-.16-.066v-1.31a.185.185 0 0 0-.187-.186h-3.235a.185.185 0 0 0-.188.187v18.702c0 .104.083.186.188.186h3.32a.185.185 0 0 0 .188-.186v-6.133c0-.082.099-.123.16-.07 1.091 1.012 2.536 1.603 4.19 1.603 3.897 0 6.936-3.139 6.936-7.217 0-4.078-3.042-7.217-6.935-7.217Zm-.63 11.266c-2.215 0-3.895-1.754-3.895-4.074S48.928 8.4 51.147 8.4c2.22 0 3.893 1.726 3.893 4.075 0 2.348-1.651 4.074-3.896 4.074h.003Z">
+                                        </path>
+                                    </svg>
+                                </p>
+                                <button type="button" class="
+                                    flex min-w-28 items-center justify-center rounded-none rounded-r-lg ml-4 
+                                    text-sm font-medium leading-normal text-primary-600 
+                                    hover:text-primary-500 focus:outline-2 focus:outline-primary-500
+                                ">
+                                    Learn More
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="ml-2 size-5">
+                                        <path fill-rule="evenodd"
+                                            d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Local Pickup Available -->
+                <div class="alert alert-success">
+                    <div class="alert-inner">
+                        <div class="alert-icon">
+                            <!-- icon slot -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            </svg>
+                        </div>
+
+                        <div class="alert-content">
+                            <p class="alert-title">
+                                Pickup available at Fort Myers, FL – Marine Detail Supply Co HQ
+                            </p>
+                            <p class="alert-description">
+                                Usually ready in 1 hour
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="product-overview-description font-light text-base text-gray-800">
+                    <div class="mt-10">
+                        <h2 class="text-base font-medium font-oswald text-primary-800">Description</h2>
+
+                        <div class="mt-4 space-y-4">
+                            <p>Liquid Thor is an advanced marine grade nano ceramic coating made with the installer in
+                                mind. The sophisticated carrier agent is a low VOC solvent that has amazing work time
+                                and is able to suspend and efficiently transfer high levels of Si02/Ti02 nano particles
+                                and UV inhibitors to the gel coat, marine paint, glass, metal, vinyl, plastic and
+                                isinglass.</p>
+                            <p>New and improved formula- featuring the same long working time you trust!</p>
+                            <p>Now with enhanced visibility during use, you’ll notice a distinct ‘sweating’ action that
+                                leaves behind a richer, more substantial layer of solids for superior performance.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 border-t border-gray-200 pt-8">
+                        <h2 class="text-base font-medium font-oswald text-primary-800">Fabric &amp; Care</h2>
+
+                        <div class="mt-4">
+                            <ul role="list" class="list-disc space-y-1 pl-5 marker:text-primary-300">
+                                <li class="pl-2">Only the best materials</li>
+                                <li class="pl-2">Ethically and locally made</li>
+                                <li class="pl-2">Pre-washed and pre-shrunk</li>
+                                <li class="pl-2">Machine wash cold with similar colors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL PANEL (your system) -->
+                        <div id="pdp-media-modal" data-ui-panel data-ui-type="modal"
+                            class="media-gallery-lightbox">
+                            <div data-ui-anim data-from="translateY(0px)" class="media-gallery-lightbox__content">
+
+                                <!-- Close fallback (works even if your panel system does not wire a close button) -->
+                                <div class="media-gallery-lightbox__controls anchor-top-right">
+                                    <button class="lightbox-btn" type="button" data-media-close
+                                        aria-label="Close gallery">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.25" stroke="currentColor"
+                                            class="size-6 md:size-8 text-white">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6 18 18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Where media-gallery.js will mount the cloned gallery -->
+                                <div data-media-gallery-modal-root data-media-context="modal" data-media-zoom="true"
+                                    data-media-thumbs="false" data-media-nav="true" data-media-pagination="true"
+                                    data-media-grab-cursor="true" data-media-effect="slide" data-media-classes="
+                       root:lightbox-gallery__root;
+                       gallery:lightbox-gallery__wrapper;
+                       slider:lightbox-gallery__slider;
+                       track:swiper-wrapper lightbox-gallery__track;
+                       slide:swiper-slide lightbox-gallery__slide;
+                       navWrapper:lightbox-gallery__nav__center;
+                       nav:lightbox-gallery__nav__btn;
+                       pagination:lightbox-gallery__pagination
+                     ">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".quickview-gallery-pagination",
+            },
+            navigation: {
+                nextEl: ".btn-next",
+                prevEl: ".btn-prev"
+            },
+        });
+    </script>
+
+    <!-- Tooltip Portal -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Create single portal root if not exists
+            let portalRoot = document.getElementById("tooltip-root");
+            if (!portalRoot) {
+                portalRoot = document.createElement("div");
+                portalRoot.id = "tooltip-root";
+                document.body.appendChild(portalRoot);
+            }
+
+            // Create a single tooltip element with arrow
+            const floating = document.createElement("div");
+            floating.className = "tooltip-floating";
+
+            const arrow = document.createElement("div");
+            arrow.className = "tooltip-floating-arrow";
+            floating.appendChild(arrow);
+
+            const content = document.createElement("div");
+            content.className = "tooltip-floating-content";
+            floating.appendChild(content);
+
+            portalRoot.appendChild(floating);
+
+            // Listen to all tooltip triggers with .tooltip-portal class
+            document.querySelectorAll(".tooltip-portal[data-tip]").forEach((trigger) => {
+                const text = trigger.getAttribute("data-tip");
+
+                const colorVariants = ['tooltip-primary', 'tooltip-secondary', 'tooltip-info', 'tooltip-success', 'tooltip-warning', 'tooltip-danger', 'tooltip-white'];
+                const colorClass = colorVariants.find(cls => trigger.classList.contains(cls));
+
+                const show = () => {
+                    content.textContent = text;
+
+                    colorVariants.forEach(cls => floating.classList.remove(cls));
+                    if (colorClass) {
+                        floating.classList.add(colorClass);
+                    }
+
+                    const rect = trigger.getBoundingClientRect();
+
+                    floating.style.opacity = "0";
+                    floating.style.visibility = "visible";
+                    floating.style.pointerEvents = "none";
+
+                    const tipHeight = floating.offsetHeight;
+                    const tipWidth = floating.offsetWidth;
+
+                    floating.style.left = rect.left + rect.width / 2 + "px";
+                    floating.style.top = rect.top - tipHeight - 8 + "px";
+
+                    floating.style.opacity = "";
+                    floating.style.visibility = "";
+
+                    floating.classList.add("visible");
+                };
+
+                const hide = () => {
+                    floating.classList.remove("visible");
+                };
+
+                trigger.addEventListener("mouseenter", show);
+                trigger.addEventListener("mouseleave", hide);
+                trigger.addEventListener("focusin", show);
+                trigger.addEventListener("focusout", hide);
+            });
+
+            // Hide tooltip on scroll
+            let scrollTimeout;
+            window.addEventListener("scroll", () => {
+                if (floating.classList.contains("visible")) {
+                    floating.classList.remove("visible");
+                }
+            }, true);
+        });
+    </script>
+
+    <!-- Product Card Variant Selection & Drag Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const variantContainer = card.querySelector('[data-variant-scroll]');
+                const variants = card.querySelectorAll('[data-variant]');
+                const productImage = card.querySelector('[data-product-image]');
+                const priceElement = card.querySelector('[data-price]');
+                const comparePriceElement = card.querySelector('[data-price-compare]');
+
+                // Quantity controls
+                const qtyInput = card.querySelector('.input-qty');
+                const decreaseBtn = card.querySelector('.product-card-qty-btn--left');
+                const increaseBtn = card.querySelector('.product-card-qty-btn--right');
+
+                if (qtyInput && decreaseBtn && increaseBtn) {
+                    decreaseBtn.addEventListener('click', () => {
+                        const currentValue = parseInt(qtyInput.value) || 1;
+                        const minValue = parseInt(qtyInput.min) || 1;
+                        if (currentValue > minValue) {
+                            qtyInput.value = currentValue - 1;
+                        }
+                    });
+
+                    increaseBtn.addEventListener('click', () => {
+                        const currentValue = parseInt(qtyInput.value) || 1;
+                        const maxValue = qtyInput.max ? parseInt(qtyInput.max) : Infinity;
+                        if (currentValue < maxValue) {
+                            qtyInput.value = currentValue + 1;
+                        }
+                    });
+                }
+
+                if (!variantContainer || !variants.length) return;
+
+                // Drag-to-scroll functionality
+                let isDown = false;
+                let isDragging = false;
+                let startX;
+                let scrollLeft;
+
+                variantContainer.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    isDragging = false;
+                    startX = e.pageX - variantContainer.offsetLeft;
+                    scrollLeft = variantContainer.scrollLeft;
+                });
+
+                variantContainer.addEventListener('mouseleave', () => {
+                    isDown = false;
+                });
+
+                variantContainer.addEventListener('mouseup', () => {
+                    isDown = false;
+                    setTimeout(() => { isDragging = false; }, 10);
+                });
+
+                variantContainer.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    isDragging = true;
+                    const x = e.pageX - variantContainer.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    variantContainer.scrollLeft = scrollLeft - walk;
+                });
+
+                // Touch support
+                let touchStartX = 0;
+                let touchScrollLeft = 0;
+                let isTouchDragging = false;
+
+                variantContainer.addEventListener('touchstart', (e) => {
+                    isTouchDragging = false;
+                    touchStartX = e.touches[0].pageX;
+                    touchScrollLeft = variantContainer.scrollLeft;
+                }, { passive: true });
+
+                variantContainer.addEventListener('touchmove', (e) => {
+                    isTouchDragging = true;
+                    const x = e.touches[0].pageX;
+                    const walk = (touchStartX - x) * 1.5;
+                    variantContainer.scrollLeft = touchScrollLeft + walk;
+                }, { passive: true });
+
+                variantContainer.addEventListener('touchend', () => {
+                    setTimeout(() => { isTouchDragging = false; }, 10);
+                }, { passive: true });
+
+                // Variant click handler
+                variants.forEach(variant => {
+                    variant.addEventListener('click', (e) => {
+                        // Don't trigger if user was dragging
+                        if (isDragging || isTouchDragging) {
+                            e.preventDefault();
+                            return;
+                        }
+
+                        const variantImage = variant.dataset.variantImage;
+                        const variantPrice = variant.dataset.variantPrice;
+                        const variantCompare = variant.dataset.variantCompare;
+
+                        // Update product image
+                        if (productImage && variantImage) {
+                            productImage.src = variantImage;
+                        }
+
+                        // Update prices
+                        if (priceElement && variantPrice) {
+                            priceElement.textContent = variantPrice;
+                        }
+                        if (comparePriceElement && variantCompare) {
+                            comparePriceElement.textContent = variantCompare;
+                        }
+
+                        // Update active state
+                        variants.forEach(v => {
+                            v.classList.remove('product-card-variant--active');
+                            v.classList.add('product-card-variant--inactive');
+                        });
+                        variant.classList.remove('product-card-variant--inactive');
+                        variant.classList.add('product-card-variant--active');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

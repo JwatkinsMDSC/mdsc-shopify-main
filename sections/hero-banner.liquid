@@ -1,0 +1,413 @@
+{% schema %}
+{
+  "name": "Hero Banner",
+  "tag": "section",
+  "class": "section-hero-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlap",
+      "label": "Enable Overlap Compensation",
+      "default": true,
+      "info": "If enabled, the hero will adjust its padding to overlap with the following section."
+    },
+    {
+      "type": "select",
+      "id": "hero_height",
+      "label": "Hero Height",
+      "options": [
+        { "value": "auto", "label": "Auto" },
+        { "value": "full-vh", "label": "100vh" },
+        { "value": "three-quarters-vh", "label": "75vh" },
+        { "value": "half-vh", "label": "50vh" }
+      ],
+      "default": "auto",
+      "info": "Only applies when Overlap Compensation is disabled."
+    },
+    {
+      "type": "header",
+      "content": "Background Media"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image",
+      "label": "Enable Background Image",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video",
+      "label": "Enable Background Video",
+      "default": false
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Background Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video Poster Image"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_overlay",
+      "label": "Enable Overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#1e3a8a"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "overlay_blend_mode",
+      "label": "Blend Mode",
+      "options": [
+        { "value": "normal", "label": "None" },
+        { "value": "multiply", "label": "Multiply" },
+        { "value": "overlay", "label": "Overlay" },
+        { "value": "screen", "label": "Screen" },
+        { "value": "darken", "label": "Darken" },
+        { "value": "lighten", "label": "Lighten" },
+        { "value": "hard-light", "label": "Hard Light" },
+        { "value": "soft-light", "label": "Soft Light" },
+        { "value": "difference", "label": "Difference" }
+      ],
+      "default": "multiply"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_subtitle",
+      "label": "Enable Subtitle",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle Text",
+      "default": "Welcome to Marine Detail Supply"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "subtitle_size",
+      "label": "Subtitle Size",
+      "options": [
+        { "value": "text-sm", "label": "Small" },
+        { "value": "text-base", "label": "Medium" },
+        { "value": "text-lg", "label": "Large" },
+        { "value": "text-xl", "label": "X-Large" }
+      ],
+      "default": "text-base"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_title",
+      "label": "Enable Title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title Text",
+      "default": "Marine Detailing Products"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "text-2xl", "label": "Small" },
+        { "value": "text-4xl", "label": "Medium" },
+        { "value": "text-6xl", "label": "Large" },
+        { "value": "text-8xl", "label": "X-Large" }
+      ],
+      "default": "text-6xl"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_description",
+      "label": "Enable Description",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description Text",
+      "default": "<p>The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release while they're still in stock.</p>"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "description_size",
+      "label": "Description Size",
+      "options": [
+        { "value": "text-sm", "label": "Small" },
+        { "value": "text-base", "label": "Medium" },
+        { "value": "text-lg", "label": "Large" },
+        { "value": "text-xl", "label": "X-Large" }
+      ],
+      "default": "text-base"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_button",
+      "label": "Enable Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background Color",
+      "default": "#4b5563"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Button Size",
+      "options": [
+        { "value": "btn-sm", "label": "Small" },
+        { "value": "btn-md", "label": "Medium" },
+        { "value": "btn-lg", "label": "Large" },
+        { "value": "btn-xl", "label": "X-Large" }
+      ],
+      "default": "btn-md"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  #hero-{{ section.id }} {
+    --hero-overlay-color: {{ section.settings.overlay_color }};
+    --hero-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --hero-overlay-blend: {{ section.settings.overlay_blend_mode }};
+    --hero-button-bg: {{ section.settings.button_bg_color }};
+    --hero-button-text: {{ section.settings.button_text_color }};
+  }
+{% endstyle %}
+
+<div class="hero-banner" id="hero-{{ section.id }}">
+  <!-- Background Layer -->
+  <div aria-hidden="true" class="hero-banner-background">
+    <div class="hero-banner-bg-wrapper">
+      <div class="absolute inset-0 overflow-hidden">
+        
+        {% if section.settings.enable_image and section.settings.image != blank %}
+          {% unless section.settings.enable_video and section.settings.video != blank %}
+            {{ section.settings.image | image_url: width: 2000 | image_tag: class: 'hero-banner-visual', loading: 'eager' }}
+          {% endunless %}
+        {% elsif section.settings.enable_image and section.settings.image == blank and section.settings.enable_video == false %}
+           {% comment %} Fallback image if enabled but not selected {% endcomment %}
+           {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-banner-visual' }}
+        {% endif %}
+        
+        {% if section.settings.enable_video and section.settings.video != blank %}
+          {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: 'w-full h-full object-cover', image_size: '2000x' }}
+        {% endif %}
+      </div>
+
+      {% if section.settings.enable_overlay %}
+        <div class="hero-banner-overlay hero-banner-overlay-{{ section.id }}"></div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Foreground Content -->
+  <div class="hero-banner-content-wrapper relative z-10 flex flex-col justify-center items-center text-center px-4 {% unless section.settings.enable_overlap %}{{ section.settings.hero_height }}{% endunless %}" 
+       data-hero 
+       data-enable-overlap="{{ section.settings.enable_overlap }}">
+    <div class="hero-banner-content py-20">
+
+      {% if section.settings.enable_subtitle %}
+        <span class="hero-banner-subtitle font-oswald {{ section.settings.subtitle_size }}" style="color: {{ section.settings.subtitle_color }}">
+          {{ section.settings.subtitle }}
+        </span>
+      {% endif %}
+
+      {% if section.settings.enable_title %}
+        <h1 class="hero-banner-title font-oswald {{ section.settings.title_size }}" style="color: {{ section.settings.title_color }}">
+          {{ section.settings.title }}
+        </h1>
+      {% endif %}
+
+      {% if section.settings.enable_description %}
+        <div class="hero-banner-description {{ section.settings.description_size }}" style="color: {{ section.settings.description_color }}">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.enable_button %}
+        <div class="hero-banner-cta">
+          <a href="{{ section.settings.button_link | default: '#' }}"
+             class="btn-hero btn-hero-{{ section.id }} {{ section.settings.button_size }}">
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const header = document.getElementById('siteHeader');
+    const revealSection = document.querySelector('[data-reveal-section]');
+
+    function updateHeroLayout(hero) {
+      const enableOverlap = hero.dataset.enableOverlap === 'true';
+      const overlapParent = document.querySelector('[data-overlap-parent]');
+      const overlapChild = overlapParent?.querySelector('[data-overlap-child]');
+      
+      if (!header) return;
+
+      const headerHeight = header.offsetHeight;
+      const revealHeight = revealSection ? revealSection.offsetHeight : 0;
+      
+      // Always adjust hero top padding based on header height
+      const adjustedHeaderHeight = headerHeight - revealHeight;
+      hero.style.paddingTop = `${adjustedHeaderHeight}px`;
+
+      if (enableOverlap && overlapParent && overlapChild) {
+        const parentHeight = overlapParent.offsetHeight;
+        
+        // Pull overlap parent upward
+        overlapParent.style.marginTop = `-${parentHeight / 2}px`;
+
+        // Push hero content downward to compensate
+        hero.style.paddingBottom = `${parentHeight / 2}px`;
+      } else {
+        // Reset styles if overlap is disabled or elements missing
+        if (overlapParent) overlapParent.style.marginTop = '';
+        hero.style.paddingBottom = '';
+      }
+    }
+
+    function init() {
+      const heroes = document.querySelectorAll('[data-hero]');
+      if (!heroes.length) return;
+
+      heroes.forEach(hero => updateHeroLayout(hero));
+
+      // Recalculate on resize
+      window.addEventListener('resize', () => {
+        heroes.forEach(hero => updateHeroLayout(hero));
+      });
+
+      // Observe overlap parent height changes
+      const overlapParent = document.querySelector('[data-overlap-parent]');
+      if (overlapParent) {
+        const parentObserver = new ResizeObserver(() => {
+          heroes.forEach(hero => updateHeroLayout(hero));
+        });
+        parentObserver.observe(overlapParent);
+      }
+
+      // Observe header height changes
+      if (header) {
+        const headerObserver = new ResizeObserver(() => {
+          heroes.forEach(hero => updateHeroLayout(hero));
+        });
+        headerObserver.observe(header);
+      }
+    }
+
+    // Run after full load to ensure media dimensions are stable
+    window.addEventListener('load', init);
+    
+    // Run immediately in case load already happened or for theme editor
+    if (document.readyState === 'complete') {
+      init();
+    }
+    
+    // Support for Shopify Theme Editor
+    document.addEventListener('shopify:section:load', init);
+    document.addEventListener('shopify:section:select', init);
+    document.addEventListener('shopify:section:deselect', init);
+  })();
+</script>

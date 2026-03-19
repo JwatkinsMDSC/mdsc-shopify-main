@@ -1,0 +1,550 @@
+@import "tailwindcss";
+
+/* ==================================================== */
+/* Animation
+/* ==================================================== */
+
+@import "tailwindcss-animated";
+@import "./components/animate-presence.css";
+
+/* ==================================================== */
+/* Core UI Foundations
+/* ==================================================== */
+
+@import "./components/buttons.css";
+@import "./components/forms.css";
+@import "./components/alerts.css";
+@import "./components/tabs.css";
+@import "./components/toast.css";
+@import "./components/tooltip.css";
+@import "./components/loading.css";
+
+
+/* ==================================================== */
+/* Layout & Structural Components
+/* ==================================================== */
+
+@import "./components/base-modal-drawers.css";
+@import "./components/modal.css";
+@import "./components/dock.css";
+@import "./components/header-nav.css";
+@import "./components/header-nav-main.css";
+@import "./components/hero.css";
+@import "./components/vertical-navigation.css";
+
+
+/* ==================================================== */
+/* Navigation & Menus
+/* ==================================================== */
+
+@import "./components/mega-menu.css";
+@import "./components/menu-category-selector.css";
+@import "./components/dropdown-ui-menu.css";
+
+
+/* ==================================================== */
+/* Cards & Content Containers
+/* ==================================================== */
+
+@import "./components/cards.css";
+@import "./components/product-card.css";
+@import "./components/product-quickview.css";
+@import "./components/collection-card.css";
+@import "./components/popular-upgrades.css";
+
+
+/* ==================================================== */
+/* Media, Carousel & Visual Motion
+/* ==================================================== */
+
+@import "./components/media-gallery.css";
+@import "./components/swiper.css";
+@import "./components/scrolling-marquee.css";
+@import "./components/animated-borders.css";
+
+
+/* ==================================================== */
+/* Indicators, Badges & Status UI
+/* ==================================================== */
+
+@import "./components/badges.css";
+@import "./components/chips.css";
+@import "./components/avatars.css";
+@import "./components/progress-bars.css";
+@import "./components/rating.css";
+@import "./components/loading-skeleton.css";
+@import "./components/b2b-price-badge.css";
+@import "./components/b2b-activated.css";
+
+
+/* ==================================================== */
+/* Filters, Pickers & Selection UI
+/* ==================================================== */
+
+@import "./components/filters.css";
+@import "./components/color-picker.css";
+
+
+/* ==================================================== */
+/* Promotional & Campaign Elements
+/* ==================================================== */
+
+@import "./components/banner-offers.css";
+@import "./components/countdown.css";
+
+/* ==================================================== */
+
+@import "tailwindcss-intersect";
+
+@plugin 'tailwind-scrollbar' {
+    nocompatible: true;
+    preferredStrategy: 'pseudoelements';
+}
+@plugin "tailwindcss-motion";
+
+@source "./**/*.html";
+@source "../../design/**/*.html";
+@source "../../layout/**/*.liquid";
+@source "../../templates/**/*.liquid";
+@source "../../sections/**/*.liquid";
+@source "../../snippets/**/*.liquid";
+@source "../../b2b/layout/**/*.liquid";
+@source "../../b2b/templates/**/*.liquid";
+@source "../../b2b/sections/**/*.liquid";
+@source "../../b2b/snippets/**/*.liquid";
+@source "../scripts/**/*.js";
+@source "../scripts/**/*.ts";
+@source "../../assets/**/*.js";
+
+/* ---------------------------------------------
+   Theme Tokens
+   --------------------------------------------- */
+@theme {
+  /* Core utilities for flex, margins, etc. */
+  --display-flex: flex;
+  --display-block: block;
+  --display-inline-flex: inline-flex;
+  --display-grid: grid;
+  --display-none: none;
+
+  /* Backdrop Styles */
+  --ui-backdrop-bg: rgba(0, 0, 0, 0.5);
+  
+  /* Margin/padding - required for mx-, px-, etc */
+  --width: 100%;
+  --max-width-xs: 20rem;
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-lg: 32rem;
+  --max-width-xl: 36rem;
+  --max-width-2xl: 42rem;
+  --max-width-3xl: 48rem;
+  --max-width-4xl: 56rem;
+  --max-width-5xl: 64rem;
+  --max-width-6xl: 72rem;
+  --max-width-7xl: 80rem;
+  
+  /* Colors */
+  --color-primary-50: #e8f0f7;
+  --color-primary-100: #c9dbeb;
+  --color-primary-200: #a9c5de;
+  --color-primary-300: #86aedd;
+  --color-primary-400: #5b8fbc;
+  --color-primary-500: #2f6fa7;
+  --color-primary-600: #0c3457;
+  --color-primary-700: #0b2e4d;
+  --color-primary-800: #0a2946;
+  --color-primary-900: #0a2641;
+  --color-primary-950: #071d31;
+  --color-secondary-50: #eff6ff;
+  --color-secondary-100: #dfeaff;
+  --color-secondary-200: #bfdcff;
+  --color-secondary-300: #9fcfff;
+  --color-secondary-400: #7bbdff;
+  --color-secondary-500: #5abcf9;
+  --color-secondary-600: #00a3ea;
+  --color-secondary-700: #008ccf;
+  --color-secondary-800: #0075aa;
+  --color-secondary-900: #006ba4;
+  --color-secondary-950: #005381;
+  --color-gray-50: #f5f6f7;
+  --color-gray-100: #ebeced;
+  --color-gray-200: #d9dadc;
+  --color-gray-300: #c5c7c9;
+  --color-gray-400: #a7a9ad;
+  --color-gray-500: #999b9e;
+  --color-gray-600: #8a8b8d;
+  --color-gray-700: #828282;
+  --color-gray-800: #585858;
+  --color-gray-900: #3b3b3b;
+  --color-gray-950: #262626;
+
+  /* Gray */
+  --badge-gray-bg: var(--color-gray-50);
+  --badge-gray-text: var(--color-gray-900);
+  --badge-gray-ring: var(--color-gray-200);
+
+  /* Primary */
+  --badge-primary-bg: var(--color-primary-50);
+  --badge-primary-text: var(--color-primary-700);
+  --badge-primary-ring: var(--color-primary-200);
+
+  /* Danger */
+  --badge-danger-bg: var(--color-red-50);
+  --badge-danger-text: var(--color-red-700);
+  --badge-danger-ring: var(--color-red-200);
+
+  /* Success */
+  --badge-success-bg: var(--color-green-50);
+  --badge-success-text: var(--color-green-700);
+  --badge-success-ring: var(--color-green-200);
+
+  /* Warning */
+  --badge-warning-bg: var(--color-yellow-50);
+  --badge-warning-text: var(--color-yellow-700);
+  --badge-warning-ring: var(--color-yellow-200);
+
+  /* Info */
+  --badge-info-bg: #dbeafe;
+  --badge-info-text: #1e40af;
+  --badge-info-ring: #2563eb;
+
+  /* White */
+  --badge-white-bg: #ffffff;
+  --badge-white-text: #374151;
+  --badge-white-ring: #e5e7eb;
+
+  /* Spacing scale */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+
+  /* Radius scale */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-full: calc(infinity * 1px);
+
+  /* Shadow scale */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 3px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.18);
+
+  /* Typography */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-default: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Cubic Bezier ease-(--ease-spring) */
+  --ease-standard: cubic-bezier(.4, 0, .2, 1);
+  --ease-emphasized: cubic-bezier(.2, 0, 0, 1);
+  --ease-spring: cubic-bezier(0,.81,.37,1.67);
+
+  /* Z-index scale */
+  --z-header: 50;
+  --z-drawer: 60;
+  --z-modal: 70;
+  --z-toast: 80;
+
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  --font-family-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-display: "Oswald", sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+.gradient-primary {
+    background-image: linear-gradient(
+        to left,
+        theme("colors.secondary.500/0"),
+        theme("colors.primary.500")
+    );
+}
+
+/* ---------------------------------------------
+   Base Layer - Typography defaults, resets, etc.
+   --------------------------------------------- */
+@layer base {
+  /* Prevent scrollbar from overlapping content */
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  /* Body defaults */
+  html, body, p, span, a, li {
+    font-family: var(--font-family-body);
+    font-weight: 400;
+    @apply tracking-normal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-body);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.875rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1.125rem; }
+}
+
+/* --------------------------------------------- 
+   Custom Utilities
+   --------------------------------------------- */
+.font-inter {
+  font-family: var(--font-family-body);
+  font-optical-sizing: auto;
+}
+
+.font-oswald {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    @apply tracking-tight uppercase;
+}
+
+.font-league {
+  font-family: var(--font-family-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 100;
+}
+
+.scrollbar-inside-content {
+  border-radius: inherit;
+  padding-right: 0.5rem;
+  scrollbar-gutter: stable;
+}
+
+@theme {
+    --tw-scrollbar-thumb-color: '';
+    --tw-scrollbar-track-color: '';
+    --tw-scrollbar-gutter-modifier: '';
+}
+
+@utility scrollbar-none {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@utility scrollbar-thin {
+    scrollbar-width: thin;
+}
+
+@utility scrollbar-width-auto {
+    scrollbar-width: auto;
+}
+
+@utility scrollbar-gutter-auto {
+    scrollbar-gutter: auto;
+}
+
+@utility scrollbar-stable {
+    scrollbar-gutter: stable var(--tw-scrollbar-gutter-modifier);
+}
+
+@utility scrollbar-both-edges {
+    --tw-scrollbar-gutter-modifier: both-edges;
+}
+
+@utility gutter-both {
+    scrollbar-gutter: stable both-edges;
+}
+
+@utility scrollbar-color-auto {
+    scrollbar-color: auto;
+}
+
+@utility scrollbar-color {
+    scrollbar-color: var(--tw-scrollbar-thumb-color) var(--tw-scrollbar-track-color);
+}
+
+@utility scrollbar-thumb-* {
+    --tw-scrollbar-thumb-color: --value(--color-*);
+}
+
+@utility scrollbar-track-* {
+    --tw-scrollbar-track-color: --value(--color-*);
+}
+
+/* Fade Mask Utilities */
+@theme {
+    --fade-top: 0%;
+    --fade-bottom: 0%;
+    --fade-left: 0%;
+    --fade-right: 0%;
+    --fade-top-start: 0;
+    --fade-bottom-start: 0;
+    --fade-left-start: 0;
+    --fade-right-start: 0;
+}
+
+@utility fade-mask {
+    mask-image: 
+        linear-gradient(to bottom, 
+            rgba(0, 0, 0, var(--fade-top-start)), 
+            black var(--fade-top), 
+            black calc(100% - var(--fade-bottom)), 
+            rgba(0, 0, 0, var(--fade-bottom-start))
+        ),
+        linear-gradient(to right, 
+            rgba(0, 0, 0, var(--fade-left-start)), 
+            black var(--fade-left), 
+            black calc(100% - var(--fade-right)), 
+            rgba(0, 0, 0, var(--fade-right-start))
+        );
+    mask-composite: intersect;
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: 
+        linear-gradient(to bottom, 
+            rgba(0, 0, 0, var(--fade-top-start)), 
+            black var(--fade-top), 
+            black calc(100% - var(--fade-bottom)), 
+            rgba(0, 0, 0, var(--fade-bottom-start))
+        ),
+        linear-gradient(to right, 
+            rgba(0, 0, 0, var(--fade-left-start)), 
+            black var(--fade-left), 
+            black calc(100% - var(--fade-right)), 
+            rgba(0, 0, 0, var(--fade-right-start))
+        );
+    -webkit-mask-composite: source-in;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+}
+
+@utility fade-top-* {
+    --fade-top: --value(--spacing-*);
+}
+
+@utility fade-bottom-* {
+    --fade-bottom: --value(--spacing-*);
+}
+
+@utility fade-left-* {
+    --fade-left: --value(--spacing-*);
+}
+
+@utility fade-right-* {
+    --fade-right: --value(--spacing-*);
+}
+
+@utility fade-x-* {
+    --fade-left: --value(--spacing-*);
+    --fade-right: --value(--spacing-*);
+}
+
+@utility fade-y-* {
+    --fade-top: --value(--spacing-*);
+    --fade-bottom: --value(--spacing-*);
+}
+
+@utility fade-top-intensity-* {
+    --fade-top-start: --value(--opacity-*);
+}
+
+@utility fade-bottom-intensity-* {
+    --fade-bottom-start: --value(--opacity-*);
+}
+
+@utility fade-left-intensity-* {
+    --fade-left-start: --value(--opacity-*);
+}
+
+@utility fade-right-intensity-* {
+    --fade-right-start: --value(--opacity-*);
+}
+
+@utility fade-x-intensity-* {
+    --fade-left-start: --value(--opacity-*);
+    --fade-right-start: --value(--opacity-*);
+}
+
+@utility fade-y-intensity-* {
+    --fade-top-start: --value(--opacity-*);
+    --fade-bottom-start: --value(--opacity-*);
+}
+
+@utility transition-fade {
+    transition-property: --fade-top, --fade-bottom, --fade-left, --fade-right, --fade-top-start, --fade-bottom-start, --fade-left-start, --fade-right-start;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Fade with pseudo-element overlay (doesn't clip children) */
+@utility fade-overlay-white {
+    position: relative;
+    isolation: isolate;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--fade-left);
+        height: 100%;
+        background: linear-gradient(to right, white 0%, white 40%, rgba(255, 255, 255, var(--fade-left-start)) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: var(--fade-right);
+        height: 100%;
+        background: linear-gradient(to left, white 0%, white 40%, rgba(255, 255, 255, var(--fade-left-start)) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.show-md-up {
+  @apply hidden md:inline-flex;
+}
+
+.show-lg-up {
+  @apply hidden lg:inline-flex;
+}
+
+.show-mobile-only {
+  @apply inline-flex md:hidden;
+}

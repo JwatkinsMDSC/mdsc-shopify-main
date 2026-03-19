@@ -1,0 +1,15 @@
+/* ================================
+   BASE MODAL & DRAWER PANELS
+   JS handles positioning + backdrop
+   CSS handles design only
+================================ */
+
+/* Base panel (modal + drawer) */
+[data-ui-panel] {
+  @apply fixed z-50;
+}
+
+/* Animation wrapper */
+[data-ui-anim] {
+  @apply will-change-[opacity,transform];
+}

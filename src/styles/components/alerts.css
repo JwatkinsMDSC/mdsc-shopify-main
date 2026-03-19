@@ -1,0 +1,41 @@
+.alert {
+    @apply border-l-4 p-4;
+}
+
+.alert-inner {
+    @apply flex;
+}
+
+.alert-icon {
+    @apply shrink-0;
+}
+
+.alert-content {
+    @apply ml-3 grid gap-1;
+}
+
+.alert-title {
+    @apply text-sm font-medium leading-tight;
+}
+
+.alert-description {
+    @apply text-xs leading-tight;
+}
+
+/* Variants */
+
+.alert-success {
+    @apply border-green-800 bg-green-50 text-green-950;
+}
+
+.alert-info {
+    @apply border-blue-800 bg-blue-50 text-blue-900;
+}
+
+.alert-warning {
+    @apply border-yellow-800 bg-yellow-50 text-yellow-900;
+}
+
+.alert-error {
+    @apply border-red-800 bg-red-50 text-red-900;
+}

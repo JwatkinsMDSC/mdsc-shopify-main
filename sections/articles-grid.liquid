@@ -1,0 +1,139 @@
+{%- style -%}
+{{ section.id | prepend: '#' }}.section-wrap:before {
+  background-color:{{ section.settings.background | default: '#ffffff' }}
+}
+{{ section.id | prepend: '#' }} .articles-grid {
+  grid-template-columns: repeat({{ section.settings.articles_per_row }}, 1fr);
+}
+{%- endstyle -%}
+
+<div id="{{ section.id }}" class="section-wrap" style="color:{{ section.settings.color | default:'inherit' }};">
+  <div class="section">
+    {%- if section.settings.show_heading == true -%}
+      <{{ section.settings.size }}>
+        {{ section.settings.text }}
+      </{{ section.settings.size }}>
+    {%- endif -%}
+
+    {%- if section.settings.show_description == true -%}
+      <div class="rte">
+        {{ section.settings.description }}
+      </div>
+    {%- endif -%}
+
+    {% assign blog_handle = section.settings.blog | default: "news" %}
+
+    <div class="articles-grid">
+      {% liquid
+      for article in blogs[blog_handle].articles limit: section.settings.limit
+        render 'article-card', article: article
+      endfor
+      %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Articles",
+  "tag": "section",
+  "class": "articles-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "presets": [
+    {
+      "name": "Articles"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Heading",
+      "default": "Headline",
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "select",
+      "id": "size",
+      "label": "Heading Size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": false
+    },
+    {
+      "visible_if": "{{ section.settings.show_description == true }}",
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias blanditiis libero ut laboriosam. Velit, architecto atque repellat sapiente hic eius eos consequuntur perspiciatis quos. Veritatis eveniet esse minima repellendus!</p>"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "info": "Limit the number of articles displayed.",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "articles_per_row",
+      "label": "Articles Per Row",
+      "info": "Number of articles per row.",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Colour"
+    }
+  ]
+}
+{% endschema %}

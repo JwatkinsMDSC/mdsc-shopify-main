@@ -1,0 +1,39 @@
+/* Toast container */
+#ui-toast-container {
+  @apply fixed bottom-4 right-4 z-50 flex flex-col gap-2 pointer-events-none;
+}
+
+/* Toast */
+.ui-toast {
+  @apply pointer-events-auto opacity-0 translate-y-2
+         transition-all duration-200 ease-out;
+}
+
+/* Visible state */
+.ui-toast.is-visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Toast content */
+.ui-toast-content {
+  @apply flex items-start gap-3 bg-gray-900 text-white
+         px-4 py-3 rounded shadow-lg;
+}
+
+/* Close button */
+.ui-toast-close {
+  @apply text-white/70 hover:text-white;
+}
+
+/* Variants */
+.ui-toast[data-variant="success"] {
+  @apply bg-green-600;
+}
+
+.ui-toast[data-variant="warning"] {
+  @apply bg-yellow-600 text-black;
+}
+
+.ui-toast[data-variant="error"] {
+  @apply bg-red-600;
+}

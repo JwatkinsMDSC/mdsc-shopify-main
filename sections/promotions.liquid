@@ -1,0 +1,266 @@
+{% style %}
+#{{ section.id }} .promotion-asset {
+  height: {{ section.settings.desktop_height | append: "vw" }};
+}
+#{{ section.id }} .promotion-asset img {
+  object-fit: {{ section.settings.object_fit }};
+  object-position:{{ section.settings.object_position }};
+}
+@media screen and (max-width: 768px) {
+  #{{ section.id }} .promotion-asset {
+    height: {{ section.settings.mobile_height | append: "vw" }};
+  }
+}
+{% endstyle %}
+
+<div id="{{ section.id }}" style="background-color:{{ section.settings.background }};">
+  <!-- image -->
+  <div class="promotion-asset">
+    {%- if section.settings.image == blank -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder' }}
+    {%- else -%}
+      {%- assign image = section.settings.image -%}
+      <img src="{{ image | image_url: width: image.width }}"
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      alt="{{ image.alt }}"
+      loading="lazy">
+    {% endif %}
+  </div>
+
+  <!-- content -->
+  <div class="section">
+    <div class="promotion-content">
+      <div class="rte">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <{{- block.settings.size }}>{{ block.settings.text }}</{{- block.settings.size -}}>
+            {%- when 'text' -%}
+              <p>{{ block.settings.text }}</p>
+            {%- when 'buttons' -%}
+              <div>
+                {%- if block.settings.button1_enable -%}
+                  <a class="button" href="{{ block.settings.button1_link | default: '#' }}">
+                    {{ block.settings.button1_label }}
+                  </a>
+                {%- endif -%}
+                {% if block.settings.button2_enable %}
+                  <a class="button" href="{{ block.settings.button2_link | default: '#' }}">
+                    {{ block.settings.button2_label }}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Promotions",
+  "tag": "section",
+  "class": "promotions-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "object_fit",
+      "label": "Fit",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "fill",
+          "label": "Fill"
+        },
+        {
+          "value": "none",
+          "label": "None"
+        }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "select",
+      "id": "object_position",
+      "label": "Position",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Height (desktop)",
+      "min": 25,
+      "max": 100,
+      "step": 1,
+      "default": 33,
+      "unit": "vw",
+      "info": "Height of the section in relation to the browser width."
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Height (mobile)",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "default": 100,
+      "unit": "vw",
+      "info": "Height of the section in relation to the device width."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Headline",
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            }
+          ],
+          "default": "h1"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Asperiores voluptatem rerum fuga assumenda similique voluptatem sapiente qui non voluptatibus.",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button1_label",
+          "default": "Button label",
+          "label": "Button 1 Label "
+        },
+        {
+          "type": "url",
+          "id": "button1_link",
+          "label": "Button 1 Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "button1_enable",
+          "default": true,
+          "label": "Show Button 1?"
+        },
+        {
+          "type": "text",
+          "id": "button2_label",
+          "default": "Button label",
+          "label": "Button 2 Label"
+        },
+        {
+          "type": "url",
+          "id": "button2_link",
+          "label": "Button 2 Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "button2_enable",
+          "default": false,
+          "label": "Show Button 2?"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotions",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "buttons"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

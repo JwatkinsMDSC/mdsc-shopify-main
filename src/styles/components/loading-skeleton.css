@@ -1,0 +1,153 @@
+/* -------------------------------------------------- */
+/* Base Skeleton
+/* -------------------------------------------------- */
+.invisible {
+    all: revert-layer;
+    max-height: 0;
+    max-width: 0;
+}
+
+.skeleton-pulse {
+    @apply animate-pulse;
+}
+
+.skeleton-muted {
+    @apply bg-primary-50 rounded-full;
+}
+
+.skeleton-line {
+    @apply h-2 bg-primary-50 rounded-full;
+}
+
+.skeleton-line-sm {
+    @apply h-2 bg-primary-50 rounded-full;
+}
+
+.skeleton-line-md {
+    @apply h-2.5 bg-primary-50 rounded-full;
+}
+
+/* -------------------------------------------------- */
+/* Text Skeleton Blocks
+/* -------------------------------------------------- */
+
+.skeleton-text {
+    @apply flex flex-col gap-2;
+}
+
+.skeleton-text-row {
+    @apply flex items-center w-full gap-2;
+}
+
+/* -------------------------------------------------- */
+/* List Skeleton
+/* -------------------------------------------------- */
+
+.skeleton-list {
+    @apply rounded-lg ring-2 ring-primary-50 shadow-xs divide-y-2 divide-primary-50;
+}
+
+.skeleton-list-item {
+    @apply flex items-center justify-between p-4;
+}
+
+/* -------------------------------------------------- */
+/* Card Skeletons
+/* -------------------------------------------------- */
+
+.skeleton-card {
+    @apply flex flex-col gap-6;
+}
+
+.skeleton-card-bordered {
+    @apply flex flex-col gap-6 p-4 rounded-lg ring-2 ring-primary-50;
+}
+
+.skeleton-media {
+    @apply flex items-center justify-center bg-primary-50 rounded-md;
+}
+
+/* -------------------------------------------------- */
+/* Media Placeholders
+/* -------------------------------------------------- */
+
+.skeleton-media-absolute {
+    @apply absolute inset-0 z-10 flex items-center justify-center bg-primary-50 rounded-md;
+}
+
+.skeleton-lightbox-media {
+    @apply absolute inset-0 z-20 flex items-center justify-center backdrop-blur-xl;
+
+    &.dark_bg {
+        @apply bg-black/80;
+    }
+
+    &.light_bg {
+        @apply bg-white/80;
+    }
+}
+
+.skeleton-media-aspect {
+    @apply aspect-video;
+}
+
+.skeleton-media-fill {
+    @apply w-full h-auto;
+}
+
+/* -------------------------------------------------- */
+/* Accessibility
+/* -------------------------------------------------- */
+
+.skeleton [aria-hidden="true"] {
+    @apply pointer-events-none;
+}
+
+/* -------------------------------------------------- */
+/* Media Gallery Skeleton
+/* -------------------------------------------------- */
+
+.skeleton-media-gallery {
+    @apply w-full flex flex-col gap-2.5 md:gap-3;
+}
+
+/* Main carousel slide */
+
+.skeleton-carousel-slide {
+    @apply relative flex flex-col items-center justify-center aspect-video bg-primary-50 rounded-lg;
+}
+
+/* Navigation buttons */
+
+.skeleton-btn {
+    @apply flex items-center justify-center;
+}
+
+.skeleton-btn-prev,
+.skeleton-btn-next {
+    @apply opacity-70;
+}
+
+/* Pagination */
+
+.skeleton-pagination-dots {
+    @apply absolute flex items-center justify-center gap-2 bottom-4 left-1/2 -translate-x-1/2;
+}
+
+.skeleton-pagination-dot {
+    @apply rounded-full bg-primary-100 size-2;
+}
+
+.skeleton-pagination-dot.active {
+    @apply bg-primary-200 size-2.5;
+}
+
+/* Thumbnails */
+
+.skeleton-media-gallery-thumbs {
+    @apply grid grid-cols-3 md:grid-cols-4 gap-2.5 md:gap-4;
+}
+
+.skeleton-thumbnail-ring {
+    @apply items-center justify-center aspect-video bg-primary-50 rounded-md;
+}

@@ -1,0 +1,20 @@
+<div class="section-wrap">
+  <div class="section">
+    <h1>{{ collection.title }}</h1>
+    <div class="rte">
+      {{ collection.description }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Details",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Display collection title and description."
+    }
+  ]
+}
+{% endschema %}

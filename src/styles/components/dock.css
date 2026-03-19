@@ -1,0 +1,119 @@
+
+  /* ============================================
+     BASE DOCK (BOTTOM NAVIGATION BAR)
+  ============================================ */
+  .dock {
+    @apply fixed inset-x-0 bottom-0 z-1 flex w-full items-center justify-around 
+           bg-white dark:bg-gray-900 
+           border-t border-gray-200/50 dark:border-white/10
+           p-2;
+
+    /* Safe-area support for iOS bottom bar */
+    height: calc(4rem + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* ============================================
+     DOCK ITEM
+  ============================================ */
+  .dock-item {
+    @apply relative flex flex-col items-center justify-center 
+           h-full basis-full max-w-32 shrink cursor-pointer rounded-md
+           text-gray-700 dark:text-gray-200 
+           bg-transparent gap-0.5 mb-1
+           transition-opacity duration-200 ease-out;
+  }
+
+  .dock-item:hover {
+    @apply opacity-80;
+  }
+
+  /* Disabled */
+  .dock-item[aria-disabled="true"],
+  .dock-item[disabled] {
+    @apply pointer-events-none text-gray-400/10 opacity-100;
+  }
+
+  /* Label under icon */
+  .dock-label {
+    font-size: 0.6875rem; /* ~11px */
+  }
+
+  /* Indicator bar (inactive initially) */
+  .dock-item::after {
+    content: "";
+    @apply absolute bottom-1 h-1 w-6 rounded-full bg-transparent transition-all;
+    border-top: 3px solid transparent;
+  }
+
+  /* ============================================
+     ACTIVE STATE
+  ============================================ */
+  .dock-active::after {
+    @apply w-10 bg-current;
+  }
+
+  /* ============================================
+     SIZE VARIANTS
+  ============================================ */
+  
+  /* XS */
+  .dock-xs {
+    height: calc(3rem + env(safe-area-inset-bottom));
+  }
+
+  .dock-xs .dock-active::after {
+    bottom: -0.1rem;
+  }
+
+  .dock-xs .dock-label {
+    font-size: 0.625rem;
+  }
+
+  /* SM */
+  .dock-sm {
+    height: calc(3.5rem + env(safe-area-inset-bottom));
+  }
+
+  .dock-sm .dock-active::after {
+    bottom: -0.1rem;
+  }
+
+  .dock-sm .dock-label {
+    font-size: 0.625rem;
+  }
+
+  /* MD */
+  .dock-md {
+    height: calc(4rem + env(safe-area-inset-bottom));
+  }
+
+  .dock-md .dock-label {
+    font-size: 0.6875rem;
+  }
+
+  /* LG */
+  .dock-lg {
+    height: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+
+  .dock-lg .dock-active::after {
+    bottom: 0.4rem;
+  }
+
+  .dock-lg .dock-label {
+    font-size: 0.6875rem;
+  }
+
+  /* XL */
+  .dock-xl {
+    height: calc(5rem + env(safe-area-inset-bottom));
+  }
+
+  .dock-xl .dock-active::after {
+    bottom: 0.4rem;
+  }
+
+  .dock-xl .dock-label {
+    font-size: 0.75rem; /* 12px */
+  }

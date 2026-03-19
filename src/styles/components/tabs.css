@@ -1,0 +1,227 @@
+/* ==================================================== */
+/* Tabs – Base
+/* ==================================================== */
+
+[data-tabs] {
+    @apply w-full;
+}
+
+.tabs__list {
+    @apply flex;
+}
+
+.tabs__tab {
+    @apply relative inline-flex items-center gap-2 text-sm font-medium
+           cursor-pointer whitespace-nowrap
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40
+           transition-colors duration-200;
+}
+
+/* SELECTED */
+.tabs__tab[aria-selected="true"] {
+    @apply text-primary-600;
+}
+
+.tabs__panel {
+    @apply pt-4;
+}
+
+/* ==================================================== */
+/* Tabs – Underline
+/* ==================================================== */
+
+.tabs__underline .tabs__list {
+    @apply gap-4 border-b border-gray-200;
+}
+
+.tabs__underline .tabs__tab {
+    @apply px-1 py-4 border-b-2 border-transparent text-gray-500;
+}
+
+.tabs__underline .tabs__tab:hover {
+    @apply text-gray-700 border-gray-300;
+}
+
+/* SELECTED */
+.tabs__underline .tabs__tab[aria-selected="true"] {
+    @apply border-primary-500 text-primary-600;
+}
+
+/* ==================================================== */
+/* Tabs – Icons (Shared Modifier)
+/* ==================================================== */
+
+.tabs__with-icons .tabs__tab {
+    @apply inline-flex items-center gap-2;
+}
+
+.tabs__with-icons .tabs__tab svg {
+    @apply size-5 text-gray-400 transition-colors;
+}
+
+/* Hover */
+.tabs__with-icons .tabs__tab:hover svg {
+    @apply text-gray-500;
+}
+
+/* Selected */
+.tabs__with-icons .tabs__tab[aria-selected="true"] svg {
+    @apply text-primary-500;
+}
+
+/* ==================================================== */
+/* Tabs – Pills
+/* ==================================================== */
+
+.tabs__pills .tabs__list {
+    @apply gap-2;
+}
+
+.tabs__pills .tabs__tab {
+    @apply rounded-md px-3 py-2 text-gray-500;
+}
+
+.tabs__pills .tabs__tab:hover {
+    @apply text-gray-700 bg-gray-50;
+}
+
+/* SELECTED */
+.tabs__pills .tabs__tab[aria-selected="true"] {
+    @apply bg-gray-100 text-gray-800;
+}
+
+/* ==================================================== */
+/* Tabs – Pills Brand
+/* ==================================================== */
+
+/* SELECTED */
+.tabs__pills-brand .tabs__tab[aria-selected="true"] {
+    @apply bg-primary-100 text-primary-700;
+}
+
+/* ==================================================== */
+/* Tabs – Bar
+/* ==================================================== */
+
+.tabs__bar .tabs__list {
+    @apply isolate flex divide-x divide-gray-200 rounded-lg bg-white shadow-sm;
+}
+
+.tabs__bar .tabs__tab {
+    @apply flex-1 text-center px-4 py-4 text-gray-500 hover:bg-gray-50;
+}
+
+.tabs__bar .tabs__tab::after {
+    content: "";
+    @apply absolute inset-x-0 bottom-0 h-0.5 bg-transparent transition-colors;
+}
+
+/* SELECTED */
+.tabs__bar .tabs__tab[aria-selected="true"] {
+    @apply text-gray-900;
+}
+
+.tabs__bar .tabs__tab[aria-selected="true"]::after {
+    @apply bg-primary-500;
+}
+
+/* ==================================================== */
+/* Tabs – Underline with Badges
+/* ==================================================== */
+
+.tabs__underline-badges .tabs__tab {
+    @apply flex items-center gap-2;
+}
+
+.tabs__underline-badges .tabs__badge {
+    @apply hidden md:inline-block rounded-full px-2.5 py-0.5 text-xs font-medium
+           bg-gray-100 text-gray-900;
+}
+
+/* SELECTED */
+.tabs__underline-badges
+.tabs__tab[aria-selected="true"]
+.tabs__badge {
+    @apply bg-primary-100 text-primary-600;
+}
+
+/* ==================================================== */
+/* Tabs – Badges (Shared Modifier)
+/* ==================================================== */
+
+.tabs__with-badges .tabs__tab {
+    @apply inline-flex items-center gap-2;
+}
+
+.tabs__with-badges .tabs__badge {
+    @apply hidden md:inline-block rounded-full
+           px-2.5 py-0.5 text-xs font-medium
+           bg-gray-100 text-gray-900
+           transition-colors;
+}
+
+/* Selected */
+.tabs__with-badges
+.tabs__tab[aria-selected="true"]
+.tabs__badge {
+    @apply bg-primary-100 text-primary-600;
+}
+
+/* ==================================================== */
+/* Tabs – Color Scheme: Secondary
+/* ==================================================== */
+
+/* ------------------------------- */
+/* Underline variant
+/* ------------------------------- */
+
+.tabs__color-secondary.tabs__underline
+.tabs__tab[aria-selected="true"] {
+    @apply border-secondary-500;
+}
+
+/* ------------------------------- */
+/* Icons modifier
+/* ------------------------------- */
+
+.tabs__color-secondary.tabs__with-icons
+.tabs__tab[aria-selected="true"] svg {
+    @apply text-secondary-500;
+}
+
+/* ------------------------------- */
+/* Pills variant
+/* ------------------------------- */
+
+.tabs__color-secondary.tabs__pills
+.tabs__tab[aria-selected="true"] {
+    @apply bg-secondary-100;
+}
+
+/* ------------------------------- */
+/* Pills Brand (if combined)
+/* ------------------------------- */
+
+.tabs__color-secondary.tabs__pills-brand
+.tabs__tab[aria-selected="true"] {
+    @apply bg-secondary-100;
+}
+
+/* ------------------------------- */
+/* Bar variant
+/* ------------------------------- */
+
+.tabs__color-secondary.tabs__bar
+.tabs__tab[aria-selected="true"]::after {
+    @apply bg-secondary-500;
+}
+
+/* ------------------------------- */
+/* Badges modifier
+/* ------------------------------- */
+
+.tabs__color-secondary.tabs__with-badges
+.tabs__tab[aria-selected="true"]
+.tabs__badge {
+    @apply bg-secondary-100 text-secondary-600;
+}

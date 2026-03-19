@@ -1,0 +1,65 @@
+.collection-card {
+    @apply relative rounded-lg shadow-xl overflow-hidden
+           select-none aspect-4/5 h-auto;
+}
+
+.collection-card-bg-wrap {
+    @apply absolute inset-0 overflow-hidden rounded-lg;
+}
+
+.collection-card-bg {
+    @apply absolute inset-0 size-full object-cover
+           transition duration-300 ease-out transform scale-100;
+}
+
+/* scale on hover — cannot use @apply group-hover:... inside CSS */
+.collection-card:hover .collection-card-bg {
+    @apply scale-110;
+}
+
+.collection-card-overlay {
+    @apply absolute inset-0
+           transition duration-300 ease-out
+           bg-linear-to-b from-transparent to-primary-600 opacity-100;
+}
+
+.collection-card:hover .collection-card-overlay {
+    @apply to-primary-800;
+}
+
+/* CONTENT */
+.collection-card-content-wrap {
+    @apply absolute inset-0 flex items-end rounded-lg p-4 md:p-6 z-10;
+}
+
+.collection-card-content {
+    @apply w-full space-y-2
+           transform transition-all duration-300 ease-out translate-y-0 md:translate-y-10;
+}
+
+.collection-card:hover .collection-card-content {
+    @apply md:-translate-y-1;
+}
+
+.collection-card-eyebrow {
+    @apply text-sm text-white;
+}
+
+.collection-card-title {
+    @apply m-0 text-xl/5 sm:text-2xl/6 md:text-3xl/8 xl:text-4xl/9 uppercase font-medium tracking-tight text-white;
+}
+
+/* BUTTON SLOT */
+.collection-card-button-wrap {
+    @apply transition-all duration-300 ease-out md:opacity-0;
+}
+
+.collection-card-button {
+    @apply mt-3 flex text-sm md:text-base md:inline-flex gap-3 md:rounded-md pt-1.5 pb-0 md:py-1.5 md:px-3
+           bg-transparent transition-all border-t md:border-0
+           md:hover:bg-white md:hover:text-primary-800 text-white md:ring-2 md:ring-white/60 md:hover:ring-white;
+}
+
+.collection-card:hover .collection-card-button-wrap {
+    @apply opacity-100 translate-y-0;
+}

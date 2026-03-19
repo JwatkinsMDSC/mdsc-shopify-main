@@ -1,0 +1,168 @@
+filters:
+
+  product_types:
+    - Compounds
+    - Polishes
+    - One-Step / AIO
+    - Ceramic Coatings
+    - Sealants / Wax
+    - Cleaners (General)
+    - Degreasers
+    - Water Spot Removers
+    - Iron / Rust Removers
+    - Mold / Mildew Cleaners
+    - Soap / Shampoo
+    - Interior Cleaners
+    - APC (All Purpose Cleaner)
+    - Spray Detailers
+    - Rinseless / Waterless Wash
+    - Marine Vinyl Care
+    - Metal / Aluminum Polish
+    - Plastic / Gelcoat Restorers
+    - Oxidation Removers
+    - Tire / Rubber Cleaners
+    - Glass Cleaners
+    - Protectants & Dressings
+    - Fabric / Upholstery Care
+
+  tools_and_accessories:
+    polishers:
+      - Dual Action Polishers
+      - Rotary Polishers
+      - Forced Rotation Polishers
+      - Mini Polishers
+      - Cordless Polishers
+      - Backing Plates
+
+    pads:
+      - Cutting Pads
+      - Polishing Pads
+      - Finishing Pads
+      - Wool Pads
+      - Microfiber Pads
+      - Foam Pads
+      - Pad Accessories & Primers
+
+    microfiber:
+      - Drying Towels
+      - Polishing Towels
+      - Glass Towels
+      - Utility Towels
+      - Applicators / Mitts
+      - Sponges & Scrubbers
+
+    abrasives:
+      - Sanding Discs (Mirka)
+      - Abralon / Abranet
+      - Interface Pads
+      - Hand Sanding Blocks
+
+    sprayers_and_tools:
+      - iK Sprayers
+      - Atomizers
+      - Pump Sprayers
+      - Foam Cannons
+      - Buckets & Accessories (Huck)
+
+  surface_types:
+    - Gelcoat
+    - Fiberglass
+    - Painted Surfaces
+    - Aluminum
+    - Stainless Steel
+    - Plastic / Rubber
+    - Vinyl
+    - Glass
+    - Non Skid / Deck
+    - Canvas & Upholstery
+    - Engine Room
+
+  stage_of_work:
+    - Wash & Prep
+    - Decontamination
+    - Cut / Restore
+    - Polish / Refine
+    - Finish / Protect
+    - Maintenance / Quick Clean
+    - Ceramic Coating Prep
+    - Ceramic Coating Application
+    - Interior Detailing
+
+  detailing_goals:
+    - Remove Oxidation
+    - Restore Shine
+    - Enhance Gloss
+    - Seal & Protect
+    - Scratch Removal
+    - Heavy Cut
+    - Medium Cut
+    - Finishing Polish
+    - Remove Water Spots
+    - Remove Rust / Orange Staining
+    - Remove Mildew
+    - Salt Removal
+    - Degrease Engine / Bilge
+    - Ceramic Coating Maintenance
+
+  brands:
+    - 3D
+    - Starke
+    - P&S
+    - Rupes
+    - Autofiber
+    - Buff and Shine
+    - Collinite
+    - FLEX
+    - Flitz
+    - GTECHNIQ Marine
+    - Huck Buckets
+    - iK Sprayers
+    - Jescar
+    - Koch Chemie
+    - Lake Country
+    - Marine Nano Shop
+    - MaxShine
+    - Menzerna
+    - Mirka
+    - Nautical One
+    - Presta
+    - Salts Gone
+    - Xanigo Marine
+    - Renegade
+    - Car Candy
+    - Boat Candy
+
+  problems_and_goals:
+    - Remove Oxidation
+    - Restore Shine
+    - Enhance Gloss
+    - Seal & Protect
+    - Scratch Removal
+    - Heavy Cut
+    - Medium Cut
+    - Finishing Polish
+    - Remove Water Spots
+    - Remove Rust / Orange Staining
+    - Remove Mildew
+    - Salt Removal
+    - Degrease Engine / Bilge
+    - Ceramic Coating Maintenance
+
+  bundle_size_pricing:
+    sizes:
+      - 8 oz
+      - 16 oz
+      - 32 oz
+      - 1 Gallon
+      - 5 Gallons
+
+    pricing:
+      - Under $25
+      - $25-$50
+      - $50-$100
+      - $100+
+
+    pack_types:
+      - Singles
+      - Two Packs
+      - Value Kits / Bundles

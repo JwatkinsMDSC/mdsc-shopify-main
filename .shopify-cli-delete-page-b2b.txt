@@ -1,0 +1,1 @@
+This file marks that templates/page.b2b.liquid should be deleted

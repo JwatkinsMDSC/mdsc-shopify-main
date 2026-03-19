@@ -1,0 +1,172 @@
+  /* ==============================
+     PRODUCT CARD WRAPPER
+  =============================== */
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-gray-200);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  /* ==============================
+     PRODUCT IMAGE AREA
+  =============================== */
+  .product-card-img-wrap {
+    @apply relative p-0 sm:p-4;
+  }
+
+  .product-card-img {
+    @apply w-full max-h-72 object-contain mx-auto;
+  }
+
+  /* Sale / Discount Badge Overlay */
+  .product-card-badge {
+    @apply absolute top-4 left-4;
+  }
+
+  /* ==============================
+     PRODUCT INFO
+  =============================== */
+  .product-card-info {
+    @apply px-2 sm:px-4 pt-2 mt-auto leading-none sm:leading-normal;
+  }
+
+  .product-card-title {
+    @apply text-sm sm:text-base leading-tight tracking-tight font-semibold text-gray-900;
+  }
+
+  @media (width >= 640px) {
+    .product-card-title {
+      font-size: 1.125rem;
+      line-height: 1;
+    }
+  }
+
+  .product-card-vendor {
+    @apply text-sm text-gray-600;
+  }
+
+  /* ==============================
+     VARIANT SELECTOR (SCROLL SLIDER)
+  =============================== */
+  .product-card-variants {
+    @apply grid grid-flow-col auto-cols-[80px] gap-2 py-2
+           cursor-grab active:cursor-grabbing select-none
+           overflow-x-auto
+           scrollbar scrollbar-thumb-primary-600 scrollbar-track-transparent
+           scrollbar-thumb-rounded-full scrollbar-h-1.5;
+  }
+
+  .product-card-variant {
+    @apply rounded-md p-2 flex flex-col
+           items-center text-[10px] text-gray-900
+           hover:inset-ring-3 hover:inset-ring-primary-600 hover:-translate-y-1 transition-[translate,box-shadow] duration-150 ease-in-out
+           leading-tight cursor-pointer;
+  }
+
+  .product-card-variant img {
+    @apply h-14 object-contain;
+  }
+
+  /* Active variant */
+  .product-card-variant--active {
+    @apply inset-ring-3 inset-ring-primary-600;
+  }
+
+  /* Inactive variant */
+  .product-card-variant--inactive {
+    @apply inset-ring-1 inset-ring-primary-100;
+  }
+
+  /* ==============================
+     PRICE SECTION
+  =============================== */
+  .product-card-price-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2);
+  }
+
+  .product-card-price-wrap {
+    @apply flex flex-col items-start gap-0;
+  }
+
+  .product-card-price-compare {
+    @apply leading-none text-xs sm:text-sm text-gray-400 line-through;
+  }
+
+  .product-card-price {
+    @apply leading-none text-sm sm:text-base font-semibold text-gray-900;
+  }
+
+  @media (width >= 640px) {
+    .product-card-price {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  /* ==============================
+     QTY CONTROLS
+  =============================== */
+  .product-card-qty-wrap {
+    @apply shrink-0;
+  }
+
+  .product-card-qty {
+    @apply isolate inline-flex rounded-md shadow-xs ring-1 ring-gray-300 dark:shadow-none;
+  }
+
+  .product-card-qty-btn {
+    @apply relative inline-flex items-center justify-center bg-white px-1 py-2
+           text-primary-600 hover:bg-gray-50 focus:z-10 cursor-pointer
+           dark:bg-white/10 dark:hover:bg-white/20;
+  }
+
+  .product-card-qty-btn--left {
+    @apply rounded-l-md border-r-[1.5px] border-gray-200;
+  }
+
+  .product-card-qty-btn--right {
+    @apply rounded-r-md border-l-[1.5px] border-gray-200;
+  }
+
+  /* ==============================
+     ADD TO CART BUTTON
+     (mobile: flex-1, desktop: auto)
+  =============================== */
+  .product-card-add {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-md
+         px-3 py-2 text-sm sm:text-base
+         bg-primary-600 text-white hover:bg-primary-400 transition-colors duration-150 ease-in-out cursor-pointer
+         flex-1 w-full;
+  }
+  
+  .product-card-add svg {
+    @apply size-4 sm:size-5;
+  }
+
+  /* ==========================================
+     QUICK VIEW BUTTON (appears on image hover)
+  ========================================== */
+  .product-card-quickview {
+    @apply absolute left-1/2 bottom-3 
+           -translate-x-1/2 translate-y-3 
+           opacity-0 w-10/12
+           px-4 py-1.5 rounded-sm 
+           text-sm font-semibold 
+           bg-primary-600/70 text-white 
+           transition-all duration-300 ease-out;
+           
+    pointer-events: none; /* prevents accidental hover block */
+  }
+
+  /* Show on hover */
+  .group:hover .product-card-quickview {
+    @apply opacity-100 translate-y-0 z-50 cursor-pointer;
+    pointer-events: auto; /* button becomes clickable */
+  }

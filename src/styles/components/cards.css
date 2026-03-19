@@ -1,0 +1,47 @@
+/* ==================================================== */
+/* Card - Menu Items
+/* ==================================================== */
+
+.card-menu {
+    @apply divide-y divide-gray-200 rounded-lg border border-slate-200 bg-white;
+
+    > * {
+        @apply text-wrap;
+    }
+
+    &.card-menu--borderless {
+        @apply border-0;
+
+        .card-menu-header {
+            @apply p-0 pb-2 border-0;
+        }
+
+        .card-menu-list {
+            @apply p-0 -translate-x-2 border-0;
+        }
+    }
+
+    .card-menu-list {
+        @apply mb-8;
+    }
+}
+
+.card-menu-header {
+    @apply px-3 py-2;
+
+    h3 {
+        @apply text-sm font-semibold text-slate-900;
+    }
+
+    &.ui--light {
+        @apply bg-primary-50;
+    }
+}
+
+.card-menu-list {
+    @apply text-sm space-y-0.5;
+
+    li a {
+        @apply block rounded-md px-2 py-1 text-slate-800 hover:bg-slate-100 hover:text-slate-900;
+    }
+}

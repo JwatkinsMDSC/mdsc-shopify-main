@@ -1,0 +1,155 @@
+/* ==================================================== */
+/* Vertical Navigation – Base
+/* ==================================================== */
+
+[data-vertical-nav] {
+    @apply flex flex-1 flex-col;
+}
+
+.vertical-nav__list {
+    @apply space-y-1;
+    margin-inline: 0;
+}
+
+.vertical-nav__item {
+    @apply list-none;
+}
+
+.vertical-nav__link {
+    @apply relative flex items-center gap-x-3 rounded-md p-2 pl-3 text-sm/6 font-semibold;
+}
+
+.vertical-nav__link::before {
+    content: "";
+    @apply absolute inset-y-0 inset-x-0 rounded-md bg-transparent transition-colors;
+    z-index: -1;
+}
+
+.vertical-nav__link:hover::before {
+    @apply bg-gray-50;
+}
+
+.vertical-nav__link[aria-current="page"]::before {
+    @apply bg-gray-50;
+}
+
+/* Hover */
+.vertical-nav__link:hover {
+    @apply text-primary-600 cursor-pointer;
+}
+
+/* Selected (current) */
+.vertical-nav__link[aria-current="page"] {
+    @apply text-primary-600;
+}
+
+/* ==================================================== */
+/* Vertical Navigation – Icons (Modifier)
+/* ==================================================== */
+
+.vertical-nav__with-icons .vertical-nav__link svg {
+    @apply size-5 shrink-0 text-gray-400 transition-colors;
+}
+
+.vertical-nav__with-icons
+.vertical-nav__link:hover svg {
+    @apply text-primary-600;
+}
+
+.vertical-nav__with-icons
+.vertical-nav__link[aria-current="page"] svg {
+    @apply text-primary-600;
+}
+
+/* ==================================================== */
+/* Vertical Navigation – Badges (Modifier)
+/* ==================================================== */
+
+.vertical-nav__badge {
+    @apply ml-auto min-w-max
+           rounded-full bg-white
+           px-2.5 py-0 leading-normal
+           text-center text-xs/5 font-medium
+           whitespace-nowrap
+           text-gray-600
+           outline -outline-offset-1 outline-gray-200;
+}
+
+/* Selected badge */
+.vertical-nav__link[aria-current="page"]
+.vertical-nav__badge {
+    @apply bg-primary-100 text-primary-600 outline-primary-200;
+}
+
+/* ==================================================== */
+/* Vertical Navigation – Icons + Badges
+/* (automatic composition)
+/* ==================================================== */
+
+/* No extra rules needed.
+Icons and badges compose cleanly via modifiers. */
+
+/* ==================================================== */
+/* Vertical Navigation – Secondary Color Scheme
+/* (Non-text only)
+/* ==================================================== */
+
+/* Icons */
+.vertical-nav__color-secondary.vertical-nav__with-icons
+.vertical-nav__link:hover svg,
+.vertical-nav__color-secondary.vertical-nav__with-icons
+.vertical-nav__link[aria-current="page"] svg {
+    @apply text-secondary-600;
+}
+
+/* Badges */
+.vertical-nav__color-secondary
+.vertical-nav__link[aria-current="page"]
+.vertical-nav__badge {
+    @apply bg-white outline-secondary-200;
+}
+
+/* ==================================================== */
+/* Vertical Navigation – Section Headers
+/* ==================================================== */
+
+.vertical-nav__section-label {
+    @apply px-2 text-xs/6 font-semibold text-gray-400;
+}
+
+/* ==================================================== */
+/* Vertical Navigation – Nested / Secondary Lists
+/* ==================================================== */
+
+.vertical-nav__sublist {
+    @apply mt-2 space-y-1;
+}
+
+.vertical-nav__subitem .vertical-nav__link {
+    @apply pl-3;
+}
+
+/* ==================================================== */
+/* Mobile Menu
+/* ==================================================== */
+
+[data-mobile-menu] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-ui-type="menu-level"] {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+}
+
+[data-menu-back] {
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MDS Theme Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tailwind.css">
+    <script type="module" src="../../assets/design.js"></script>
+</head>
+
+<body class="bg-slate-100">
+    <section class="max-w-3xl mx-auto mt-8 p-6 space-y-12">
+
+        <h1 class="text-3xl font-bold mb-4">Marquee Test Page</h1>
+        <p class="text-gray-600 mb-8">Testing marquee controller with debug mode</p>
+
+        <!-- Logo Marquee (Normal) -->
+<section class="mb-16">
+  <h2 class="text-xl font-semibold mb-4">Normal Marquee</h2>
+  <div
+    data-marquee
+    data-marquee-direction="left"
+    data-marquee-speed="28"
+    data-marquee-gap="32"
+    data-marquee-pause-on-hover
+  >
+    <div data-marquee-viewport>
+      <div data-marquee-content>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Starke.svg?v=1766501510"
+            alt="Starke Yacht Care logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/duraslic_logo.svg?v=1766522801"
+            alt="DuraSlic logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/3D_Logo_-_Green.svg?v=1766502132"
+            alt="3D logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/P_and_S_-_Logo_-_Red.svg?v=1766502903"
+            alt="P and S logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/booyah_clean_fc.png?v=1766574872"
+            alt="Booyah Clean logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mirka-fc.svg?v=1766575019"
+            alt="Mirka logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/shurhold.svg?v=1766575673"
+            alt="Shurhold logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/koch-chemie-fc.svg?v=1766575759"
+            alt="Koch Chemie logo"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Logo Marquee (Debug Mode) -->
+<section class="mb-16">
+  <h2 class="text-xl font-semibold mb-4">Debug Marquee (with overlay)</h2>
+  <p class="text-sm text-gray-500 mb-2">Red dashed border = viewport bounds | Green line = loop reset boundary</p>
+  <div
+    data-marquee
+    data-marquee-debug
+    data-marquee-direction="left"
+    data-marquee-speed="50"
+    data-marquee-gap="32"
+    data-marquee-pause-on-hover
+  >
+    <div data-marquee-viewport>
+      <div data-marquee-content>
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Starke.svg?v=1766501510"
+            alt="Starke Yacht Care logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/duraslic_logo.svg?v=1766522801"
+            alt="DuraSlic logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/3D_Logo_-_Green.svg?v=1766502132"
+            alt="3D logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/P_and_S_-_Logo_-_Red.svg?v=1766502903"
+            alt="P and S logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/booyah_clean_fc.png?v=1766574872"
+            alt="Booyah Clean logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mirka-fc.svg?v=1766575019"
+            alt="Mirka logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/shurhold.svg?v=1766575673"
+            alt="Shurhold logo"
+          >
+        </div>
+
+        <div>
+          <img
+            src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/koch-chemie-fc.svg?v=1766575759"
+            alt="Koch Chemie logo"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </section>
+</body>
+
+</html>

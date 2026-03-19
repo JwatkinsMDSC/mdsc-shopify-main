@@ -1,0 +1,152 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "b2b",
+  "sections": {
+    "b2b_header": {
+      "type": "b2b-header",
+      "blocks": {
+        "announcement_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Free shipping on orders over $500</p>",
+            "link_text": "Learn More",
+            "link": ""
+          }
+        },
+        "announcement_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "<p>Volume discounts available for bulk orders</p>",
+            "link_text": "Learn More",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_1",
+        "announcement_2"
+      ],
+      "settings": {
+        "enable_announcements": true,
+        "phone_number": "(555) 555-1234",
+        "bottom_menu": "main-menu"
+      }
+    },
+    "b2b_hero": {
+      "type": "b2b-hero",
+      "blocks": {
+        "collection_j8nPWx": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "eyebrow": "Shop the collection"
+          }
+        },
+        "collection_dXKezH": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "eyebrow": "Shop the collection"
+          }
+        },
+        "collection_Tcpa34": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "eyebrow": "Shop the collection"
+          }
+        },
+        "collection_d7wNjV": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "eyebrow": "Shop the collection"
+          }
+        },
+        "collection_ncQcpm": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "eyebrow": "Shop the collection"
+          }
+        },
+        "collection_q8Y8P8": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "eyebrow": "Shop the collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_j8nPWx",
+        "collection_dXKezH",
+        "collection_Tcpa34",
+        "collection_d7wNjV",
+        "collection_ncQcpm",
+        "collection_q8Y8P8"
+      ],
+      "settings": {
+        "eyebrow": "Welcome to Marine Detail Supply",
+        "heading": "Marine Detailing Products",
+        "subheading": "The new arrivals have, well, newly arrived. Check out the latest options from our summer small-batch release while they're still in stock.",
+        "button_text": "Shop Collection",
+        "button_link": ""
+      }
+    },
+    "b2b_product_grid": {
+      "type": "b2b-product-grid",
+      "settings": {
+        "collection": "all",
+        "products_per_page": 24,
+        "show_discount_badge": true,
+        "show_discounted_first": true,
+        "heading": "All Products"
+      }
+    },
+    "b2b_footer_cta": {
+      "type": "b2b-above-footer-cta",
+      "settings": {}
+    },
+    "b2b_footer": {
+      "type": "b2b-footer",
+      "settings": {
+        "copyright_text": "© 2024 Marine Detail Supply. All rights reserved.",
+        "contact_info": ""
+      }
+    },
+    "b2b_cart": {
+      "type": "b2b-cart-modal",
+      "settings": {
+        "heading": "Shopping Cart",
+        "empty_cart_message": "Your cart is empty"
+      }
+    },
+    "b2b_countdown": {
+      "type": "b2b-countdown-timer",
+      "settings": {
+        "heading": "Limited Time Offer",
+        "end_date": "",
+        "end_time": "23:59",
+        "show_timer": true
+      }
+    }
+  },
+  "order": [
+    "b2b_header",
+    "b2b_hero",
+    "b2b_product_grid",
+    "b2b_footer_cta",
+    "b2b_footer",
+    "b2b_cart",
+    "b2b_countdown"
+  ]
+}

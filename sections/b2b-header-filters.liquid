@@ -1,0 +1,132 @@
+{% schema %}
+{
+  "name": "B2B Header Filters",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_filters",
+      "label": "Enable Filters",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "filter",
+      "name": "Filter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Filter Label"
+        },
+        {
+          "type": "select",
+          "id": "filter_type",
+          "label": "Filter Type",
+          "options": [
+            { "value": "product_type", "label": "Product Type" },
+            { "value": "collection", "label": "Collection" },
+            { "value": "tag", "label": "Tag" },
+            { "value": "brand", "label": "Brand" },
+            { "value": "price", "label": "Price Range" }
+          ],
+          "default": "product_type"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% if section.settings.enable_filters %}
+  <div id="b2bRevealFilters" class="b2b-header-filters bg-white border-b border-gray-200 shadow-md" data-filters-bar>
+    <div class="fade-overlay-white fade-x-4 mx-auto max-w-400">
+      <div class="relative flex justify-center space-x-4">
+        <div class="px-4 whitespace-nowrap overflow-x-auto flex items-center gap-2 cursor-grab scrollbar scrollbar-thumb-primary-300 gutter-both scrollbar-track-white scrollbar-h-1">
+          
+          {% for block in section.blocks %}
+            <div class="flex items-center gap-1 cursor-pointer py-2" data-filter-group="{{ block.id }}" {{ block.shopify_attributes }}>
+              <div data-popover>
+                <button class="filter-trigger" data-popover-button>
+                  <span class="badge badge-info badge-xs badge-pill shadow-sm hidden" data-filter-count>0</span>
+                  {{ block.settings.label }}
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20" class="size-5 text-gray-400">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                  </svg>
+                </button>
+                
+                <div class="filter-popover" data-popover-panel>
+                  <div class="filter-panel">
+                    <div class="p-4">
+                      <div class="filter-header">
+                        {{ block.settings.label }}
+                        <button type="button" class="filter-close-btn ml-auto btn btn-xs btn-secondary btn-circle">
+                          <span class="sr-only">Close</span>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-3">
+                            <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      
+                      <form class="filters-panel-chips" data-filter-type="{{ block.settings.filter_type }}">
+                        {% comment %} Filter options will be populated by JavaScript {% endcomment %}
+                      </form>
+                    </div>
+                    
+                    <div class="filter-actions">
+                      <button type="button" class="filter-action-btn filter-action-apply">
+                        Apply Filters
+                      </button>
+                      <button type="button" class="filter-action-btn filter-action-reset">
+                        Clear All
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .b2b-header-filters {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  
+  .b2b-header-filters.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-overlay-white {
+    position: relative;
+  }
+  
+  .fade-overlay-white::before,
+  .fade-overlay-white::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .fade-overlay-white::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+  }
+  
+  .fade-overlay-white::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+  }
+{% endstylesheet %}

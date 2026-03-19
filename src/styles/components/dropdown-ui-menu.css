@@ -1,0 +1,36 @@
+  .app-dd-menu {
+      @apply 
+        absolute w-56 right-0 divide-y divide-gray-100 rounded-md bg-white shadow-lg mt-3 
+        outline-5 outline-secondary-500/40 sm:text-sm 
+        dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10;
+  }
+
+  /* header section */
+  .app-dd-menu__header {
+      @apply px-4 py-3;
+  }
+
+  .app-dd-menu__header-label {
+      @apply text-sm text-gray-700;
+  }
+
+  .app-dd-menu__header-email {
+      @apply truncate text-sm font-medium text-gray-900;
+  }
+
+  /* grouped list sections */
+  .app-dd-menu__section {
+      @apply py-1;
+  }
+
+  /* item row (anchor) */
+  .app-dd-menu__item {
+      @apply 
+        flex items-center px-4 py-2 text-sm text-gray-900 
+        hover:bg-primary-50 hover:text-gray-900 focus:bg-primary-50 focus:text-gray-900 focus:outline-hidden;
+  }
+
+  /* icon inside item */
+  .app-dd-menu__icon {
+      @apply mr-3 size-5 text-primary-400 group-focus:text-primary-500;
+  }

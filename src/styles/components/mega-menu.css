@@ -1,0 +1,102 @@
+/* Mega Menu Trigger Button */
+.mega-menu-trigger {
+    @apply flex gap-0.5 items-center cursor-pointer relative;
+    &:before {
+        @apply bg-secondary-600 opacity-0 transition-all duration-200 ease-linear;
+        content: '';
+        position: absolute;
+        left: 0; right: 0; bottom: 0; height: 0;
+        border-radius: 6px 6px 0 0;
+    }
+}
+
+.mega-menu-trigger[aria-expanded="true"] {
+    &:before {
+        @apply opacity-100 h-1;
+    }
+}
+
+/* Positioned element (layout only) */
+.mega-menu-panel {
+  @apply absolute w-full inset-x-0;
+}
+
+/* Layout removal */
+.mega-menu-panel.hidden {
+  @apply hidden;
+}
+
+
+/* Animate icon */
+.mega-menu-trigger svg {
+  @apply transition-transform duration-150 ease-in-out text-slate-600;
+}
+ 
+el-mega-menu {
+  @apply transition-opacity duration-300;
+}
+
+.mega-nav-column {
+    @apply flex flex-col gap-6;
+}
+
+.mega-nav-group {
+    @apply flex flex-col gap-3;
+}
+
+.mega-nav-group__title {
+    @apply text-sm font-semibold text-slate-900 tracking-tight;
+}
+
+.mega-nav-group__list {
+    @apply flex flex-col gap-2;
+    
+    li {
+        @apply leading-snug;
+    }
+
+    a {
+        @apply text-sm text-slate-700 transition-colors hover:text-primary-600 hover:underline;
+    }
+}
+
+.mega-nav-group__list a {
+    @apply focus:outline-none focus-visible:text-primary-700 min-w-0 text-wrap;
+}
+
+.mega-nav-group__list a[aria-current="page"] {
+    @apply text-primary-700 font-medium;
+}
+
+/* Mega Menu Footer Container */
+.mega-nav-footer {
+    @apply grid gap-4 grid-cols-[260px_1fr] border-t border-slate-200 bg-slate-50 p-4
+           md:flex-row md:items-center md:justify-between;
+}
+
+/* Primary CTA */
+.mega-nav-footer__primary {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-md border border-slate-200 bg-white
+           px-4 py-1.5 text-[13px] font-medium shadow-xs
+           transition-colors hover:bg-slate-50;
+}
+
+.mega-nav-footer__primary-icon {
+    @apply size-5 -translate-x-0.5 transition-all
+           group-hover:translate-x-1.25
+           group-hover:text-secondary-600;
+}
+
+/* Secondary Links Wrapper */
+.mega-nav-footer__secondary {
+    @apply flex flex-wrap gap-2;
+}
+
+/* Secondary CTA Pills */
+.mega-nav-footer__pill {
+    @apply inline-flex items-center justify-center gap-2
+           rounded-md border border-slate-200 bg-white
+           px-3 py-1.5 text-[13px] font-medium shadow-xs
+           transition-colors hover:bg-slate-50;
+}

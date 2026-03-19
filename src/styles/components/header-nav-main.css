@@ -1,0 +1,23 @@
+.main-header-navbar {
+    @apply z-10 bg-white shadow-sm border-b border-gray-200;
+}
+
+.main-header-navbar__container {
+    @apply flex justify-start lg:justify-center max-w-400 mx-auto min-h-8;
+}
+
+.main-header-navbar__scrolling-container {
+    @apply px-2 hidden sm:flex gap-6 whitespace-nowrap overflow-x-auto items-center scrollbar scrollbar-thumb-primary-300 scrollbar-track-white scrollbar-h-1;
+}
+
+.main-header-navbar__list {
+    @apply flex gap-5 items-center;
+}
+
+.main-header-navbar__link, .mega-menu-trigger {
+    @apply text-sm leading-none flex items-center h-full py-2.5 text-slate-900 hover:text-primary-500;
+}
+
+.main-header-navbar__mobile {
+    @apply pr-2 flex ml-auto items-center leading-none sm:hidden;
+}

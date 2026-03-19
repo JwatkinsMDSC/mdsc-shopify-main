@@ -1,0 +1,65 @@
+/* ---------------------------------------------
+   Announcement Banner (36px locked height)
+--------------------------------------------- */
+
+.announcement-banner {
+    @apply relative w-full sm:w-fit
+           flex items-center
+           bg-primary-700 text-white
+           h-9;
+}
+
+/* Left / Right buttons */
+.announcement-btn {
+    @apply h-full w-9
+           grid place-items-center
+           text-secondary-400
+           hover:text-secondary-200
+           cursor-pointer
+           select-none;
+}
+
+.announcement-prev {
+    @apply border-l sm:border-0 border-secondary-600/50;
+}
+
+.announcement-next {
+    @apply border-r sm:border-0 border-secondary-600/50;
+}
+
+/* Fixed-height rail (CRITICAL) */
+.announcement-rail {
+    @apply relative flex-1
+           h-9
+           overflow-hidden;
+}
+
+/* Swiper container must inherit rail height only */
+.announcement-swiper {
+    @apply h-full w-full
+           overflow-hidden;
+}
+
+/* Swiper internals */
+.announcement-swiper .swiper-wrapper {
+    @apply h-full w-full sm:w-fit;
+}
+
+.announcement-swiper .swiper-slide {
+    @apply h-full
+           flex items-center justify-center
+           gap-2 md:gap-3
+           text-xs md:text-sm
+           whitespace-nowrap;
+}
+
+/* Text handling */
+.announcement-swiper .swiper-slide span {
+    @apply truncate;
+}
+
+.announcement-swiper .swiper-slide a {
+    @apply font-semibold underline
+           text-secondary-300
+           hover:text-secondary-200;
+}

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page_title }}{% if current_page != 1 %} - {{ 'general.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}</title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {%- if request.path contains "/pages/thank-you" -%}
+  <meta name="robots" content="noindex">
+  {%- endif -%}
+
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- unless settings.favicon == blank -%}
+    <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endunless -%}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+  {% comment %} Tailwind CSS v4 + All Components (compiled from src/styles/tailwind.css) {% endcomment %}
+  {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+
+  <style>
+    /* Prevent scrollbar from overlapping page content */
+    html {
+      scrollbar-gutter: stable;
+    }
+  </style>
+
+  {% if request.design_mode %}
+  <style>
+    /* SVG size overrides for theme editor - prevents CSS variable errors */
+    /* Ultra-specific selectors to override all possible conflicts */
+    svg.size-3, svg[class*="size-3"], 
+    .swiper svg.size-3, .swiper svg[class*="size-3"],
+    .swiper-hero-btn svg.size-3, .swiper-hero-btn svg[class*="size-3"] { 
+      width: 12px !important; 
+      height: 12px !important; 
+    }
+    
+    svg.size-4, svg[class*="size-4"],
+    .swiper svg.size-4, .swiper svg[class*="size-4"],
+    .swiper-hero-btn svg.size-4, .swiper-hero-btn svg[class*="size-4"] { 
+      width: 16px !important; 
+      height: 16px !important; 
+    }
+    
+    svg.size-5, svg[class*="size-5"],
+    .swiper svg.size-5, .swiper svg[class*="size-5"],
+    .swiper-hero-btn svg.size-5, .swiper-hero-btn svg[class*="size-5"],
+    .btn-prev svg.size-5, .btn-next svg.size-5,
+    .collection-card-button svg.size-5 { 
+      width: 20px !important; 
+      height: 20px !important; 
+    }
+    
+    svg.size-6, svg[class*="size-6"],
+    .swiper svg.size-6, .swiper svg[class*="size-6"],
+    .collection-card-button svg.size-6 { 
+      width: 24px !important; 
+      height: 24px !important; 
+    }
+    
+    svg.size-8, svg[class*="size-8"] { width: 32px !important; height: 32px !important; }
+    svg.size-12, svg[class*="size-12"] { width: 48px !important; height: 48px !important; }
+    svg.size-18, svg[class*="size-18"] { width: 72px !important; height: 72px !important; }
+    svg.size-24, svg[class*="size-24"] { width: 96px !important; height: 96px !important; }
+    svg.size-30, svg[class*="size-30"] { width: 120px !important; height: 120px !important; }
+    svg.size-32, svg[class*="size-32"] { width: 128px !important; height: 128px !important; }
+    
+    /* Width/height overrides */
+    svg.w-3, svg[class*="w-3"] { width: 12px !important; }
+    svg.w-4, svg[class*="w-4"] { width: 16px !important; }
+    svg.w-5, svg[class*="w-5"] { width: 20px !important; }
+    svg.w-6, svg[class*="w-6"] { width: 24px !important; }
+    svg.w-8, svg[class*="w-8"] { width: 32px !important; }
+    svg.w-12, svg[class*="w-12"] { width: 48px !important; }
+    
+    svg.h-3, svg[class*="h-3"] { height: 12px !important; }
+    svg.h-4, svg[class*="h-4"] { height: 16px !important; }
+    svg.h-5, svg[class*="h-5"] { height: 20px !important; }
+    svg.h-6, svg[class*="h-6"] { height: 24px !important; }
+    svg.h-8, svg[class*="h-8"] { height: 32px !important; }
+    svg.h-12, svg[class*="h-12"] { height: 48px !important; }
+  </style>
+  {% endif %}
+
+  <script type="importmap">
+  {
+    "imports": {
+      "./swiper.js": "{{ 'swiper.js' | asset_url }}",
+      "./effect-fade.js": "{{ 'effect-fade.js' | asset_url }}"
+    }
+  }
+  </script>
+  <script type="module" src="{{ 'design.js' | asset_url }}"></script>
+  {% if request.design_mode %}
+  <script type="module" src="{{ 'b2b-theme-editor.js' | asset_url }}"></script>
+  {% endif %}
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+  <script src="{{ 'b2b-core.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-tooltips.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-drag-scroll.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-quantity.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-currency-menu.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-main.js' | asset_url }}" defer></script>
+  <script src="{{ 'product-grid-filters.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-product-grid.js' | asset_url }}" defer></script>
+  <script type="module" src="{{ 'b2b-quick-view.js' | asset_url }}"></script>
+  <script src="{{ 'b2b-cart.js' | asset_url }}" defer></script>
+  <script src="{{ 'b2b-countdown.js' | asset_url }}" defer></script>
+
+  {% render 'schemas' %}
+  {% render 'social-meta-tags' %}
+  {{ content_for_header }}
+</head>
+
+<body class="bg-gray-50" data-b2b-customer="{% if customer and customer.tags contains 'b2b' %}true{% else %}false{% endif %}">
+  {% comment %}
+  Skip to content accessibility link
+  {% endcomment %}
+  <a href="#main-content" class="skip-to-content desktop sr-only focus:not-sr-only">
+    <span>Skip to content</span>
+  </a>
+
+  {% sections 'header-group' %}
+
+  {% liquid
+  unless template == "index" or template == "cart" or template == "blog"
+    render 'breadcrumb'
+  endunless
+  %}
+
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  <footer class="section-wrap">
+    <div class="container">
+      {% sections 'footer-group' %}
+    </div>
+  </footer>
+
+  {% liquid
+  # Newsletter Popup.
+  if settings.newsletter_popup
+    render 'newsletter-popup'
+  endif
+  %}
+
+  {%- comment -%}
+  B2B Auto-Redirect: Redirect B2B customers to B2B portal
+  {%- endcomment -%}
+  {% if customer and customer.metafields.custom.customer_levels != blank %}
+    {% unless request.path contains 'view=b2b' or template == 'cart' or template == 'product' or template contains 'account' or template contains 'order' %}
+      <script>
+        if (window.location.pathname === '/' && !window.location.search.includes('view=b2b')) {
+          window.location.href = '/?view=b2b';
+        }
+      </script>
+    {% endunless %}
+  {% endif %}
+</body>
+</html>

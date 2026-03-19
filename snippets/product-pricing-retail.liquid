@@ -1,0 +1,35 @@
+{% comment %}
+  Renders retail pricing UI.
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - current_variant: {Object} Selected variant
+{% endcomment %}
+
+<div class="product-pricing-retail flex items-baseline gap-2">
+  <!-- Compare At Price -->
+  <span
+    class="text-sm text-gray-500 line-through"
+    data-compare-price
+    {% unless current_variant.compare_at_price > current_variant.price %}style="display: none;"{% endunless %}
+  >
+    {{ current_variant.compare_at_price | money }}
+  </span>
+
+  <!-- Base Price -->
+  <span
+    class="text-lg font-bold text-gray-900"
+    data-base-price
+  >
+    {{ current_variant.price | money }}
+  </span>
+
+  <!-- Savings Badge -->
+  <span
+    class="rounded bg-red-100 px-2 py-0.5 text-xs font-medium text-red-800"
+    data-you-save
+    {% unless current_variant.compare_at_price > current_variant.price %}style="display: none;"{% endunless %}
+  >
+    Save <span data-savings-amount>{{ current_variant.compare_at_price | minus: current_variant.price | money }}</span>
+  </span>
+</div>

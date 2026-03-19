@@ -1,0 +1,24 @@
+/* ================================
+   MODAL ROOT
+   Using <dialog class="modal">
+================================ */
+.modal {
+  @apply fixed inset-0 m-0 p-0 bg-transparent
+         overflow-y-auto max-w-none max-h-none size-auto;
+}
+
+/* Containers for positioning */
+.modal-container {
+  @apply flex min-h-full items-stretch justify-center text-center
+         focus:outline-none sm:items-center sm:px-6 lg:px-8;
+}
+
+/* ================================
+   MODAL PANEL (APPEARANCE ONLY)
+   Motion handled by animate-presence.css
+================================ */
+
+.modal-panel {
+  @apply flex w-full text-left text-base
+         sm:my-8 sm:max-w-3xl;
+}

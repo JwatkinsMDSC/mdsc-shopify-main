@@ -1,0 +1,64 @@
+.b2b-price-badge-header {
+    @apply flex gap-2 items-center justify-center;
+    background: linear-gradient(
+        45deg,
+        #1e90ff 5%,
+        #00bfff 10%,
+        #87cefa 30%,
+        #87ceeb 50%,
+        #87cefa 70%,
+        #00bfff 80%,
+        #1e90ff 95%
+    );
+    border: none;
+    border-radius: 6px 6px 0 0;
+    outline: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    line-height: normal;
+    position: relative;
+    overflow: hidden;
+
+    .shimmer {
+        @apply -rotate-45 absolute top-1/2 -translate-y-1/2 bg-linear-to-r from-10% from-white/50 via-30% to-white to-90%;
+        left: -40px;
+        width: 20px;
+        height: 80px;
+        opacity: 0.4;
+    }
+}
+
+.b2b-price-badge-header-text {
+    @apply uppercase text-base justify-center w-full text-primary-700 tracking-tight font-bold leading-normal;
+}
+
+.b2b-price-badge-body {
+    @apply flex py-1 px-2 items-center justify-between border border-primary-200 border-t-0 rounded-b-md shadow-md;
+}
+
+.b2b-price-compare {
+    @apply text-sm text-gray-500 line-through;
+    line-height: normal;
+}
+
+.b2b-price {
+    @apply text-lg font-bold leading-tight text-primary-600;
+    line-height: normal;
+}
+
+@keyframes shimmer-sweep {
+    0% {
+        left: 0;
+    }
+    30% {
+        left: 120%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+
+.shimmer-sweep {
+    animation: shimmer-sweep 2.75s ease infinite;
+}

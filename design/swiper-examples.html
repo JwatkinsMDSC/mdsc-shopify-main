@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Examples - MDS Design System</title>
+    <link rel="stylesheet" href="/tailwind.css">
+    <link rel="stylesheet" href="/assets/swiper.css">
+    <script type="module" src="/assets/design.js"></script>
+</head>
+<body class="bg-gray-50">
+    
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        
+        <div class="mb-8">
+            <a href="./index.html" class="text-primary-600 hover:text-primary-700 font-medium">&larr; Back to Index</a>
+        </div>
+
+        <h1 class="text-4xl font-bold mb-8">Swiper.js Examples</h1>
+
+        <!-- Basic Slider -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-4">Basic Slider</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div 
+                    class="swiper" 
+                    data-swiper
+                    data-swiper-config='{
+                        "navigation": {
+                            "nextEl": ".swiper-button-next",
+                            "prevEl": ".swiper-button-prev"
+                        }
+                    }'
+                    style="height: 300px;"
+                >
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-blue-500 text-white flex items-center justify-center text-2xl rounded-lg">Slide 1</div>
+                        <div class="swiper-slide bg-green-500 text-white flex items-center justify-center text-2xl rounded-lg">Slide 2</div>
+                        <div class="swiper-slide bg-purple-500 text-white flex items-center justify-center text-2xl rounded-lg">Slide 3</div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-4">Product Gallery with Pagination</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div 
+                    class="swiper product-gallery" 
+                    data-swiper
+                    data-swiper-config='{
+                        "slidesPerView": 1,
+                        "spaceBetween": 0,
+                        "loop": true,
+                        "pagination": {
+                            "el": ".swiper-pagination",
+                            "clickable": true
+                        }
+                    }'
+                    style="height: 400px;"
+                >
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide flex items-center justify-center bg-gray-100 rounded-lg">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272" 
+                                 alt="Product 1" 
+                                 class="h-full w-auto object-contain">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center bg-gray-100 rounded-lg">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616" 
+                                 alt="Product 2" 
+                                 class="h-full w-auto object-contain">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center bg-gray-100 rounded-lg">
+                            <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272" 
+                                 alt="Product 3" 
+                                 class="h-full w-auto object-contain">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Multi-slide -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-4">Responsive Multi-slide Carousel</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div 
+                    class="swiper" 
+                    data-swiper
+                    data-swiper-config='{
+                        "slidesPerView": 1,
+                        "spaceBetween": 16,
+                        "navigation": {
+                            "nextEl": ".multi-next",
+                            "prevEl": ".multi-prev"
+                        },
+                        "breakpoints": {
+                            "640": {
+                                "slidesPerView": 2,
+                                "spaceBetween": 20
+                            },
+                            "1024": {
+                                "slidesPerView": 3,
+                                "spaceBetween": 30
+                            },
+                            "1280": {
+                                "slidesPerView": 4,
+                                "spaceBetween": 40
+                            }
+                        }
+                    }'
+                    style="height: 250px;"
+                >
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-red-500 text-white flex items-center justify-center text-xl rounded-lg">Card 1</div>
+                        <div class="swiper-slide bg-orange-500 text-white flex items-center justify-center text-xl rounded-lg">Card 2</div>
+                        <div class="swiper-slide bg-yellow-500 text-white flex items-center justify-center text-xl rounded-lg">Card 3</div>
+                        <div class="swiper-slide bg-green-500 text-white flex items-center justify-center text-xl rounded-lg">Card 4</div>
+                        <div class="swiper-slide bg-blue-500 text-white flex items-center justify-center text-xl rounded-lg">Card 5</div>
+                        <div class="swiper-slide bg-indigo-500 text-white flex items-center justify-center text-xl rounded-lg">Card 6</div>
+                    </div>
+                    <div class="swiper-button-prev multi-prev"></div>
+                    <div class="swiper-button-next multi-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auto-playing Hero -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-4">Auto-playing Hero Slider (Fade Effect)</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div 
+                    class="swiper hero-slider" 
+                    data-swiper
+                    data-swiper-config='{
+                        "loop": true,
+                        "autoplay": {
+                            "delay": 3000,
+                            "disableOnInteraction": false
+                        },
+                        "effect": "fade",
+                        "fadeEffect": {
+                            "crossFade": true
+                        },
+                        "pagination": {
+                            "el": ".hero-pagination",
+                            "clickable": true
+                        }
+                    }'
+                    style="height: 400px;"
+                >
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-linear-to-r from-blue-600 to-blue-800 text-white flex flex-col items-center justify-center text-center rounded-lg">
+                            <h3 class="text-4xl font-bold mb-4">Welcome to MDS</h3>
+                            <p class="text-xl">Premium Marine Detailing Products</p>
+                        </div>
+                        <div class="swiper-slide bg-linear-to-r from-green-600 to-green-800 text-white flex flex-col items-center justify-center text-center rounded-lg">
+                            <h3 class="text-4xl font-bold mb-4">Quality Products</h3>
+                            <p class="text-xl">Professional Grade Solutions</p>
+                        </div>
+                        <div class="swiper-slide bg-linear-to-r from-purple-600 to-purple-800 text-white flex flex-col items-center justify-center text-center rounded-lg">
+                            <h3 class="text-4xl font-bold mb-4">Fast Shipping</h3>
+                            <p class="text-xl">Get Your Products Quickly</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination hero-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrollbar Navigation -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-4">Slider with Scrollbar</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div 
+                    class="swiper" 
+                    data-swiper
+                    data-swiper-config='{
+                        "slidesPerView": 3,
+                        "spaceBetween": 20,
+                        "scrollbar": {
+                            "el": ".swiper-scrollbar",
+                            "draggable": true
+                        }
+                    }'
+                    style="height: 200px;"
+                >
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-pink-500 text-white flex items-center justify-center text-xl rounded-lg">Item 1</div>
+                        <div class="swiper-slide bg-rose-500 text-white flex items-center justify-center text-xl rounded-lg">Item 2</div>
+                        <div class="swiper-slide bg-red-500 text-white flex items-center justify-center text-xl rounded-lg">Item 3</div>
+                        <div class="swiper-slide bg-orange-500 text-white flex items-center justify-center text-xl rounded-lg">Item 4</div>
+                        <div class="swiper-slide bg-amber-500 text-white flex items-center justify-center text-xl rounded-lg">Item 5</div>
+                        <div class="swiper-slide bg-yellow-500 text-white flex items-center justify-center text-xl rounded-lg">Item 6</div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

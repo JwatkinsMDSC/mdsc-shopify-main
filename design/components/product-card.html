@@ -1,0 +1,512 @@
+<div id="product-template" class="product-card shadow-sm">
+
+    <!-- Discount Badge -->
+    <div class="product-card-img-wrap group">
+        <div class="product-card-badge badge badge-md badge-gradient-primary badge-pill">
+            35% OFF
+        </div>
+
+        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+            alt="Product Image" class="product-card-img" data-product-image />
+
+        <!-- Quick View Button -->
+        <button class="product-card-quickview" command="show-modal" commandfor="quickview-1">
+            Quick View
+        </button>
+    </div>
+
+    <!-- Product Quick View -->
+    <el-dialog>
+        <dialog id="quickview-1" class="relative z-10 backdrop:bg-transparent">
+            <el-dialog-backdrop class="modal-backdrop backdrop-blur"></el-dialog-backdrop>
+
+            <div tabindex="0" class="fixed inset-0 z-10 w-screen overflow-y-auto focus:outline-none">
+                <div class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
+                    <!-- This element is to trick the browser into centering the modal contents. -->
+                    <span aria-hidden="true" class="hidden md:inline-block md:h-screen md:align-middle">&#8203;</span>
+                    <!-- Modal panel, show/hide based on modal state. -->
+                    <el-dialog-panel
+                        class="flex w-full transform text-left text-base transition data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in md:my-8 md:max-w-2xl md:px-4 data-closed:md:translate-y-0 data-closed:md:scale-95 lg:max-w-4xl">
+                        <div
+                            class="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+                            <button type="button" command="close" commandfor="quickview-1"
+                                class="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8">
+                                <span class="sr-only">Close</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+
+                            <div
+                                class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:items-center lg:gap-x-8">
+                                <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                    alt="Back of women&#039;s Basic Tee in black."
+                                    class="aspect-2/3 w-full rounded-lg bg-gray-100 object-cover sm:col-span-4 lg:col-span-5" />
+                                <div class="sm:col-span-8 lg:col-span-7">
+                                    <h2 class="text-xl font-medium text-gray-900 tracking-tight sm:pr-12">
+                                        Starke Level R Heavy Cut Compound</h2>
+
+                                    <section aria-labelledby="information-heading" class="mt-1">
+                                        <h3 id="information-heading" class="sr-only">Product
+                                            information</h3>
+
+                                        <!-- Reviews -->
+                                        <div class="mt-4">
+                                            <h4 class="sr-only">Reviews</h4>
+                                            <div class="rating">
+
+                                                <p class="rating-score">
+                                                    3.9 <span class="sr-only">out of 5 stars</span>
+                                                </p>
+
+                                                <div class="rating-stars">
+                                                    <!-- Active stars -->
+                                                    <svg viewBox="0 0 20 20" fill="currentColor"
+                                                        class="rating-star rating-star--active">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                    </svg>
+                                                    <svg viewBox="0 0 20 20" fill="currentColor"
+                                                        class="rating-star rating-star--active">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                    </svg>
+                                                    <svg viewBox="0 0 20 20" fill="currentColor"
+                                                        class="rating-star rating-star--active">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                    </svg>
+                                                    <svg viewBox="0 0 20 20" fill="currentColor"
+                                                        class="rating-star rating-star--active">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                    </svg>
+
+                                                    <!-- Inactive star -->
+                                                    <svg viewBox="0 0 20 20" fill="currentColor"
+                                                        class="rating-star rating-star--inactive">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" />
+                                                    </svg>
+                                                </div>
+
+                                                <div class="rating-reviews">
+                                                    <span class="rating-reviews-separator"
+                                                        aria-hidden="true">&middot;</span>
+                                                    <a href="#" class="rating-reviews-link">
+                                                        See all 512 reviews
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Product Description -->
+                                        <div class="mt-4">
+                                            <h4 class="sr-only">Description</h4>
+
+                                            <p class="text-sm text-gray-800">Ready to bring back the brilliant shine of
+                                                your boat's gel coat or marine paint? Look no further than Level R! This
+                                                powerful product effortlessly removes scratches, heavy oxidation, and
+                                                chalk, restoring your vessel to its former glory. For that ultimate
+                                                glossy finish, follow up with Elevate medium cut compound or Ignition
+                                                finishing polish. Want to take it even further? Use a protective coating
+                                                from our large product offering to achieve an unparalleled shine and
+                                                protect against the elements. Transform your boat with Level R and
+                                                cruise in style!</p>
+                                        </div>
+                                    </section>
+
+                                    <section aria-labelledby="options-heading" class="mt-6">
+                                        <h3 id="options-heading" class="sr-only">
+                                            Product options
+                                        </h3>
+
+                                        <form>
+                                            <!-- Color picker -->
+                                            <fieldset class="color-picker" aria-label="Choose a color">
+                                                <legend class="color-picker-legend">Color</legend>
+
+                                                <div class="color-picker-options">
+
+                                                    <!-- Black -->
+                                                    <label class="color-picker-option">
+                                                        <input type="radio" name="color" aria-label="Black"
+                                                            value="black" checked
+                                                            class="color-picker-radio color-black" />
+                                                    </label>
+
+                                                    <!-- Heather Grey -->
+                                                    <label class="color-picker-option">
+                                                        <input type="radio" name="color" aria-label="Heather Grey"
+                                                            value="heather-grey"
+                                                            class="color-picker-radio color-heather-gray" />
+                                                    </label>
+
+                                                </div>
+                                            </fieldset>
+
+                                            <!-- Size picker -->
+                                            <fieldset aria-label="Choose a size" class="product-card-variants scrollbar scrollbar-thumb-primary-600 scrollbar-track-gray-200 
+                                                                        scrollbar-h-2 scrollbar-thumb-rounded-full scrollbar-track-rounded-full cursor-grab 
+                                                                        active:cursor-grabbing select-none mt-8"
+                                                data-variant-scroll>
+                                                <legend class="text-sm font-medium text-gray-900">
+                                                    Size</legend>
+                                                <div class="tooltip tooltip-primary tooltip-portal" data-tip="16 oz.">
+                                                    <div class="product-card-variant product-card-variant--active"
+                                                        data-variant
+                                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                                        data-variant-price="$22.74" data-variant-compare="$34.99">
+                                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                            alt="16oz" draggable="false">
+                                                        <span class="mt-1">16 oz.</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tooltip tooltip-portal" data-tip="32 oz.">
+                                                    <div class="product-card-variant product-card-variant--inactive"
+                                                        data-variant
+                                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                        data-variant-price="$38.99" data-variant-compare="$49.99">
+                                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                            alt="32oz" draggable="false">
+                                                        <span class="mt-1">32 oz.</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tooltip tooltip-portal" data-tip="128 oz. Jug">
+                                                    <div class="product-card-variant product-card-variant--inactive"
+                                                        data-variant
+                                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                                                        data-variant-price="$89.99" data-variant-compare="$119.99">
+                                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                            alt="128 oz Jug" draggable="false">
+                                                        <span class="mt-1">128 oz. Jug</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tooltip tooltip-portal" data-tip="128 oz. Drum">
+                                                    <div class="product-card-variant product-card-variant--inactive"
+                                                        data-variant
+                                                        data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                        data-variant-price="$299.99" data-variant-compare="$399.99">
+                                                        <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                                                            alt="128 oz Drum" draggable="false">
+                                                        <span class="mt-1">128 oz. Drum</span>
+                                                    </div>
+                                                </div>
+
+                                            </fieldset>
+
+                                            <!-- Price + Qty + Add to Cart -->
+                                            <div class="product-card-price-area flex-col p-0 mt-8">
+
+                                                <!-- Price + Qty -->
+                                                <div class="flex w-full justify-between items-center gap-2">
+
+                                                    <!-- Price -->
+                                                    <div class="product-card-price-wrap">
+                                                        <p class="product-card-price-compare" data-price-compare>$34.99
+                                                        </p>
+                                                        <p class="product-card-price" data-price>
+                                                            $22.74</p>
+                                                    </div>
+
+                                                    <!-- Qty -->
+                                                    <div class="product-card-qty-wrap">
+                                                        <span class="product-card-qty">
+
+                                                            <button type="button"
+                                                                class="product-card-qty-btn product-card-qty-btn--left">
+                                                                <span class="sr-only">Decrease</span>
+                                                                <svg viewBox="0 0 24 24" fill="currentColor"
+                                                                    class="size-3">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                            </button>
+
+                                                            <input type="number" value="1" min="1" class="input-qty">
+
+                                                            <button type="button"
+                                                                class="product-card-qty-btn product-card-qty-btn--right">
+                                                                <span class="sr-only">Increase</span>
+                                                                <svg viewBox="0 0 24 24" fill="currentColor"
+                                                                    class="size-3">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                                                        clip-rule="evenodd" />
+                                                                </svg>
+                                                            </button>
+
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Add to Cart -->
+                                                <button class="product-card-add">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="size-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                                    </svg>
+                                                    Add to cart
+                                                </button>
+
+                                            </div>
+
+                                        </form>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </div>
+        </dialog>
+    </el-dialog>
+
+    <!-- Product Info -->
+    <div class="product-card-info">
+        <h2 class="product-card-title">
+            Starke Level R Heavy Cut Compound
+        </h2>
+        <p class="product-card-vendor">Starke Yacht Care</p>
+
+        <!-- Variant Slider -->
+        <div class="
+                                product-card-variants scrollbar scrollbar-thumb-primary-600 scrollbar-track-gray-200 
+                                scrollbar-h-2 scrollbar-thumb-rounded-full scrollbar-track-rounded-full cursor-grab 
+                                active:cursor-grabbing select-none" data-variant-scroll>
+
+            <div class="tooltip tooltip-primary tooltip-portal" data-tip="16 oz.">
+                <div class="product-card-variant product-card-variant--active" data-variant
+                    data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                    data-variant-price="$22.74" data-variant-compare="$34.99">
+                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                        alt="16oz" draggable="false">
+                    <span class="mt-1">16 oz.</span>
+                </div>
+            </div>
+
+            <div class="tooltip tooltip-portal" data-tip="32 oz.">
+                <div class="product-card-variant product-card-variant--inactive" data-variant
+                    data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                    data-variant-price="$38.99" data-variant-compare="$49.99">
+                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                        alt="32oz" draggable="false">
+                    <span class="mt-1">32 oz.</span>
+                </div>
+            </div>
+
+            <div class="tooltip tooltip-portal" data-tip="128 oz. Jug">
+                <div class="product-card-variant product-card-variant--inactive" data-variant
+                    data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/elevate_1gal.jpg?v=1679473272"
+                    data-variant-price="$89.99" data-variant-compare="$119.99">
+                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                        alt="128 oz Jug" draggable="false">
+                    <span class="mt-1">128 oz. Jug</span>
+                </div>
+            </div>
+
+            <div class="tooltip tooltip-portal" data-tip="128 oz. Drum">
+                <div class="product-card-variant product-card-variant--inactive" data-variant
+                    data-variant-image="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                    data-variant-price="$299.99" data-variant-compare="$399.99">
+                    <img src="https://cdn.shopify.com/s/files/1/0297/1589/0309/products/Ignition_16oz.jpg?v=1679473616"
+                        alt="128 oz Drum" draggable="false">
+                    <span class="mt-1">128 oz. Drum</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Price + Qty + Add to Cart -->
+    <div class="product-card-price-area flex-col">
+
+        <!-- Price + Qty -->
+        <div class="flex w-full justify-between items-center gap-2">
+
+            <!-- Price -->
+            <div class="product-card-price-wrap">
+                <p class="product-card-price-compare" data-price-compare>$34.99</p>
+                <p class="product-card-price" data-price>$22.74</p>
+            </div>
+
+            <!-- Qty -->
+            <div class="product-card-qty-wrap">
+                <span class="product-card-qty">
+
+                    <button type="button" class="product-card-qty-btn product-card-qty-btn--left">
+                        <span class="sr-only">Decrease</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                            <path fill-rule="evenodd"
+                                d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <input type="number" value="1" min="1" class="input-qty">
+
+                    <button type="button" class="product-card-qty-btn product-card-qty-btn--right">
+                        <span class="sr-only">Increase</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="size-3">
+                            <path fill-rule="evenodd"
+                                d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="product-card-add">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            Add to cart
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- Product Card Variant Selection & Drag Scroll -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const productCards = document.querySelectorAll('.product-card');
+
+        productCards.forEach(card => {
+            const variantContainer = card.querySelector('[data-variant-scroll]');
+            const variants = card.querySelectorAll('[data-variant]');
+            const productImage = card.querySelector('[data-product-image]');
+            const priceElement = card.querySelector('[data-price]');
+            const comparePriceElement = card.querySelector('[data-price-compare]');
+
+            // Quantity controls
+            const qtyInput = card.querySelector('.input-qty');
+            const decreaseBtn = card.querySelector('.product-card-qty-btn--left');
+            const increaseBtn = card.querySelector('.product-card-qty-btn--right');
+
+            if (qtyInput && decreaseBtn && increaseBtn) {
+                decreaseBtn.addEventListener('click', () => {
+                    const currentValue = parseInt(qtyInput.value) || 1;
+                    const minValue = parseInt(qtyInput.min) || 1;
+                    if (currentValue > minValue) {
+                        qtyInput.value = currentValue - 1;
+                    }
+                });
+
+                increaseBtn.addEventListener('click', () => {
+                    const currentValue = parseInt(qtyInput.value) || 1;
+                    const maxValue = qtyInput.max ? parseInt(qtyInput.max) : Infinity;
+                    if (currentValue < maxValue) {
+                        qtyInput.value = currentValue + 1;
+                    }
+                });
+            }
+
+            if (!variantContainer || !variants.length) return;
+
+            // Drag-to-scroll functionality
+            let isDown = false;
+            let isDragging = false;
+            let startX;
+            let scrollLeft;
+
+            variantContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                isDragging = false;
+                startX = e.pageX - variantContainer.offsetLeft;
+                scrollLeft = variantContainer.scrollLeft;
+            });
+
+            variantContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            variantContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                setTimeout(() => { isDragging = false; }, 10);
+            });
+
+            variantContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                isDragging = true;
+                const x = e.pageX - variantContainer.offsetLeft;
+                const walk = (x - startX) * 2;
+                variantContainer.scrollLeft = scrollLeft - walk;
+            });
+
+            // Touch support
+            let touchStartX = 0;
+            let touchScrollLeft = 0;
+            let isTouchDragging = false;
+
+            variantContainer.addEventListener('touchstart', (e) => {
+                isTouchDragging = false;
+                touchStartX = e.touches[0].pageX;
+                touchScrollLeft = variantContainer.scrollLeft;
+            }, { passive: true });
+
+            variantContainer.addEventListener('touchmove', (e) => {
+                isTouchDragging = true;
+                const x = e.touches[0].pageX;
+                const walk = (touchStartX - x) * 1.5;
+                variantContainer.scrollLeft = touchScrollLeft + walk;
+            }, { passive: true });
+
+            variantContainer.addEventListener('touchend', () => {
+                setTimeout(() => { isTouchDragging = false; }, 10);
+            }, { passive: true });
+
+            // Variant click handler
+            variants.forEach(variant => {
+                variant.addEventListener('click', (e) => {
+                    // Don't trigger if user was dragging
+                    if (isDragging || isTouchDragging) {
+                        e.preventDefault();
+                        return;
+                    }
+
+                    const variantImage = variant.dataset.variantImage;
+                    const variantPrice = variant.dataset.variantPrice;
+                    const variantCompare = variant.dataset.variantCompare;
+
+                    // Update product image
+                    if (productImage && variantImage) {
+                        productImage.src = variantImage;
+                    }
+
+                    // Update prices
+                    if (priceElement && variantPrice) {
+                        priceElement.textContent = variantPrice;
+                    }
+                    if (comparePriceElement && variantCompare) {
+                        comparePriceElement.textContent = variantCompare;
+                    }
+
+                    // Update active state
+                    variants.forEach(v => {
+                        v.classList.remove('product-card-variant--active');
+                        v.classList.add('product-card-variant--inactive');
+                    });
+                    variant.classList.remove('product-card-variant--inactive');
+                    variant.classList.add('product-card-variant--active');
+                });
+            });
+        });
+    });
+</script>

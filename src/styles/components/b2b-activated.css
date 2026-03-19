@@ -1,0 +1,67 @@
+/* ================================== */
+/* Main Header */
+/* ================================== */
+
+.main-header-navbar {
+  @apply z-10 bg-white shadow-sm border-b border-gray-200;
+}
+
+/* B2B state applied at main header level */
+.main-header.b2b__activated {
+
+  /* ---------------------------------- */
+  /* Navbar adjustments */
+  /* ---------------------------------- */
+  .main-header-navbar {
+    @apply pl-30 md:pl-40 lg:pl-0;
+  }
+
+  /* ---------------------------------- */
+  /* Middle Bar Branding */
+  /* ---------------------------------- */
+  .middle-bar {
+    .branding .logo {
+      &.retail {
+        @apply hidden;
+      }
+
+      &.b2b {
+        @apply block;
+      }
+    }
+  }
+
+  /* ---------------------------------- */
+  /* Top Bar */
+  /* ---------------------------------- */
+  .top-bar {
+    @apply justify-center sm:pl-28 md:pl-36 pl-0;
+
+    .accountment-banner-container {
+      @apply relative;
+    }
+
+    .announcement-banner {
+      @apply w-full lg:w-auto;
+    }
+
+    .announcement-swiper {
+      @apply flex justify-center;
+
+      .swiper-slide {
+        @apply md:text-xs lg:text-sm;
+      }
+
+      .announcement-btn {
+        @apply relative;
+      }
+    }
+  }
+}
+
+/* ---------------------------------- */
+/* Top Bar base styles (non-state) */
+/* ---------------------------------- */
+.top-bar {
+  @apply h-9 relative bg-primary-700 text-sm;
+}

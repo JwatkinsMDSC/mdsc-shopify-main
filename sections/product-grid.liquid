@@ -1,0 +1,139 @@
+<style>
+{{ section.id | prepend: '#' }}.section-wrap:before {
+  background-color:{{ section.settings.background | default: '#ffffff' }}
+}
+{{ section.id | prepend: '#' }} .products-grid {
+  grid-template-columns: repeat({{ section.settings.products_per_row }}, 1fr);
+}
+</style>
+
+<div id="{{ section.id }}" class="section-wrap" style="color:{{ section.settings.color | default:'inherit' }};">
+  <div class="section">
+    {% if section.settings.show_heading == true %}
+      <{{ section.settings.size }}>
+        {{ section.settings.text }}
+      </{{ section.settings.size }}>
+    {% endif %}
+
+    {%- if section.settings.show_description == true -%}
+      <div class="rte">
+        {{ section.settings.description }}
+      </div>
+    {%- endif -%}
+
+    {% assign collection_handle = section.settings.collection | default: "home" %}
+
+    <div class="products-grid">
+      {% liquid
+      for product in collections[collection_handle].products limit: section.settings.limit
+        render 'product-card', product: product
+      endfor
+      %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Products",
+  "tag": "section",
+  "class": "collection-products-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "presets": [
+    {
+      "name": "Products"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Heading",
+      "default": "Headline",
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "select",
+      "id": "size",
+      "label": "Heading Size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": false
+    },
+    {
+      "visible_if": "{{ section.settings.show_description == true }}",
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias blanditiis libero ut laboriosam. Velit, architecto atque repellat sapiente hic eius eos consequuntur perspiciatis quos. Veritatis eveniet esse minima repellendus!</p>"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Limit",
+      "info": "Limit the number of products displayed.",
+      "min": 2,
+      "max": 24,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products Per Row",
+      "info": "Number of products per row.",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Colour"
+    }
+  ]
+}
+{% endschema %}

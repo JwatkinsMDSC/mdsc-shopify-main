@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MDS Theme Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tailwind.css">
+    <script type="module" src="../../assets/design.js"></script>
+</head>
+<body class="bg-gray-50">
+    <section class="max-w-200 mx-auto mt-16 p-4">
+
+
+        <!-- MAIN GALLERY -->
+        <div 
+            data-media-gallery 
+            data-media-gallery-type="product"
+            class="media-gallery-carousel media-gallery__soft-rounded"
+        >
+            <!-- Skeleton (visible by default) -->
+            <div data-skeleton role="status" class="skeleton skeleton-media-gallery">
+                <!-- Main Slide -->
+                <div class="skeleton-carousel-slide">
+                    <div class="flex w-full p-2 justify-between items-center">
+                        <div class="skeleton-btn skeleton-btn-prev">
+                            <svg class="size-10 md:size-12 lg:size-14 text-primary-200 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m15 19-7-7 7-7" />
+                            </svg>
+                        </div>
+                        <div class="skeleton-btn skeleton-btn-next">
+                            <svg class="size-10 md:size-12 lg:size-14 text-primary-200 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m9 5 7 7-7 7" />
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="skeleton-pagination-dots">
+                        <div class="skeleton-pagination-dot"></div>
+                        <div class="skeleton-pagination-dot"></div>
+                        <div class="skeleton-pagination-dot active"></div>
+                        <div class="skeleton-pagination-dot"></div>
+                        <div class="skeleton-pagination-dot"></div>
+                    </div>
+                    <div class="absolute inset-0 m-auto flex flex-col gap-2 items-center justify-center">
+                        <svg class="size-20 animate-spin text-primary-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+                <!-- Thumbnails -->
+                <div class="skeleton-media-gallery-thumbs">
+                    <div class="skeleton-thumbnail-ring flex">
+                        <svg class="size-8 sm:size-10 text-fg-disabled text-primary-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                        </svg>
+                    </div>
+                    <div class="skeleton-thumbnail-ring flex">
+                        <svg class="size-8 sm:size-10 text-fg-disabled text-primary-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                        </svg>
+                    </div>
+                    <div class="skeleton-thumbnail-ring flex">
+                        <svg class="size-8 sm:size-10 text-fg-disabled text-primary-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                        </svg>
+                    </div>
+                    <div class="skeleton-thumbnail-ring hidden md:flex">
+                        <svg class="size-8 sm:size-10 text-1fg-disabled text-primary-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z" />
+                        </svg>
+                    </div>
+                </div>
+                <span class="sr-only">Loading...</span>
+            </div>
+
+            <!-- MAIN SLIDER (hidden by default with invisible class) -->
+            <div 
+                class="media-gallery-carousel__main invisible"
+                data-slider
+                data-slider-type="media-main"
+                data-slider-lazy
+                data-slider-show-labels
+            >
+                <div class="swiper-wrapper media-gallery-carousel__wrapper">
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="16oz Bottle">
+                        <img 
+                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_16oz_1080x.jpg"
+                            loading="lazy"
+                            alt="Level R 16oz bottle - front view"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="32oz Bottle">
+                        <img 
+                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_32oz_1080x.jpg"
+                            loading="lazy" 
+                            alt="Level R 32oz bottle - front view"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Product Shot">
+                        <img 
+                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_1080x.jpg"
+                            loading="lazy" 
+                            alt="Level R extra heavy cut compound"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Detail View">
+                        <img 
+                            data-lazy-src="https://marinedetailsupply.com/cdn/shop/files/5361ACB2-070D-4054-9334-DCEA5A6C2CDD_1080x.png"
+                            loading="lazy" 
+                            alt="Product detail and ingredients"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Lifestyle 1">
+                        <img 
+                            data-lazy-src="https://picsum.photos/id/237/800/800.jpg"
+                            loading="lazy" 
+                            alt="Product in use - lifestyle shot 1"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Lifestyle 2">
+                        <img 
+                            data-lazy-src="https://picsum.photos/id/238/800/800.jpg"
+                            loading="lazy" 
+                            alt="Product in use - lifestyle shot 2"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Lifestyle 3">
+                        <img 
+                            data-lazy-src="https://picsum.photos/id/239/800/800.jpg"
+                            loading="lazy" 
+                            alt="Product in use - lifestyle shot 3"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Before/After 1">
+                        <img 
+                            data-lazy-src="https://picsum.photos/id/240/800/800.jpg"
+                            loading="lazy" 
+                            alt="Before and after comparison 1"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Before/After 2">
+                        <img 
+                            data-lazy-src="https://picsum.photos/id/241/800/800.jpg"
+                            loading="lazy" 
+                            alt="Before and after comparison 2"
+                        >
+                    </div>
+                    <div class="swiper-slide media-gallery-carousel__slide" data-slider-label="Texture Close-up">
+                        <img 
+                            data-lazy-src="https://picsum.photos/id/242/800/800.jpg"
+                            loading="lazy" 
+                            alt="Product texture and consistency close-ups"
+                        >
+                    </div>
+                </div>
+                <!-- OPEN MODAL (your system) -->
+                <div class="slider-nav__actions">
+                    <button class="slider-btn slider-btn-white slider-btn-round" type="button" data-ui-trigger data-media-open aria-controls="pdp-media-modal">
+                        <svg class="size-5 md:size-7 text-primary-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="slider-nav__center">
+                    <button class="slider-btn slider-btn-white slider-btn__prev" type="button" data-slider-prev aria-label="Previous media">
+                        <svg class="size-5 md:size-7 text-primary-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="m15 19-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button class="slider-btn slider-btn-white slider-btn__next" type="button" data-slider-next aria-label="Next media">
+                        <svg class="size-5 md:size-7 text-primary-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="m9 5 7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- THUMBS (hidden by default with invisible class) -->
+            <div
+                class="swiper invisible"
+                data-slider
+                data-slider-type="media-thumbs-soft"
+                data-slider-lazy
+            >
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_16oz_300x.jpg" loading="lazy" alt="A"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_32oz_300x.jpg" loading="lazy" alt="B"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://marinedetailsupply.com/cdn/shop/products/LevelR_300x.jpg" loading="lazy" alt="C"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://marinedetailsupply.com/cdn/shop/files/5361ACB2-070D-4054-9334-DCEA5A6C2CDD_300x.png" loading="lazy" alt="D"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://picsum.photos/id/237/800/800.jpg" loading="lazy" alt="E"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://picsum.photos/id/238/800/800.jpg" loading="lazy" alt="F"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://picsum.photos/id/239/800/800.jpg" loading="lazy" alt="G"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://picsum.photos/id/240/800/800.jpg" loading="lazy" alt="H"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://picsum.photos/id/241/800/800.jpg" loading="lazy" alt="I"></div>
+                    <div class="swiper-slide"><img data-lazy-src="https://picsum.photos/id/242/800/800.jpg" loading="lazy" alt="J"></div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL PANEL (your system) -->
+        <div 
+            id="pdp-media-modal"
+            data-ui-panel
+            data-ui-type="modal"
+            class="media-gallery-lightbox"
+        >
+            <div class="media-gallery-lightbox__content">
+                
+                <!-- Close fallback (works even if your panel system does not wire a close button) -->
+                <div class="media-gallery-lightbox__controls anchor-top-right">
+                    <button class="lightbox-btn" type="button" data-media-close aria-label="Close gallery">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" 
+                            class="size-6 md:size-8 text-white"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Where media-gallery.js will mount the cloned gallery -->
+                <div data-media-gallery-modal-root
+                     data-media-context="modal"
+                     data-media-zoom="true"
+                     data-media-thumbs="false"
+                     data-media-nav="true"
+                     data-media-pagination="true"
+                     data-media-grab-cursor="true"
+                     data-media-effect="slide"
+                     data-media-classes="
+                       root:lightbox-gallery__root;
+                       gallery:lightbox-gallery__wrapper;
+                       slider:lightbox-gallery__slider;
+                       track:swiper-wrapper lightbox-gallery__track;
+                       slide:swiper-slide lightbox-gallery__slide;
+                       navWrapper:lightbox-gallery__nav__center;
+                       nav:lightbox-gallery__nav__btn;
+                       pagination:lightbox-gallery__pagination
+                     ">
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+</body>
+
+</html>

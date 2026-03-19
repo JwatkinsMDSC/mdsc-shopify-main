@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MDS Theme Design Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tailwind.css">
+    <script type="module" src="../../assets/design.js"></script>
+</head>
+
+<body class="bg-slate-100">
+    <section class="max-w-3xl mx-auto mt-8 p-6 space-y-12">
+
+        <button class="btn btn-secondary btn-xl" data-ui-trigger aria-controls="mobile-menu" aria-expanded="false">
+            Open Menu
+        </button>
+
+        <div id="mobile-menu" data-ui-panel data-ui-type="drawer" data-ui-position="left" data-ui-lock-scroll
+            data-ui-trap-focus data-ui-backdrop data-ui-backdrop-variant="blur"
+            class="ui-from-left h-full w-80 bg-white shadow-xl p-4">
+<nav data-mobile-menu class="relative h-full w-full overflow-hidden">
+
+  <!-- LEVEL 1: ROOT -->
+  <div
+    data-ui-panel
+    data-ui-type="menu-level"
+    data-menu-level="root"
+    data-open
+    class="ui-from-right absolute inset-0"
+  >
+    <ul class="vertical-nav__list vertical-nav__with-icons vertical-nav__color-secondary">
+      <li class="vertical-nav__item">
+        <button
+          type="button"
+          class="vertical-nav__link w-full"
+          data-menu-target="shop"
+          data-menu-label="Shop"
+        >
+          Shop
+          <span class="ml-auto">›</span>
+        </button>
+      </li>
+
+      <li class="vertical-nav__item">
+        <a class="vertical-nav__link" href="/collections">Collections</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- LEVEL 2: SHOP -->
+  <div
+    data-ui-panel
+    data-ui-type="menu-level"
+    data-menu-level="shop"
+    class="ui-from-right absolute inset-0"
+    hidden
+  >
+    <!-- Back button will be auto-injected -->
+
+    <ul class="vertical-nav__list">
+      <li class="vertical-nav__item">
+        <button
+          type="button"
+          class="vertical-nav__link w-full"
+          data-menu-target="shop-headphones"
+          data-menu-label="Headphones"
+        >
+          Headphones
+          <span class="ml-auto">›</span>
+        </button>
+      </li>
+
+      <li class="vertical-nav__item">
+        <a class="vertical-nav__link" href="/collections/speakers">Speakers</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- LEVEL 3: SHOP → HEADPHONES -->
+  <div
+    data-ui-panel
+    data-ui-type="menu-level"
+    data-menu-level="shop-headphones"
+    class="ui-from-right absolute inset-0"
+    hidden
+  >
+    <!-- Back button will be auto-injected -->
+
+    <ul class="vertical-nav__list">
+      <li class="vertical-nav__item">
+        <a class="vertical-nav__link" href="/collections/headphones/wireless">
+          Wireless
+        </a>
+      </li>
+
+      <li class="vertical-nav__item">
+        <a class="vertical-nav__link" href="/collections/headphones/wired">
+          Wired
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+
+
+        </div>
+
+    </section>
+</body>
+
+</html>

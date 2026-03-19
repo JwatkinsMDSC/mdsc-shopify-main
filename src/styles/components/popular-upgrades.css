@@ -1,0 +1,75 @@
+.popular-upgrades {
+    @apply rounded-lg bg-gray-50 p-4 transition-all open:bg-secondary-50;
+}
+
+.popular-upgrades-summary {
+    @apply flex items-center justify-between cursor-pointer list-none;
+}
+
+.popular-upgrades-summary-left {
+    @apply flex items-center gap-2;
+}
+
+.popular-upgrades-title {
+    @apply text-sm font-medium text-black;
+}
+
+.popular-upgrades-toggle {
+    @apply transition-transform duration-300;
+}
+
+details[open] .popular-upgrades-toggle {
+    @apply rotate-45;
+}
+
+.popular-upgrades-toggle-icon {
+    @apply w-4 h-4 text-black;
+}
+
+.popular-upgrades-content {
+    @apply rounded-md bg-white shadow-sm;
+}
+
+.popular-upgrades-list {
+    @apply mt-4 divide-y divide-gray-200;
+}
+
+.popular-upgrades-item {
+    @apply px-3 py-3 sm:px-6 sm:py-4;
+}
+
+.popular-upgrades-label {
+    @apply flex items-center gap-2.5 sm:gap-4;
+}
+
+.popular-upgrades-checkbox {
+    @apply w-5 h-5 shrink-0 accent-primary-500;
+}
+
+.popular-upgrades-image {
+    @apply w-16 h-16 object-cover rounded border border-gray-200 shadow-sm;
+}
+
+.popular-upgrades-text {
+    @apply flex flex-col grow;
+}
+
+.popular-upgrades-name {
+    @apply text-xs sm:text-base font-medium text-black tracking-tight;
+}
+
+.popular-upgrades-variant {
+    @apply block text-sm text-gray-700;
+}
+
+.popular-upgrade-price-wrap {
+    @apply text-right;
+}
+
+.popular-upgrade-price-compare {
+    @apply text-xs font-medium text-gray-700 line-through whitespace-nowrap;
+}
+
+.popular-upgrade-price {
+    @apply text-sm font-semibold text-black whitespace-nowrap;
+}

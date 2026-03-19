@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>MDS Theme Design Studio - Marquee Pause Test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../tailwind.css">
+    <script type="module" src="../../assets/design.js"></script>
+</head>
+
+<body class="bg-slate-100">
+    <section class="max-w-5xl mx-auto mt-8 p-6 space-y-12">
+
+        <h1 class="text-3xl font-bold mb-4">Marquee Pause Manager Test</h1>
+        <p class="text-gray-600 mb-8">Testing viewport visibility, layout visibility, and pause coordination</p>
+
+        <!-- Instructions -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
+            <h3 class="text-lg font-semibold mb-2">Test Instructions</h3>
+            <ol class="list-decimal list-inside space-y-2">
+                <li>Open browser DevTools console to see pause state logging</li>
+                <li>Scroll down to see marquee pause when out of viewport</li>
+                <li>Click "Toggle Hidden Marquee" to test layout visibility pause</li>
+                <li>Hover over marquee to test hover pause (second marquee only)</li>
+                <li>Check console for [marquee] log messages showing pause reasons</li>
+            </ol>
+        </div>
+
+        <!-- Viewport padding to enable scrolling -->
+        <div class="h-[100vh] bg-gray-200 flex items-center justify-center rounded-lg">
+            <p class="text-2xl font-semibold text-gray-600">Scroll Down ↓</p>
+        </div>
+
+        <!-- Marquee 1: Debug mode, viewport visibility test -->
+        <section class="mb-16">
+            <h2 class="text-xl font-semibold mb-4">Marquee 1: Viewport Visibility Test (Debug Mode)</h2>
+            <p class="text-sm text-gray-500 mb-2">Scroll this marquee out of view to test viewport pause</p>
+            <div
+                data-marquee
+                data-marquee-debug
+                data-marquee-direction="left"
+                data-marquee-speed="50"
+                data-marquee-gap="32"
+            >
+                <div data-marquee-viewport>
+                    <div data-marquee-content>
+                        <div>
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/Starke.svg?v=1766501510"
+                                alt="Starke Yacht Care logo"
+                            >
+                        </div>
+                        <div>
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/duraslic_logo.svg?v=1766522801"
+                                alt="DuraSlic logo"
+                            >
+                        </div>
+                        <div>
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/3D_Logo_-_Green.svg?v=1766502132"
+                                alt="3D logo"
+                            >
+                        </div>
+                        <div>
+                            <img
+                                src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/P_and_S_-_Logo_-_Red.svg?v=1766502903"
+                                alt="P and S logo"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee 2: Layout visibility test with toggle -->
+        <section class="mb-16">
+            <h2 class="text-xl font-semibold mb-4">Marquee 2: Layout Visibility Test (Hover Pause)</h2>
+            <button 
+                id="toggleMarquee2" 
+                class="mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+                Toggle Hidden Marquee
+            </button>
+            <div id="marquee2Container">
+                <div
+                    data-marquee
+                    data-marquee-debug
+                    data-marquee-direction="right"
+                    data-marquee-speed="40"
+                    data-marquee-gap="32"
+                    data-marquee-pause-on-hover
+                >
+                    <div data-marquee-viewport>
+                        <div data-marquee-content>
+                            <div>
+                                <img
+                                    src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/booyah_clean_fc.png?v=1766574872"
+                                    alt="Booyah Clean logo"
+                                >
+                            </div>
+                            <div>
+                                <img
+                                    src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/mirka-fc.svg?v=1766575019"
+                                    alt="Mirka logo"
+                                >
+                            </div>
+                            <div>
+                                <img
+                                    src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/shurhold.svg?v=1766575673"
+                                    alt="Shurhold logo"
+                                >
+                            </div>
+                            <div>
+                                <img
+                                    src="https://cdn.shopify.com/s/files/1/0297/1589/0309/files/koch-chemie-fc.svg?v=1766575759"
+                                    alt="Koch Chemie logo"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More padding for scrolling -->
+        <div class="h-[50vh] bg-gray-200 flex items-center justify-center rounded-lg">
+            <p class="text-xl font-semibold text-gray-600">End of Test Page</p>
+        </div>
+
+    </section>
+
+    <script>
+        // Toggle visibility of marquee 2 to test layout pause
+        document.getElementById('toggleMarquee2').addEventListener('click', () => {
+            const container = document.getElementById('marquee2Container');
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                console.log('✅ Showing marquee 2 - should resume');
+            } else {
+                container.style.display = 'none';
+                console.log('❌ Hiding marquee 2 - should pause with "layout" reason');
+            }
+        });
+    </script>
+</body>
+
+</html>

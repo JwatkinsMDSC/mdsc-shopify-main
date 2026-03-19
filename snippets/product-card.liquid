@@ -1,0 +1,90 @@
+{% comment %}
+  Renders a product card.
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - context: {String} Context where the card is rendered (pdp, card, quick_view)
+  - current_variant: {Object} Selected variant (optional)
+
+  Usage:
+  {% render 'product-card', product: product, context: 'card' %}
+{% endcomment %}
+
+{%- assign current_variant = current_variant | default: product.selected_or_first_available_variant -%}
+
+<div
+  class="product-card relative flex flex-col gap-4"
+  data-product-card
+  data-product-id="{{ product.id }}"
+  data-context="{{ context }}"
+  {% if engine_off %}data-product-engine="off"{% endif %}
+>
+  <!-- Image -->
+  <div class="product-card__image relative aspect-square overflow-hidden rounded-lg bg-gray-100">
+    <a href="{{ product.url }}" class="block h-full w-full">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | image_url: width: 600 }}"
+          alt="{{ product.featured_image.alt | escape }}"
+          class="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+          width="600"
+          height="600"
+          data-product-image
+        >
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'h-full w-full object-cover text-gray-400' }}
+      {% endif %}
+    </a>
+  </div>
+
+  <!-- Content -->
+  <div class="product-card__content flex flex-col gap-2">
+    <!-- Title -->
+    <h3 class="text-lg font-medium text-gray-900">
+      <a href="{{ product.url }}" class="hover:underline">
+        {{ product.title }}
+      </a>
+    </h3>
+
+    <!-- Pricing -->
+    {% render 'product-pricing',
+      product: product,
+      current_variant: current_variant
+    %}
+
+    <!-- Variant Picker (if needed in card) -->
+    {% if context == 'quick_view' or context == 'pdp' %}
+      {% render 'product-variant-picker',
+        product: product,
+        current_variant: current_variant
+      %}
+    {% endif %}
+
+    <!-- Actions -->
+    <div class="product-card__actions mt-2">
+      {% if product.available %}
+        <button
+          type="button"
+          class="w-full rounded-md bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          data-add-to-cart
+          {% unless current_variant.available %}disabled{% endunless %}
+        >
+          {% if current_variant.available %}
+            Add to Cart
+          {% else %}
+            Out of Stock
+          {% endif %}
+        </button>
+      {% else %}
+        <button
+          type="button"
+          class="w-full rounded-md bg-gray-200 px-4 py-2 text-sm font-medium text-gray-500 cursor-not-allowed"
+          disabled
+        >
+          Sold Out
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>

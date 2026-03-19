@@ -1,0 +1,252 @@
+{% liquid
+  assign selected_variant = product.selected_or_first_available_variant
+  assign b2b_price = selected_variant.price
+  assign retail_price = selected_variant.compare_at_price
+  assign has_discount = false
+  assign discount_percentage = 0
+
+  if product.metafields.b2b.price != blank
+    assign b2b_price = product.metafields.b2b.price
+  endif
+
+  if retail_price > b2b_price and retail_price > 0
+    assign has_discount = true
+    assign price_diff = retail_price | minus: b2b_price
+    assign discount_percentage = price_diff | times: 100 | divided_by: retail_price
+  endif
+
+  assign card_id = 'product-' | append: product.id | append: '-' | append: card_index
+  assign form_id = card_id | append: '-form'
+%}
+
+<div id="{{ card_id }}" class="product-card shadow-sm" data-product-id="{{ product.id }}" data-product-handle="{{ product.handle }}" data-product-type="{{ product.type }}" data-product-vendor="{{ product.vendor }}">
+  <div class="product-card-img-wrap group">
+    {% if has_discount and show_discount_badge %}
+      <div class="product-card-badge badge badge-md badge-gradient-primary badge-pill">
+        {{ discount_percentage | round }}% OFF
+      </div>
+    {% endif %}
+
+    {% assign featured_image = selected_variant.featured_image | default: product.featured_image %}
+    <a href="{{ product.url }}" class="block">
+      {% if featured_image %}
+        <img src="{{ featured_image | image_url: width: 400 }}" alt="{{ product.title }}" class="product-card-img" loading="eager" data-product-image>
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'product-card-img' }}
+      {% endif %}
+    </a>
+
+    {% unless request.design_mode %}
+    <button class="product-card-quickview" data-quick-view data-product-handle="{{ product.handle }}">
+      Quick View
+    </button>
+    {% endunless %}
+  </div>
+
+  <div class="product-card-info">
+    <a href="{{ product.url }}" class="product-card-title">
+      {{ product.title }}
+    </a>
+    {% if product.vendor %}
+      <p class="product-card-vendor">{{ product.vendor }}</p>
+    {% endif %}
+
+    {% if product.variants.size > 1 %}
+      <div class="product-card-variants" data-variant-list>
+        {% for variant in product.variants %}
+          {% assign variant_image = variant.featured_image | default: product.featured_image %}
+          {% assign variant_b2b_price = variant.price %}
+          {% if product.metafields.b2b.price != blank %}
+            {% assign variant_b2b_price = product.metafields.b2b.price %}
+          {% endif %}
+          <div class="tooltip{% unless request.design_mode %} tooltip-portal{% endunless %}"{% unless request.design_mode %} data-tip="{{ variant.title }}"{% endunless %}>
+            <label class="product-card-variant{% if variant.id == selected_variant.id %} product-card-variant--active{% else %} product-card-variant--inactive{% endif %}" data-variant-label>
+              <input type="radio" name="id" value="{{ variant.id }}" class="sr-only" {% if variant.id == selected_variant.id %}checked{% endif %} data-variant-radio data-price-display="{{ variant_b2b_price | money }}" data-compare-display="{{ variant.compare_at_price | money }}" data-compare="{{ variant.compare_at_price }}" data-available="{{ variant.available }}"{% if variant_image %} data-image="{{ variant_image | image_url: width: 400 }}"{% endif %}>
+              {% if variant_image %}
+                {{ variant_image | image_url: width: 120 | image_tag: alt: variant.title }}
+              {% endif %}
+              <span class="mt-1">{{ variant.title }}</span>
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    </div>
+    {% form 'product', product, id: form_id, class: 'product-card-add-form', novalidate: true %}
+    <div class="product-card-price-area">
+        <input type="hidden" name="id" value="{{ selected_variant.id }}" data-variant-id>
+
+        <div class="flex w-full justify-between items-center gap-2">
+
+          <div class="product-card-price-wrap">
+            {% if has_discount %}
+              <p class="product-card-price-compare" data-price-compare>{{ retail_price | money }}</p>
+            {% else %}
+              <p class="product-card-price-compare hidden" data-price-compare></p>
+            {% endif %}
+            <p class="product-card-price" data-price>{{ b2b_price | money }}</p>
+          </div>
+
+          <div class="product-card-qty-wrap">
+            <span class="product-card-qty">
+
+              <button type="button" class="product-card-qty-btn product-card-qty-btn--left" data-qty-decrease>
+                <span class="sr-only">Decrease</span>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12" class="size-3">
+                  <path fill-rule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <input type="number" name="quantity" value="1" min="1" class="input-qty" data-qty-input>
+
+              <button type="button" class="product-card-qty-btn product-card-qty-btn--right" data-qty-increase>
+                <span class="sr-only">Increase</span>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12" class="size-3">
+                  <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+            </span>
+          </div>
+
+        </div>
+
+        <button class="product-card-add" type="submit" data-product-add>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"></path>
+          </svg>
+          Add to cart
+        </button>
+    </div>
+    {% endform %}
+</div>
+
+<script>
+(() => {
+  const card = document.getElementById('{{ card_id }}');
+  if (!card) return;
+  const priceEl = card.querySelector('[data-price]');
+  const compareEl = card.querySelector('[data-price-compare]');
+  const imgEl = card.querySelector('[data-product-image]');
+  const radios = card.querySelectorAll('[data-variant-radio]');
+  const variantInput = card.querySelector('[data-variant-id]');
+  const qtyInput = card.querySelector('[data-qty-input]');
+  const qtyDown = card.querySelector('[data-qty-decrease]');
+  const qtyUp = card.querySelector('[data-qty-increase]');
+  const addButton = card.querySelector('[data-product-add]');
+  const form = card.querySelector('form.product-card-add-form');
+
+  const setActive = (active) => {
+    card.querySelectorAll('[data-variant-label]').forEach((label) => {
+      const input = label.querySelector('[data-variant-radio]');
+      const isActive = input === active;
+      label.classList.toggle('product-card-variant--active', isActive);
+      label.classList.toggle('product-card-variant--inactive', !isActive);
+    });
+  };
+
+  const update = (input) => {
+    console.log('Update called:', input);
+    if (!input) {
+      console.log('No input provided');
+      return;
+    }
+    console.log('Variant data:', {
+      priceDisplay: input.dataset.priceDisplay,
+      compareDisplay: input.dataset.compareDisplay,
+      compare: input.dataset.compare,
+      image: input.dataset.image,
+      variantId: input.value,
+      available: input.dataset.available
+    });
+    if (priceEl && input.dataset.priceDisplay) {
+      console.log('Updating price to:', input.dataset.priceDisplay);
+      priceEl.textContent = input.dataset.priceDisplay;
+    }
+    if (compareEl) {
+      const hasCompare = input.dataset.compareDisplay && input.dataset.compareDisplay.trim() !== '' && input.dataset.compare !== '0';
+      console.log('Has compare price:', hasCompare);
+      compareEl.textContent = hasCompare ? input.dataset.compareDisplay : '';
+      compareEl.classList.toggle('hidden', !hasCompare);
+    }
+    if (imgEl && input.dataset.image) {
+      console.log('Updating image to:', input.dataset.image);
+      imgEl.src = input.dataset.image;
+    }
+    if (variantInput) {
+      console.log('Updating variant input to:', input.value);
+      variantInput.value = input.value;
+    }
+    if (addButton) {
+      const isAvailable = input.dataset.available === 'true';
+      addButton.disabled = !isAvailable;
+      if (isAvailable) {
+        addButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"></path></svg>Add to cart';
+      } else {
+        addButton.innerHTML = 'Out of stock';
+      }
+    }
+    setActive(input);
+  };
+
+  if (radios.length) {
+    radios.forEach((radio) => {
+      const label = radio.closest('[data-variant-label]');
+      radio.addEventListener('change', () => update(radio));
+      if (label && radio.dataset.image) {
+        label.addEventListener('mouseenter', () => {
+          if (imgEl && imgEl.src !== radio.dataset.image) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.as = 'image';
+            link.href = radio.dataset.image;
+            document.head.appendChild(link);
+          }
+        }, { once: true });
+      }
+    });
+    update(card.querySelector('[data-variant-radio]:checked') || radios[0]);
+  }
+
+  const adjustQty = (delta) => {
+    if (!qtyInput) return;
+    const current = parseInt(qtyInput.value, 10) || 1;
+    const next = Math.max(1, current + delta);
+    qtyInput.value = next;
+  };
+
+  if (qtyDown) qtyDown.addEventListener('click', () => adjustQty(-1));
+  if (qtyUp) qtyUp.addEventListener('click', () => adjustQty(1));
+
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const variantId = variantInput ? variantInput.value : '{{ selected_variant.id }}';
+      const quantity = qtyInput ? parseInt(qtyInput.value, 10) : 1;
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify({
+          id: variantId,
+          quantity: quantity
+        })
+      })
+      .then(res => res.json())
+      .then(() => {
+        card.dispatchEvent(new CustomEvent('b2b:cart-updated', { bubbles: true }));
+      })
+      .catch(() => {
+        form.submit();
+      });
+    });
+  }
+
+  // Initialize drag-to-scroll for variant selector
+  if (window.initializeDragScroll) {
+    window.initializeDragScroll(card);
+  }
+})();
+</script>

@@ -1,0 +1,18 @@
+button.is-loading {
+  @apply opacity-60 cursor-not-allowed;
+} 
+  
+  /* Base qty input */
+  .input-qty {
+    @apply w-10 text-center py-1;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  /* Remove the spinner arrows in Chrome/Safari/Edge */
+  .input-qty::-webkit-inner-spin-button,
+  .input-qty::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+

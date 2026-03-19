@@ -1,0 +1,64 @@
+/* ===== HERO COMPONENT ===== */
+.hero-banner {
+    @apply relative;
+}
+
+.hero-banner-background {
+    @apply absolute inset-0 flex flex-col;
+}
+
+.hero-banner-bg-wrapper {
+    @apply relative w-full flex-1 bg-primary-800;
+}
+
+.hero-banner-visual {
+    @apply absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover;
+}
+
+.hero-banner-overlay {
+    @apply absolute inset-0;
+    background-color: var(--hero-overlay-color);
+    opacity: var(--hero-overlay-opacity);
+    mix-blend-mode: var(--hero-overlay-blend);
+}
+
+.hero-banner-content-wrapper {
+    @apply relative mx-auto max-w-3xl px-4 text-center flex flex-col items-center justify-center;
+
+    &.full-vh {
+        @apply h-screen;
+    }
+
+    &.three-quarters-vh {
+        @apply h-[75vh];
+    }
+
+    &.half-vh {
+        @apply h-[50vh];
+    }
+}
+
+.hero-banner-content {
+    @apply relative;
+}
+
+.hero-banner-subtitle {
+    @apply text-lg uppercase font-light tracking-normal;
+}
+
+.hero-banner-title {
+    @apply text-4xl sm:text-5xl md:text-6xl uppercase font-medium tracking-tight;
+}
+
+.hero-banner-description {
+    @apply mt-4 text-base sm:text-xl;
+}
+
+.hero-banner-cta {
+    @apply mt-4 sm:mt-6;
+}
+
+.btn-hero {
+    background-color: var(--hero-button-bg);
+    color: var(--hero-button-text);
+}

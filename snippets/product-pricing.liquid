@@ -1,0 +1,33 @@
+{% comment %}
+  Main pricing wrapper.
+  Renders all pricing UIs.
+  JavaScript controls visibility and values.
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - current_variant: {Object} Selected variant
+{% endcomment %}
+
+<div class="product-pricing-wrapper" data-pricing-wrapper>
+  <!-- Retail Pricing -->
+  <div
+    class="product-pricing-retail hidden"
+    data-pricing-retail
+  >
+    {% render 'product-pricing-retail',
+      product: product,
+      current_variant: current_variant
+    %}
+  </div>
+
+  <!-- B2B Pricing -->
+  <div
+    class="product-pricing-b2b hidden"
+    data-pricing-b2b
+  >
+    {% render 'product-pricing-b2b',
+      product: product,
+      current_variant: current_variant
+    %}
+  </div>
+</div>

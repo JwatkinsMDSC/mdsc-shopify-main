@@ -1,0 +1,110 @@
+{% comment %}
+Primary product orchestration section
+Responsible for layout and data wiring only
+{% endcomment %}
+
+<section
+  class="product-main"
+  data-product-id="{{ product.id }}"
+  data-section-id="{{ section.id }}"
+  data-product-main
+>
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Product media -->
+      <div class="product-main__gallery">
+        {% render 'product-gallery',
+          product: product,
+          current_variant: current_variant
+        %}
+      </div>
+
+      <div class="product-main__content flex flex-col gap-6">
+
+        <!-- Brand + title -->
+        {% render 'product-title',
+          product: product
+        %}
+
+        <!-- Reviews -->
+        {% render 'product-reviews',
+          product: product
+        %}
+
+        <!-- Social sharing -->
+        {% render 'product-share',
+          product: product
+        %}
+
+        <!-- Variant selector -->
+        {% render 'product-variant-picker',
+          product: product,
+          current_variant: current_variant
+        %}
+
+        <!-- Stock alert -->
+        {% render 'product-stock-alert',
+          current_variant: current_variant
+        %}
+
+        <!-- Pricing wrapper -->
+        {% render 'product-pricing',
+          product: product,
+          current_variant: current_variant
+        %}
+
+        <!-- Quantity + Add to cart -->
+        {% render 'product-quantity-form',
+          product: product,
+          current_variant: current_variant
+        %}
+
+        <!-- Shop Pay -->
+        {% render 'product-payment-buttons',
+          product: product
+        %}
+
+        <!-- Pickup availability -->
+        {% render 'product-pickup-availability',
+          current_variant: current_variant
+        %}
+
+        <!-- Popular upgrades -->
+        {% render 'product-popular-upgrades',
+          product: product
+        %}
+
+        <!-- Description -->
+        {% render 'product-description',
+          product: product
+        %}
+
+      </div>
+    </div>
+  </div>
+
+  {% comment %}
+  Expose product JSON once
+  {% endcomment %}
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Product Main",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Product Main"
+    }
+  ]
+}
+{% endschema %}

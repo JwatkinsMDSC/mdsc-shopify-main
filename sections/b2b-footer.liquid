@@ -1,0 +1,89 @@
+{% schema %}
+{
+  "name": "B2B Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "© 2024 Marine Detail Supply. All rights reserved."
+    },
+    {
+      "type": "richtext",
+      "id": "contact_info",
+      "label": "Contact Information"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "B2B Footer"
+    }
+  ]
+}
+{% endschema %}
+
+<footer class="bg-gray-900" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  
+  <div class="max-w-400 mx-auto px-4 py-12 sm:py-16">
+    
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+      {% for block in section.blocks %}
+        <div {{ block.shopify_attributes }}>
+          {% if block.settings.heading != blank %}
+            <h3 class="text-sm font-semibold text-white uppercase tracking-wider">
+              {{ block.settings.heading }}
+            </h3>
+          {% endif %}
+          
+          <ul class="mt-4 space-y-3">
+            {% for link in linklists[block.settings.menu].links %}
+              <li>
+                <a href="{{ link.url }}" class="text-base text-gray-300 hover:text-white">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+      
+      {% if section.settings.contact_info != blank %}
+        <div>
+          <h3 class="text-sm font-semibold text-white uppercase tracking-wider">
+            Contact
+          </h3>
+          <div class="mt-4 text-base text-gray-300">
+            {{ section.settings.contact_info }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="mt-12 border-t border-gray-800 pt-8">
+      <p class="text-base text-gray-400 text-center">
+        {{ section.settings.copyright_text }}
+      </p>
+    </div>
+    
+  </div>
+</footer>

@@ -1,0 +1,64 @@
+
+  /* ===============================
+     COLOR PICKER FIELDSET
+  =============================== */
+  .color-picker {
+    @apply w-full;
+  }
+
+  .color-picker-legend {
+    @apply text-sm font-medium text-gray-900;
+  }
+
+  /* ===============================
+     COLOR OPTIONS WRAPPER
+  =============================== */
+  .color-picker-options {
+    @apply mt-2 flex items-center gap-x-3;
+  }
+
+  /* ===============================
+     COLOR OPTION CONTAINER
+     (adds the outer subtle outline circle)
+  =============================== */
+  .color-picker-option {
+    @apply flex rounded-full outline outline-black/10 -outline-offset-1;
+  }
+
+  /* ===============================
+     COLOR RADIO INPUT BASE
+  =============================== */
+  .color-picker-radio {
+    @apply size-8 appearance-none rounded-full forced-color-adjust-none 
+           cursor-pointer;
+  }
+
+  /* ===============================
+     CHECKED STATE
+  =============================== */
+  .color-picker-radio:checked {
+    @apply outline-2 outline-offset-2;
+  }
+
+  .color-picker-radio:focus-visible {
+    @apply outline-3 outline-offset-3;
+  }
+
+  /* ===============================
+     COLOR VARIANTS
+     Extend freely as needed
+  =============================== */
+
+  .color-black {
+    @apply bg-gray-900;
+  }
+  .color-black:checked {
+    @apply outline-gray-900;
+  }
+
+  .color-heather-gray {
+    @apply bg-gray-400;
+  }
+  .color-heather-gray:checked {
+    @apply outline-gray-400;
+  }
