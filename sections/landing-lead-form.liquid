@@ -1,0 +1,623 @@
+{% style %}
+{{ section.id | prepend: '#' }}.section-wrap:before {
+  background-color: {{ section.settings.background | default: '#1e3a5f' }}
+}
+{% endstyle %}
+
+<div id="{{ section.id }}" class="section-wrap" style="color:{{ section.settings.color | default: '#ffffff' }};">
+  <div class="section">
+
+    {%- if section.settings.show_heading == true -%}
+      <div class="center">
+        <{{ section.settings.size }}>
+          {{ section.settings.heading }}
+        </{{ section.settings.size }}>
+      </div>
+    {%- endif -%}
+
+    <div class="lead-form-layout" style="
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 2rem;
+    ">
+      <!-- Benefits Column -->
+      <div class="lead-form-benefits">
+        {%- if section.settings.benefits_heading != blank -%}
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+            {{ section.settings.benefits_heading }}
+          </h3>
+        {%- endif -%}
+
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.25rem;">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'benefit' -%}
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;" {{ block.shopify_attributes }}>
+                <span style="
+                  flex-shrink: 0;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 50%;
+                  background: {{ section.settings.accent_color | default: '#22c55e' }};
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 0.875rem;
+                  color: #ffffff;
+                  margin-top: 2px;
+                ">✓</span>
+                <div>
+                  <strong style="display: block; font-size: 1.05rem;">{{ block.settings.title }}</strong>
+                  {%- if block.settings.text != blank -%}
+                    <span style="opacity: 0.8; font-size: 0.9rem;">{{ block.settings.text }}</span>
+                  {%- endif -%}
+                </div>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.show_trust_line -%}
+          <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.7;">
+            {{ section.settings.trust_line }}
+          </p>
+        {%- endif -%}
+      </div>
+
+      <!-- Form Column -->
+      <div class="lead-form-container" style="
+        background: #ffffff;
+        color: #333333;
+        border-radius: 8px;
+        padding: 2rem;
+      ">
+        {%- if section.settings.form_heading != blank -%}
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a1a;">
+            {{ section.settings.form_heading }}
+          </h3>
+        {%- endif -%}
+
+        {%- if section.settings.form_subheading != blank -%}
+          <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">
+            {{ section.settings.form_subheading }}
+          </p>
+        {%- endif -%}
+
+        {% form 'contact', class: 'lead-gen-form' %}
+          {% if form.posted_successfully? %}
+            <script>
+              window.location.href = "{{ section.settings.thank_you_page | default: '/pages/thank-you' }}";
+            </script>
+            <div style="padding: 1rem; background: #f0fdf4; border-radius: 6px; color: #166534;">
+              <strong>Thanks for your inquiry!</strong>
+              <p>A member of our dealer team will be in touch shortly.</p>
+            </div>
+          {% else %}
+            <div class="rte">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+
+              {%- when 'field_text' -%}
+                <div style="margin-bottom: 1rem;" {{ block.shopify_attributes }}>
+                  <label for="{{ block.settings.name | handleize | prepend: 'contact_' }}"
+                    style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; color: #374151;"
+                    {% if block.settings.required %}class="required"{% endif %}>
+                    {{ block.settings.title }}
+                  </label>
+                  <input type="text"
+                    id="{{ block.settings.name | handleize | prepend: 'contact_' }}"
+                    name="contact[{{ block.settings.name }}]"
+                    placeholder="{{ block.settings.placeholder }}"
+                    {% if block.settings.required %}required{% endif %}
+                    style="width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.95rem;">
+                </div>
+
+              {%- when 'field_email' -%}
+                <div style="margin-bottom: 1rem;" {{ block.shopify_attributes }}>
+                  <label for="contact_email"
+                    style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; color: #374151;"
+                    class="required">
+                    {{ block.settings.title }}
+                  </label>
+                  <input type="email"
+                    id="contact_email"
+                    name="contact[email]"
+                    placeholder="{{ block.settings.placeholder }}"
+                    required
+                    style="width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.95rem;">
+                </div>
+
+              {%- when 'field_phone' -%}
+                <div style="margin-bottom: 1rem;" {{ block.shopify_attributes }}>
+                  <label for="contact_phone"
+                    style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; color: #374151;"
+                    {% if block.settings.required %}class="required"{% endif %}>
+                    {{ block.settings.title }}
+                  </label>
+                  <input type="tel"
+                    id="contact_phone"
+                    name="contact[Phone]"
+                    placeholder="{{ block.settings.placeholder }}"
+                    {% if block.settings.required %}required{% endif %}
+                    style="width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.95rem;">
+                </div>
+
+              {%- when 'field_select' -%}
+                <div style="margin-bottom: 1rem;" {{ block.shopify_attributes }}>
+                  <label for="{{ block.settings.name | handleize | prepend: 'contact_' }}"
+                    style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; color: #374151;"
+                    {% if block.settings.required %}class="required"{% endif %}>
+                    {{ block.settings.title }}
+                  </label>
+                  <select
+                    id="{{ block.settings.name | handleize | prepend: 'contact_' }}"
+                    name="contact[{{ block.settings.name }}]"
+                    {% if block.settings.required %}required{% endif %}
+                    style="width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.95rem; background: #fff;">
+                    <option value="">{{ block.settings.placeholder | default: 'Select an option' }}</option>
+                    {%- assign options = block.settings.options | split: ',' -%}
+                    {%- for option in options -%}
+                      {%- assign trimmed = option | strip -%}
+                      <option value="{{ trimmed }}">{{ trimmed }}</option>
+                    {%- endfor -%}
+                  </select>
+                </div>
+
+              {%- when 'field_textarea' -%}
+                <div style="margin-bottom: 1rem;" {{ block.shopify_attributes }}>
+                  <label for="{{ block.settings.name | handleize | prepend: 'contact_' }}"
+                    style="display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; color: #374151;"
+                    {% if block.settings.required %}class="required"{% endif %}>
+                    {{ block.settings.title }}
+                  </label>
+                  <textarea
+                    id="{{ block.settings.name | handleize | prepend: 'contact_' }}"
+                    name="contact[{{ block.settings.name }}]"
+                    placeholder="{{ block.settings.placeholder }}"
+                    rows="{{ block.settings.rows | default: 4 }}"
+                    {% if block.settings.required %}required{% endif %}
+                    style="width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.95rem; resize: vertical;"></textarea>
+                </div>
+
+              {%- when 'field_hidden' -%}
+                <input type="hidden"
+                  name="contact[{{ block.settings.name }}]"
+                  value="{{ block.settings.value }}"
+                  {{ block.shopify_attributes }}>
+
+            {%- endcase -%}
+          {%- endfor -%}
+
+          <button type="submit" style="
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            background: {{ section.settings.button_bg | default: '#1e3a5f' }};
+            color: {{ section.settings.button_color | default: '#ffffff' }};
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 0.5rem;
+          ">
+            {{ section.settings.button_label | default: 'Request Dealer Information' }}
+          </button>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media screen and (max-width: 768px) {
+    #{{ section.id }} .lead-form-layout {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Lead Gen Form",
+  "tag": "section",
+  "class": "lead-form-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ready to Grow Your Business?"
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "select",
+      "id": "size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "header",
+      "content": "Benefits Column"
+    },
+    {
+      "type": "text",
+      "id": "benefits_heading",
+      "label": "Benefits Heading",
+      "default": "Become an Authorized Dealer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_line",
+      "label": "Show trust line",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_trust_line == true }}",
+      "type": "text",
+      "id": "trust_line",
+      "label": "Trust Line",
+      "default": "Join 500+ dealers nationwide. No commitments required to inquire."
+    },
+    {
+      "type": "header",
+      "content": "Form Column"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Form Heading",
+      "default": "Get Dealer Pricing & Info"
+    },
+    {
+      "type": "text",
+      "id": "form_subheading",
+      "label": "Form Subheading",
+      "default": "Fill out the form below and our dealer team will reach out within 24 hours."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit Button Label",
+      "default": "Request Dealer Information"
+    },
+    {
+      "type": "url",
+      "id": "thank_you_page",
+      "label": "Thank you page",
+      "info": "Redirect after successful submission. Defaults to /pages/thank-you."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#1e3a5f"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Colour",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Checkmark Color",
+      "default": "#22c55e"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Benefit title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "info": "Optional short description."
+        }
+      ]
+    },
+    {
+      "type": "field_text",
+      "name": "Text Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name",
+          "default": "Name",
+          "info": "Used in the form submission data."
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "field_email",
+      "name": "Email Field",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Email Address"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "you@company.com"
+        }
+      ]
+    },
+    {
+      "type": "field_phone",
+      "name": "Phone Field",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Phone Number"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "(555) 123-4567"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "field_select",
+      "name": "Dropdown Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "I'm interested in"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name",
+          "default": "Interest"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Select an option"
+        },
+        {
+          "type": "text",
+          "id": "options",
+          "label": "Options (comma-separated)",
+          "default": "Restoration Kits, Buffing Polishes, Sealants, Full Product Line, Dealer Partnership",
+          "info": "Enter options separated by commas."
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "field_textarea",
+      "name": "Textarea Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Message"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name",
+          "default": "Message"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Tell us about your business and what products interest you..."
+        },
+        {
+          "type": "number",
+          "id": "rows",
+          "label": "Rows",
+          "default": 4
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "field_hidden",
+      "name": "Hidden Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name",
+          "default": "Source"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "Google Ads - Restoration Kits"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lead Gen Form",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Exclusive Dealer Pricing",
+            "text": "Access wholesale rates on our full restoration product line."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Marketing Support",
+            "text": "Co-branded materials and product training for your team."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Priority Fulfillment",
+            "text": "Dedicated stock allocation and expedited shipping."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "title": "Technical Expertise",
+            "text": "Direct access to our marine restoration specialists."
+          }
+        },
+        {
+          "type": "field_text",
+          "settings": {
+            "title": "Full Name",
+            "name": "Name",
+            "placeholder": "John Smith",
+            "required": true
+          }
+        },
+        {
+          "type": "field_text",
+          "settings": {
+            "title": "Company / Shop Name",
+            "name": "Company",
+            "placeholder": "Your business name"
+          }
+        },
+        {
+          "type": "field_email",
+          "settings": {
+            "title": "Email Address",
+            "placeholder": "you@company.com"
+          }
+        },
+        {
+          "type": "field_phone",
+          "settings": {
+            "title": "Phone Number",
+            "placeholder": "(555) 123-4567"
+          }
+        },
+        {
+          "type": "field_select",
+          "settings": {
+            "title": "I'm interested in",
+            "name": "Interest",
+            "options": "Restoration Kits, Buffing Polishes, Sealants, Full Product Line, Dealer Partnership"
+          }
+        },
+        {
+          "type": "field_textarea",
+          "settings": {
+            "title": "Questions or Comments",
+            "name": "Message",
+            "placeholder": "Tell us about your business and what products interest you..."
+          }
+        },
+        {
+          "type": "field_hidden",
+          "settings": {
+            "name": "Source",
+            "value": "Google Ads - Restoration Kits Campaign"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

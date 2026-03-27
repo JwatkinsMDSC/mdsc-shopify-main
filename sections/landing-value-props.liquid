@@ -1,0 +1,212 @@
+{% style %}
+{{ section.id | prepend: '#' }}.section-wrap:before {
+  background-color: {{ section.settings.background | default: '#ffffff' }}
+}
+{% endstyle %}
+
+<div id="{{ section.id }}" class="section-wrap" style="color:{{ section.settings.color | default:'inherit' }};">
+  <div class="section">
+    <div class="center">
+      {%- if section.settings.show_heading == true -%}
+        <{{ section.settings.size }}>
+          {{ section.settings.heading }}
+        </{{ section.settings.size }}>
+      {%- endif -%}
+
+      {%- if section.settings.show_description == true -%}
+        <div class="rte">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="value-props-grid" style="
+      display: grid;
+      grid-template-columns: repeat({{ section.settings.columns }}, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    ">
+      {%- for block in section.blocks -%}
+        <div class="value-prop-item" style="text-align: center; padding: 1.5rem;" {{ block.shopify_attributes }}>
+          {%- if block.settings.icon != blank -%}
+            <div class="value-prop-icon" style="margin-bottom: 1rem;">
+              <img
+                src="{{ block.settings.icon | image_url: width: 80 }}"
+                alt="{{ block.settings.title | escape }}"
+                width="80"
+                height="80"
+                loading="lazy"
+                style="display: inline-block;">
+            </div>
+          {%- else -%}
+            <div class="value-prop-icon" style="margin-bottom: 1rem; font-size: 2.5rem;">
+              {{ block.settings.emoji }}
+            </div>
+          {%- endif -%}
+
+          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">
+            {{ block.settings.title }}
+          </h3>
+
+          {%- if block.settings.text != blank -%}
+            <div class="rte" style="font-size: 0.95rem; opacity: 0.85;">
+              {{ block.settings.text }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  @media screen and (max-width: 768px) {
+    #{{ section.id }} .value-props-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    #{{ section.id }} .value-props-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Value Propositions",
+  "tag": "section",
+  "class": "value-props-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Dealers Choose Marine Detail Supply"
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "select",
+      "id": "size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": false
+    },
+    {
+      "visible_if": "{{ section.settings.show_description == true }}",
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns (Desktop)",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "info": "Number of columns on desktop. Tablet shows 2, mobile shows 1."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#f8fafc"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Colour"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prop",
+      "name": "Value Prop",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image",
+          "info": "Upload a small icon (80x80 recommended). Leave blank to use emoji instead."
+        },
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji Fallback",
+          "default": "✓",
+          "info": "Displayed if no icon image is set."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Benefit Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>Explain the key benefit for your dealers here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value Propositions",
+      "blocks": [
+        {
+          "type": "prop",
+          "settings": {
+            "emoji": "🔬",
+            "title": "Marine-Grade Formulas",
+            "text": "<p>Professional compounds engineered specifically for marine gelcoat and fiberglass restoration.</p>"
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "emoji": "📦",
+            "title": "Dealer Pricing",
+            "text": "<p>Competitive wholesale pricing with volume discounts for authorized dealers.</p>"
+          }
+        },
+        {
+          "type": "prop",
+          "settings": {
+            "emoji": "🚚",
+            "title": "Fast Fulfillment",
+            "text": "<p>Quick turnaround on orders with dedicated dealer support.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

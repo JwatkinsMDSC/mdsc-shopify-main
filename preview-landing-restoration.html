@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page Preview — Marine Restoration Kits Campaign</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #333; line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; }
+    .section { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .center { text-align: center; }
+    .rte p { margin-bottom: 0.75rem; }
+    .rte p:last-child { margin-bottom: 0; }
+    h1, h2, h3 { line-height: 1.2; margin-bottom: 1rem; }
+
+    /* Preview Banner */
+    .preview-banner {
+      background: #fef3c7; color: #92400e; text-align: center; padding: 0.75rem 1rem;
+      font-size: 0.875rem; font-weight: 600; border-bottom: 2px solid #f59e0b;
+      position: sticky; top: 0; z-index: 100;
+    }
+
+    /* ========== HERO BANNER ========== */
+    .hero-banner {
+      position: relative; min-height: 50vh; display: flex; align-items: center;
+      justify-content: center; overflow: hidden;
+    }
+    .hero-banner-background {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-banner-bg-wrapper { position: relative; width: 100%; height: 100%; }
+    .hero-banner-bg-wrapper > div:first-child { position: absolute; inset: 0; overflow: hidden; }
+    .hero-banner-visual {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-banner-placeholder {
+      width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%);
+    }
+    .hero-banner-overlay {
+      position: absolute; inset: 0;
+      background: #0f172a; opacity: 0.65; mix-blend-mode: multiply;
+    }
+    .hero-banner-content-wrapper {
+      position: relative; z-index: 10; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center; padding: 1rem;
+    }
+    .hero-banner-content { padding: 5rem 1rem; max-width: 800px; }
+    .hero-banner-subtitle {
+      display: block; font-size: 1.125rem; color: #93c5fd;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .hero-banner-title {
+      font-size: clamp(2rem, 5vw, 3.75rem); font-weight: 800; color: #fff;
+      margin-bottom: 1.25rem;
+    }
+    .hero-banner-description { font-size: 1.125rem; color: #e2e8f0; margin-bottom: 2rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .hero-banner-description p { margin: 0; }
+    .btn-hero {
+      display: inline-block; padding: 1rem 2.5rem; background: #2563eb; color: #fff;
+      border-radius: 6px; font-size: 1.1rem; font-weight: 700;
+      transition: background 0.2s;
+    }
+    .btn-hero:hover { background: #1d4ed8; }
+
+    /* ========== VALUE PROPS ========== */
+    .value-props-section { background: #f8fafc; }
+    .value-props-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem;
+    }
+    .value-prop-item { text-align: center; padding: 1.5rem; }
+    .value-prop-icon { margin-bottom: 1rem; font-size: 2.5rem; }
+    .value-prop-item h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .value-prop-item .rte { font-size: 0.95rem; opacity: 0.85; }
+
+    /* ========== PRODUCT GRID ========== */
+    .products-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 1.5rem;
+    }
+    .product-card { display: flex; flex-direction: column; gap: 1rem; }
+    .product-card__image {
+      position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 0.5rem;
+      background: #f3f4f6;
+    }
+    .product-card__image .placeholder {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      color: #9ca3af; font-size: 0.875rem;
+    }
+    .product-card__content h3 { font-size: 1rem; font-weight: 600; }
+    .product-card__content h3 a { color: #111; }
+    .product-card__price { color: #374151; font-weight: 500; }
+    .product-card__actions button {
+      width: 100%; padding: 0.5rem 1rem; background: #111; color: #fff;
+      border: none; border-radius: 6px; font-size: 0.875rem; font-weight: 500; cursor: pointer;
+    }
+    .product-card__actions button:hover { background: #374151; }
+
+    /* ========== IMAGE & TEXT ========== */
+    .image-text-section { background: #f1f5f9; }
+    .grid-2 {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .image-text-left .image-text-asset { order: -1; }
+    .image-text-asset .placeholder-img {
+      width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+      border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;
+      color: #64748b; font-size: 0.875rem;
+    }
+    .image-text-content h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; }
+    .image-text-content .rte { margin-bottom: 1.5rem; color: #475569; }
+    .button {
+      display: inline-block; padding: 0.75rem 1.75rem; background: #111; color: #fff;
+      border-radius: 6px; font-weight: 600; transition: background 0.2s;
+    }
+    .button:hover { background: #374151; }
+
+    /* ========== FAQS ========== */
+    .faqs-section { background: #f8fafc; }
+    details { border-bottom: 1px solid #e2e8f0; }
+    summary {
+      padding: 1.25rem 0; font-weight: 600; font-size: 1.05rem; cursor: pointer;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    summary::after { content: '+'; font-size: 1.5rem; color: #94a3b8; }
+    details[open] summary::after { content: '−'; }
+    details .rte { padding-bottom: 1.25rem; color: #475569; }
+    summary::-webkit-details-marker { display: none; }
+
+    /* ========== LEAD FORM ========== */
+    .lead-form-section { background: #0f172a; color: #fff; }
+    .lead-form-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2rem;
+    }
+    .lead-form-benefits h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .lead-form-benefits ul { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+    .lead-form-benefits li { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .benefit-check {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #22c55e;
+      display: flex; align-items: center; justify-content: center; font-size: 0.875rem;
+      color: #fff; margin-top: 2px;
+    }
+    .benefit-check::after { content: '✓'; }
+    .lead-form-benefits strong { display: block; font-size: 1.05rem; }
+    .lead-form-benefits .sub { opacity: 0.8; font-size: 0.9rem; }
+    .trust-line { margin-top: 2rem; font-size: 0.85rem; opacity: 0.7; }
+    .lead-form-container {
+      background: #fff; color: #333; border-radius: 8px; padding: 2rem;
+    }
+    .lead-form-container h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a1a1a; }
+    .lead-form-container .form-sub { font-size: 0.9rem; color: #666; margin-bottom: 1.5rem; }
+    .form-field { margin-bottom: 1rem; }
+    .form-field label {
+      display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; color: #374151;
+    }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%; padding: 0.625rem 0.75rem; border: 1px solid #d1d5db;
+      border-radius: 6px; font-size: 0.95rem; font-family: inherit;
+    }
+    .form-field textarea { resize: vertical; }
+    .form-submit {
+      width: 100%; padding: 0.875rem 1.5rem; background: #2563eb; color: #fff;
+      border: none; border-radius: 6px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; margin-top: 0.5rem; transition: background 0.2s;
+    }
+    .form-submit:hover { background: #1d4ed8; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .value-props-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .value-props-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .lead-form-layout { grid-template-columns: 1fr; }
+      .hero-banner-title { font-size: 2rem; }
+      .image-text-left .image-text-asset { order: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preview Banner -->
+<div class="preview-banner">
+  PREVIEW MODE — This is a static mockup of your Shopify landing page. Images and products are placeholders.
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 1: HERO BANNER -->
+<!-- ============================================================ -->
+<section class="hero-banner">
+  <div class="hero-banner-background">
+    <div class="hero-banner-bg-wrapper">
+      <div>
+        <div class="hero-banner-placeholder hero-banner-visual"></div>
+      </div>
+      <div class="hero-banner-overlay"></div>
+    </div>
+  </div>
+  <div class="hero-banner-content-wrapper">
+    <div class="hero-banner-content">
+      <span class="hero-banner-subtitle">Professional Marine Restoration</span>
+      <h1 class="hero-banner-title">Marine-Grade Restoration Kits &amp; Sealants</h1>
+      <div class="hero-banner-description">
+        <p>Professional buffing polishes and sealants trusted by dealers nationwide. Restore, protect, and seal — with compounds engineered for marine gelcoat and fiberglass.</p>
+      </div>
+      <div>
+        <a href="#products" class="btn-hero">Browse Restoration Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 2: VALUE PROPOSITIONS -->
+<!-- ============================================================ -->
+<section class="value-props-section">
+  <div class="section">
+    <div class="center">
+      <h2>Why Dealers Choose Our Restoration Line</h2>
+    </div>
+    <div class="value-props-grid">
+      <div class="value-prop-item">
+        <div class="value-prop-icon">🔬</div>
+        <h3>Marine-Grade Formulas</h3>
+        <div class="rte"><p>Professional compounds engineered specifically for marine gelcoat and fiberglass restoration. No automotive compromises.</p></div>
+      </div>
+      <div class="value-prop-item">
+        <div class="value-prop-icon">💰</div>
+        <h3>Dealer Pricing &amp; Volume Discounts</h3>
+        <div class="rte"><p>Competitive wholesale pricing with tiered volume discounts for authorized dealers. Maximize your margins.</p></div>
+      </div>
+      <div class="value-prop-item">
+        <div class="value-prop-icon">🛡️</div>
+        <h3>Complete System Approach</h3>
+        <div class="rte"><p>From heavy-cut compounds to finishing polishes and long-lasting sealants — one source for the entire restoration workflow.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 3: PRODUCT GRID — BUFFING POLISHES -->
+<!-- ============================================================ -->
+<section id="products">
+  <div class="section">
+    <div class="center">
+      <h2>Buffing Polishes &amp; Restoration Compounds</h2>
+      <div class="rte" style="max-width:700px;margin:0 auto 1rem;">
+        <p>Our marine-grade buffing polishes are formulated for heavy oxidation removal, swirl correction, and high-gloss finishing on gelcoat and fiberglass surfaces.</p>
+      </div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">Heavy-Cut Restoration Compound</a></h3>
+          <div class="product-card__price">$34.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">Medium-Cut Polish</a></h3>
+          <div class="product-card__price">$29.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">Finishing Polish</a></h3>
+          <div class="product-card__price">$27.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">3-Step Restoration Kit</a></h3>
+          <div class="product-card__price">$79.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 4: IMAGE & TEXT — SEALANT SPOTLIGHT -->
+<!-- ============================================================ -->
+<section class="image-text-section">
+  <div class="section">
+    <div class="grid-2 image-text-left">
+      <div class="image-text-content">
+        <h2>Long-Lasting Marine Sealant Protection</h2>
+        <div class="rte">
+          <p>Complete every restoration job with confidence. Our marine sealants deliver durable UV protection and a deep, wet-look shine that lasts through harsh marine environments.</p>
+          <p>Engineered to bond with gelcoat and fiberglass surfaces, providing a hydrophobic barrier against salt spray, sun damage, and environmental contaminants.</p>
+        </div>
+        <p><a class="button" href="#sealants">Shop Sealants</a></p>
+      </div>
+      <div class="image-text-asset">
+        <div class="placeholder-img">Sealant Product Image</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5: PRODUCT GRID — SEALANTS -->
+<!-- ============================================================ -->
+<section id="sealants">
+  <div class="section">
+    <div class="center">
+      <h2>Marine Sealants &amp; Protectants</h2>
+      <div class="rte" style="max-width:700px;margin:0 auto 1rem;">
+        <p>Seal and protect restored surfaces with our professional-grade marine sealants. UV-resistant, hydrophobic, and built to last in saltwater environments.</p>
+      </div>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">Marine Ceramic Sealant</a></h3>
+          <div class="product-card__price">$44.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">UV Shield Protectant</a></h3>
+          <div class="product-card__price">$36.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">Hydrophobic Spray Sealant</a></h3>
+          <div class="product-card__price">$24.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image"><div class="placeholder">Product Image</div></div>
+        <div class="product-card__content">
+          <h3><a href="#">Restore &amp; Seal Bundle</a></h3>
+          <div class="product-card__price">$89.99</div>
+          <div class="product-card__actions"><button>Add to Cart</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6: FAQs -->
+<!-- ============================================================ -->
+<section class="faqs-section">
+  <div class="section">
+    <div class="center">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+  </div>
+  <div class="section" style="padding-top:0;">
+    <details>
+      <summary>What surfaces do your restoration kits work on?</summary>
+      <div class="rte"><p>Our restoration compounds and polishes are specifically formulated for marine gelcoat and fiberglass surfaces. They're effective on boats, yachts, jet skis, and other marine vessels. The complete system handles everything from heavy oxidation removal to final high-gloss finishing.</p></div>
+    </details>
+    <details>
+      <summary>How long does the sealant protection last?</summary>
+      <div class="rte"><p>Our marine sealants provide durable protection that can last 6-12 months depending on environmental conditions and maintenance. In harsh saltwater environments with proper application, you can expect reliable UV protection and hydrophobic performance throughout the boating season.</p></div>
+    </details>
+    <details>
+      <summary>Do you offer dealer pricing and wholesale accounts?</summary>
+      <div class="rte"><p>Yes! We offer competitive dealer pricing with tiered volume discounts. Fill out the inquiry form below to get started. Our dealer team will provide a custom quote based on your business needs and projected volume within 24 hours.</p></div>
+    </details>
+    <details>
+      <summary>What's included in a typical restoration kit?</summary>
+      <div class="rte"><p>Our restoration kits include a complete system approach: heavy-cut compound for oxidation removal, medium-cut polish for defect correction, finishing polish for high-gloss results, and a protective sealant for long-lasting protection. Kits can be customized for dealer accounts based on your most common job types.</p></div>
+    </details>
+    <details>
+      <summary>What kind of support do you provide to dealers?</summary>
+      <div class="rte"><p>Authorized dealers receive product training materials, technical support from our marine restoration specialists, co-branded marketing materials, priority fulfillment, and dedicated account management. We're invested in helping your business grow.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 7: LEAD GEN FORM -->
+<!-- ============================================================ -->
+<section class="lead-form-section" id="contact">
+  <div class="section">
+    <div class="center">
+      <h2>Ready to Stock Professional Restoration Products?</h2>
+    </div>
+    <div class="lead-form-layout">
+      <!-- Benefits Column -->
+      <div class="lead-form-benefits">
+        <h3>Become an Authorized Dealer</h3>
+        <ul>
+          <li>
+            <span class="benefit-check"></span>
+            <div>
+              <strong>Exclusive Dealer Pricing</strong>
+              <span class="sub">Access wholesale rates on our full restoration product line.</span>
+            </div>
+          </li>
+          <li>
+            <span class="benefit-check"></span>
+            <div>
+              <strong>Marketing Support</strong>
+              <span class="sub">Co-branded materials and product training for your team.</span>
+            </div>
+          </li>
+          <li>
+            <span class="benefit-check"></span>
+            <div>
+              <strong>Priority Fulfillment</strong>
+              <span class="sub">Dedicated stock allocation and expedited shipping.</span>
+            </div>
+          </li>
+          <li>
+            <span class="benefit-check"></span>
+            <div>
+              <strong>Technical Expertise</strong>
+              <span class="sub">Direct access to our marine restoration specialists.</span>
+            </div>
+          </li>
+        </ul>
+        <p class="trust-line">Join 500+ dealers nationwide. No commitment required to inquire.</p>
+      </div>
+
+      <!-- Form Column -->
+      <div class="lead-form-container">
+        <h3>Get Dealer Pricing &amp; Product Info</h3>
+        <p class="form-sub">Fill out the form below and our dealer team will reach out within 24 hours.</p>
+
+        <form onsubmit="event.preventDefault(); alert('Form submitted! (This is a preview — submissions work on Shopify)');">
+          <div class="form-field">
+            <label>Full Name <span style="color:#ef4444;">*</span></label>
+            <input type="text" placeholder="John Smith" required>
+          </div>
+          <div class="form-field">
+            <label>Company / Shop Name</label>
+            <input type="text" placeholder="Your business name">
+          </div>
+          <div class="form-field">
+            <label>Email Address <span style="color:#ef4444;">*</span></label>
+            <input type="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="(555) 123-4567">
+          </div>
+          <div class="form-field">
+            <label>I'm interested in</label>
+            <select>
+              <option value="">Select a product category</option>
+              <option>Restoration Kits</option>
+              <option>Buffing Polishes</option>
+              <option>Marine Sealants</option>
+              <option>Full Product Line</option>
+              <option>Dealer Partnership</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Questions or Comments</label>
+            <textarea rows="4" placeholder="Tell us about your business and what products interest you..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Request Dealer Information</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
