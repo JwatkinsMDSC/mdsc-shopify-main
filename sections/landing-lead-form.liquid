@@ -1,0 +1,451 @@
+{%- assign benefit_blocks = section.blocks | where: 'type', 'benefit' -%}
+{%- assign field_blocks = section.blocks | where: 'type', 'field_text' -%}
+{%- assign field_blocks = field_blocks | concat: (section.blocks | where: 'type', 'field_email') -%}
+{%- assign field_blocks = field_blocks | concat: (section.blocks | where: 'type', 'field_phone') -%}
+{%- assign field_blocks = field_blocks | concat: (section.blocks | where: 'type', 'field_select') -%}
+{%- assign field_blocks = field_blocks | concat: (section.blocks | where: 'type', 'field_textarea') -%}
+
+{% style %}
+#{{ section.id }}.section-wrap {
+  background-color: {{ section.settings.background | default: '#0f172a' }};
+  color: {{ section.settings.color | default: '#ffffff' }};
+}
+#{{ section.id }} .lead-form-accent { color: {{ section.settings.accent_color | default: '#22c55e' }}; }
+#{{ section.id }} .lead-form-benefit-icon { color: {{ section.settings.accent_color | default: '#22c55e' }}; }
+#{{ section.id }} .lead-form-submit {
+  background-color: {{ section.settings.button_bg | default: '#2563eb' }};
+  color: {{ section.settings.button_color | default: '#ffffff' }};
+}
+{% endstyle %}
+
+<div id="{{ section.id }}" class="section-wrap landing-lead-form-wrap">
+  <div class="section">
+    <div class="lead-form-grid">
+
+      <!-- Left: Benefits -->
+      <div class="lead-form-benefits">
+        {%- if section.settings.show_heading == true -%}
+          <{{- section.settings.size }} class="lead-form-heading">
+            {{ section.settings.heading }}
+          </{{- section.settings.size -}}>
+        {%- endif -%}
+
+        {%- if section.settings.benefits_heading != blank -%}
+          <p class="lead-form-benefits-heading lead-form-accent">{{ section.settings.benefits_heading }}</p>
+        {%- endif -%}
+
+        <ul class="lead-form-benefit-list">
+          {%- for block in benefit_blocks -%}
+            <li class="lead-form-benefit-item" {{ block.shopify_attributes }}>
+              <span class="lead-form-benefit-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <div>
+                <strong class="lead-form-benefit-title">{{ block.settings.title }}</strong>
+                <p class="lead-form-benefit-text">{{ block.settings.text }}</p>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {%- if section.settings.show_trust_line == true and section.settings.trust_line != blank -%}
+          <p class="lead-form-trust-line">{{ section.settings.trust_line }}</p>
+        {%- endif -%}
+      </div>
+
+      <!-- Right: Form -->
+      <div class="lead-form-panel">
+        {%- if section.settings.form_heading != blank -%}
+          <h3 class="lead-form-panel-heading">{{ section.settings.form_heading }}</h3>
+        {%- endif -%}
+        {%- if section.settings.form_subheading != blank -%}
+          <p class="lead-form-panel-subheading">{{ section.settings.form_subheading }}</p>
+        {%- endif -%}
+
+        {%- form 'contact' -%}
+          <div class="lead-form-fields">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+
+                {%- when 'field_text' -%}
+                  <div class="lead-form-field" {{ block.shopify_attributes }}>
+                    <label class="lead-form-label" for="field-{{ block.id }}">
+                      {{ block.settings.title }}
+                      {%- if block.settings.required -%}<span aria-hidden="true"> *</span>{%- endif -%}
+                    </label>
+                    <input
+                      class="lead-form-input"
+                      type="text"
+                      id="field-{{ block.id }}"
+                      name="contact[{{ block.settings.name | default: block.settings.title }}]"
+                      placeholder="{{ block.settings.placeholder }}"
+                      {%- if block.settings.required %} required{%- endif -%}>
+                  </div>
+
+                {%- when 'field_email' -%}
+                  <div class="lead-form-field" {{ block.shopify_attributes }}>
+                    <label class="lead-form-label" for="field-{{ block.id }}">{{ block.settings.title }}</label>
+                    <input
+                      class="lead-form-input"
+                      type="email"
+                      id="field-{{ block.id }}"
+                      name="contact[email]"
+                      placeholder="{{ block.settings.placeholder }}"
+                      required>
+                  </div>
+
+                {%- when 'field_phone' -%}
+                  <div class="lead-form-field" {{ block.shopify_attributes }}>
+                    <label class="lead-form-label" for="field-{{ block.id }}">{{ block.settings.title }}</label>
+                    <input
+                      class="lead-form-input"
+                      type="tel"
+                      id="field-{{ block.id }}"
+                      name="contact[{{ block.settings.title | handleize }}]"
+                      placeholder="{{ block.settings.placeholder }}">
+                  </div>
+
+                {%- when 'field_select' -%}
+                  <div class="lead-form-field" {{ block.shopify_attributes }}>
+                    <label class="lead-form-label" for="field-{{ block.id }}">{{ block.settings.title }}</label>
+                    <select
+                      class="lead-form-input lead-form-select"
+                      id="field-{{ block.id }}"
+                      name="contact[{{ block.settings.name | default: block.settings.title }}]">
+                      {%- if block.settings.placeholder != blank -%}
+                        <option value="" disabled selected>{{ block.settings.placeholder }}</option>
+                      {%- endif -%}
+                      {%- assign options = block.settings.options | split: ',' -%}
+                      {%- for option in options -%}
+                        <option value="{{ option | strip }}">{{ option | strip }}</option>
+                      {%- endfor -%}
+                    </select>
+                  </div>
+
+                {%- when 'field_textarea' -%}
+                  <div class="lead-form-field lead-form-field--full" {{ block.shopify_attributes }}>
+                    <label class="lead-form-label" for="field-{{ block.id }}">{{ block.settings.title }}</label>
+                    <textarea
+                      class="lead-form-input lead-form-textarea"
+                      id="field-{{ block.id }}"
+                      name="contact[{{ block.settings.name | default: block.settings.title }}]"
+                      placeholder="{{ block.settings.placeholder }}"
+                      rows="4"></textarea>
+                  </div>
+
+                {%- when 'field_hidden' -%}
+                  <input
+                    type="hidden"
+                    name="contact[{{ block.settings.name }}]"
+                    value="{{ block.settings.value }}"
+                    {{ block.shopify_attributes }}>
+
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+
+          <button type="submit" class="lead-form-submit btn-hero btn-hero-{{ section.id }} btn-lg">
+            {{ section.settings.button_label | default: 'Submit' }}
+          </button>
+        {%- endform -%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lead Form",
+  "tag": "section",
+  "class": "landing-lead-form-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get In Touch"
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "select",
+      "id": "size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "header",
+      "content": "Benefits Column"
+    },
+    {
+      "type": "text",
+      "id": "benefits_heading",
+      "label": "Benefits Subheading",
+      "default": "What You Get"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_line",
+      "label": "Show trust line",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_trust_line == true }}",
+      "type": "text",
+      "id": "trust_line",
+      "label": "Trust Line",
+      "default": "Trusted by businesses nationwide."
+    },
+    {
+      "type": "header",
+      "content": "Form Panel"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Form Heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "text",
+      "id": "form_subheading",
+      "label": "Form Subheading",
+      "default": "Fill out the form and we'll be in touch."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Submit Button Label",
+      "default": "Submit"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#0f172a"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#22c55e"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "#2563eb"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Benefit Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Brief description of this benefit."
+        }
+      ]
+    },
+    {
+      "type": "field_text",
+      "name": "Text Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Field Label"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name (for form submission)",
+          "default": "Field"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "field_email",
+      "name": "Email Field",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Email Address"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "you@example.com"
+        }
+      ]
+    },
+    {
+      "type": "field_phone",
+      "name": "Phone Field",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Phone Number"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "(555) 000-0000"
+        }
+      ]
+    },
+    {
+      "type": "field_select",
+      "name": "Select Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Select an option"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name (for form submission)",
+          "default": "Selection"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder option",
+          "default": "Choose one..."
+        },
+        {
+          "type": "text",
+          "id": "options",
+          "label": "Options (comma-separated)",
+          "default": "Option 1, Option 2, Option 3"
+        }
+      ]
+    },
+    {
+      "type": "field_textarea",
+      "name": "Textarea Field",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Message"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name (for form submission)",
+          "default": "Message"
+        },
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder",
+          "default": "Your message..."
+        }
+      ]
+    },
+    {
+      "type": "field_hidden",
+      "name": "Hidden Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Field Name",
+          "default": "Source"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lead Form",
+      "blocks": [
+        { "type": "benefit" },
+        { "type": "benefit" },
+        { "type": "field_text" },
+        { "type": "field_email" },
+        { "type": "field_textarea" }
+      ]
+    }
+  ]
+}
+{% endschema %}

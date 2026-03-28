@@ -1,0 +1,125 @@
+/* ===== LANDING VALUE PROPS ===== */
+.value-props-grid {
+    @apply grid gap-8 mt-10;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+    .value-props-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .value-props-grid {
+        /* columns set via inline style from section settings */
+    }
+}
+
+.value-prop-card {
+    @apply flex flex-col gap-3 p-6 rounded-xl bg-white shadow-sm border border-slate-100;
+}
+
+.value-prop-emoji {
+    @apply text-4xl;
+}
+
+.value-prop-title {
+    @apply text-lg font-semibold text-slate-900 m-0;
+}
+
+.value-prop-text {
+    @apply text-slate-600 text-sm;
+}
+
+/* ===== LANDING LEAD FORM ===== */
+.landing-lead-form-wrap {
+    @apply py-16 md:py-24;
+}
+
+.lead-form-grid {
+    @apply grid gap-12 md:grid-cols-2 md:gap-16 items-start;
+}
+
+.lead-form-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-6;
+}
+
+.lead-form-benefits-heading {
+    @apply text-sm font-semibold uppercase tracking-widest mb-4;
+}
+
+.lead-form-benefit-list {
+    @apply list-none p-0 m-0 flex flex-col gap-5 mb-8;
+}
+
+.lead-form-benefit-item {
+    @apply flex gap-3 items-start;
+}
+
+.lead-form-benefit-icon {
+    @apply flex-shrink-0 mt-0.5;
+}
+
+.lead-form-benefit-title {
+    @apply block text-base font-semibold;
+}
+
+.lead-form-benefit-text {
+    @apply text-sm opacity-80 mt-0.5 m-0;
+}
+
+.lead-form-trust-line {
+    @apply text-sm opacity-60 mt-2;
+}
+
+/* Form panel */
+.lead-form-panel {
+    @apply bg-white rounded-2xl p-6 md:p-8 shadow-xl;
+}
+
+.lead-form-panel-heading {
+    @apply text-xl font-bold text-slate-900 mb-1;
+}
+
+.lead-form-panel-subheading {
+    @apply text-sm text-slate-500 mb-6;
+}
+
+.lead-form-fields {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6;
+}
+
+.lead-form-field {
+    @apply flex flex-col gap-1;
+}
+
+.lead-form-field--full {
+    @apply sm:col-span-2;
+}
+
+.lead-form-label {
+    @apply text-sm font-medium text-slate-700;
+}
+
+.lead-form-input {
+    @apply w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+           transition-colors;
+}
+
+.lead-form-select {
+    @apply bg-white;
+}
+
+.lead-form-textarea {
+    @apply resize-y;
+}
+
+.lead-form-submit {
+    @apply w-full justify-center rounded-lg font-semibold transition-opacity;
+}
+
+.lead-form-submit:hover {
+    @apply opacity-90;
+}

@@ -1,0 +1,141 @@
+{% style %}
+{{ section.id | prepend: '#' }}.section-wrap:before {
+  background-color:{{ section.settings.background | default: '#f8fafc' }}
+}
+{{ section.id | prepend: '#' }} .value-props-grid {
+  grid-template-columns: repeat({{ section.settings.columns | default: 3 }}, 1fr);
+}
+{% endstyle %}
+
+<div id="{{ section.id }}" class="section-wrap">
+  <div class="section">
+    {%- if section.settings.show_heading == true -%}
+      <div class="center">
+        <{{- section.settings.size }}>{{ section.settings.heading }}</{{- section.settings.size -}}>
+        {%- if section.settings.show_description == true -%}
+          <div class="rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="value-props-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'prop' -%}
+          <div class="value-prop-card" {{ block.shopify_attributes }}>
+            {%- if block.settings.emoji != blank -%}
+              <div class="value-prop-emoji">{{ block.settings.emoji }}</div>
+            {%- endif -%}
+            <h3 class="value-prop-title">{{ block.settings.title }}</h3>
+            <div class="rte value-prop-text">{{ block.settings.text }}</div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Value Props",
+  "tag": "section",
+  "class": "landing-value-props-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading",
+      "default": true
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Choose Us"
+    },
+    {
+      "visible_if": "{{ section.settings.show_heading == true }}",
+      "type": "select",
+      "id": "size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": false
+    },
+    {
+      "visible_if": "{{ section.settings.show_description == true }}",
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Description text here.</p>"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#f8fafc"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prop",
+      "name": "Value Prop",
+      "settings": [
+        {
+          "type": "text",
+          "id": "emoji",
+          "label": "Emoji / Icon",
+          "default": "✅"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Value Proposition"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description",
+          "default": "<p>Describe your value proposition here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value Props",
+      "blocks": [
+        { "type": "prop" },
+        { "type": "prop" },
+        { "type": "prop" }
+      ]
+    }
+  ]
+}
+{% endschema %}

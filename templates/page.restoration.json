@@ -1,0 +1,310 @@
+{
+  "sections": {
+    "hero_banner_xR4k9": {
+      "type": "hero-banner",
+      "settings": {
+        "enable_overlap": false,
+        "hero_height": "half-vh",
+        "enable_image": true,
+        "enable_video": false,
+        "enable_overlay": true,
+        "overlay_color": "#0f172a",
+        "overlay_opacity": 65,
+        "overlay_blend_mode": "multiply",
+        "enable_subtitle": true,
+        "subtitle": "Professional Marine Restoration",
+        "subtitle_color": "#93c5fd",
+        "subtitle_size": "text-lg",
+        "enable_title": true,
+        "title": "Marine-Grade Restoration Kits & Sealants",
+        "title_color": "#ffffff",
+        "title_size": "text-6xl",
+        "enable_description": true,
+        "description": "<p>Professional buffing polishes and sealants trusted by dealers nationwide. Restore, protect, and seal — with compounds engineered for marine gelcoat and fiberglass.</p>",
+        "description_color": "#e2e8f0",
+        "description_size": "text-lg",
+        "enable_button": true,
+        "button_label": "Browse Restoration Products",
+        "button_bg_color": "#2563eb",
+        "button_text_color": "#ffffff",
+        "button_size": "btn-lg"
+      }
+    },
+    "value_props_mK7v2": {
+      "type": "landing-value-props",
+      "settings": {
+        "show_heading": true,
+        "heading": "Why Dealers Choose Our Restoration Line",
+        "size": "h2",
+        "show_description": false,
+        "columns": 3,
+        "background": "#f8fafc"
+      },
+      "blocks": {
+        "prop_1": {
+          "type": "prop",
+          "settings": {
+            "emoji": "🔬",
+            "title": "Marine-Grade Formulas",
+            "text": "<p>Professional compounds engineered specifically for marine gelcoat and fiberglass restoration. No automotive compromises.</p>"
+          }
+        },
+        "prop_2": {
+          "type": "prop",
+          "settings": {
+            "emoji": "💰",
+            "title": "Dealer Pricing & Volume Discounts",
+            "text": "<p>Competitive wholesale pricing with tiered volume discounts for authorized dealers. Maximize your margins.</p>"
+          }
+        },
+        "prop_3": {
+          "type": "prop",
+          "settings": {
+            "emoji": "🛡️",
+            "title": "Complete System Approach",
+            "text": "<p>From heavy-cut compounds to finishing polishes and long-lasting sealants — one source for the entire restoration workflow.</p>"
+          }
+        }
+      },
+      "block_order": ["prop_1", "prop_2", "prop_3"]
+    },
+    "products_polishes_aB3n8": {
+      "type": "product-grid",
+      "settings": {
+        "show_heading": true,
+        "text": "Buffing Polishes & Restoration Compounds",
+        "size": "h2",
+        "show_description": true,
+        "description": "<p>Our marine-grade buffing polishes are formulated for heavy oxidation removal, swirl correction, and high-gloss finishing on gelcoat and fiberglass surfaces.</p>",
+        "limit": 4,
+        "products_per_row": 4,
+        "background": "#ffffff"
+      }
+    },
+    "sealant_spotlight_pQ9w5": {
+      "type": "image-with-text",
+      "settings": {
+        "show_heading": false,
+        "show_description": false,
+        "background": "#f1f5f9",
+        "object_fit": "cover",
+        "object_position": "center",
+        "aspect_ratio": "4/3",
+        "image_position": "left"
+      },
+      "blocks": {
+        "heading_1": {
+          "type": "heading",
+          "settings": {
+            "text": "Long-Lasting Marine Sealant Protection",
+            "size": "h2"
+          }
+        },
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Complete every restoration job with confidence. Our marine sealants deliver durable UV protection and a deep, wet-look shine that lasts through harsh marine environments.</p><p>Engineered to bond with gelcoat and fiberglass surfaces, providing a hydrophobic barrier against salt spray, sun damage, and environmental contaminants.</p>"
+          }
+        },
+        "button_1": {
+          "type": "buttons",
+          "settings": {
+            "button_label": "Shop Sealants"
+          }
+        }
+      },
+      "block_order": ["heading_1", "text_1", "button_1"]
+    },
+    "products_sealants_cD6m1": {
+      "type": "product-grid",
+      "settings": {
+        "show_heading": true,
+        "text": "Marine Sealants & Protectants",
+        "size": "h2",
+        "show_description": true,
+        "description": "<p>Seal and protect restored surfaces with our professional-grade marine sealants. UV-resistant, hydrophobic, and built to last in saltwater environments.</p>",
+        "limit": 4,
+        "products_per_row": 4,
+        "background": "#ffffff"
+      }
+    },
+    "faqs_hN2j7": {
+      "type": "faqs",
+      "settings": {
+        "background": "#f8fafc",
+        "heading": "Frequently Asked Questions",
+        "size": "h2",
+        "show_description": false
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "text",
+          "settings": {
+            "title": "What surfaces do your restoration kits work on?",
+            "content": "<p>Our restoration compounds and polishes are specifically formulated for marine gelcoat and fiberglass surfaces. They're effective on boats, yachts, jet skis, and other marine vessels. The complete system handles everything from heavy oxidation removal to final high-gloss finishing.</p>",
+            "open": false
+          }
+        },
+        "faq_2": {
+          "type": "text",
+          "settings": {
+            "title": "How long does the sealant protection last?",
+            "content": "<p>Our marine sealants provide durable protection that can last 6-12 months depending on environmental conditions and maintenance. In harsh saltwater environments with proper application, you can expect reliable UV protection and hydrophobic performance throughout the boating season.</p>",
+            "open": false
+          }
+        },
+        "faq_3": {
+          "type": "text",
+          "settings": {
+            "title": "Do you offer dealer pricing and wholesale accounts?",
+            "content": "<p>Yes! We offer competitive dealer pricing with tiered volume discounts. Fill out the inquiry form below to get started. Our dealer team will provide a custom quote based on your business needs and projected volume within 24 hours.</p>",
+            "open": false
+          }
+        },
+        "faq_4": {
+          "type": "text",
+          "settings": {
+            "title": "What's included in a typical restoration kit?",
+            "content": "<p>Our restoration kits include a complete system approach: heavy-cut compound for oxidation removal, medium-cut polish for defect correction, finishing polish for high-gloss results, and a protective sealant for long-lasting protection. Kits can be customized for dealer accounts based on your most common job types.</p>",
+            "open": false
+          }
+        },
+        "faq_5": {
+          "type": "text",
+          "settings": {
+            "title": "What kind of support do you provide to dealers?",
+            "content": "<p>Authorized dealers receive product training materials, technical support from our marine restoration specialists, co-branded marketing materials, priority fulfillment, and dedicated account management. We're invested in helping your business grow.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"]
+    },
+    "lead_form_eW5t3": {
+      "type": "landing-lead-form",
+      "settings": {
+        "show_heading": true,
+        "heading": "Ready to Stock Professional Restoration Products?",
+        "size": "h2",
+        "benefits_heading": "Become an Authorized Dealer",
+        "show_trust_line": true,
+        "trust_line": "Join 500+ dealers nationwide. No commitment required to inquire.",
+        "form_heading": "Get Dealer Pricing & Product Info",
+        "form_subheading": "Fill out the form below and our dealer team will reach out within 24 hours.",
+        "button_label": "Request Dealer Information",
+        "background": "#0f172a",
+        "color": "#ffffff",
+        "accent_color": "#22c55e",
+        "button_bg": "#2563eb",
+        "button_color": "#ffffff"
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Exclusive Dealer Pricing",
+            "text": "Access wholesale rates on our full restoration product line."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Marketing Support",
+            "text": "Co-branded materials and product training for your team."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Priority Fulfillment",
+            "text": "Dedicated stock allocation and expedited shipping."
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "title": "Technical Expertise",
+            "text": "Direct access to our marine restoration specialists."
+          }
+        },
+        "field_name": {
+          "type": "field_text",
+          "settings": {
+            "title": "Full Name",
+            "name": "Name",
+            "placeholder": "John Smith",
+            "required": true
+          }
+        },
+        "field_company": {
+          "type": "field_text",
+          "settings": {
+            "title": "Company / Shop Name",
+            "name": "Company",
+            "placeholder": "Your business name"
+          }
+        },
+        "field_email": {
+          "type": "field_email",
+          "settings": {
+            "title": "Email Address",
+            "placeholder": "you@company.com"
+          }
+        },
+        "field_phone": {
+          "type": "field_phone",
+          "settings": {
+            "title": "Phone Number",
+            "placeholder": "(555) 123-4567"
+          }
+        },
+        "field_interest": {
+          "type": "field_select",
+          "settings": {
+            "title": "I'm interested in",
+            "name": "Interest",
+            "placeholder": "Select a product category",
+            "options": "Restoration Kits, Buffing Polishes, Marine Sealants, Full Product Line, Dealer Partnership"
+          }
+        },
+        "field_message": {
+          "type": "field_textarea",
+          "settings": {
+            "title": "Questions or Comments",
+            "name": "Message",
+            "placeholder": "Tell us about your business and what products interest you..."
+          }
+        },
+        "field_source": {
+          "type": "field_hidden",
+          "settings": {
+            "name": "Source",
+            "value": "Google Ads - Restoration Kits Campaign"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4",
+        "field_name",
+        "field_company",
+        "field_email",
+        "field_phone",
+        "field_interest",
+        "field_message",
+        "field_source"
+      ]
+    }
+  },
+  "order": [
+    "hero_banner_xR4k9",
+    "value_props_mK7v2",
+    "products_polishes_aB3n8",
+    "sealant_spotlight_pQ9w5",
+    "products_sealants_cD6m1",
+    "faqs_hN2j7",
+    "lead_form_eW5t3"
+  ]
+}
